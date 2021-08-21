@@ -1,0 +1,11 @@
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\bin\Debug\Store_management_system.exe.config
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\bin\Debug\Store_management_system.exe
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\bin\Debug\Store_management_system.pdb
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Form1.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Properties.Resources.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.exe
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.pdb
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.MainMenu.resources
