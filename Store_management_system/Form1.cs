@@ -152,7 +152,7 @@ namespace Store_management_system
 
         private void Form1_Load(object sender, EventArgs e)
         {
-                       textBox1.Text = "username";
+            textBox1.Text = "username";
             textBox2.Text = "password";
         }
         //placeholder username
@@ -183,7 +183,7 @@ namespace Store_management_system
                 textBox2.ForeColor = Color.Black;
             }
         }
-      
+            //placeholder       
         private void textBox2_Leave(object sender, EventArgs e)
         {
             if (textBox2.Text == "")
