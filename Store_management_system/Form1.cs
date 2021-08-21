@@ -159,7 +159,7 @@ namespace Store_management_system
         private void textBox1_Enter(object sender, EventArgs e)
         {
             if(textBox1.Text=="username" )
-            {
+            {//comment
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
             }
