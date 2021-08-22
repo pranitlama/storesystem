@@ -42,7 +42,7 @@ namespace Store_management_system
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click(object sender, EventArgs e)//exit code
         {
             DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
@@ -50,5 +50,7 @@ namespace Store_management_system
                 Application.Exit();
             }
         }
+
+        
     }
 }
