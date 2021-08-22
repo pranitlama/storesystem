@@ -32,10 +32,9 @@ namespace Store_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" && textBox2.Text  != "")
+            if (textBox1.Text != "username" && textBox2.Text  != "password")
             {
-                
-
+               
                 try
                 {
                     if (connect.State != ConnectionState.Open)
@@ -55,7 +54,7 @@ namespace Store_management_system
                     sda.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("login successfully!!!");
+                        MessageBox.Show("login successfull!!!");
                         textBox1.Text = "";
                         textBox2.Text = "";
                         MainMenu f2 = new MainMenu();
@@ -151,14 +150,14 @@ namespace Store_management_system
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-            textBox1.Text = "username";
+        { 
+            textBox1.Text = " Username";
             textBox2.Text = "password";
         }
         //placeholder username
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            if(textBox1.Text=="username" )
+            if(textBox1.Text==" Username" )
             {
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
@@ -170,7 +169,7 @@ namespace Store_management_system
         {
             if (textBox1.Text == "")
             {
-                textBox1.Text = "username";
+                textBox1.Text = " Username";
                 textBox1.ForeColor = Color.Silver;
             }
         }
