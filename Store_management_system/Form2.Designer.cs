@@ -29,40 +29,98 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelleft = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.menu = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelside = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.areport = new System.Windows.Forms.Button();
+            this.astock = new System.Windows.Forms.Button();
+            this.aemployee = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelleft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelleft
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 845);
-            this.panel1.TabIndex = 0;
+            this.panelleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.panelleft.Controls.Add(this.panel2);
+            this.panelleft.Controls.Add(this.panelside);
+            this.panelleft.Controls.Add(this.button7);
+            this.panelleft.Controls.Add(this.button6);
+            this.panelleft.Controls.Add(this.areport);
+            this.panelleft.Controls.Add(this.astock);
+            this.panelleft.Controls.Add(this.aemployee);
+            this.panelleft.Controls.Add(this.button1);
+            this.panelleft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelleft.Location = new System.Drawing.Point(0, 0);
+            this.panelleft.Name = "panelleft";
+            this.panelleft.Size = new System.Drawing.Size(258, 910);
+            this.panelleft.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(80)))));
+            this.panel2.Controls.Add(this.menu);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(3, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 135);
+            this.panel2.TabIndex = 0;
+            // 
+            // menu
+            // 
+            this.menu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu.BackgroundImage")));
+            this.menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menu.FlatAppearance.BorderSize = 0;
+            this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.menu.Location = new System.Drawing.Point(3, 88);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(50, 44);
+            this.menu.TabIndex = 3;
+            this.menu.UseVisualStyleBackColor = true;
+            this.menu.Click += new System.EventHandler(this.menu_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(114, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(74, 56);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Cooper Black", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(110, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(117, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "SAMP STORE";
+            // 
+            // panelside
+            // 
+            this.panelside.BackColor = System.Drawing.Color.White;
+            this.panelside.Location = new System.Drawing.Point(6, 191);
+            this.panelside.Name = "panelside";
+            this.panelside.Size = new System.Drawing.Size(11, 111);
+            this.panelside.TabIndex = 3;
             // 
             // button7
             // 
@@ -72,11 +130,12 @@ namespace Store_management_system
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(15, 692);
+            this.button7.Location = new System.Drawing.Point(6, 734);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(215, 66);
+            this.button7.Size = new System.Drawing.Size(218, 100);
             this.button7.TabIndex = 2;
-            this.button7.Text = "        LOG OUT";
+            this.button7.Text = "    LOGOUT";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -84,147 +143,123 @@ namespace Store_management_system
             // 
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(15, 588);
+            this.button6.Location = new System.Drawing.Point(12, 614);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(215, 66);
+            this.button6.Size = new System.Drawing.Size(218, 100);
             this.button6.TabIndex = 2;
-            this.button6.Text = "     SETTING";
+            this.button6.Text = "  SETTING";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button4
+            // areport
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(15, 484);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(215, 66);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "     REPORT";
-            this.button4.UseVisualStyleBackColor = true;
+            this.areport.FlatAppearance.BorderSize = 0;
+            this.areport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.areport.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.areport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.areport.Image = ((System.Drawing.Image)(resources.GetObject("areport.Image")));
+            this.areport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.areport.Location = new System.Drawing.Point(12, 495);
+            this.areport.Name = "areport";
+            this.areport.Size = new System.Drawing.Size(218, 100);
+            this.areport.TabIndex = 2;
+            this.areport.Text = "  REPORT";
+            this.areport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.areport.UseVisualStyleBackColor = true;
+            this.areport.Click += new System.EventHandler(this.areport_Click);
             // 
-            // button3
+            // astock
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(15, 379);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(215, 66);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "     STOCKS";
-            this.button3.UseVisualStyleBackColor = true;
+            this.astock.FlatAppearance.BorderSize = 0;
+            this.astock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.astock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.astock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.astock.Image = ((System.Drawing.Image)(resources.GetObject("astock.Image")));
+            this.astock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.astock.Location = new System.Drawing.Point(12, 396);
+            this.astock.Name = "astock";
+            this.astock.Size = new System.Drawing.Size(218, 100);
+            this.astock.TabIndex = 2;
+            this.astock.Text = "  STOCKS";
+            this.astock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.astock.UseVisualStyleBackColor = true;
+            this.astock.Click += new System.EventHandler(this.astock_Click);
             // 
-            // button2
+            // aemployee
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(15, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(215, 66);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "        EMPLOYEE";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.aemployee.FlatAppearance.BorderSize = 0;
+            this.aemployee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.aemployee.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aemployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.aemployee.Image = ((System.Drawing.Image)(resources.GetObject("aemployee.Image")));
+            this.aemployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.aemployee.Location = new System.Drawing.Point(12, 297);
+            this.aemployee.Name = "aemployee";
+            this.aemployee.Size = new System.Drawing.Size(218, 104);
+            this.aemployee.TabIndex = 2;
+            this.aemployee.Text = "  EMPLOYEE";
+            this.aemployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.aemployee.UseVisualStyleBackColor = true;
+            this.aemployee.Click += new System.EventHandler(this.aemployee_Click);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(15, 171);
+            this.button1.Location = new System.Drawing.Point(23, 198);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 66);
+            this.button1.Size = new System.Drawing.Size(207, 104);
             this.button1.TabIndex = 2;
-            this.button1.Text = "     HOME";
+            this.button1.Text = "  HOME";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(100)))));
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(225, 140);
-            this.panel2.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(33, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 23);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "SAMP STORE";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(59, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.panel3.Location = new System.Drawing.Point(223, 40);
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(258, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1889, 62);
+            this.panel3.Size = new System.Drawing.Size(987, 62);
             this.panel3.TabIndex = 1;
             // 
-            // button5
+            // timer1
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(196, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(34, 43);
-            this.button5.TabIndex = 2;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button1_Click);
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(258, 62);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(987, 72);
+            this.panel4.TabIndex = 2;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1245, 844);
+            this.ClientSize = new System.Drawing.Size(1245, 910);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelleft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
-            this.panel1.ResumeLayout(false);
+            this.panelleft.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -234,17 +269,20 @@ namespace Store_management_system
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelleft;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button areport;
+        private System.Windows.Forms.Button astock;
+        private System.Windows.Forms.Button aemployee;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panelside;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button menu;
     }
 }
