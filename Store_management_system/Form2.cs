@@ -25,6 +25,7 @@ namespace Store_management_system
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+          //  button2.Visible=false;
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0,0);
@@ -82,29 +83,42 @@ namespace Store_management_system
                     timer1.Stop();
                     isCollapsed = true;
                     this.Refresh();
+                    
                 }
             }
         }
 
         private void menu_Click(object sender, EventArgs e)
         {
+            menu.Visible =true;
+            menu.Location= new Point(10,87);
+          //  button2.Visible=true;
+            
             timer1.Start();
             if (on)
             {
                 label1.Hide();
                 pictureBox1.Hide();
                 on = false;
+              
             }
             else
             {
                 label1.Show();
                 pictureBox1.Show();
                 on = true;
+                
+                menu.Location = new Point(147, 87);
+               
+
             }
+            
+           
 
             
         }
-        
+      
+
         private void moveSidePanel(Control btn)
         {
             panelside.Top = btn.Top;
@@ -120,6 +134,27 @@ namespace Store_management_system
         private void areport_Click(object sender, EventArgs e)
         {
             moveSidePanel(areport);
+        }
+
+        private void mini_Click(object sender, EventArgs e)
+        {
+            //minimize login window
+            this.WindowState = FormWindowState.Minimized;
+            //textBox1.Focus();
+        }
+
+        private void clos_Click(object sender, EventArgs e)
+        {
+            //closes login window
+            DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+            // else if (dialog == DialogResult.No)
+            //  {
+            //     e.Cancel = true;
+            // }
         }
     }
 }
