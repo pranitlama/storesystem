@@ -33,7 +33,6 @@ namespace Store_management_system
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panelleft = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.menu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelside = new System.Windows.Forms.Panel();
@@ -43,6 +42,7 @@ namespace Store_management_system
             this.astock = new System.Windows.Forms.Button();
             this.aemployee = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.menu = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
@@ -80,20 +80,6 @@ namespace Store_management_system
             this.panel2.Size = new System.Drawing.Size(258, 186);
             this.panel2.TabIndex = 0;
             // 
-            // menu
-            // 
-            this.menu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu.BackgroundImage")));
-            this.menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menu.FlatAppearance.BorderSize = 0;
-            this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.menu.Location = new System.Drawing.Point(3, 6);
-            this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(63, 47);
-            this.menu.TabIndex = 3;
-            this.menu.UseVisualStyleBackColor = true;
-            this.menu.Click += new System.EventHandler(this.menu_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -118,9 +104,9 @@ namespace Store_management_system
             // panelside
             // 
             this.panelside.BackColor = System.Drawing.Color.White;
-            this.panelside.Location = new System.Drawing.Point(17, 285);
+            this.panelside.Location = new System.Drawing.Point(1, 285);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(11, 104);
+            this.panelside.Size = new System.Drawing.Size(11, 111);
             this.panelside.TabIndex = 3;
             // 
             // button7
@@ -131,11 +117,11 @@ namespace Store_management_system
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(34, 967);
+            this.button7.Location = new System.Drawing.Point(18, 967);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(221, 104);
+            this.button7.Size = new System.Drawing.Size(237, 104);
             this.button7.TabIndex = 2;
-            this.button7.Text = "  LOGOUT";
+            this.button7.Text = "     LOGOUT";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -148,11 +134,11 @@ namespace Store_management_system
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(34, 828);
+            this.button6.Location = new System.Drawing.Point(18, 828);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(221, 104);
+            this.button6.Size = new System.Drawing.Size(237, 104);
             this.button6.TabIndex = 2;
-            this.button6.Text = "  SETTING";
+            this.button6.Text = "     SETTING";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -165,11 +151,11 @@ namespace Store_management_system
             this.areport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.areport.Image = ((System.Drawing.Image)(resources.GetObject("areport.Image")));
             this.areport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.areport.Location = new System.Drawing.Point(34, 701);
+            this.areport.Location = new System.Drawing.Point(18, 701);
             this.areport.Name = "areport";
-            this.areport.Size = new System.Drawing.Size(224, 104);
+            this.areport.Size = new System.Drawing.Size(240, 104);
             this.areport.TabIndex = 2;
-            this.areport.Text = "  REPORT";
+            this.areport.Text = "     REPORT";
             this.areport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.areport.UseVisualStyleBackColor = true;
             this.areport.Click += new System.EventHandler(this.areport_Click);
@@ -182,11 +168,11 @@ namespace Store_management_system
             this.astock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.astock.Image = ((System.Drawing.Image)(resources.GetObject("astock.Image")));
             this.astock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.astock.Location = new System.Drawing.Point(34, 572);
+            this.astock.Location = new System.Drawing.Point(18, 572);
             this.astock.Name = "astock";
-            this.astock.Size = new System.Drawing.Size(224, 104);
+            this.astock.Size = new System.Drawing.Size(240, 104);
             this.astock.TabIndex = 2;
-            this.astock.Text = "  STOCKS";
+            this.astock.Text = "     STOCKS";
             this.astock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.astock.UseVisualStyleBackColor = true;
             this.astock.Click += new System.EventHandler(this.astock_Click);
@@ -198,9 +184,9 @@ namespace Store_management_system
             this.aemployee.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aemployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.aemployee.Image = ((System.Drawing.Image)(resources.GetObject("aemployee.Image")));
-            this.aemployee.Location = new System.Drawing.Point(34, 423);
+            this.aemployee.Location = new System.Drawing.Point(18, 423);
             this.aemployee.Name = "aemployee";
-            this.aemployee.Size = new System.Drawing.Size(221, 104);
+            this.aemployee.Size = new System.Drawing.Size(240, 104);
             this.aemployee.TabIndex = 2;
             this.aemployee.Text = "    EMPLOYEE";
             this.aemployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -215,14 +201,28 @@ namespace Store_management_system
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(34, 285);
+            this.button1.Location = new System.Drawing.Point(16, 285);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 104);
+            this.button1.Size = new System.Drawing.Size(242, 104);
             this.button1.TabIndex = 2;
-            this.button1.Text = "  HOME";
+            this.button1.Text = "     HOME";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // menu
+            // 
+            this.menu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("menu.BackgroundImage")));
+            this.menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menu.FlatAppearance.BorderSize = 0;
+            this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+            this.menu.Location = new System.Drawing.Point(0, 0);
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(65, 57);
+            this.menu.TabIndex = 3;
+            this.menu.UseVisualStyleBackColor = true;
+            this.menu.Click += new System.EventHandler(this.menu_Click);
             // 
             // panel3
             // 
