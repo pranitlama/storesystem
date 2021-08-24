@@ -14,7 +14,8 @@ namespace Store_management_system
     public partial class MainMenu : Form
     {
         int panelWidth;
-        bool isCollapsed; 
+        bool isCollapsed;
+        bool on = true;
         public MainMenu()
         {
             InitializeComponent();
@@ -25,7 +26,7 @@ namespace Store_management_system
         private void MainMenu_Load(object sender, EventArgs e)
         {
             int w = Screen.PrimaryScreen.Bounds.Width;
-           int h = Screen.PrimaryScreen.Bounds.Height;
+            int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0,0);
             this.Size = new Size(w,h);
            
@@ -33,7 +34,8 @@ namespace Store_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            moveSidePanel(button1); 
+            moveSidePanel(button1);
+          
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -44,6 +46,7 @@ namespace Store_management_system
         private void aemployee_Click(object sender, EventArgs e)
         {
             moveSidePanel(aemployee);
+           
 
         }
 
@@ -53,7 +56,9 @@ namespace Store_management_system
             DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
-                Application.Exit();
+                Form1 fm = new Form1();
+                fm.Show();
+                this.Hide();
             }
         }
 
@@ -72,7 +77,7 @@ namespace Store_management_system
             else
             {
                 panelleft.Width = panelleft.Width - 10;
-                if(panelleft.Width<=74)
+                if(panelleft.Width<=84)
                 {
                     timer1.Stop();
                     isCollapsed = true;
@@ -84,6 +89,20 @@ namespace Store_management_system
         private void menu_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            if (on)
+            {
+                label1.Hide();
+                pictureBox1.Hide();
+                on = false;
+            }
+            else
+            {
+                label1.Show();
+                pictureBox1.Show();
+                on = true;
+            }
+
+            
         }
         
         private void moveSidePanel(Control btn)

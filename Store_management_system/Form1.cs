@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
- 
+
 namespace Store_management_system
 {
    
@@ -133,7 +133,7 @@ namespace Store_management_system
             DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
            // else if (dialog == DialogResult.No)
           //  {
@@ -190,6 +190,19 @@ namespace Store_management_system
                 textBox2.Text  ="password" ;
                 textBox2.ForeColor = Color.Silver;
             }
+        }
+        
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+
+            button1.BackColor = Color.White; 
+            button1.ForeColor = System.Drawing.Color.FromArgb(30,50,94);
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.FromArgb(30, 50, 94);
+            button1.ForeColor = System.Drawing.Color.White ;
         }
     }
 }
