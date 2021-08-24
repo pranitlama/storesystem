@@ -78,7 +78,7 @@ namespace Store_management_system
             else
             {
                 panelleft.Width = panelleft.Width - 10;
-                if(panelleft.Width<=75)
+                if(panelleft.Width<=85)
                 {
                     timer1.Stop();
                     isCollapsed = true;
