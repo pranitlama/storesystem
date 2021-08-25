@@ -109,6 +109,7 @@ namespace Store_management_system
             {
                 label1.Show();
                // pictureBox1.Show();
+               //this is a comment
                 on = true;
                 button2.Visible = false;
 
