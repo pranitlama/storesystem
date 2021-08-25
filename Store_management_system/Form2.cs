@@ -101,14 +101,14 @@ namespace Store_management_system
             if (on)
             {
                 label1.Hide();
-                pictureBox1.Hide();
+                //pictureBox1.Hide();
                 on = false;
               
             }
             else
             {
                 label1.Show();
-                pictureBox1.Show();
+               // pictureBox1.Show();
                 on = true;
                 button2.Visible = false;
 
