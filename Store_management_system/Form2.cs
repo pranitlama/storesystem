@@ -21,11 +21,13 @@ namespace Store_management_system
             InitializeComponent();
             panelWidth = panelleft.Width; 
             isCollapsed= false;
+           
+           
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-          //  button2.Visible=false;
+            button2.Visible=false;
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0,0);
@@ -78,7 +80,7 @@ namespace Store_management_system
             else
             {
                 panelleft.Width = panelleft.Width - 10;
-                if(panelleft.Width<=85)
+                if(panelleft.Width<=75)
                 {
                     timer1.Stop();
                     isCollapsed = true;
@@ -91,8 +93,8 @@ namespace Store_management_system
         private void menu_Click(object sender, EventArgs e)
         {
             menu.Visible =true;
-            menu.Location= new Point(11, 127);
-          //  button2.Visible=true;
+   
+            button2.Visible=true;
             
             timer1.Start();
             if (on)
@@ -107,14 +109,9 @@ namespace Store_management_system
                 label1.Show();
                 pictureBox1.Show();
                 on = true;
-                
-                menu.Location = new Point(212, 120);
-               
+                button2.Visible = false;
 
             }
-            
-           
-
             
         }
       
@@ -155,6 +152,11 @@ namespace Store_management_system
             //  {
             //     e.Cancel = true;
             // }
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
