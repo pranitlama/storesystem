@@ -75,6 +75,7 @@ namespace Store_management_system
                     timer1.Stop();
                     isCollapsed = false;
                     this.Refresh();
+                    //command accepted
                 }
             }
             else
@@ -100,14 +101,15 @@ namespace Store_management_system
             if (on)
             {
                 label1.Hide();
-                pictureBox1.Hide();
+                //pictureBox1.Hide();
                 on = false;
               
             }
             else
             {
                 label1.Show();
-                pictureBox1.Show();
+               // pictureBox1.Show();
+               //this is a comment
                 on = true;
                 button2.Visible = false;
 
