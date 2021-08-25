@@ -100,31 +100,36 @@ namespace Store_management_system
 
         private void hide_Click(object sender, EventArgs e)
         {
-
-            if (textBox2.PasswordChar == '\0')
-            {
+            textBox2.UseSystemPasswordChar = true;
+           // if (textBox2.UseSystemPasswordChar==false)
+           // if (textBox2.PasswordChar == '\0')
+            
                 hide.Hide();
                 //   see.BringToFront();
                 //hide password
-                textBox2.PasswordChar = '•';
+                //textBox2.UseSystemPasswordChar = true;
+                // textBox2.PasswordChar = '•';
                 see.Show();
                 textBox2.Focus();
 
 
-            }
+            
         }
 
         private void see_Click(object sender, EventArgs e)
         {
-            if (textBox2.PasswordChar == '•')
-            {
-                // hide.BringToFront();
-                //show password
-                see.Hide();
-                textBox2.PasswordChar = '\0';
+            //textBox2.UseSystemPasswordChar = false;
+            //if(textBox2.UseSystemPasswordChar==true)
+            //  if (textBox2.PasswordChar == '•')
+            textBox2.UseSystemPasswordChar = false;
+            // hide.BringToFront();
+            //show password
+            see.Hide();
+                //textBox2.PasswordChar = '\0';
+               
                 hide.Show();
                 textBox2.Focus();
-            }
+            
 
         }
 
@@ -151,12 +156,14 @@ namespace Store_management_system
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.PasswordChar = '•';
-            if (textBox2.PasswordChar == '•')
-            {
-                see.Show();
+            textBox2.UseSystemPasswordChar = true;
+            see.Show();
+          //  textBox2.PasswordChar = '•';
+           // if (textBox2.PasswordChar == '•')
+           // {
+             //   see.Show();
                 
-            }
+          //  }
             
         }
    
@@ -164,8 +171,7 @@ namespace Store_management_system
         private void Form1_Load(object sender, EventArgs e)
         {
             textBox1.Text = " Username";
-            
-            textBox2.Text = "password";
+            textBox2.Text = "Password";
         }
         //placeholder username
         private void textBox1_Enter(object sender, EventArgs e)
@@ -189,7 +195,7 @@ namespace Store_management_system
         //placeholder password
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "password")
+            if (textBox2.Text == "Password")
             {
                 textBox2.Text = "";
                 textBox2.ForeColor = Color.Black;
@@ -200,7 +206,7 @@ namespace Store_management_system
         {
             if (textBox2.Text == "")
             {
-                textBox2.Text = "password";
+                textBox2.Text = "Password";
                 textBox2.ForeColor = Color.Silver;
             }
         }

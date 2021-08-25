@@ -109,10 +109,9 @@ namespace Store_management_system
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.MaxLength = 8;
             this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '•';
             this.textBox2.Size = new System.Drawing.Size(183, 15);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "password";
+            this.textBox2.Text = "Password";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);

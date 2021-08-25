@@ -44,11 +44,11 @@ namespace Store_management_system
             this.aemployee = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.clos = new System.Windows.Forms.Button();
+            this.mini = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.clos = new System.Windows.Forms.Button();
-            this.mini = new System.Windows.Forms.Button();
             this.panelleft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -92,10 +92,10 @@ namespace Store_management_system
             this.menu.FlatAppearance.BorderSize = 0;
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.menu.Location = new System.Drawing.Point(147, 87);
+            this.menu.Location = new System.Drawing.Point(136, 84);
             this.menu.Margin = new System.Windows.Forms.Padding(2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(21, 32);
+            this.menu.Size = new System.Drawing.Size(34, 34);
             this.menu.TabIndex = 3;
             this.menu.UseVisualStyleBackColor = true;
             this.menu.Click += new System.EventHandler(this.menu_Click);
@@ -116,7 +116,7 @@ namespace Store_management_system
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(37, 86);
+            this.label1.Location = new System.Drawing.Point(34, 84);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 16);
@@ -251,6 +251,37 @@ namespace Store_management_system
             this.panel3.Size = new System.Drawing.Size(752, 81);
             this.panel3.TabIndex = 1;
             // 
+            // clos
+            // 
+            this.clos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clos.BackgroundImage")));
+            this.clos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.clos.FlatAppearance.BorderSize = 0;
+            this.clos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.clos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clos.Location = new System.Drawing.Point(726, 2);
+            this.clos.Margin = new System.Windows.Forms.Padding(2);
+            this.clos.Name = "clos";
+            this.clos.Size = new System.Drawing.Size(24, 24);
+            this.clos.TabIndex = 9;
+            this.clos.UseVisualStyleBackColor = true;
+            this.clos.Click += new System.EventHandler(this.clos_Click);
+            // 
+            // mini
+            // 
+            this.mini.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mini.BackgroundImage")));
+            this.mini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mini.FlatAppearance.BorderSize = 0;
+            this.mini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mini.Location = new System.Drawing.Point(698, 2);
+            this.mini.Margin = new System.Windows.Forms.Padding(2);
+            this.mini.Name = "mini";
+            this.mini.Size = new System.Drawing.Size(24, 24);
+            this.mini.TabIndex = 8;
+            this.mini.UseVisualStyleBackColor = true;
+            this.mini.Click += new System.EventHandler(this.mini_Click);
+            // 
             // timer1
             // 
             this.timer1.Interval = 1;
@@ -275,35 +306,6 @@ namespace Store_management_system
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 395);
             this.panel1.TabIndex = 3;
-            // 
-            // clos
-            // 
-            this.clos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("clos.BackgroundImage")));
-            this.clos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.clos.FlatAppearance.BorderSize = 0;
-            this.clos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.clos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clos.Location = new System.Drawing.Point(726, 2);
-            this.clos.Margin = new System.Windows.Forms.Padding(2);
-            this.clos.Name = "clos";
-            this.clos.Size = new System.Drawing.Size(24, 24);
-            this.clos.TabIndex = 9;
-            this.clos.UseVisualStyleBackColor = true;
-            this.clos.Click += new System.EventHandler(this.clos_Click);
-            // 
-            // mini
-            // 
-            this.mini.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mini.BackgroundImage")));
-            this.mini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mini.FlatAppearance.BorderSize = 0;
-            this.mini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mini.Location = new System.Drawing.Point(698, 2);
-            this.mini.Margin = new System.Windows.Forms.Padding(2);
-            this.mini.Name = "mini";
-            this.mini.Size = new System.Drawing.Size(24, 24);
-            this.mini.TabIndex = 8;
-            this.mini.UseVisualStyleBackColor = true;
-            this.mini.Click += new System.EventHandler(this.mini_Click);
             // 
             // MainMenu
             // 
