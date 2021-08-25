@@ -90,9 +90,9 @@ namespace Store_management_system
             this.menu.FlatAppearance.BorderSize = 0;
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.menu.Location = new System.Drawing.Point(220, 134);
+            this.menu.Location = new System.Drawing.Point(201, 132);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(32, 49);
+            this.menu.Size = new System.Drawing.Size(51, 51);
             this.menu.TabIndex = 3;
             this.menu.UseVisualStyleBackColor = true;
             this.menu.Click += new System.EventHandler(this.menu_Click);
