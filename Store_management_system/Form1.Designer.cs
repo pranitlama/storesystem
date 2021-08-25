@@ -104,12 +104,12 @@ namespace Store_management_system
             this.textBox2.Location = new System.Drawing.Point(878, 352);
             this.textBox2.MaxLength = 8;
             this.textBox2.Name = "textBox2";
-<<<<<<< HEAD
+
             this.textBox2.Size = new System.Drawing.Size(183, 15);
-=======
+
             this.textBox2.PasswordChar = '•';
             this.textBox2.Size = new System.Drawing.Size(274, 23);
->>>>>>> 5e7af7b38fe2b4afa3150f87fd527c2b855e077f
+
             this.textBox2.TabIndex = 2;
             this.textBox2.Text = "Password";
             this.textBox2.Click += new System.EventHandler(this.textBox2_Click);

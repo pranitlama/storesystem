@@ -90,16 +90,16 @@ namespace Store_management_system
             this.menu.FlatAppearance.BorderSize = 0;
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-<<<<<<< HEAD
+
             this.menu.Location = new System.Drawing.Point(136, 84);
             this.menu.Margin = new System.Windows.Forms.Padding(2);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(34, 34);
-=======
+
             this.menu.Location = new System.Drawing.Point(220, 134);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(32, 49);
->>>>>>> 5e7af7b38fe2b4afa3150f87fd527c2b855e077f
+
             this.menu.TabIndex = 3;
             this.menu.UseVisualStyleBackColor = true;
             this.menu.Click += new System.EventHandler(this.menu_Click);
@@ -119,12 +119,12 @@ namespace Store_management_system
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-<<<<<<< HEAD
+
             this.label1.Location = new System.Drawing.Point(34, 84);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-=======
+
             this.label1.Location = new System.Drawing.Point(56, 132);
->>>>>>> 5e7af7b38fe2b4afa3150f87fd527c2b855e077f
+
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 2;
@@ -288,32 +288,32 @@ namespace Store_management_system
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-<<<<<<< HEAD
+
             this.panel4.Location = new System.Drawing.Point(172, 81);
             this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(752, 36);
-=======
+
             this.panel4.Location = new System.Drawing.Point(258, 125);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1128, 55);
->>>>>>> 5e7af7b38fe2b4afa3150f87fd527c2b855e077f
+
             this.panel4.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-<<<<<<< HEAD
+
             this.panel1.Location = new System.Drawing.Point(172, 117);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(752, 395);
-=======
+
             this.panel1.Location = new System.Drawing.Point(258, 180);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1128, 608);
->>>>>>> 5e7af7b38fe2b4afa3150f87fd527c2b855e077f
+
             this.panel1.TabIndex = 3;
             // 
             // MainMenu
