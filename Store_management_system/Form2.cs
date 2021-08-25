@@ -91,7 +91,7 @@ namespace Store_management_system
         private void menu_Click(object sender, EventArgs e)
         {
             menu.Visible =true;
-            menu.Location= new Point(0,84);
+            menu.Location= new Point(11, 127);
           //  button2.Visible=true;
             
             timer1.Start();
@@ -108,7 +108,7 @@ namespace Store_management_system
                 pictureBox1.Show();
                 on = true;
                 
-                menu.Location = new Point(136, 84);
+                menu.Location = new Point(212, 120);
                
 
             }
