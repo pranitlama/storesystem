@@ -111,7 +111,7 @@ namespace Store_management_system
                // pictureBox1.Show();
                 on = true;
                 button2.Visible = false;
-
+                //comasdklfja
             }
             
         }
