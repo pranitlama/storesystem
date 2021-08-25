@@ -75,6 +75,7 @@ namespace Store_management_system
                     timer1.Stop();
                     isCollapsed = false;
                     this.Refresh();
+                    //command accepted
                 }
             }
             else
