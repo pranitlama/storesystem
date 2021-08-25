@@ -92,6 +92,7 @@ namespace Store_management_system
                     //2 nd test git hub
                     //3rd comment
                     //4th comment test
+                    //i am commenting you from samikbranch
                 }
             }
         }
@@ -117,7 +118,7 @@ namespace Store_management_system
                //this is a comment
                 on = true;
                 button2.Visible = false;
-
+                //comasdklfja
             }
             
         }
