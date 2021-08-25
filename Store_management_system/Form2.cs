@@ -90,13 +90,8 @@ namespace Store_management_system
                     this.Refresh();
                     //i commeted on al ine
                     //2 nd test git hub
-<<<<<<< HEAD
-                    //alsjdfklajsdfklj
-                    //asdfasdfasdf
-=======
                     //3rd comment
                     //4th comment test
->>>>>>> b851b96602f78a9582d07bddbefe68781dca1c3f
                 }
             }
         }
