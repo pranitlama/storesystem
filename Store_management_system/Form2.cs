@@ -76,6 +76,8 @@ namespace Store_management_system
                     isCollapsed = false;
                     this.Refresh();
                     //command accepted
+
+
                 }
             }
             else
@@ -86,7 +88,8 @@ namespace Store_management_system
                     timer1.Stop();
                     isCollapsed = true;
                     this.Refresh();
-                    
+                    //i commeted on al ine
+                    //2 nd test git hub
                 }
             }
         }
