@@ -76,6 +76,8 @@ namespace Store_management_system
                     isCollapsed = false;
                     this.Refresh();
                     //command accepted
+
+
                 }
             }
             else
@@ -86,7 +88,8 @@ namespace Store_management_system
                     timer1.Stop();
                     isCollapsed = true;
                     this.Refresh();
-                    
+                    //i commeted on al ine
+                    //2 nd test git hub
                 }
             }
         }
@@ -109,6 +112,7 @@ namespace Store_management_system
             {
                 label1.Show();
                // pictureBox1.Show();
+               //this is a comment
                 on = true;
                 button2.Visible = false;
                 //comasdklfja
