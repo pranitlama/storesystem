@@ -87,6 +87,7 @@ namespace Store_management_system
                     if (connect.State == ConnectionState.Open)
                     {
                         connect.Close();
+                
                     }
                 }
             }
