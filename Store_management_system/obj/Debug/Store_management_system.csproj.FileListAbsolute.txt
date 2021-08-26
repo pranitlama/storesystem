@@ -20,3 +20,6 @@ C:\Users\Samik Shk\Source\Repos\storesystem\Store_management_system\obj\Debug\St
 C:\Users\Samik Shk\Source\Repos\storesystem\Store_management_system\obj\Debug\Store_management_system.csproj.CoreCompileInputs.cache
 C:\Users\Samik Shk\Source\Repos\storesystem\Store_management_system\obj\Debug\Store_management_system.exe
 C:\Users\Samik Shk\Source\Repos\storesystem\Store_management_system\obj\Debug\Store_management_system.pdb
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.HOMEUC.resources
+C:\Users\Samik Shk\source\repos\storesystem\Store_management_system\obj\Debug\Store_management_system.HOMEUC.resources
+C:\Users\Samik Shk\source\repos\storesystem\Store_management_system\obj\Debug\Store_management_system.Required5.resources
