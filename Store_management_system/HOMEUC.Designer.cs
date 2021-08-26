@@ -33,10 +33,11 @@ namespace Store_management_system
             // 
             // HOMEUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "HOMEUC";
-            this.Size = new System.Drawing.Size(1608, 891);
+            this.Size = new System.Drawing.Size(1072, 579);
             this.ResumeLayout(false);
 
         }

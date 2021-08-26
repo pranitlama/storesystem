@@ -25,15 +25,22 @@ namespace Store_management_system
            
         }
 
+        private void AddControlsToPanel(Control C)
+        {
+            C.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(C);
+        }
+
         private void MainMenu_Load(object sender, EventArgs e)
         {
             button2.Visible=false;
-          //  int w = Screen.PrimaryScreen.Bounds.Width;
-          //  int h = Screen.PrimaryScreen.Bounds.Height;
-          //  this.Location = new Point(0,0);
-           // this.Size = new Size(w,h);
-           
-         }
+            int w = Screen.PrimaryScreen.Bounds.Width;
+            int h = Screen.PrimaryScreen.Bounds.Height;
+            this.Location = new Point(0, 0);
+            this.Size = new Size(w, h);
+
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -49,6 +56,9 @@ namespace Store_management_system
         private void aemployee_Click(object sender, EventArgs e)
         {
             moveSidePanel(aemployee);
+            Required5 ue = new Required5();
+            AddControlsToPanel(ue);
+            
            
 
         }
@@ -88,11 +98,7 @@ namespace Store_management_system
                     timer1.Stop();
                     isCollapsed = true;
                     this.Refresh();
-                    //i commeted on al ine
-                    //2 nd test git hub
-                    //3rd comment
-                    //4th comment test
-                    //i am commenting you from samikbranch
+                 
                 }
             }
         }
