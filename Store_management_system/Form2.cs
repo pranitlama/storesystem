@@ -86,7 +86,7 @@ namespace Store_management_system
                     isCollapsed = false;
                     this.Refresh();
                     //command accepted
-
+                    //i am accepting the command
 
                 }
             }
