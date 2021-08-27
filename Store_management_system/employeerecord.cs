@@ -19,7 +19,7 @@ namespace Store_management_system
             InitializeComponent();
         }
         string employeegender;
-        //int temp;
+        
         private void DisplayData()
         {
             try
@@ -45,6 +45,7 @@ namespace Store_management_system
             }
             catch (Exception ex)
             {
+              
                 MessageBox.Show(ex.ToString());
             }
             finally
@@ -61,8 +62,33 @@ namespace Store_management_system
 
         private void eadd_Click(object sender, EventArgs e)
         {
-           
-            if (em_fname.Text != "" || em_lname.Text != "" ||em_address.Text!="" || em_pn.Text=="" || employeegender=="" ||em_dob.Text=="" || em_age.Text=="")
+            SqlDataAdapter da = new SqlDataAdapter("Select e_pn from employee_details where e_pn='" + em_pn.Text + "'", connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if(dt.Rows.Count>=1)
+            {
+                MessageBox.Show("Phone number already exist");
+            }
+            else
+            {
+                DisplayData();
+            }
+             da = new SqlDataAdapter("Select e_email from employee_details where e_email='" + em_email.Text + "'", connect);
+            DataTable dts = new DataTable();
+            da.Fill(dts);
+            if(dts.Rows.Count>=1)
+            {
+                MessageBox.Show("Email already exist");
+            }
+            else
+            {
+                DisplayData();
+            }
+           if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text=="" || em_pn.Text=="" || employeegender=="" || em_dob.Text=="" || em_age.Text=="")
+            {
+                MessageBox.Show("please enter complete data");
+            }
+           else
             {
                 try
                 {
@@ -81,19 +107,12 @@ namespace Store_management_system
                     string query = "Insert into employee_details (e_fname,e_mname,e_lname,e_address,e_pn,e_age,e_gender,e_dob,e_email) values (@parameter_fname,@parameter_mname,@parameter_lname,@parameter_address,@parameter_pn,@parameter_age,@parameter_gender,@parameter_dob,@parameter_email)";
 
                     SqlCommand cmd = new SqlCommand(query, connect);
-
-
                     cmd.Parameters.AddWithValue("@parameter_fname", st_fname);
                     cmd.Parameters.AddWithValue("@parameter_mname", st_mname);
                     cmd.Parameters.AddWithValue("@parameter_lname", st_lname);
                     cmd.Parameters.AddWithValue("@parameter_address", st_address);
                     cmd.Parameters.AddWithValue("@parameter_pn", st_pn);
-
                     cmd.Parameters.AddWithValue("@parameter_age", st_age);
-                    
-
-
-
                     cmd.Parameters.AddWithValue("@parameter_gender", employeegender);
                     cmd.Parameters.AddWithValue("@parameter_dob", st_dob);
                     cmd.Parameters.AddWithValue("@parameter_email", st_email);
@@ -109,20 +128,18 @@ namespace Store_management_system
                     em_dob.Text = "";
                     em_email.Text = "";
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
-                    MessageBox.Show(ex.ToString());
+                   
                 }
                 finally
                 {
                     connect.Close();
                 }
                 DisplayData();
+
             }
-            else
-            {
-                MessageBox.Show("Please enter complete data");
-            }
+           
         }
 
         private void em_male_CheckedChanged(object sender, EventArgs e)
@@ -213,6 +230,7 @@ namespace Store_management_system
                 string employee_dob = employeelist.CurrentRow.Cells["edob"].Value.ToString();
                 string employee_email = employeelist.CurrentRow.Cells["eemail"].Value.ToString();
                 MessageBox.Show("Id: " + employee_id + "\nName: " + employee_name);
+
                 em_fname.Text = employee_fname;
                 em_mname.Text = employee_mname;
                 em_lname.Text = employee_lname;
@@ -236,9 +254,15 @@ namespace Store_management_system
             eupdate.Enabled = false;
 
             em_fname.Text = "";
+            em_mname.Text = "";
+            em_lname.Text = "";
             em_address.Text = "";
             em_pn.Text = "";
             employeegender = "";
+            em_age.Text = "";
+            em_dob.Text = "";
+            em_email.Text = "";
+
         }
 
         private void eupdate_Click(object sender, EventArgs e)
@@ -261,6 +285,22 @@ namespace Store_management_system
             {
                 e.Handled = true;
             }
+        }
+
+        private void em_pn_TextChanged(object sender, EventArgs e)
+        {
+         
+            
+        }
+
+        private void em_email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
