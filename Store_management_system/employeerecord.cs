@@ -61,31 +61,8 @@ namespace Store_management_system
 
         private void eadd_Click(object sender, EventArgs e)
         {
-            if (em_fname.Text == "")
-            {
-                Required1.Visible = true;
-            }
-            if (em_lname.Text == "")
-            {
-                Required3.Visible = true;
-            }
-            if (em_address.Text == "")
-            {
-                Required4.Visible = true;
-            }
-            if (em_pn.Text == "")
-            {
-                Required9.Visible = true;
-            }
-            if (!em_female.Checked && !em_male.Checked)
-            {
-                Required6.Visible = true;
-            }
-            if (em_dob.Text == "")
-            {
-                Required7.Visible = true;
-            }
-            if (em_fname.Text != "" || em_lname.Text != "")
+           
+            if (em_fname.Text != "" || em_lname.Text != "" ||em_address.Text!="" || em_pn.Text=="" || employeegender=="" ||em_dob.Text=="" || em_age.Text=="")
             {
                 try
                 {
@@ -113,25 +90,7 @@ namespace Store_management_system
                     cmd.Parameters.AddWithValue("@parameter_pn", st_pn);
 
                     cmd.Parameters.AddWithValue("@parameter_age", st_age);
-                    string num = em_age.Text;
-                    if (num.Contains("5") || num.Contains("6"))
-                    {
-
-                    }
-                    else
-                    {
-                        if (em_age.Text == "")
-                        {
-                            Required10.Visible = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please type integer number");
-                        }
-
-                        return;
-                    }
-
+                    
 
 
 
@@ -286,6 +245,22 @@ namespace Store_management_system
         {
 
             eupdate.Enabled = false;
+        }
+        
+        private void em_age_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!(char.IsNumber(e.KeyChar) || e.KeyChar==(char)Keys.Back || e.KeyChar==(char)Keys.Delete)) 
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void em_pn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar=='+' || e.KeyChar=='-'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
