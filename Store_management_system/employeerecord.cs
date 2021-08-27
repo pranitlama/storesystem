@@ -13,7 +13,8 @@ namespace Store_management_system
 {
     public partial class Required5 : UserControl
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+       // SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         public Required5()
         {
             InitializeComponent();
@@ -67,22 +68,25 @@ namespace Store_management_system
             da.Fill(dt);
             if(dt.Rows.Count>=1)
             {
-                MessageBox.Show("Phone number already exist");
+                pnerror.Visible = true;
             }
             else
             {
                 DisplayData();
+                pnerror.Visible = false;
+                
             }
              da = new SqlDataAdapter("Select e_email from employee_details where e_email='" + em_email.Text + "'", connect);
             DataTable dts = new DataTable();
             da.Fill(dts);
             if(dts.Rows.Count>=1)
             {
-                MessageBox.Show("Email already exist");
+                emailerror.Visible = true;
             }
             else
             {
                 DisplayData();
+                emailerror.Visible = false;
             }
            if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text=="" || em_pn.Text=="" || employeegender=="" || em_dob.Text=="" || em_age.Text=="")
             {
@@ -127,6 +131,8 @@ namespace Store_management_system
                     em_age.Text = "";
                     em_dob.Text = "";
                     em_email.Text = "";
+                    em_male.Checked = false;
+                    em_female.Checked = false;
                 }
                 catch (Exception )
                 {
@@ -262,6 +268,10 @@ namespace Store_management_system
             em_age.Text = "";
             em_dob.Text = "";
             em_email.Text = "";
+            em_male.Checked = false;
+            em_female.Checked = false;
+            pnerror.Visible = false;
+            emailerror.Visible = false;
 
         }
 
