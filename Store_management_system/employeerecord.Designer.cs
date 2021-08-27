@@ -73,6 +73,8 @@ namespace Store_management_system
             this.label16 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.eclear = new ePOSOne.btnProduct.Button_WOC();
+            this.pnerror = new System.Windows.Forms.Label();
+            this.emailerror = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeelist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -278,6 +280,7 @@ namespace Store_management_system
             this.em_pn.Name = "em_pn";
             this.em_pn.Size = new System.Drawing.Size(230, 23);
             this.em_pn.TabIndex = 5;
+            this.em_pn.TextChanged += new System.EventHandler(this.em_pn_TextChanged);
             this.em_pn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_pn_KeyPress);
             // 
             // em_age
@@ -307,6 +310,7 @@ namespace Store_management_system
             this.em_email.Name = "em_email";
             this.em_email.Size = new System.Drawing.Size(295, 23);
             this.em_email.TabIndex = 10;
+            this.em_email.TextChanged += new System.EventHandler(this.em_email_TextChanged);
             // 
             // label3
             // 
@@ -572,11 +576,38 @@ namespace Store_management_system
             this.eclear.UseVisualStyleBackColor = false;
             this.eclear.Click += new System.EventHandler(this.eclear_Click);
             // 
+            // pnerror
+            // 
+            this.pnerror.AutoSize = true;
+            this.pnerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnerror.ForeColor = System.Drawing.Color.Red;
+            this.pnerror.Location = new System.Drawing.Point(500, 115);
+            this.pnerror.Name = "pnerror";
+            this.pnerror.Size = new System.Drawing.Size(166, 15);
+            this.pnerror.TabIndex = 15;
+            this.pnerror.Text = "Phone number Already exists";
+            this.pnerror.Visible = false;
+            // 
+            // emailerror
+            // 
+            this.emailerror.AutoSize = true;
+            this.emailerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailerror.ForeColor = System.Drawing.Color.Red;
+            this.emailerror.Location = new System.Drawing.Point(850, 164);
+            this.emailerror.Name = "emailerror";
+            this.emailerror.Size = new System.Drawing.Size(163, 15);
+            this.emailerror.TabIndex = 15;
+            this.emailerror.Text = "Email Address Already exists";
+            this.emailerror.Visible = false;
+            this.emailerror.Click += new System.EventHandler(this.label18_Click);
+            // 
             // Required5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.emailerror);
+            this.Controls.Add(this.pnerror);
             this.Controls.Add(this.eupdate);
             this.Controls.Add(this.eclear);
             this.Controls.Add(this.edelete);
@@ -662,5 +693,7 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn edob;
         private System.Windows.Forms.DataGridViewTextBoxColumn eemail;
         private System.Windows.Forms.DataGridViewTextBoxColumn Action;
+        private System.Windows.Forms.Label pnerror;
+        private System.Windows.Forms.Label emailerror;
     }
 }
