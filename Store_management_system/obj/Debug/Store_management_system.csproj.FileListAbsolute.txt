@@ -23,3 +23,16 @@ C:\Users\Samik Shk\Source\Repos\storesystem\Store_management_system\obj\Debug\St
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.HOMEUC.resources
 C:\Users\Samik Shk\source\repos\storesystem\Store_management_system\obj\Debug\Store_management_system.HOMEUC.resources
 C:\Users\Samik Shk\source\repos\storesystem\Store_management_system\obj\Debug\Store_management_system.Required5.resources
+E:\sms\Store_management_system\bin\Debug\Store_management_system.exe.config
+E:\sms\Store_management_system\bin\Debug\Store_management_system.exe
+E:\sms\Store_management_system\bin\Debug\Store_management_system.pdb
+E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
+E:\sms\Store_management_system\obj\Debug\Store_management_system.Required5.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.Form1.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.MainMenu.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.HOMEUC.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.Properties.Resources.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.GenerateResource.cache
+E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.CoreCompileInputs.cache
+E:\sms\Store_management_system\obj\Debug\Store_management_system.exe
+E:\sms\Store_management_system\obj\Debug\Store_management_system.pdb

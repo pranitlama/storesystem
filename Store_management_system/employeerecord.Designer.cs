@@ -36,6 +36,19 @@ namespace Store_management_system
             this.em_dob = new System.Windows.Forms.DateTimePicker();
             this.em_mname = new System.Windows.Forms.TextBox();
             this.employeelist = new System.Windows.Forms.DataGridView();
+            this.SN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.efname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.elname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ename = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.epn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eage = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.egender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eemail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.em_address = new System.Windows.Forms.TextBox();
             this.em_pn = new System.Windows.Forms.TextBox();
             this.em_age = new System.Windows.Forms.TextBox();
@@ -58,28 +71,8 @@ namespace Store_management_system
             this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.Required1 = new System.Windows.Forms.Label();
-            this.Required4 = new System.Windows.Forms.Label();
-            this.Required3 = new System.Windows.Forms.Label();
-            this.Required7 = new System.Windows.Forms.Label();
-            this.Required6 = new System.Windows.Forms.Label();
-            this.Required9 = new System.Windows.Forms.Label();
-            this.Required10 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.eclear = new ePOSOne.btnProduct.Button_WOC();
-            this.SN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.efname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.elname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ename = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eaddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.epn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eage = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.egender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eemail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Action = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.employeelist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,6 +169,98 @@ namespace Store_management_system
             this.employeelist.TabIndex = 10;
             this.employeelist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeelist_CellClick);
             // 
+            // SN
+            // 
+            this.SN.HeaderText = "SN";
+            this.SN.Name = "SN";
+            this.SN.ReadOnly = true;
+            this.SN.Width = 50;
+            // 
+            // eid
+            // 
+            this.eid.HeaderText = "EID";
+            this.eid.MinimumWidth = 10;
+            this.eid.Name = "eid";
+            this.eid.ReadOnly = true;
+            this.eid.Visible = false;
+            this.eid.Width = 50;
+            // 
+            // efname
+            // 
+            this.efname.HeaderText = "First Name";
+            this.efname.Name = "efname";
+            this.efname.ReadOnly = true;
+            this.efname.Visible = false;
+            // 
+            // emname
+            // 
+            this.emname.HeaderText = "Middle Name";
+            this.emname.Name = "emname";
+            this.emname.ReadOnly = true;
+            this.emname.Visible = false;
+            // 
+            // elname
+            // 
+            this.elname.HeaderText = "Last Name";
+            this.elname.Name = "elname";
+            this.elname.ReadOnly = true;
+            this.elname.Visible = false;
+            // 
+            // ename
+            // 
+            this.ename.HeaderText = "Employee Name";
+            this.ename.Name = "ename";
+            this.ename.ReadOnly = true;
+            this.ename.Width = 150;
+            // 
+            // eaddress
+            // 
+            this.eaddress.HeaderText = "Address";
+            this.eaddress.Name = "eaddress";
+            this.eaddress.ReadOnly = true;
+            this.eaddress.Width = 150;
+            // 
+            // epn
+            // 
+            this.epn.HeaderText = "Phone no";
+            this.epn.Name = "epn";
+            this.epn.ReadOnly = true;
+            this.epn.Width = 150;
+            // 
+            // eage
+            // 
+            this.eage.HeaderText = "Age";
+            this.eage.Name = "eage";
+            this.eage.ReadOnly = true;
+            this.eage.Width = 50;
+            // 
+            // egender
+            // 
+            this.egender.HeaderText = "Gender";
+            this.egender.Name = "egender";
+            this.egender.ReadOnly = true;
+            // 
+            // edob
+            // 
+            this.edob.HeaderText = "Date of Birth";
+            this.edob.Name = "edob";
+            this.edob.ReadOnly = true;
+            this.edob.Width = 150;
+            // 
+            // eemail
+            // 
+            this.eemail.HeaderText = "Email Address";
+            this.eemail.Name = "eemail";
+            this.eemail.ReadOnly = true;
+            this.eemail.Width = 200;
+            // 
+            // Action
+            // 
+            this.Action.HeaderText = "Action";
+            this.Action.Name = "Action";
+            this.Action.ReadOnly = true;
+            this.Action.Width = 98;
+            // 
             // em_address
             // 
             this.em_address.Font = new System.Drawing.Font("Century Gothic", 9.75F);
@@ -193,6 +278,7 @@ namespace Store_management_system
             this.em_pn.Name = "em_pn";
             this.em_pn.Size = new System.Drawing.Size(230, 23);
             this.em_pn.TabIndex = 5;
+            this.em_pn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_pn_KeyPress);
             // 
             // em_age
             // 
@@ -202,6 +288,7 @@ namespace Store_management_system
             this.em_age.Name = "em_age";
             this.em_age.Size = new System.Drawing.Size(230, 23);
             this.em_age.TabIndex = 6;
+            this.em_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_age_KeyPress);
             // 
             // em_lname
             // 
@@ -451,95 +538,6 @@ namespace Store_management_system
             this.label16.TabIndex = 14;
             this.label16.Text = "*";
             // 
-            // Required1
-            // 
-            this.Required1.AutoSize = true;
-            this.Required1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required1.ForeColor = System.Drawing.Color.Red;
-            this.Required1.Location = new System.Drawing.Point(128, 68);
-            this.Required1.Name = "Required1";
-            this.Required1.Size = new System.Drawing.Size(64, 16);
-            this.Required1.TabIndex = 15;
-            this.Required1.Text = "Required";
-            this.Required1.Visible = false;
-            this.Required1.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // Required4
-            // 
-            this.Required4.AutoSize = true;
-            this.Required4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required4.ForeColor = System.Drawing.Color.Red;
-            this.Required4.Location = new System.Drawing.Point(128, 115);
-            this.Required4.Name = "Required4";
-            this.Required4.Size = new System.Drawing.Size(64, 16);
-            this.Required4.TabIndex = 15;
-            this.Required4.Text = "Required";
-            this.Required4.Visible = false;
-            // 
-            // Required3
-            // 
-            this.Required3.AutoSize = true;
-            this.Required3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required3.ForeColor = System.Drawing.Color.Red;
-            this.Required3.Location = new System.Drawing.Point(864, 72);
-            this.Required3.Name = "Required3";
-            this.Required3.Size = new System.Drawing.Size(64, 16);
-            this.Required3.TabIndex = 15;
-            this.Required3.Text = "Required";
-            this.Required3.Visible = false;
-            this.Required3.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // Required7
-            // 
-            this.Required7.AutoSize = true;
-            this.Required7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required7.ForeColor = System.Drawing.Color.Red;
-            this.Required7.Location = new System.Drawing.Point(511, 159);
-            this.Required7.Name = "Required7";
-            this.Required7.Size = new System.Drawing.Size(64, 16);
-            this.Required7.TabIndex = 15;
-            this.Required7.Text = "Required";
-            this.Required7.Visible = false;
-            this.Required7.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // Required6
-            // 
-            this.Required6.AutoSize = true;
-            this.Required6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required6.ForeColor = System.Drawing.Color.Red;
-            this.Required6.Location = new System.Drawing.Point(128, 166);
-            this.Required6.Name = "Required6";
-            this.Required6.Size = new System.Drawing.Size(64, 16);
-            this.Required6.TabIndex = 15;
-            this.Required6.Text = "Required";
-            this.Required6.Visible = false;
-            // 
-            // Required9
-            // 
-            this.Required9.AutoSize = true;
-            this.Required9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required9.ForeColor = System.Drawing.Color.Red;
-            this.Required9.Location = new System.Drawing.Point(511, 114);
-            this.Required9.Name = "Required9";
-            this.Required9.Size = new System.Drawing.Size(64, 16);
-            this.Required9.TabIndex = 15;
-            this.Required9.Text = "Required";
-            this.Required9.Visible = false;
-            this.Required9.Click += new System.EventHandler(this.label17_Click);
-            // 
-            // Required10
-            // 
-            this.Required10.AutoSize = true;
-            this.Required10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Required10.ForeColor = System.Drawing.Color.Red;
-            this.Required10.Location = new System.Drawing.Point(864, 119);
-            this.Required10.Name = "Required10";
-            this.Required10.Size = new System.Drawing.Size(64, 16);
-            this.Required10.TabIndex = 15;
-            this.Required10.Text = "Required";
-            this.Required10.Visible = false;
-            this.Required10.Click += new System.EventHandler(this.label17_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -574,110 +572,11 @@ namespace Store_management_system
             this.eclear.UseVisualStyleBackColor = false;
             this.eclear.Click += new System.EventHandler(this.eclear_Click);
             // 
-            // SN
-            // 
-            this.SN.HeaderText = "SN";
-            this.SN.Name = "SN";
-            this.SN.ReadOnly = true;
-            this.SN.Width = 50;
-            // 
-            // eid
-            // 
-            this.eid.HeaderText = "EID";
-            this.eid.MinimumWidth = 10;
-            this.eid.Name = "eid";
-            this.eid.ReadOnly = true;
-            this.eid.Visible = false;
-            this.eid.Width = 50;
-            // 
-            // efname
-            // 
-            this.efname.HeaderText = "First Name";
-            this.efname.Name = "efname";
-            this.efname.ReadOnly = true;
-            this.efname.Visible = false;
-            // 
-            // emname
-            // 
-            this.emname.HeaderText = "Middle Name";
-            this.emname.Name = "emname";
-            this.emname.ReadOnly = true;
-            this.emname.Visible = false;
-            // 
-            // elname
-            // 
-            this.elname.HeaderText = "Last Name";
-            this.elname.Name = "elname";
-            this.elname.ReadOnly = true;
-            this.elname.Visible = false;
-            // 
-            // ename
-            // 
-            this.ename.HeaderText = "Employee Name";
-            this.ename.Name = "ename";
-            this.ename.ReadOnly = true;
-            this.ename.Width = 150;
-            // 
-            // eaddress
-            // 
-            this.eaddress.HeaderText = "Address";
-            this.eaddress.Name = "eaddress";
-            this.eaddress.ReadOnly = true;
-            this.eaddress.Width = 150;
-            // 
-            // epn
-            // 
-            this.epn.HeaderText = "Phone no";
-            this.epn.Name = "epn";
-            this.epn.ReadOnly = true;
-            this.epn.Width = 150;
-            // 
-            // eage
-            // 
-            this.eage.HeaderText = "Age";
-            this.eage.Name = "eage";
-            this.eage.ReadOnly = true;
-            this.eage.Width = 50;
-            // 
-            // egender
-            // 
-            this.egender.HeaderText = "Gender";
-            this.egender.Name = "egender";
-            this.egender.ReadOnly = true;
-            // 
-            // edob
-            // 
-            this.edob.HeaderText = "Date of Birth";
-            this.edob.Name = "edob";
-            this.edob.ReadOnly = true;
-            this.edob.Width = 150;
-            // 
-            // eemail
-            // 
-            this.eemail.HeaderText = "Email Address";
-            this.eemail.Name = "eemail";
-            this.eemail.ReadOnly = true;
-            this.eemail.Width = 200;
-            // 
-            // Action
-            // 
-            this.Action.HeaderText = "Action";
-            this.Action.Name = "Action";
-            this.Action.ReadOnly = true;
-            this.Action.Width = 98;
-            // 
             // Required5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.Required6);
-            this.Controls.Add(this.Required4);
-            this.Controls.Add(this.Required7);
-            this.Controls.Add(this.Required10);
-            this.Controls.Add(this.Required3);
-            this.Controls.Add(this.Required9);
-            this.Controls.Add(this.Required1);
             this.Controls.Add(this.eupdate);
             this.Controls.Add(this.eclear);
             this.Controls.Add(this.edelete);
@@ -748,13 +647,6 @@ namespace Store_management_system
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label Required1;
-        private System.Windows.Forms.Label Required4;
-        private System.Windows.Forms.Label Required3;
-        private System.Windows.Forms.Label Required7;
-        private System.Windows.Forms.Label Required6;
-        private System.Windows.Forms.Label Required9;
-        private System.Windows.Forms.Label Required10;
         private System.Windows.Forms.Label label14;
         private ePOSOne.btnProduct.Button_WOC eclear;
         private System.Windows.Forms.DataGridViewTextBoxColumn SN;
