@@ -11,18 +11,50 @@ using System.Data.SqlClient;
 
 namespace Store_management_system
 {
-    public partial class Required5 : UserControl
+
+    public partial class Employee : UserControl
     {
-       // SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
-        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
-        public Required5()
+        //Samik 
+        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        //Pranit
+        // SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        
+
+
+
+        public Employee()
         {
+
             InitializeComponent();
+            this.employeelist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.employeelist.ColumnHeadersHeight = 40;
+            //    this.employeelist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            employeelist.Columns[10].DefaultCellStyle.Format = "yyyy/MM/dd";
+            DataGridViewButtonColumn c = (DataGridViewButtonColumn)employeelist.Columns["Action"];
+            c.FlatStyle = FlatStyle.Popup;
+            c.DefaultCellStyle.ForeColor = Color.White;
+            c.DefaultCellStyle.BackColor = Color.Navy;
+
+            searchselect.SelectedIndex = 0;
+
+           // employeelist.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
+
+            //DataGridViewButtonColumn c1 = (DataGridViewButtonColumn)employeelist.Columns["Action"];
+            //c.FlatStyle = FlatStyle.Popup;
+            //c.DefaultCellStyle.ForeColor = Color.Navy;
+            //c.DefaultCellStyle.BackColor = Color.Yellow;
+
+
+
+
+
         }
         string employeegender;
-        
+
         private void DisplayData()
         {
+
+          
             try
             {
                 connect.Open();
@@ -36,22 +68,29 @@ namespace Store_management_system
                 foreach (DataRow dataRow in dt.Rows)
                 {
                     var fullName = $"{dataRow["e_fname"].ToString()} {dataRow["e_mname"].ToString()} {dataRow["e_lname"].ToString()}";
-                    employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"] ,fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit");
+                    employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"], fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit");
                     sn++;
 
                 }
+
+                countrows();
+
 
 
 
             }
             catch (Exception ex)
             {
-              
+
                 MessageBox.Show(ex.ToString());
             }
             finally
             {
-                connect.Close();
+                if (connect.State == ConnectionState.Open)
+                {
+                    connect.Close();
+
+                }
             }
             //  throw new NotImplementedException();
         }
@@ -63,10 +102,17 @@ namespace Store_management_system
 
         private void eadd_Click(object sender, EventArgs e)
         {
+            if (validerror.Visible == true)
+            {
+                return;
+            }
+            else
+            {
+            }
             SqlDataAdapter da = new SqlDataAdapter("Select e_pn from employee_details where e_pn='" + em_pn.Text + "'", connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            if(dt.Rows.Count>=1)
+            if (dt.Rows.Count >= 1)
             {
                 pnerror.Visible = true;
             }
@@ -74,12 +120,12 @@ namespace Store_management_system
             {
                 DisplayData();
                 pnerror.Visible = false;
-                
+
             }
-             da = new SqlDataAdapter("Select e_email from employee_details where e_email='" + em_email.Text + "'", connect);
+            da = new SqlDataAdapter("Select e_email from employee_details where e_email='" + em_email.Text + "'", connect);
             DataTable dts = new DataTable();
             da.Fill(dts);
-            if(dts.Rows.Count>=1)
+            if (dts.Rows.Count >= 1)
             {
                 emailerror.Visible = true;
             }
@@ -88,11 +134,11 @@ namespace Store_management_system
                 DisplayData();
                 emailerror.Visible = false;
             }
-           if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text=="" || em_pn.Text=="" || employeegender=="" || em_dob.Text=="" || em_age.Text=="")
+            if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text == "" || em_pn.Text == "" || employeegender == null || em_dob.Text == "" || em_age.Text == "" || em_email.Text == "")
             {
-                MessageBox.Show("please enter complete data");
+                string result = Messageboxok.ShowBox("", "Please enter complete data");
             }
-           else
+            else
             {
                 try
                 {
@@ -134,9 +180,9 @@ namespace Store_management_system
                     em_male.Checked = false;
                     em_female.Checked = false;
                 }
-                catch (Exception )
+                catch (Exception)
                 {
-                   
+
                 }
                 finally
                 {
@@ -145,7 +191,7 @@ namespace Store_management_system
                 DisplayData();
 
             }
-           
+
         }
 
         private void em_male_CheckedChanged(object sender, EventArgs e)
@@ -160,7 +206,21 @@ namespace Store_management_system
 
         private void employeerecord_Load(object sender, EventArgs e)
         {
+            employeelist.RowTemplate.Height = 35;
+            // employeelist.AllowUserToResizeRows = false;
+
+
             DisplayData();
+            // em_dob.CustomFormat = "yyyy/MM/dd";
+
+            employeelist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+            
+
+
+            this.employeelist.EnableHeadersVisualStyles = false;
+            // this.employeelist.ColumnHeadersHeight = 80;
+
+
         }
 
         private void edelete_Click(object sender, EventArgs e)
@@ -170,7 +230,7 @@ namespace Store_management_system
             try
             {
                 connect.Open();
-                if (employeelist.SelectedRows.Count > 0)
+                if (employeelist.SelectedRows.Count > 0 )
                 {
 
                     //remove only single row
@@ -186,9 +246,30 @@ namespace Store_management_system
                         cmd.Parameters.AddWithValue("@parameter_id", id);
 
 
-                        cmd.ExecuteNonQuery();
-                        employeelist.Rows.RemoveAt(row.Index);
-                        MessageBox.Show("Removed successfully");
+                        
+
+                        //      MessageBox.Show("Removed successfully");
+                        string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
+                        if(result.Equals("1"))
+                        {
+                            cmd.ExecuteNonQuery();
+
+                            employeelist.Rows.RemoveAt(row.Index);
+                        }
+                        if(result.Equals("2"))
+                        {
+
+                        }
+                        //DialogResult dialog = MessageBox.Show("Do you really want to delete?", "Delete", MessageBoxButtons.YesNo);
+                        //if (dialog == DialogResult.Yes)
+                        //{
+                        //    cmd.ExecuteNonQuery();
+                        //    employeelist.Rows.RemoveAt(row.Index);
+                        //}
+                        //else
+                        //{
+
+                        //}
                     }
 
 
@@ -197,7 +278,7 @@ namespace Store_management_system
                 }
                 else
                 {
-                    MessageBox.Show("Please select at least one row to Remove");
+                    string result = Messageboxok.ShowBox("","Please select a row to remove");
                 }
             }
             catch (Exception ex)
@@ -220,10 +301,12 @@ namespace Store_management_system
         int employee_id;
         private void employeelist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            eupdate.Enabled = true;
-            int index = e.RowIndex;
+
+            //int index = e.RowIndex;
             if (e.ColumnIndex == employeelist.Columns["Action"].Index)
             {
+
+                eupdate.Enabled = true;
                 string employee_fname = employeelist.CurrentRow.Cells["efname"].Value.ToString();
                 string employee_mname = employeelist.CurrentRow.Cells["emname"].Value.ToString();
                 string employee_lname = employeelist.CurrentRow.Cells["elname"].Value.ToString();
@@ -250,7 +333,15 @@ namespace Store_management_system
             }
             else
             {
-                employeelist.Rows[index].Selected = true;
+
+
+                //employeelist.Rows[index].Selected = true;
+                //employeelist.CurrentRow.Selected = true;
+                //employeelist.CurrentRow.Selected
+                //eupdate.Enabled = false;
+              
+
+
             }
 
         }
@@ -274,16 +365,129 @@ namespace Store_management_system
             emailerror.Visible = false;
 
         }
-
+  
         private void eupdate_Click(object sender, EventArgs e)
         {
+            if (validerror.Visible == true)
+            {
+                return;
+            }
+            else
+            {
+            }
+            var phoneDuplicateCheckQuery =  $"Select e_pn from employee_details where e_pn='{em_pn.Text}' and e_id != {employee_id}";
+            SqlDataAdapter da = new SqlDataAdapter(phoneDuplicateCheckQuery, connect);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            if (dt.Rows.Count >= 1)
+            {
+                pnerror.Visible = true;
+            }
+            else
+                {
 
-            eupdate.Enabled = false;
+                    DisplayData();
+                pnerror.Visible = false;
+                }
+            var emailDuplicateCheckQuery = $"Select e_email from employee_details where e_email='{em_email.Text}' and e_id != {employee_id}";
+
+            SqlDataAdapter daa = new SqlDataAdapter(emailDuplicateCheckQuery, connect);
+            DataTable dts = new DataTable();
+            daa.Fill(dts);
+
+            
+            if (dts.Rows.Count >= 1)
+            {
+                emailerror.Visible = true;
+            }
+            else
+            {
+                DisplayData();
+                emailerror.Visible = false;
+            }
+
+            if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text == "" || em_pn.Text == "" || employeegender == null || em_dob.Text == "" || em_age.Text == "" || em_email.Text == "")
+            {
+                MessageBox.Show("Please enter complete data");
+                return;
+
+            }
+            else {
+
+                try
+                {
+         
+                        if (employee_id != 0)
+                        {
+                       
+                        //open sql connection
+                        connect.Open();
+
+                            string st_fname = em_fname.Text;
+                            string st_mname = em_mname.Text;
+                            string st_lname = em_lname.Text;
+                            string st_address = em_address.Text;
+                            string st_pn = em_pn.Text;
+                            string st_age = em_age.Text;
+                            string st_dob = em_dob.Text;
+                            string st_email = em_email.Text;
+
+                            //save data to database
+
+                            //passing paramter method
+                            string query = "Update employee_details set e_fname=@parameter_fname,e_mname=@parameter_mname,e_lname=@parameter_lname, e_address=@parameter_address,e_pn=@parameter_pn,e_age=@parameter_age,e_gender=@parameter_gender,e_dob=@parameter_dob,e_email=@parameter_email where e_id=@parameter_id";
+
+
+                            SqlCommand cmd = new SqlCommand(query, connect);
+                            cmd.Parameters.AddWithValue("@parameter_fname", st_fname);
+                            cmd.Parameters.AddWithValue("@parameter_mname", st_mname);
+                            cmd.Parameters.AddWithValue("@parameter_lname", st_lname);
+                            cmd.Parameters.AddWithValue("@parameter_address", st_address);
+                            cmd.Parameters.AddWithValue("@parameter_pn", st_pn);
+                            cmd.Parameters.AddWithValue("@parameter_age", st_age);
+                            cmd.Parameters.AddWithValue("@parameter_gender", employeegender);
+                            cmd.Parameters.AddWithValue("@parameter_dob", st_dob);
+                            cmd.Parameters.AddWithValue("@parameter_email", st_email);
+                            cmd.Parameters.AddWithValue("@parameter_id", employee_id);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Updated succesfully");
+                            employee_id = 0;
+                            em_fname.Text = "";
+                            em_mname.Text = "";
+                            em_lname.Text = "";
+                            em_address.Text = "";
+                            em_pn.Text = "";
+                            em_age.Text = "";
+                            em_dob.Text = "";
+                            em_email.Text = "";
+                            em_male.Checked = false;
+                            em_female.Checked = false;
+                            eupdate.Enabled = false;
+                        }
+                    
+
+                }
+                catch (Exception )
+                {
+                   
+                }
+                finally
+                {
+                    connect.Close();
+
+                }
+                
+                DisplayData();
+            }
+           
+
         }
+       
+       
         
         private void em_age_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(!(char.IsNumber(e.KeyChar) || e.KeyChar==(char)Keys.Back || e.KeyChar==(char)Keys.Delete)) 
+            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
             {
                 e.Handled = true;
             }
@@ -291,7 +495,7 @@ namespace Store_management_system
 
         private void em_pn_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar=='+' || e.KeyChar=='-'))
+            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back))
             {
                 e.Handled = true;
             }
@@ -299,18 +503,183 @@ namespace Store_management_system
 
         private void em_pn_TextChanged(object sender, EventArgs e)
         {
-         
-            
+            validerror.Visible = false;
+            pnerror.Visible = false;
+
         }
 
         private void em_email_TextChanged(object sender, EventArgs e)
         {
-
+            emailerror.Visible = false;
         }
 
         private void label18_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void em_pn_Validating(object sender, CancelEventArgs e)
+        {
+            if (em_pn.Text.Length == 10 || em_pn.Text == "")
+            {
+                validerror.Visible = false;
+            }
+            else
+            {
+
+                validerror.Visible = true;
+            }
+        }
+
+        private void display()
+        {
+            try
+            {
+
+                if (searchbox.Text == "")
+                {
+                    DisplayData();
+                }
+                else if (searchselect.Text == "ID")
+                {
+                    connect.Open();
+                    string query = "select * from employee_details where e_id like '" + searchbox.Text + "'";
+
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    employeelist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        var fullName = $"{dataRow["e_fname"].ToString()} {dataRow["e_mname"].ToString()} {dataRow["e_lname"].ToString()}";
+                        employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"], fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit");
+                        sn++;
+
+                    }
+                    countrows();
+
+
+                }
+                else if (searchselect.Text == "Name")
+                {
+                    connect.Open();
+                    // string query = "select * from employee_details where e_fname,e_lname like '" + searchbox.Text + "%'";
+                    string query = "Select * from employee_details where e_fname like'" + searchbox.Text + "%' or e_lname like '" + searchbox.Text + "%'";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    employeelist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        var fullName = $"{dataRow["e_fname"].ToString()} {dataRow["e_mname"].ToString()} {dataRow["e_lname"].ToString()}";
+                        employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"], fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit");
+                        sn++;
+
+                    }
+                    countrows();
+
+
+                }
+                else if (searchselect.Text == "Phone no")
+                {
+                    connect.Open();
+                    string query = "select * from employee_details where e_pn like '" + searchbox.Text + "%'";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    employeelist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        var fullName = $"{dataRow["e_fname"].ToString()} {dataRow["e_mname"].ToString()} {dataRow["e_lname"].ToString()}";
+                        employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"], fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit");
+                        sn++;
+
+                    }
+                    countrows();
+
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (connect.State == ConnectionState.Open)
+                {
+                    connect.Close();
+                }
+            }
+        }
+
+        private void searchbox_TextChanged(object sender, EventArgs e)
+        {
+            display();
+          
+        }
+        private void countrows()
+        {
+            int numrows = employeelist.Rows.Count;
+            countrow.Text = numrows.ToString();
+            countrow.Text = "   " + countrow.Text;
+        }
+
+        private void em_fname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void em_mname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void em_lname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void searchbox_Leave(object sender, EventArgs e)
+        {
+
+     
+        }
+   
+
+        private void employeelist_SelectionChanged_1(object sender, EventArgs e)
+        {
+            //foreach (DataGridViewCell c in employeelist.CurrentRow.Cells)
+            //    c.Selected = c.ColumnIndex != 12;
+            //employeelist.Columns[5].Selected = false;
+            //employeelist.Columns[0].doSelect = false;
+        }
+
+        private void employeelist_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void employeelist_Leave(object sender, EventArgs e)
+        {
+            searchbox.Text = "";
         }
     }
 }
