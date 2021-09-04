@@ -22,7 +22,6 @@ namespace Store_management_system
             panelWidth = panelleft.Width; 
             isCollapsed= false;
            
-           
         }
 
         private void AddControlsToPanel(Control C)
@@ -44,40 +43,52 @@ namespace Store_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
+            employeerecords.Visible = false;
             moveSidePanel(button1);
           
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+            employeerecords.Visible = false;
             moveSidePanel(button6);
         }
 
         private void aemployee_Click(object sender, EventArgs e)
         {
+             employeerecords.Visible = true;    
             moveSidePanel(aemployee);
-            Required5 ue = new Required5();
+            Employee ue = new Employee();
             AddControlsToPanel(ue);
-            
-           
-
         }
-
+       
         private void button7_Click(object sender, EventArgs e)//exit code
         {
+            employeerecords.Visible = false;
             moveSidePanel(button7);
-            DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            string result = MyMessageBoxyesno.ShowBox("CLOSE", "Do you want to sign out?");
+            if (result.Equals("1"))
             {
                 Form1 fm = new Form1();
                 fm.Show();
                 this.Hide();
             }
+            if (result.Equals("2"))
+            {
+
+            }
+            //if (dialog == DialogResult.Yes)
+            //{
+            //    Form1 fm = new Form1();
+            //    fm.Show();
+            //    this.Hide();
+            //}
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(isCollapsed)
+          
+            if (isCollapsed)
             {
                 panelleft.Width = panelleft.Width + 10;
                 if (panelleft.Width >= panelWidth)
@@ -115,6 +126,8 @@ namespace Store_management_system
                 label1.Hide();
                 //pictureBox1.Hide();
                 on = false;
+                
+               
               
             }
             else
@@ -139,11 +152,13 @@ namespace Store_management_system
 
         private void astock_Click(object sender, EventArgs e)
         {
+            employeerecords.Visible = false;
             moveSidePanel(astock);
         }
 
         private void areport_Click(object sender, EventArgs e)
         {
+            employeerecords.Visible = false;
             moveSidePanel(areport);
         }
 
@@ -157,11 +172,21 @@ namespace Store_management_system
         private void clos_Click(object sender, EventArgs e)
         {
             //closes login window
-            DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            string result = MyMessageBoxyesno.ShowBox("CLOSE", "Do you want to exit the program?");
+            if (result.Equals("1"))
             {
                 Application.Exit();
             }
+            if (result.Equals("2"))
+            {
+
+            }
+
+            //DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
+            //if (dialog == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
             // else if (dialog == DialogResult.No)
             //  {
             //     e.Cancel = true;

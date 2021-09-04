@@ -73,6 +73,18 @@
     <Compile Include="HOMEUC.Designer.cs">
       <DependentUpon>HOMEUC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messageboxok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Messageboxok.Designer.cs">
+      <DependentUpon>Messageboxok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyMessageBox.Designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="employeerecord.resx">
@@ -86,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HOMEUC.resx">
       <DependentUpon>HOMEUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Messageboxok.resx">
+      <DependentUpon>Messageboxok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

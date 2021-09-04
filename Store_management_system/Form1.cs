@@ -15,17 +15,18 @@ namespace Store_management_system
     public partial class Form1 : Form
     {
         //pranit
-        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         //samik
-        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         private Point mouseoffset;
-
+        
         public Form1()
         {
             InitializeComponent();
             hide.Hide();
             see.Hide();
-            
+          //  System.Windows.Forms.Application.Exit();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -59,7 +60,8 @@ namespace Store_management_system
                     sda.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
-                        MessageBox.Show("login successfull!!!");
+                        //MessageBox.Show("login successfull!!!");
+                        string result = Messageboxok.ShowBox("","        Login Successful");
                         textBox1.Text = "";
                         textBox2.Text = "";
                         MainMenu f2 = new MainMenu();
@@ -145,12 +147,21 @@ namespace Store_management_system
 
         private void clos_Click(object sender, EventArgs e)
         {
-            //closes login window
-            DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
+            string result = MyMessageBoxyesno.ShowBox("CLOSE", "Do you want to exit the program");
+            if (result.Equals("1"))
             {
                 Application.Exit();
             }
+            if (result.Equals("2"))
+            {
+
+            }
+            //closes login window
+            //DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
+            //if (dialog == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
             // else if (dialog == DialogResult.No)
             //  {
             //     e.Cancel = true;
@@ -228,9 +239,10 @@ namespace Store_management_system
 
         private void button1_MouseHover(object sender, EventArgs e)
         {
-
+            
             button1.BackColor = Color.White;
             button1.ForeColor = System.Drawing.Color.FromArgb(30, 50, 94);
+           
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
