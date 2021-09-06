@@ -73,7 +73,7 @@ namespace Store_management_system
             this.panelleft.Location = new System.Drawing.Point(0, 0);
             this.panelleft.Margin = new System.Windows.Forms.Padding(2);
             this.panelleft.Name = "panelleft";
-            this.panelleft.Size = new System.Drawing.Size(172, 484);
+            this.panelleft.Size = new System.Drawing.Size(172, 588);
             this.panelleft.TabIndex = 0;
             // 
             // button1
@@ -268,7 +268,7 @@ namespace Store_management_system
             this.panel3.Location = new System.Drawing.Point(172, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(739, 75);
+            this.panel3.Size = new System.Drawing.Size(801, 75);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -278,7 +278,7 @@ namespace Store_management_system
             this.employeerecords.AutoSize = true;
             this.employeerecords.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeerecords.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.employeerecords.Location = new System.Drawing.Point(302, 24);
+            this.employeerecords.Location = new System.Drawing.Point(333, 24);
             this.employeerecords.Name = "employeerecords";
             this.employeerecords.Size = new System.Drawing.Size(237, 29);
             this.employeerecords.TabIndex = 10;
@@ -293,7 +293,7 @@ namespace Store_management_system
             this.clos.FlatAppearance.BorderSize = 0;
             this.clos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.clos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clos.Location = new System.Drawing.Point(715, 2);
+            this.clos.Location = new System.Drawing.Point(775, 2);
             this.clos.Margin = new System.Windows.Forms.Padding(2);
             this.clos.Name = "clos";
             this.clos.Size = new System.Drawing.Size(24, 24);
@@ -308,7 +308,7 @@ namespace Store_management_system
             this.mini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mini.FlatAppearance.BorderSize = 0;
             this.mini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mini.Location = new System.Drawing.Point(685, 2);
+            this.mini.Location = new System.Drawing.Point(747, 2);
             this.mini.Margin = new System.Windows.Forms.Padding(2);
             this.mini.Name = "mini";
             this.mini.Size = new System.Drawing.Size(24, 24);
@@ -328,7 +328,7 @@ namespace Store_management_system
             this.panel4.Location = new System.Drawing.Point(172, 75);
             this.panel4.Margin = new System.Windows.Forms.Padding(1);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(739, 26);
+            this.panel4.Size = new System.Drawing.Size(801, 26);
             this.panel4.TabIndex = 2;
             // 
             // panel1
@@ -338,19 +338,19 @@ namespace Store_management_system
             this.panel1.Location = new System.Drawing.Point(172, 101);
             this.panel1.Margin = new System.Windows.Forms.Padding(1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(739, 383);
+            this.panel1.Size = new System.Drawing.Size(801, 487);
             this.panel1.TabIndex = 3;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(911, 484);
+            this.ClientSize = new System.Drawing.Size(973, 588);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelleft);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainMenu";

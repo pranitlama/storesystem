@@ -245,9 +245,6 @@ namespace Store_management_system
                         SqlCommand cmd = new SqlCommand(query, connect);
                         cmd.Parameters.AddWithValue("@parameter_id", id);
 
-
-                        
-
                         //      MessageBox.Show("Removed successfully");
                         string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
                         if(result.Equals("1"))
