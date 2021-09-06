@@ -15,9 +15,9 @@ namespace Store_management_system
     public partial class Form1 : Form
     {
         //pranit
-        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         //samik
-        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
         private Point mouseoffset;
         
         public Form1()
@@ -61,7 +61,7 @@ namespace Store_management_system
                     if (dt.Rows.Count > 0)
                     {
                         //MessageBox.Show("login successfull!!!");
-                        string result = Messageboxok.ShowBox("","        Login Successful");
+                        string result = Messageboxok.ShowBox("","     Login Successful");
                         textBox1.Text = "";
                         textBox2.Text = "";
                         MainMenu f2 = new MainMenu();
@@ -76,6 +76,7 @@ namespace Store_management_system
                         
                         //MessageBox.Show("Your Username or Password is incorrect, Please Try Again!!!", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         textBox2.Text = "";
+                        textBox2.Focus();
                     }
 
 
@@ -285,5 +286,7 @@ namespace Store_management_system
           
             
         }
+
+      
     }
 }

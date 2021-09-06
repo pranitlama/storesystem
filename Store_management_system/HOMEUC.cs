@@ -16,5 +16,7 @@ namespace Store_management_system
         {
             InitializeComponent();
         }
+
+        
     }
 }
