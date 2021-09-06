@@ -38,6 +38,9 @@ namespace Store_management_system
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
+            HOMEUC ue = new HOMEUC();
+            AddControlsToPanel(ue);
+
 
         }
 
@@ -45,7 +48,10 @@ namespace Store_management_system
         {
             employeerecords.Visible = false;
             moveSidePanel(button1);
-          
+            HOMEUC  ue = new HOMEUC();
+            AddControlsToPanel(ue);
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)

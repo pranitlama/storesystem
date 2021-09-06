@@ -43,8 +43,9 @@ namespace Store_management_system
             this.panel1.Controls.Add(this.lblmessage);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 32);
+            this.panel1.Size = new System.Drawing.Size(527, 49);
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
@@ -55,17 +56,19 @@ namespace Store_management_system
             this.lblmessage.AutoSize = true;
             this.lblmessage.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblmessage.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblmessage.Location = new System.Drawing.Point(12, 9);
+            this.lblmessage.Location = new System.Drawing.Point(18, 14);
+            this.lblmessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblmessage.Name = "lblmessage";
-            this.lblmessage.Size = new System.Drawing.Size(11, 16);
+            this.lblmessage.Size = new System.Drawing.Size(15, 21);
             this.lblmessage.TabIndex = 0;
             this.lblmessage.Text = ".";
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(213, 169);
+            this.btnOK.Location = new System.Drawing.Point(252, 207);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 31);
+            this.btnOK.Size = new System.Drawing.Size(112, 48);
             this.btnOK.TabIndex = 1;
             this.btnOK.Text = "Yes";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -73,9 +76,10 @@ namespace Store_management_system
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(305, 169);
+            this.btnCancel.Location = new System.Drawing.Point(382, 207);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 31);
+            this.btnCancel.Size = new System.Drawing.Size(112, 48);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "No";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -85,23 +89,25 @@ namespace Store_management_system
             // 
             this.lbltitle.AutoSize = true;
             this.lbltitle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltitle.Location = new System.Drawing.Point(12, 48);
+            this.lbltitle.Location = new System.Drawing.Point(18, 74);
+            this.lbltitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltitle.Name = "lbltitle";
-            this.lbltitle.Size = new System.Drawing.Size(12, 17);
+            this.lbltitle.Size = new System.Drawing.Size(15, 23);
             this.lbltitle.TabIndex = 0;
             this.lbltitle.Text = ".";
             // 
             // MyMessageBoxyesno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(401, 212);
+            this.ClientSize = new System.Drawing.Size(527, 288);
             this.Controls.Add(this.lbltitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "MyMessageBoxyesno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MyMessageBox";

@@ -35,7 +35,9 @@ E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.Generate
 E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.CoreCompileInputs.cache
 E:\sms\Store_management_system\obj\Debug\Store_management_system.exe
 E:\sms\Store_management_system\obj\Debug\Store_management_system.pdb
-C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Required5.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.Employee.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.MyMessageBoxyesno.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.Messageboxok.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Employee.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Messageboxok.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.MyMessageBoxyesno.resources
