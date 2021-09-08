@@ -26,7 +26,6 @@ C:\Users\Samik Shk\source\repos\storesystem\Store_management_system\obj\Debug\St
 E:\sms\Store_management_system\bin\Debug\Store_management_system.exe.config
 E:\sms\Store_management_system\bin\Debug\Store_management_system.exe
 E:\sms\Store_management_system\bin\Debug\Store_management_system.pdb
-E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
 E:\sms\Store_management_system\obj\Debug\Store_management_system.Form1.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.MainMenu.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.HOMEUC.resources
@@ -41,3 +40,5 @@ E:\sms\Store_management_system\obj\Debug\Store_management_system.Messageboxok.re
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Employee.resources
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Messageboxok.resources
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.MyMessageBoxyesno.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.Signupforms.resources
+E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache

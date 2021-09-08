@@ -46,7 +46,7 @@ namespace Store_management_system
 
         private void button1_Click(object sender, EventArgs e)
         {
-            employeerecords.Visible = false;
+       
             moveSidePanel(button1);
             HOMEUC  ue = new HOMEUC();
             AddControlsToPanel(ue);
@@ -56,13 +56,13 @@ namespace Store_management_system
 
         private void button6_Click(object sender, EventArgs e)
         {
-            employeerecords.Visible = false;
+   
             moveSidePanel(button6);
         }
 
         private void aemployee_Click(object sender, EventArgs e)
         {
-             employeerecords.Visible = true;    
+            
             moveSidePanel(aemployee);
             Employee ue = new Employee();
             AddControlsToPanel(ue);
@@ -158,14 +158,16 @@ namespace Store_management_system
 
         private void astock_Click(object sender, EventArgs e)
         {
-            employeerecords.Visible = false;
+           
             moveSidePanel(astock);
         }
 
         private void areport_Click(object sender, EventArgs e)
         {
-            employeerecords.Visible = false;
             moveSidePanel(areport);
+            Signupforms us = new Signupforms();
+            AddControlsToPanel(us);
+          
         }
 
         private void mini_Click(object sender, EventArgs e)

@@ -14,10 +14,8 @@ namespace Store_management_system
 
     public partial class Form1 : Form
     {
-        //pranit
-        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
-        //samik
-        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
+        SqlConnection connect = new SqlConnection(ConnectionString.Value);
+
         private Point mouseoffset;
         
         public Form1()
@@ -25,7 +23,7 @@ namespace Store_management_system
             InitializeComponent();
             hide.Hide();
             see.Hide();
-          //  System.Windows.Forms.Application.Exit();
+      
 
         }
 
@@ -35,74 +33,7 @@ namespace Store_management_system
             entererror.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-            if (textBox1.Text != "Username" && textBox2.Text != "Password")
-            {
-
-                try
-                {
-                    if (connect.State != ConnectionState.Open)
-                    {
-                        connect.Open();
-                    }
-                    string user_name = textBox1.Text;
-                    string Pass_word = textBox2.Text;
-
-
-                    string query = "Select * from login where username='" + user_name + "' and password = '" + Pass_word + "'";
-                    SqlCommand cmd = new SqlCommand(query, connect);
-                    cmd.ExecuteNonQuery();
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    if (dt.Rows.Count > 0)
-                    {
-                        //MessageBox.Show("login successfull!!!");
-                        string result = Messageboxok.ShowBox("","     Login Successful");
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        MainMenu f2 = new MainMenu();
-                        f2.Show();//open main menu
-                        Visible = false;//hide login form
-
-                    }
-                    else
-                    {
-                        entererror.Hide();
-                        incorrecterror.Show();
-                        
-                        //MessageBox.Show("Your Username or Password is incorrect, Please Try Again!!!", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox2.Text = "";
-                        textBox2.Focus();
-                    }
-
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    if (connect.State == ConnectionState.Open)
-                    {
-                        connect.Close();
-                
-                    }
-                }
-            }
-            else
-            {
-                entererror.Show();
-                incorrecterror.Hide();
-                //   MessageBox.Show("Please Enter Your Username and Password First!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
+       
 
         private void hide_Click(object sender, EventArgs e)
         {
@@ -235,31 +166,17 @@ namespace Store_management_system
                 textBox2.Text = "Password";
                 textBox2.ForeColor = Color.Silver;
                 textBox2.UseSystemPasswordChar = false;
+                see.Hide();
+                hide.Hide();
+                
             }
         }
 
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-            
-            button1.BackColor = Color.White;
-            button1.ForeColor = System.Drawing.Color.FromArgb(30, 50, 94);
-           
-        }
+       
 
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            button1.BackColor = Color.FromArgb(30, 50, 94);
-            button1.ForeColor = System.Drawing.Color.White;
-        }
+       
 
-        private void button1_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == 13)
-            {
-                button1_Click(sender, e);
-            }
-        }
-
+       
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseoffset = new Point(-e.X, -e.Y);
@@ -286,7 +203,102 @@ namespace Store_management_system
           
             
         }
+        private bool mouseDown;
+        private Point offset;
+        private void pictureBox3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseDown == true)
+            {
+                Point currentScreenPos = PointToScreen(e.Location);
+                Location = new Point(currentScreenPos.X - offset.X, currentScreenPos.Y - offset.Y);
+            }
+        }
 
-      
+        private void pictureBox3_MouseDown(object sender, MouseEventArgs e)
+        {
+            offset.X = e.X;
+            offset.Y = e.Y;
+            mouseDown = true;
+        }
+
+        private void pictureBox3_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
+        }
+
+        private void eadd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logins_Click(object sender, EventArgs e)
+        {
+
+            if (textBox1.Text != "Username" && textBox2.Text != "Password")
+            {
+
+                try
+                {
+                    if (connect.State != ConnectionState.Open)
+                    {
+                        connect.Open();
+                    }
+                    string user_name = textBox1.Text;
+                    string Pass_word = textBox2.Text;
+
+
+                    string query = "Select * from login where username='" + user_name + "' and password = '" + Pass_word + "'";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    cmd.ExecuteNonQuery();
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        //MessageBox.Show("login successfull!!!");
+                        string result = Messageboxok.ShowBox("", "     Login Successful");
+                        textBox1.Text = "";
+                        textBox2.Text = "";
+                        MainMenu f2 = new MainMenu();
+                        f2.Show();//open main menu
+                        Visible = false;//hide login form
+
+                    }
+                    else
+                    {
+                        entererror.Hide();
+                        incorrecterror.Show();
+
+                        //MessageBox.Show("Your Username or Password is incorrect, Please Try Again!!!", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox2.Text = "";
+                        textBox2.Focus();
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    if (connect.State == ConnectionState.Open)
+                    {
+                        connect.Close();
+
+                    }
+                }
+            }
+            else
+            {
+                entererror.Show();
+                incorrecterror.Hide();
+                //   MessageBox.Show("Please Enter Your Username and Password First!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+       
     }
 }
