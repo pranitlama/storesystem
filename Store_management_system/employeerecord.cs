@@ -14,13 +14,7 @@ namespace Store_management_system
 
     public partial class Employee : UserControl
     {
-        //Samik 
-        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
-        //Pranit
-         SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True");
-        
-
-
+        SqlConnection connect = new SqlConnection(ConnectionString.Value);
 
         public Employee()
         {
@@ -34,10 +28,11 @@ namespace Store_management_system
             c.FlatStyle = FlatStyle.Popup;
             c.DefaultCellStyle.ForeColor = Color.White;
             c.DefaultCellStyle.BackColor = Color.Navy;
+          
 
             searchselect.SelectedIndex = 0;
 
-           // employeelist.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
+            // employeelist.DefaultCellStyle.SelectionBackColor = Color.CornflowerBlue;
 
             //DataGridViewButtonColumn c1 = (DataGridViewButtonColumn)employeelist.Columns["Action"];
             //c.FlatStyle = FlatStyle.Popup;
@@ -54,7 +49,7 @@ namespace Store_management_system
         private void DisplayData()
         {
 
-          
+
             try
             {
                 connect.Open();
@@ -109,12 +104,17 @@ namespace Store_management_system
             else
             {
             }
+
+            #region Phone Number Duplicate Check
             SqlDataAdapter da = new SqlDataAdapter("Select e_pn from employee_details where e_pn='" + em_pn.Text + "'", connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
+
+            var valid = true;
             if (dt.Rows.Count >= 1)
             {
                 pnerror.Visible = true;
+                valid = false;
             }
             else
             {
@@ -122,19 +122,31 @@ namespace Store_management_system
                 pnerror.Visible = false;
 
             }
+            #endregion
+
+            #region Email Duplicate Check
             da = new SqlDataAdapter("Select e_email from employee_details where e_email='" + em_email.Text + "'", connect);
             DataTable dts = new DataTable();
             da.Fill(dts);
             if (dts.Rows.Count >= 1)
             {
                 emailerror.Visible = true;
+                valid = false;
             }
             else
             {
                 DisplayData();
                 emailerror.Visible = false;
             }
-            if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text == "" || em_pn.Text == "" || employeegender == null || em_dob.Text == "" || em_age.Text == "" || em_email.Text == "")
+
+            #endregion
+
+            if (!valid)
+            {
+                return;
+            }
+
+            if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text == "" || em_pn.Text == "" || employeegender == null || em_dob.Text == "" || em_age.Text == "" |em_email.Text == "")
             {
                 string result = Messageboxok.ShowBox("", "Please enter complete data");
             }
@@ -180,7 +192,7 @@ namespace Store_management_system
                     em_male.Checked = false;
                     em_female.Checked = false;
                 }
-                catch (Exception)
+                catch (Exception )
                 {
 
                 }
@@ -214,7 +226,7 @@ namespace Store_management_system
             // em_dob.CustomFormat = "yyyy/MM/dd";
 
             employeelist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
-            
+
 
 
             this.employeelist.EnableHeadersVisualStyles = false;
@@ -230,7 +242,7 @@ namespace Store_management_system
             try
             {
                 connect.Open();
-                if (employeelist.SelectedRows.Count > 0 )
+                if (employeelist.SelectedRows.Count > 0)
                 {
 
                     //remove only single row
@@ -245,18 +257,15 @@ namespace Store_management_system
                         SqlCommand cmd = new SqlCommand(query, connect);
                         cmd.Parameters.AddWithValue("@parameter_id", id);
 
-
-                        
-
                         //      MessageBox.Show("Removed successfully");
                         string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
-                        if(result.Equals("1"))
+                        if (result.Equals("1"))
                         {
                             cmd.ExecuteNonQuery();
 
                             employeelist.Rows.RemoveAt(row.Index);
                         }
-                        if(result.Equals("2"))
+                        if (result.Equals("2"))
                         {
 
                         }
@@ -278,7 +287,7 @@ namespace Store_management_system
                 }
                 else
                 {
-                    string result = Messageboxok.ShowBox("","Please select a row to remove");
+                    string result = Messageboxok.ShowBox("", "Please select a row to remove");
                 }
             }
             catch (Exception ex)
@@ -318,8 +327,8 @@ namespace Store_management_system
                 string employee_age = employeelist.CurrentRow.Cells["eage"].Value.ToString();
                 string employee_dob = employeelist.CurrentRow.Cells["edob"].Value.ToString();
                 string employee_email = employeelist.CurrentRow.Cells["eemail"].Value.ToString();
-                MessageBox.Show("Id: " + employee_id + "\nName: " + employee_name);
-
+                //   MessageBox.Show("Id: " + employee_id + "\nName: " + employee_name);
+                string result = Messageboxok.ShowBox("", "Id: " + employee_id + "\nName: " + employee_name);
                 em_fname.Text = employee_fname;
                 em_mname.Text = employee_mname;
                 em_lname.Text = employee_lname;
@@ -339,12 +348,14 @@ namespace Store_management_system
                 //employeelist.CurrentRow.Selected = true;
                 //employeelist.CurrentRow.Selected
                 //eupdate.Enabled = false;
-              
+
 
 
             }
+            
 
-        }
+
+            }
 
         private void eclear_Click(object sender, EventArgs e)
         {
@@ -365,7 +376,7 @@ namespace Store_management_system
             emailerror.Visible = false;
 
         }
-  
+
         private void eupdate_Click(object sender, EventArgs e)
         {
             if (validerror.Visible == true)
@@ -375,7 +386,7 @@ namespace Store_management_system
             else
             {
             }
-            var phoneDuplicateCheckQuery =  $"Select e_pn from employee_details where e_pn='{em_pn.Text}' and e_id != {employee_id}";
+            var phoneDuplicateCheckQuery = $"Select e_pn from employee_details where e_pn='{em_pn.Text}' and e_id != {employee_id}";
             SqlDataAdapter da = new SqlDataAdapter(phoneDuplicateCheckQuery, connect);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -384,18 +395,18 @@ namespace Store_management_system
                 pnerror.Visible = true;
             }
             else
-                {
+            {
 
-                    DisplayData();
+                DisplayData();
                 pnerror.Visible = false;
-                }
+            }
             var emailDuplicateCheckQuery = $"Select e_email from employee_details where e_email='{em_email.Text}' and e_id != {employee_id}";
 
             SqlDataAdapter daa = new SqlDataAdapter(emailDuplicateCheckQuery, connect);
             DataTable dts = new DataTable();
             daa.Fill(dts);
 
-            
+
             if (dts.Rows.Count >= 1)
             {
                 emailerror.Visible = true;
@@ -408,7 +419,7 @@ namespace Store_management_system
 
             if (em_fname.Text == "" || em_lname.Text == "" || em_address.Text == "" || em_pn.Text == "" || employeegender == null || em_dob.Text == "" || em_age.Text == "" || em_email.Text == "")
             {
-                MessageBox.Show("Please enter complete data");
+                string result = Messageboxok.ShowBox("", "Please enter complete data");
                 return;
 
             }
@@ -416,75 +427,75 @@ namespace Store_management_system
 
                 try
                 {
-         
-                        if (employee_id != 0)
-                        {
-                       
+
+                    if (employee_id != 0)
+                    {
+
                         //open sql connection
                         connect.Open();
 
-                            string st_fname = em_fname.Text;
-                            string st_mname = em_mname.Text;
-                            string st_lname = em_lname.Text;
-                            string st_address = em_address.Text;
-                            string st_pn = em_pn.Text;
-                            string st_age = em_age.Text;
-                            string st_dob = em_dob.Text;
-                            string st_email = em_email.Text;
+                        string st_fname = em_fname.Text;
+                        string st_mname = em_mname.Text;
+                        string st_lname = em_lname.Text;
+                        string st_address = em_address.Text;
+                        string st_pn = em_pn.Text;
+                        string st_age = em_age.Text;
+                        string st_dob = em_dob.Text;
+                        string st_email = em_email.Text;
 
-                            //save data to database
+                        //save data to database
 
-                            //passing paramter method
-                            string query = "Update employee_details set e_fname=@parameter_fname,e_mname=@parameter_mname,e_lname=@parameter_lname, e_address=@parameter_address,e_pn=@parameter_pn,e_age=@parameter_age,e_gender=@parameter_gender,e_dob=@parameter_dob,e_email=@parameter_email where e_id=@parameter_id";
+                        //passing paramter method
+                        string query = "Update employee_details set e_fname=@parameter_fname,e_mname=@parameter_mname,e_lname=@parameter_lname, e_address=@parameter_address,e_pn=@parameter_pn,e_age=@parameter_age,e_gender=@parameter_gender,e_dob=@parameter_dob,e_email=@parameter_email where e_id=@parameter_id";
 
 
-                            SqlCommand cmd = new SqlCommand(query, connect);
-                            cmd.Parameters.AddWithValue("@parameter_fname", st_fname);
-                            cmd.Parameters.AddWithValue("@parameter_mname", st_mname);
-                            cmd.Parameters.AddWithValue("@parameter_lname", st_lname);
-                            cmd.Parameters.AddWithValue("@parameter_address", st_address);
-                            cmd.Parameters.AddWithValue("@parameter_pn", st_pn);
-                            cmd.Parameters.AddWithValue("@parameter_age", st_age);
-                            cmd.Parameters.AddWithValue("@parameter_gender", employeegender);
-                            cmd.Parameters.AddWithValue("@parameter_dob", st_dob);
-                            cmd.Parameters.AddWithValue("@parameter_email", st_email);
-                            cmd.Parameters.AddWithValue("@parameter_id", employee_id);
-                            cmd.ExecuteNonQuery();
-                            MessageBox.Show("Updated succesfully");
-                            employee_id = 0;
-                            em_fname.Text = "";
-                            em_mname.Text = "";
-                            em_lname.Text = "";
-                            em_address.Text = "";
-                            em_pn.Text = "";
-                            em_age.Text = "";
-                            em_dob.Text = "";
-                            em_email.Text = "";
-                            em_male.Checked = false;
-                            em_female.Checked = false;
-                            eupdate.Enabled = false;
-                        }
-                    
+                        SqlCommand cmd = new SqlCommand(query, connect);
+                        cmd.Parameters.AddWithValue("@parameter_fname", st_fname);
+                        cmd.Parameters.AddWithValue("@parameter_mname", st_mname);
+                        cmd.Parameters.AddWithValue("@parameter_lname", st_lname);
+                        cmd.Parameters.AddWithValue("@parameter_address", st_address);
+                        cmd.Parameters.AddWithValue("@parameter_pn", st_pn);
+                        cmd.Parameters.AddWithValue("@parameter_age", st_age);
+                        cmd.Parameters.AddWithValue("@parameter_gender", employeegender);
+                        cmd.Parameters.AddWithValue("@parameter_dob", st_dob);
+                        cmd.Parameters.AddWithValue("@parameter_email", st_email);
+                        cmd.Parameters.AddWithValue("@parameter_id", employee_id);
+                        cmd.ExecuteNonQuery();
+                        string result = Messageboxok.ShowBox("", "Updated Successfully");
+                        employee_id = 0;
+                        em_fname.Text = "";
+                        em_mname.Text = "";
+                        em_lname.Text = "";
+                        em_address.Text = "";
+                        em_pn.Text = "";
+                        em_age.Text = "";
+                        em_dob.Text = "";
+                        em_email.Text = "";
+                        em_male.Checked = false;
+                        em_female.Checked = false;
+                        eupdate.Enabled = false;
+                    }
+
 
                 }
-                catch (Exception )
+                catch (Exception)
                 {
-                   
+
                 }
                 finally
                 {
                     connect.Close();
 
                 }
-                
+
                 DisplayData();
             }
-           
+
 
         }
-       
-       
-        
+
+
+
         private void em_age_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
@@ -624,7 +635,7 @@ namespace Store_management_system
         private void searchbox_TextChanged(object sender, EventArgs e)
         {
             display();
-          
+
         }
         private void countrows()
         {
@@ -660,9 +671,9 @@ namespace Store_management_system
         private void searchbox_Leave(object sender, EventArgs e)
         {
 
-     
+
         }
-   
+
 
         private void employeelist_SelectionChanged_1(object sender, EventArgs e)
         {
@@ -674,12 +685,21 @@ namespace Store_management_system
 
         private void employeelist_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void employeelist_Leave(object sender, EventArgs e)
         {
             searchbox.Text = "";
         }
+
+        private void check1_Click(object sender, EventArgs e)
+        {
+            employee_id = Convert.ToInt32(employeelist.CurrentRow.Cells["eid"].Value.ToString());
+            string result = Messageboxok.ShowBox("", "Id: " + employee_id);
+
+        }
+
+     
     }
 }

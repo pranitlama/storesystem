@@ -85,6 +85,7 @@ namespace Store_management_system
             this.searchbox = new System.Windows.Forms.TextBox();
             this.searchselect = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.check1 = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.employeelist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,10 +93,9 @@ namespace Store_management_system
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 69);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(46, 45);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 23);
+            this.label2.Size = new System.Drawing.Size(75, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -103,11 +103,10 @@ namespace Store_management_system
             // em_fname
             // 
             this.em_fname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_fname.Location = new System.Drawing.Point(196, 65);
-            this.em_fname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_fname.Location = new System.Drawing.Point(127, 42);
             this.em_fname.Multiline = true;
             this.em_fname.Name = "em_fname";
-            this.em_fname.Size = new System.Drawing.Size(343, 33);
+            this.em_fname.Size = new System.Drawing.Size(230, 23);
             this.em_fname.TabIndex = 1;
             this.em_fname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_fname_KeyPress);
             // 
@@ -115,10 +114,9 @@ namespace Store_management_system
             // 
             this.em_male.AutoSize = true;
             this.em_male.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_male.Location = new System.Drawing.Point(186, 218);
-            this.em_male.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_male.Location = new System.Drawing.Point(124, 142);
             this.em_male.Name = "em_male";
-            this.em_male.Size = new System.Drawing.Size(84, 27);
+            this.em_male.Size = new System.Drawing.Size(57, 21);
             this.em_male.TabIndex = 7;
             this.em_male.TabStop = true;
             this.em_male.Text = "Male";
@@ -129,10 +127,9 @@ namespace Store_management_system
             // 
             this.em_female.AutoSize = true;
             this.em_female.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_female.Location = new System.Drawing.Point(322, 218);
-            this.em_female.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_female.Location = new System.Drawing.Point(215, 142);
             this.em_female.Name = "em_female";
-            this.em_female.Size = new System.Drawing.Size(109, 27);
+            this.em_female.Size = new System.Drawing.Size(73, 21);
             this.em_female.TabIndex = 8;
             this.em_female.TabStop = true;
             this.em_female.Text = "Female";
@@ -144,21 +141,19 @@ namespace Store_management_system
             this.em_dob.CustomFormat = "yyyy/MM/dd";
             this.em_dob.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.em_dob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.em_dob.Location = new System.Drawing.Point(754, 209);
-            this.em_dob.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_dob.Location = new System.Drawing.Point(503, 136);
             this.em_dob.Name = "em_dob";
-            this.em_dob.Size = new System.Drawing.Size(343, 31);
+            this.em_dob.Size = new System.Drawing.Size(230, 23);
             this.em_dob.TabIndex = 9;
             this.em_dob.Value = new System.DateTime(2021, 8, 27, 0, 0, 0, 0);
             // 
             // em_mname
             // 
             this.em_mname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_mname.Location = new System.Drawing.Point(747, 65);
-            this.em_mname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_mname.Location = new System.Drawing.Point(498, 42);
             this.em_mname.Multiline = true;
             this.em_mname.Name = "em_mname";
-            this.em_mname.Size = new System.Drawing.Size(343, 33);
+            this.em_mname.Size = new System.Drawing.Size(230, 23);
             this.em_mname.TabIndex = 2;
             this.em_mname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_mname_KeyPress);
             // 
@@ -202,8 +197,7 @@ namespace Store_management_system
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.employeelist.DefaultCellStyle = dataGridViewCellStyle2;
             this.employeelist.GridColor = System.Drawing.SystemColors.Info;
-            this.employeelist.Location = new System.Drawing.Point(9, 346);
-            this.employeelist.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.employeelist.Location = new System.Drawing.Point(6, 225);
             this.employeelist.Name = "employeelist";
             this.employeelist.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -216,7 +210,7 @@ namespace Store_management_system
             this.employeelist.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.employeelist.RowHeadersWidth = 39;
             this.employeelist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.employeelist.Size = new System.Drawing.Size(1782, 462);
+            this.employeelist.Size = new System.Drawing.Size(1188, 300);
             this.employeelist.TabIndex = 17;
             this.employeelist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeelist_CellClick);
             this.employeelist.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeelist_CellLeave);
@@ -337,22 +331,20 @@ namespace Store_management_system
             // em_address
             // 
             this.em_address.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_address.Location = new System.Drawing.Point(196, 140);
-            this.em_address.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_address.Location = new System.Drawing.Point(131, 91);
             this.em_address.Multiline = true;
             this.em_address.Name = "em_address";
-            this.em_address.Size = new System.Drawing.Size(343, 33);
+            this.em_address.Size = new System.Drawing.Size(230, 23);
             this.em_address.TabIndex = 4;
             // 
             // em_pn
             // 
             this.em_pn.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_pn.Location = new System.Drawing.Point(747, 137);
-            this.em_pn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_pn.Location = new System.Drawing.Point(498, 89);
             this.em_pn.MaxLength = 12;
             this.em_pn.Multiline = true;
             this.em_pn.Name = "em_pn";
-            this.em_pn.Size = new System.Drawing.Size(343, 33);
+            this.em_pn.Size = new System.Drawing.Size(230, 23);
             this.em_pn.TabIndex = 5;
             this.em_pn.TextChanged += new System.EventHandler(this.em_pn_TextChanged);
             this.em_pn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_pn_KeyPress);
@@ -361,33 +353,30 @@ namespace Store_management_system
             // em_age
             // 
             this.em_age.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_age.Location = new System.Drawing.Point(1280, 140);
-            this.em_age.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_age.Location = new System.Drawing.Point(853, 91);
             this.em_age.Multiline = true;
             this.em_age.Name = "em_age";
-            this.em_age.Size = new System.Drawing.Size(343, 33);
+            this.em_age.Size = new System.Drawing.Size(230, 23);
             this.em_age.TabIndex = 6;
             this.em_age.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_age_KeyPress);
             // 
             // em_lname
             // 
             this.em_lname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_lname.Location = new System.Drawing.Point(1280, 69);
-            this.em_lname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_lname.Location = new System.Drawing.Point(853, 45);
             this.em_lname.Multiline = true;
             this.em_lname.Name = "em_lname";
-            this.em_lname.Size = new System.Drawing.Size(343, 33);
+            this.em_lname.Size = new System.Drawing.Size(230, 23);
             this.em_lname.TabIndex = 3;
             this.em_lname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_lname_KeyPress);
             // 
             // em_email
             // 
             this.em_email.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.em_email.Location = new System.Drawing.Point(1280, 212);
-            this.em_email.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.em_email.Location = new System.Drawing.Point(853, 138);
             this.em_email.Multiline = true;
             this.em_email.Name = "em_email";
-            this.em_email.Size = new System.Drawing.Size(440, 33);
+            this.em_email.Size = new System.Drawing.Size(295, 23);
             this.em_email.TabIndex = 10;
             this.em_email.TextChanged += new System.EventHandler(this.em_email_TextChanged);
             // 
@@ -395,10 +384,9 @@ namespace Store_management_system
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(72, 145);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(48, 94);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 23);
+            this.label3.Size = new System.Drawing.Size(57, 17);
             this.label3.TabIndex = 1;
             this.label3.Text = "Address";
             this.label3.Click += new System.EventHandler(this.label2_Click);
@@ -407,10 +395,9 @@ namespace Store_management_system
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(70, 222);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(47, 144);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 23);
+            this.label4.Size = new System.Drawing.Size(56, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "Gender";
             this.label4.Click += new System.EventHandler(this.label2_Click);
@@ -419,10 +406,9 @@ namespace Store_management_system
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(598, 65);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(399, 42);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 23);
+            this.label5.Size = new System.Drawing.Size(95, 17);
             this.label5.TabIndex = 1;
             this.label5.Text = "Middle Name";
             this.label5.Click += new System.EventHandler(this.label2_Click);
@@ -431,10 +417,9 @@ namespace Store_management_system
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(598, 212);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(399, 138);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 23);
+            this.label6.Size = new System.Drawing.Size(88, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Date of Birth";
             this.label6.Click += new System.EventHandler(this.label2_Click);
@@ -443,10 +428,9 @@ namespace Store_management_system
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(598, 137);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(399, 89);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 23);
+            this.label7.Size = new System.Drawing.Size(70, 17);
             this.label7.TabIndex = 1;
             this.label7.Text = "Phone no";
             this.label7.Click += new System.EventHandler(this.label2_Click);
@@ -455,10 +439,9 @@ namespace Store_management_system
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1142, 74);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Location = new System.Drawing.Point(761, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 23);
+            this.label8.Size = new System.Drawing.Size(77, 17);
             this.label8.TabIndex = 1;
             this.label8.Text = "Last Name";
             this.label8.Click += new System.EventHandler(this.label2_Click);
@@ -467,10 +450,9 @@ namespace Store_management_system
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1162, 145);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Location = new System.Drawing.Point(775, 94);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 23);
+            this.label9.Size = new System.Drawing.Size(34, 17);
             this.label9.TabIndex = 1;
             this.label9.Text = "Age";
             this.label9.Click += new System.EventHandler(this.label2_Click);
@@ -479,10 +461,9 @@ namespace Store_management_system
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1162, 214);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Location = new System.Drawing.Point(775, 139);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 23);
+            this.label10.Size = new System.Drawing.Size(43, 17);
             this.label10.TabIndex = 1;
             this.label10.Text = "Email";
             this.label10.Click += new System.EventHandler(this.label2_Click);
@@ -497,13 +478,12 @@ namespace Store_management_system
             this.eupdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.eupdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eupdate.Location = new System.Drawing.Point(524, 282);
-            this.eupdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.eupdate.Location = new System.Drawing.Point(352, 183);
             this.eupdate.Name = "eupdate";
             this.eupdate.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.eupdate.OnHoverButtonColor = System.Drawing.Color.Gold;
             this.eupdate.OnHoverTextColor = System.Drawing.Color.Black;
-            this.eupdate.Size = new System.Drawing.Size(148, 55);
+            this.eupdate.Size = new System.Drawing.Size(99, 36);
             this.eupdate.TabIndex = 12;
             this.eupdate.Text = "Update";
             this.eupdate.TextColor = System.Drawing.Color.White;
@@ -519,13 +499,12 @@ namespace Store_management_system
             this.edelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.edelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.edelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.edelete.Location = new System.Drawing.Point(714, 282);
-            this.edelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.edelete.Location = new System.Drawing.Point(474, 183);
             this.edelete.Name = "edelete";
             this.edelete.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.edelete.OnHoverButtonColor = System.Drawing.Color.Gold;
             this.edelete.OnHoverTextColor = System.Drawing.Color.Black;
-            this.edelete.Size = new System.Drawing.Size(148, 55);
+            this.edelete.Size = new System.Drawing.Size(99, 36);
             this.edelete.TabIndex = 13;
             this.edelete.Text = "Delete";
             this.edelete.TextColor = System.Drawing.Color.White;
@@ -541,13 +520,12 @@ namespace Store_management_system
             this.eadd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.eadd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eadd.Location = new System.Drawing.Point(346, 282);
-            this.eadd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.eadd.Location = new System.Drawing.Point(230, 183);
             this.eadd.Name = "eadd";
             this.eadd.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.eadd.OnHoverButtonColor = System.Drawing.Color.Gold;
             this.eadd.OnHoverTextColor = System.Drawing.Color.Black;
-            this.eadd.Size = new System.Drawing.Size(148, 55);
+            this.eadd.Size = new System.Drawing.Size(99, 36);
             this.eadd.TabIndex = 11;
             this.eadd.Text = "Add";
             this.eadd.TextColor = System.Drawing.Color.White;
@@ -561,10 +539,9 @@ namespace Store_management_system
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(177, 54);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(118, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 29);
+            this.label1.Size = new System.Drawing.Size(14, 18);
             this.label1.TabIndex = 14;
             this.label1.Text = "*";
             // 
@@ -575,10 +552,9 @@ namespace Store_management_system
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(1250, 62);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Location = new System.Drawing.Point(833, 40);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(23, 29);
+            this.label11.Size = new System.Drawing.Size(14, 18);
             this.label11.TabIndex = 14;
             this.label11.Text = "*";
             // 
@@ -589,10 +565,9 @@ namespace Store_management_system
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(158, 126);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Location = new System.Drawing.Point(105, 82);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 29);
+            this.label12.Size = new System.Drawing.Size(14, 18);
             this.label12.TabIndex = 14;
             this.label12.Text = "*";
             // 
@@ -603,10 +578,9 @@ namespace Store_management_system
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(156, 217);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Location = new System.Drawing.Point(104, 141);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(23, 29);
+            this.label13.Size = new System.Drawing.Size(14, 18);
             this.label13.TabIndex = 14;
             this.label13.Text = "*";
             // 
@@ -617,10 +591,9 @@ namespace Store_management_system
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(710, 126);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Location = new System.Drawing.Point(473, 82);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(23, 29);
+            this.label15.Size = new System.Drawing.Size(14, 18);
             this.label15.TabIndex = 14;
             this.label15.Text = "*";
             // 
@@ -631,10 +604,9 @@ namespace Store_management_system
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(720, 185);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Location = new System.Drawing.Point(480, 120);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(23, 29);
+            this.label16.Size = new System.Drawing.Size(14, 18);
             this.label16.TabIndex = 14;
             this.label16.Text = "*";
             // 
@@ -645,10 +617,9 @@ namespace Store_management_system
             this.label14.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(1222, 137);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(815, 89);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(23, 29);
+            this.label14.Size = new System.Drawing.Size(14, 18);
             this.label14.TabIndex = 14;
             this.label14.Text = "*";
             // 
@@ -661,13 +632,12 @@ namespace Store_management_system
             this.eclear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.eclear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.eclear.Location = new System.Drawing.Point(896, 282);
-            this.eclear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.eclear.Location = new System.Drawing.Point(596, 183);
             this.eclear.Name = "eclear";
             this.eclear.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.eclear.OnHoverButtonColor = System.Drawing.Color.Gold;
             this.eclear.OnHoverTextColor = System.Drawing.Color.Black;
-            this.eclear.Size = new System.Drawing.Size(148, 55);
+            this.eclear.Size = new System.Drawing.Size(99, 36);
             this.eclear.TabIndex = 14;
             this.eclear.Text = "Clear";
             this.eclear.TextColor = System.Drawing.Color.White;
@@ -679,10 +649,9 @@ namespace Store_management_system
             this.pnerror.AutoSize = true;
             this.pnerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnerror.ForeColor = System.Drawing.Color.Red;
-            this.pnerror.Location = new System.Drawing.Point(750, 177);
-            this.pnerror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.pnerror.Location = new System.Drawing.Point(500, 115);
             this.pnerror.Name = "pnerror";
-            this.pnerror.Size = new System.Drawing.Size(244, 22);
+            this.pnerror.Size = new System.Drawing.Size(166, 15);
             this.pnerror.TabIndex = 15;
             this.pnerror.Text = "Phone number Already exists";
             this.pnerror.Visible = false;
@@ -692,10 +661,9 @@ namespace Store_management_system
             this.emailerror.AutoSize = true;
             this.emailerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailerror.ForeColor = System.Drawing.Color.Red;
-            this.emailerror.Location = new System.Drawing.Point(1275, 252);
-            this.emailerror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.emailerror.Location = new System.Drawing.Point(850, 164);
             this.emailerror.Name = "emailerror";
-            this.emailerror.Size = new System.Drawing.Size(242, 22);
+            this.emailerror.Size = new System.Drawing.Size(163, 15);
             this.emailerror.TabIndex = 15;
             this.emailerror.Text = "Email Address Already exists";
             this.emailerror.Visible = false;
@@ -708,10 +676,9 @@ namespace Store_management_system
             this.label17.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(1236, 205);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Location = new System.Drawing.Point(824, 133);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(23, 29);
+            this.label17.Size = new System.Drawing.Size(14, 18);
             this.label17.TabIndex = 14;
             this.label17.Text = "*";
             // 
@@ -720,10 +687,9 @@ namespace Store_management_system
             this.validerror.AutoSize = true;
             this.validerror.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.validerror.ForeColor = System.Drawing.Color.Red;
-            this.validerror.Location = new System.Drawing.Point(750, 177);
-            this.validerror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.validerror.Location = new System.Drawing.Point(500, 115);
             this.validerror.Name = "validerror";
-            this.validerror.Size = new System.Drawing.Size(283, 22);
+            this.validerror.Size = new System.Drawing.Size(196, 15);
             this.validerror.TabIndex = 15;
             this.validerror.Text = "Please Enter Valid Mobile Number";
             this.validerror.Visible = false;
@@ -732,32 +698,29 @@ namespace Store_management_system
             // 
             this.countrow.BackColor = System.Drawing.SystemColors.Window;
             this.countrow.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countrow.Location = new System.Drawing.Point(306, 812);
-            this.countrow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.countrow.Location = new System.Drawing.Point(204, 528);
             this.countrow.Name = "countrow";
             this.countrow.ReadOnly = true;
-            this.countrow.Size = new System.Drawing.Size(168, 30);
+            this.countrow.Size = new System.Drawing.Size(113, 22);
             this.countrow.TabIndex = 16;
             // 
             // Total
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(146, 817);
-            this.Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Total.Location = new System.Drawing.Point(97, 531);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(123, 23);
+            this.Total.Size = new System.Drawing.Size(84, 17);
             this.Total.TabIndex = 17;
             this.Total.Text = "Total Count";
             // 
             // searchbox
             // 
             this.searchbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.Location = new System.Drawing.Point(1455, 295);
-            this.searchbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchbox.Location = new System.Drawing.Point(970, 192);
             this.searchbox.Multiline = true;
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(298, 36);
+            this.searchbox.Size = new System.Drawing.Size(200, 25);
             this.searchbox.TabIndex = 16;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             this.searchbox.Leave += new System.EventHandler(this.searchbox_Leave);
@@ -770,26 +733,45 @@ namespace Store_management_system
             "ID",
             "Name",
             "Phone no"});
-            this.searchselect.Location = new System.Drawing.Point(1314, 295);
-            this.searchselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchselect.Location = new System.Drawing.Point(876, 192);
             this.searchselect.Name = "searchselect";
-            this.searchselect.Size = new System.Drawing.Size(130, 29);
+            this.searchselect.Size = new System.Drawing.Size(88, 25);
             this.searchselect.TabIndex = 15;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(1172, 296);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(781, 192);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(134, 28);
+            this.label18.Size = new System.Drawing.Size(88, 19);
             this.label18.TabIndex = 20;
             this.label18.Text = "Search By:";
             // 
+            // check1
+            // 
+            this.check1.BackColor = System.Drawing.SystemColors.Info;
+            this.check1.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.check1.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.check1.FlatAppearance.BorderSize = 0;
+            this.check1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.check1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.check1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check1.Location = new System.Drawing.Point(107, 183);
+            this.check1.Name = "check1";
+            this.check1.OnHoverBorderColor = System.Drawing.Color.SlateGray;
+            this.check1.OnHoverButtonColor = System.Drawing.Color.Gold;
+            this.check1.OnHoverTextColor = System.Drawing.Color.Black;
+            this.check1.Size = new System.Drawing.Size(99, 36);
+            this.check1.TabIndex = 11;
+            this.check1.Text = "Check ID";
+            this.check1.TextColor = System.Drawing.Color.White;
+            this.check1.UseVisualStyleBackColor = false;
+            this.check1.Click += new System.EventHandler(this.check1_Click);
+            // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.label18);
@@ -803,6 +785,7 @@ namespace Store_management_system
             this.Controls.Add(this.eupdate);
             this.Controls.Add(this.eclear);
             this.Controls.Add(this.edelete);
+            this.Controls.Add(this.check1);
             this.Controls.Add(this.eadd);
             this.Controls.Add(this.employeelist);
             this.Controls.Add(this.em_dob);
@@ -832,9 +815,8 @@ namespace Store_management_system
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Employee";
-            this.Size = new System.Drawing.Size(1791, 842);
+            this.Size = new System.Drawing.Size(1194, 561);
             this.Load += new System.EventHandler(this.employeerecord_Load);
             ((System.ComponentModel.ISupportInitialize)(this.employeelist)).EndInit();
             this.ResumeLayout(false);
@@ -883,6 +865,7 @@ namespace Store_management_system
         private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.ComboBox searchselect;
         private System.Windows.Forms.Label label18;
+        private ePOSOne.btnProduct.Button_WOC check1;
         private System.Windows.Forms.DataGridViewTextBoxColumn SN;
         private System.Windows.Forms.DataGridViewTextBoxColumn eid;
         private System.Windows.Forms.DataGridViewTextBoxColumn efname;

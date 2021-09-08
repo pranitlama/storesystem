@@ -49,6 +49,7 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ConnectionString.cs" />
     <Compile Include="employeerecord.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +88,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Signupforms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Signupforms.Designer.cs">
+      <DependentUpon>Signupforms.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="employeerecord.resx">
       <DependentUpon>employeerecord.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +121,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Signupforms.resx">
+      <DependentUpon>Signupforms.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
