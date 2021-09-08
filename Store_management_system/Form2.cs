@@ -88,7 +88,7 @@ namespace Store_management_system
             //    Form1 fm = new Form1();
             //    fm.Show();
             //    this.Hide();
-            //}
+            //}//
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -202,6 +202,11 @@ namespace Store_management_system
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelside_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -15,7 +15,7 @@ namespace Store_management_system
     public partial class Form1 : Form
     {
         SqlConnection connect = new SqlConnection(ConnectionString.Value);
-
+       
         private Point mouseoffset;
         
         public Form1()
@@ -23,6 +23,7 @@ namespace Store_management_system
             InitializeComponent();
             hide.Hide();
             see.Hide();
+           
       
 
         }
@@ -233,8 +234,75 @@ namespace Store_management_system
 
         private void logins_Click(object sender, EventArgs e)
         {
-
             if (textBox1.Text != "Username" && textBox2.Text != "Password")
+            {
+                try
+                {
+                    if (connect.State != ConnectionState.Open)
+                    {
+                        connect.Open();
+                    }
+                    string query = "Select * from login where username='" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
+
+                    SqlCommand cmd = new SqlCommand(query, connect);
+
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    int count = 0;
+                    string userrole = string.Empty;
+                    while (reader.Read())
+                    {
+                        count = count + 1;
+                        userrole = reader["userrole"].ToString();
+                    }
+                    if (count == 1)
+                    {
+                       // string result = Messageboxok.ShowBox("", "ADMIN Login Successful");
+                     //  MessageBox.Show("Username and Password . . . is Correct", "Confirmation Message", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        this.Hide();
+                        if (userrole == "Admin")
+                        {
+                            MessageBox.Show("admin login");
+                            MainMenu mm = new MainMenu();
+                            mm.Show();
+                        }
+                        //show admin window
+                        else
+                        {//show user window
+                         //string result = Messageboxok.ShowBox("", "EMPLOYEE Login Successful");
+                            MessageBox.Show("employee login"); 
+                            Employeewindow ew = new Employeewindow();
+                            ew.Show();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    if (connect.State == ConnectionState.Open)
+                    {
+                        connect.Close();
+
+                    }
+                }
+            }
+        else
+            {
+                entererror.Show();
+                incorrecterror.Hide();
+            }
+        }
+    }
+}
+
+/*
+ if (textBox1.Text != "Username" && textBox2.Text != "Password")
             {
 
                 try
@@ -299,6 +367,4 @@ namespace Store_management_system
             }
         }
 
-       
-    }
-}
+*/
