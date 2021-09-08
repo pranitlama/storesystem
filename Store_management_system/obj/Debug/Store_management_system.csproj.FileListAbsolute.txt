@@ -42,3 +42,5 @@ C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Deb
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.MyMessageBoxyesno.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.Signupforms.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Signupforms.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.Employeewindow.resources

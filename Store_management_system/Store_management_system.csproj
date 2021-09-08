@@ -56,6 +56,12 @@
     <Compile Include="employeerecord.Designer.cs">
       <DependentUpon>employeerecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Employeewindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employeewindow.Designer.cs">
+      <DependentUpon>Employeewindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <EmbeddedResource Include="employeerecord.resx">
       <DependentUpon>employeerecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employeewindow.resx">
+      <DependentUpon>Employeewindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
