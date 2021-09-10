@@ -13,7 +13,7 @@ namespace Store_management_system
 {
     public partial class Signupforms : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionStr.Value);
+        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
 
         public Signupforms()
         {
@@ -25,6 +25,8 @@ namespace Store_management_system
 
             rolechoose.SelectedIndex = 1;
             adminoremployee.SelectedIndex = 2;
+            see.Hide();
+            hide.Hide();
 
             
           
@@ -544,34 +546,42 @@ namespace Store_management_system
         private void hide_Click(object sender, EventArgs e)
         {
             passw.UseSystemPasswordChar = false;
-            hide.SendToBack();
-            see.BringToFront();
+          
+            hide.Hide();
+            see.Show();
         }
 
         private void see_Click(object sender, EventArgs e)
         {
             passw.UseSystemPasswordChar = true;
-            see.SendToBack();
-            hide.BringToFront();
+            hide.Show();
+            see.Hide();
         }
 
         private void passw_Enter(object sender, EventArgs e)
         {
            
             passw.Focus();
-            see.Visible = true;
-            hide.Visible = true;
+            hide.Show();
+            see.Show();
+     
         }
 
         private void passw_Leave(object sender, EventArgs e)
         {
-           
-            
 
-                see.Visible = false;
-                hide.Visible = false;
-            
-            
+            if (passw.Text == "")
+            {
+
+               
+                passw.UseSystemPasswordChar = false;
+                see.Hide();
+                hide.Hide();
+
+            }
+
+
+
         }
     }
     }

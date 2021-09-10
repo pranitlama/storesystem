@@ -14,7 +14,7 @@ namespace Store_management_system
 
     public partial class Employee : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionStr.Value);
+        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
 
         public Employee()
         {

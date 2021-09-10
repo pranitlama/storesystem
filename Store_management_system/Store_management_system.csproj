@@ -50,6 +50,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ConnectionStr.cs" />
+    <Compile Include="connectionstri.cs" />
     <Compile Include="employeerecord.cs">
       <SubType>UserControl</SubType>
     </Compile>

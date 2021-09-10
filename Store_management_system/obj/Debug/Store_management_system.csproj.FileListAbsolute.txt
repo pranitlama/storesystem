@@ -46,3 +46,4 @@ C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Deb
 E:\sms\Store_management_system\obj\Debug\Store_management_system.Employeewindow.resources
 E:\sms\Store_management_system\obj\Debug\CustomControls.RJControls.RJTextBox.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\CustomControls.RJControls.RJTextBox.resources
