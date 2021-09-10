@@ -46,9 +46,11 @@ namespace Store_management_system
             this.entererror = new System.Windows.Forms.Label();
             this.logins = new ePOSOne.btnProduct.Button_WOC();
             this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@ namespace Store_management_system
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bauhaus 93", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(606, 116);
+            this.label1.Location = new System.Drawing.Point(609, 164);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 39);
@@ -66,7 +68,7 @@ namespace Store_management_system
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(550, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(553, 227);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(17, 16);
@@ -80,7 +82,7 @@ namespace Store_management_system
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox1.Location = new System.Drawing.Point(585, 179);
+            this.textBox1.Location = new System.Drawing.Point(588, 227);
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.MaxLength = 25;
             this.textBox1.Name = "textBox1";
@@ -96,7 +98,7 @@ namespace Store_management_system
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(550, 231);
+            this.pictureBox2.Location = new System.Drawing.Point(553, 279);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(17, 17);
@@ -109,7 +111,7 @@ namespace Store_management_system
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox2.Location = new System.Drawing.Point(585, 229);
+            this.textBox2.Location = new System.Drawing.Point(588, 277);
             this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.MaxLength = 15;
             this.textBox2.Name = "textBox2";
@@ -127,7 +129,7 @@ namespace Store_management_system
             this.see.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.see.FlatAppearance.BorderSize = 0;
             this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.see.Location = new System.Drawing.Point(741, 231);
+            this.see.Location = new System.Drawing.Point(744, 279);
             this.see.Margin = new System.Windows.Forms.Padding(2);
             this.see.Name = "see";
             this.see.Size = new System.Drawing.Size(22, 13);
@@ -141,7 +143,7 @@ namespace Store_management_system
             this.hide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.hide.FlatAppearance.BorderSize = 0;
             this.hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hide.Location = new System.Drawing.Point(741, 231);
+            this.hide.Location = new System.Drawing.Point(744, 279);
             this.hide.Margin = new System.Windows.Forms.Padding(2);
             this.hide.Name = "hide";
             this.hide.Size = new System.Drawing.Size(22, 13);
@@ -195,7 +197,7 @@ namespace Store_management_system
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.ForeColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(580, 199);
+            this.panel1.Location = new System.Drawing.Point(583, 247);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 2);
             this.panel1.TabIndex = 9;
@@ -204,7 +206,7 @@ namespace Store_management_system
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.ForeColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(580, 251);
+            this.panel2.Location = new System.Drawing.Point(583, 299);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(183, 2);
             this.panel2.TabIndex = 9;
@@ -214,7 +216,7 @@ namespace Store_management_system
             this.incorrecterror.AutoSize = true;
             this.incorrecterror.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incorrecterror.ForeColor = System.Drawing.Color.DarkRed;
-            this.incorrecterror.Location = new System.Drawing.Point(565, 269);
+            this.incorrecterror.Location = new System.Drawing.Point(568, 317);
             this.incorrecterror.Name = "incorrecterror";
             this.incorrecterror.Size = new System.Drawing.Size(203, 13);
             this.incorrecterror.TabIndex = 10;
@@ -225,7 +227,7 @@ namespace Store_management_system
             this.entererror.AutoSize = true;
             this.entererror.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entererror.ForeColor = System.Drawing.Color.DarkRed;
-            this.entererror.Location = new System.Drawing.Point(565, 269);
+            this.entererror.Location = new System.Drawing.Point(568, 317);
             this.entererror.Name = "entererror";
             this.entererror.Size = new System.Drawing.Size(216, 13);
             this.entererror.TabIndex = 10;
@@ -242,7 +244,7 @@ namespace Store_management_system
             this.logins.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logins.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logins.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.logins.Location = new System.Drawing.Point(621, 296);
+            this.logins.Location = new System.Drawing.Point(624, 344);
             this.logins.Name = "logins";
             this.logins.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.logins.OnHoverButtonColor = System.Drawing.Color.White;
@@ -256,10 +258,20 @@ namespace Store_management_system
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(3, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(617, 61);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(93, 88);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
             // 
             // Form1
             // 
@@ -269,6 +281,7 @@ namespace Store_management_system
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(806, 509);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.logins);
             this.Controls.Add(this.entererror);
             this.Controls.Add(this.incorrecterror);
@@ -295,6 +308,7 @@ namespace Store_management_system
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,6 +332,7 @@ namespace Store_management_system
         private System.Windows.Forms.Label entererror;
         private ePOSOne.btnProduct.Button_WOC logins;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

@@ -162,8 +162,8 @@ namespace Store_management_system
             this.employeelist.AllowUserToAddRows = false;
             this.employeelist.AllowUserToDeleteRows = false;
             this.employeelist.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.employeelist.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.employeelist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.employeelist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,6 +219,7 @@ namespace Store_management_system
             // 
             // SN
             // 
+            this.SN.FillWeight = 39.23278F;
             this.SN.HeaderText = "SN";
             this.SN.MinimumWidth = 8;
             this.SN.Name = "SN";
@@ -263,62 +264,70 @@ namespace Store_management_system
             // 
             // ename
             // 
+            this.ename.FillWeight = 124.7434F;
             this.ename.HeaderText = "Employee Name";
             this.ename.MinimumWidth = 8;
             this.ename.Name = "ename";
             this.ename.ReadOnly = true;
-            this.ename.Width = 150;
+            this.ename.Width = 159;
             // 
             // eaddress
             // 
+            this.eaddress.FillWeight = 120.6057F;
             this.eaddress.HeaderText = "Address";
             this.eaddress.MinimumWidth = 8;
             this.eaddress.Name = "eaddress";
             this.eaddress.ReadOnly = true;
-            this.eaddress.Width = 150;
+            this.eaddress.Width = 154;
             // 
             // epn
             // 
+            this.epn.FillWeight = 117.0091F;
             this.epn.HeaderText = "Phone no";
             this.epn.MinimumWidth = 8;
             this.epn.Name = "epn";
             this.epn.ReadOnly = true;
-            this.epn.Width = 150;
+            this.epn.Width = 149;
             // 
             // eage
             // 
+            this.eage.FillWeight = 37.96097F;
             this.eage.HeaderText = "Age";
             this.eage.MinimumWidth = 8;
             this.eage.Name = "eage";
             this.eage.ReadOnly = true;
-            this.eage.Width = 50;
+            this.eage.Width = 48;
             // 
             // egender
             // 
+            this.egender.FillWeight = 121.0943F;
             this.egender.HeaderText = "Gender";
             this.egender.MinimumWidth = 8;
             this.egender.Name = "egender";
             this.egender.ReadOnly = true;
-            this.egender.Width = 150;
+            this.egender.Width = 155;
             // 
             // edob
             // 
+            this.edob.FillWeight = 117.4338F;
             this.edob.HeaderText = "Date of Birth";
             this.edob.MinimumWidth = 8;
             this.edob.Name = "edob";
             this.edob.ReadOnly = true;
-            this.edob.Width = 150;
+            this.edob.Width = 149;
             // 
             // eemail
             // 
+            this.eemail.FillWeight = 152.336F;
             this.eemail.HeaderText = "Email Address";
             this.eemail.MinimumWidth = 8;
             this.eemail.Name = "eemail";
             this.eemail.ReadOnly = true;
-            this.eemail.Width = 200;
+            this.eemail.Width = 194;
             // 
             // Action
             // 
+            this.Action.FillWeight = 69.58385F;
             this.Action.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.Action.HeaderText = "Action";
             this.Action.MinimumWidth = 8;
@@ -326,7 +335,7 @@ namespace Store_management_system
             this.Action.ReadOnly = true;
             this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Action.Width = 98;
+            this.Action.Width = 91;
             // 
             // em_address
             // 
@@ -478,6 +487,7 @@ namespace Store_management_system
             this.eupdate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.eupdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eupdate.ForeColor = System.Drawing.Color.White;
             this.eupdate.Location = new System.Drawing.Point(352, 183);
             this.eupdate.Name = "eupdate";
             this.eupdate.OnHoverBorderColor = System.Drawing.Color.SlateGray;
@@ -499,6 +509,7 @@ namespace Store_management_system
             this.edelete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.edelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.edelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edelete.ForeColor = System.Drawing.Color.White;
             this.edelete.Location = new System.Drawing.Point(474, 183);
             this.edelete.Name = "edelete";
             this.edelete.OnHoverBorderColor = System.Drawing.Color.SlateGray;
@@ -520,6 +531,7 @@ namespace Store_management_system
             this.eadd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.eadd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eadd.ForeColor = System.Drawing.Color.White;
             this.eadd.Location = new System.Drawing.Point(230, 183);
             this.eadd.Name = "eadd";
             this.eadd.OnHoverBorderColor = System.Drawing.Color.SlateGray;
@@ -632,6 +644,7 @@ namespace Store_management_system
             this.eclear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.eclear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.eclear.ForeColor = System.Drawing.Color.White;
             this.eclear.Location = new System.Drawing.Point(596, 183);
             this.eclear.Name = "eclear";
             this.eclear.OnHoverBorderColor = System.Drawing.Color.SlateGray;
@@ -727,6 +740,7 @@ namespace Store_management_system
             // 
             // searchselect
             // 
+            this.searchselect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.searchselect.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchselect.FormattingEnabled = true;
             this.searchselect.Items.AddRange(new object[] {
@@ -737,6 +751,7 @@ namespace Store_management_system
             this.searchselect.Name = "searchselect";
             this.searchselect.Size = new System.Drawing.Size(88, 25);
             this.searchselect.TabIndex = 15;
+          //  this.searchselect.SelectedIndexChanged += new System.EventHandler(this.searchselect_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -757,6 +772,7 @@ namespace Store_management_system
             this.check1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.check1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.check1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.check1.ForeColor = System.Drawing.Color.White;
             this.check1.Location = new System.Drawing.Point(107, 183);
             this.check1.Name = "check1";
             this.check1.OnHoverBorderColor = System.Drawing.Color.SlateGray;

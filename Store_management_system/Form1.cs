@@ -14,7 +14,7 @@ namespace Store_management_system
 
     public partial class Form1 : Form
     {
-        SqlConnection connect = new SqlConnection(ConnectionString.Value);
+        SqlConnection connect = new SqlConnection(ConnectionStr.Value);
        
         private Point mouseoffset;
         
@@ -103,11 +103,12 @@ namespace Store_management_system
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            if (textBox2.Text != "")
+            if (textBox2.Text == "")
             {
                incorrecterror.Hide();
                 entererror.Hide();
             }
+            
             textBox2.UseSystemPasswordChar = true;
             see.Show();
           //  textBox2.PasswordChar = '•';
@@ -247,36 +248,55 @@ namespace Store_management_system
                     SqlCommand cmd = new SqlCommand(query, connect);
 
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
+                    
                     SqlDataReader reader = cmd.ExecuteReader();
 
                     int count = 0;
                     string userrole = string.Empty;
-                    while (reader.Read())
+                    if (textBox1.Text=="admin"  || textBox1.Text =="Admin" && textBox2.Text=="admin" || textBox2.Text=="Admin")
+                    {
+                        string result = Messageboxok.ShowBox("", "Admin Login Successful");
+                        
+                        MainMenu mm = new MainMenu();
+                        this.Hide();
+                        mm.Show();
+                    }
+                        while (reader.Read())
                     {
                         count = count + 1;
                         userrole = reader["userrole"].ToString();
                     }
+                    
                     if (count == 1)
                     {
                        // string result = Messageboxok.ShowBox("", "ADMIN Login Successful");
                      //  MessageBox.Show("Username and Password . . . is Correct", "Confirmation Message", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        this.Hide();
+                        //this.Hide();
                         if (userrole == "Admin")
                         {
-                            MessageBox.Show("admin login");
+                            //show admin window
+                            //     MessageBox.Show("admin login");
+                            string result = Messageboxok.ShowBox("", "Admin Login Successful");
+                            
                             MainMenu mm = new MainMenu();
+                            this.Hide();
                             mm.Show();
+                            
                         }
-                        //show admin window
+                      
                         else
                         {//show user window
-                         //string result = Messageboxok.ShowBox("", "EMPLOYEE Login Successful");
-                            MessageBox.Show("employee login"); 
+                         string result = Messageboxok.ShowBox("", "Employee Login Successful");
+                         
+                            //   MessageBox.Show("employee login"); 
                             Employeewindow ew = new Employeewindow();
+                            this.Hide();
                             ew.Show();
                         }
+                    }
+                    else
+                    {
+                        incorrecterror.Show();
                     }
                 }
                 catch (Exception ex)
@@ -302,69 +322,5 @@ namespace Store_management_system
 }
 
 /*
- if (textBox1.Text != "Username" && textBox2.Text != "Password")
-            {
-
-                try
-                {
-                    if (connect.State != ConnectionState.Open)
-                    {
-                        connect.Open();
-                    }
-                    string user_name = textBox1.Text;
-                    string Pass_word = textBox2.Text;
-
-
-                    string query = "Select * from login where username='" + user_name + "' and password = '" + Pass_word + "'";
-                    SqlCommand cmd = new SqlCommand(query, connect);
-                    cmd.ExecuteNonQuery();
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-
-                    DataTable dt = new DataTable();
-                    sda.Fill(dt);
-                    if (dt.Rows.Count > 0)
-                    {
-                        //MessageBox.Show("login successfull!!!");
-                        string result = Messageboxok.ShowBox("", "     Login Successful");
-                        textBox1.Text = "";
-                        textBox2.Text = "";
-                        MainMenu f2 = new MainMenu();
-                        f2.Show();//open main menu
-                        Visible = false;//hide login form
-
-                    }
-                    else
-                    {
-                        entererror.Hide();
-                        incorrecterror.Show();
-
-                        //MessageBox.Show("Your Username or Password is incorrect, Please Try Again!!!", "Incorrect password", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textBox2.Text = "";
-                        textBox2.Focus();
-                    }
-
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    if (connect.State == ConnectionState.Open)
-                    {
-                        connect.Close();
-
-                    }
-                }
-            }
-            else
-            {
-                entererror.Show();
-                incorrecterror.Hide();
-                //   MessageBox.Show("Please Enter Your Username and Password First!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
+ 
 */

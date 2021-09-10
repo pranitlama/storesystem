@@ -13,17 +13,20 @@ namespace Store_management_system
 {
     public partial class Signupforms : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionString.Value);
+        SqlConnection connect = new SqlConnection(ConnectionStr.Value);
 
         public Signupforms()
         {
             InitializeComponent();
             this.userlist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.userlist.ColumnHeadersHeight = 40;
-           
-         
-         
+            
+        //    rolechoose.BackColor = Color.Yellow;
+
             rolechoose.SelectedIndex = 1;
+            adminoremployee.SelectedIndex = 2;
+
+            
           
             
         }
@@ -43,7 +46,7 @@ namespace Store_management_system
                 foreach (DataRow dataRow in dt.Rows)
                 {
                    
-                    userlist.Rows.Add(sn, dataRow["userrole"], dataRow["e_id"], dataRow["username"], dataRow["password"],"Edit","Check");
+                    userlist.Rows.Add(sn, dataRow["userrole"], dataRow["e_id"], dataRow["username"], dataRow["password"]);
                     sn++;
 
                 }
@@ -110,10 +113,7 @@ namespace Store_management_system
           
             if (rolechoose.Text == "Employee")
             {
-                if(idtaken.Visible==true)
-                {
-                    return;
-                }
+                
                 if(unmatched.Visible==true)
                 {
                     return;
@@ -132,6 +132,10 @@ namespace Store_management_system
                  //   displaydata();
                     usernameerror.Visible = false;
                 }
+                if (idtaken.Visible == true)
+                {
+                    valid = false;
+                }
                 da = new SqlDataAdapter("Select e_id from employee_details where e_id='" + idno.Text + "'", connect);
                 DataTable dts = new DataTable();
                 da.Fill(dts);
@@ -149,7 +153,16 @@ namespace Store_management_system
                    // displaydata();
                     iderror.Visible = false;
                 }
-                
+
+                if(username.Text=="admin" || username.Text=="Admin")
+                {
+                    authorizederror.Visible = true;
+                    valid = false;
+                }
+                else
+                {
+                    authorizederror.Visible = false;
+                }
 
                 if (!valid)
                 {
@@ -176,7 +189,7 @@ namespace Store_management_system
                         cmd.Parameters.AddWithValue("@parameter_username", st_username);
                         cmd.Parameters.AddWithValue("@parameter_password", st_password);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Sign up successfully");
+                        string result = Messageboxok.ShowBox("", "Sign Up Successfully");
                         idno.Text = "";
                         username.Text = "";
                         passw.Text = "";
@@ -219,7 +232,16 @@ namespace Store_management_system
                     //displaydata();
                     usernameerror.Visible = false;
                 }
-                
+                if (username.Text == "admin" || username.Text == "Admin")
+                {
+                    authorizederror.Visible = true;
+                    valid = false;
+                }
+                else
+                {
+                    authorizederror.Visible = false;
+                }
+
                 if (!valid)
                 {
                     return;
@@ -245,7 +267,7 @@ namespace Store_management_system
                         cmd.Parameters.AddWithValue("@parameter_username", st_username);
                         cmd.Parameters.AddWithValue("@parameter_password", st_password);
                         cmd.ExecuteNonQuery();
-                        MessageBox.Show("Sign up successfully");
+                        string result = Messageboxok.ShowBox("", "Sign Up Successfully");
                         //idno.Text = "";
                         username.Text = "";
                         passw.Text = "";
@@ -270,51 +292,50 @@ namespace Store_management_system
         private void username_TextChanged(object sender, EventArgs e)
         {
             usernameerror.Visible = false;
+            authorizederror.Visible = false;
         }
 
         private void cpassw_TextChanged(object sender, EventArgs e)
         {
             cpassw.UseSystemPasswordChar = true;
-            if (cpassw.Text == "")
-            {
-                unmatched.Visible = false;
-                matched.Visible = false;
-            }
-            else
-            {
+           
+               
+                if (passw.Text != cpassw.Text && cpassw.Text!=string.Empty )
+                {
+                    unmatched.Visible = true;
+                    matched.Visible = false;
 
-            }
+                }
+                else if(passw.Text==cpassw.Text && cpassw.Text!=string.Empty)
+                {
+
+                    unmatched.Visible = false;
+                    matched.Visible = true;
+                }
+            
+        }
+
+       
+
+       
+
+        private void passw_TextChanged(object sender, EventArgs e)
+        {
+            passw.UseSystemPasswordChar = true;
+            
+           
             if (passw.Text != cpassw.Text)
             {
                 unmatched.Visible = true;
                 matched.Visible = false;
 
             }
-            else
+            else if (passw.Text == cpassw.Text && cpassw.Text != string.Empty)
             {
-               
+
                 unmatched.Visible = false;
                 matched.Visible = true;
             }
-        }
-
-        private void cpassw_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void cpassw_Leave(object sender, EventArgs e)
-        {
-          if(cpassw.Text=="")
-            {
-                unmatched.Visible = false;
-                matched.Visible = false;
-            }
-        }
-
-        private void passw_TextChanged(object sender, EventArgs e)
-        {
-            passw.UseSystemPasswordChar = true;
         }
 
         private void idno_TextChanged(object sender, EventArgs e)
@@ -341,6 +362,7 @@ namespace Store_management_system
         {
             iderror.Visible = false;
             usernameerror.Visible = false;
+            authorizederror.Visible = false;
             idtaken.Visible = false;
             username.Clear();
             passw.Clear();
@@ -359,70 +381,203 @@ namespace Store_management_system
                 e.Handled = true;
             }
         }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connect.Open();
+                if (userlist.SelectedRows.Count > 0)
+                {
+
+                    //remove only single row
+                    // employeelist.Rows.RemoveAt(employeelist.SelectedRows[0].Index);
+
+                    //remove multiple rows
+                    foreach (DataGridViewRow row in userlist.SelectedRows)
+                    {
+                        // int serial = Convert.ToInt32(row.Cells["sn"].Value);
+
+                        string usern = Convert.ToString(row.Cells["usrname"].Value);
+
+                        string query = "delete from login where username=@parameter_username";
+                        SqlCommand cmd = new SqlCommand(query, connect);
+                        cmd.Parameters.AddWithValue("@parameter_username",usern);
+
+                        //      MessageBox.Show("Removed successfully");
+                        string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
+                        if (result.Equals("1"))
+                        {
+                            cmd.ExecuteNonQuery();
+
+                            userlist.Rows.RemoveAt(row.Index);
+                        }
+                        if (result.Equals("2"))
+                        {
+
+                        }
+                        //DialogResult dialog = MessageBox.Show("Do you really want to delete?", "Delete", MessageBoxButtons.YesNo);
+                        //if (dialog == DialogResult.Yes)
+                        //{
+                        //    cmd.ExecuteNonQuery();
+                        //    employeelist.Rows.RemoveAt(row.Index);
+                        //}
+                        //else
+                        //{
+
+                        //}
+                    }
+
+
+                    // serial no count from 1
+
+                }
+                else
+                {
+                    string result = Messageboxok.ShowBox("", "Please select a row to remove");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connect.Close();
+            }
+
+            displaydata();
+        }
+
+        private void userlist_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (showpassw.Checked == false)
+            {
+                if (e.ColumnIndex == 4)
+                {
+                    if (e.Value != null)
+                    {
+                        e.Value = new String('●', e.Value.ToString().Length);
+
+                    }
+                }
+            }
+
+        }
+
+        private void showpassw_CheckedChanged(object sender, EventArgs e)
+        {
+            displaydata();
+        }
+
+       
+        private void combo1()
+        {
+            string query = "select * from login where userrole='" + adminoremployee.Text + "'";
+            SqlCommand cmd = new SqlCommand(query, connect);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            userlist.Rows.Clear();
+            int sn = 1;
+            foreach (DataRow dataRow in dt.Rows)
+            {
+
+                userlist.Rows.Add(sn, dataRow["userrole"], dataRow["e_id"], dataRow["username"], dataRow["password"]);
+                sn++;
+
+            }
+            //countrows();
+
+
+        }
+        private void adminoremployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+               
+            {
+                
+                if (adminoremployee.Text == "Admin")
+                {
+                    connect.Open();
+
+                    combo1();
+                }
+                 else if(adminoremployee.Text=="Employee")
+                {
+                    connect.Open();
+                    combo1();
+                }
+                else
+                {
+                    displaydata();
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (connect.State == ConnectionState.Open)
+                {
+                    connect.Close();
+
+                }
+            }
+        }
+
+        private void cpassw_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (cpassw.Text == string.Empty)
+            {
+                matched.Visible = false;
+                unmatched.Visible = false;
+
+            }
+
+
+        }
+
+        private void hide_Click(object sender, EventArgs e)
+        {
+            passw.UseSystemPasswordChar = false;
+            hide.SendToBack();
+            see.BringToFront();
+        }
+
+        private void see_Click(object sender, EventArgs e)
+        {
+            passw.UseSystemPasswordChar = true;
+            see.SendToBack();
+            hide.BringToFront();
+        }
+
+        private void passw_Enter(object sender, EventArgs e)
+        {
+           
+            passw.Focus();
+            see.Visible = true;
+            hide.Visible = true;
+        }
+
+        private void passw_Leave(object sender, EventArgs e)
+        {
+           
+            
+
+                see.Visible = false;
+                hide.Visible = false;
+            
+            
+        }
     }
     }
 
 
 
 /*
-  if (rolechoose.Text == "Employee")
-           {
-              
-               {
-                   MessageBox.Show("Please enter complete data");
-               }
-               SqlDataAdapter dar = new SqlDataAdapter("Select e_id from employee_details where e_id='" + idno.Text + "'", connect);
-               DataTable dat = new DataTable();
-               dar.Fill(dat);
-               if (!(dat.Rows.Count >= 1))
-               {
-                   iderror.Visible = true;
-               }
-               else
-               {
-                   displaydata();
-               }
-               SqlDataAdapter daq = new SqlDataAdapter("Select username from login where username='" + username.Text + "'", connect);
-               DataTable dt = new DataTable();
-               daq.Fill(dt);
-               if (dt.Rows.Count >= 1)
-               {
-                   usernameerror.Visible = true;
-               }
-               else
-               {
-                   displaydata();
-               }
-               if(passw.Text==cpassw.Text)
-               {
-                   passworderror.Visible = true;
-               }
-               else
-               {
-                   displaydata();
-               }
-
-               else
-               {
-
-                   try
-                   {
-                     
-                   }
-
-                   catch (Exception ex)
-                   {
-                       MessageBox.Show(ex.ToString());
-                   }
-                   finally
-                   {
-                       connect.Close();
-                   }
-                   displaydata();
-               }
-
-
-
-           }
-
+ 
 */
