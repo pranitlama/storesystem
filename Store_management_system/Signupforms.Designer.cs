@@ -29,8 +29,8 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Signupforms));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,19 +43,27 @@ namespace Store_management_system
             this.cpassw = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.userlist = new System.Windows.Forms.DataGridView();
-            this.rolechoose = new System.Windows.Forms.ComboBox();
-            this.iderror = new System.Windows.Forms.Label();
-            this.usernameerror = new System.Windows.Forms.Label();
-            this.unmatched = new System.Windows.Forms.PictureBox();
-            this.idtaken = new System.Windows.Forms.Label();
-            this.Reset = new ePOSOne.btnProduct.Button_WOC();
-            this.signupbtn = new ePOSOne.btnProduct.Button_WOC();
-            this.matched = new System.Windows.Forms.PictureBox();
             this.sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userrole = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usrname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rolechoose = new System.Windows.Forms.ComboBox();
+            this.iderror = new System.Windows.Forms.Label();
+            this.usernameerror = new System.Windows.Forms.Label();
+            this.unmatched = new System.Windows.Forms.PictureBox();
+            this.idtaken = new System.Windows.Forms.Label();
+            this.matched = new System.Windows.Forms.PictureBox();
+            this.authorizederror = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.adminoremployee = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.hide = new System.Windows.Forms.Button();
+            this.see = new System.Windows.Forms.Button();
+            this.showpassw = new CustomControls.RJControls.RJToggleButton();
+            this.delete = new ePOSOne.btnProduct.Button_WOC();
+            this.Reset = new ePOSOne.btnProduct.Button_WOC();
+            this.signupbtn = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.userlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unmatched)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matched)).BeginInit();
@@ -142,11 +150,12 @@ namespace Store_management_system
             this.passw.ForeColor = System.Drawing.SystemColors.WindowText;
             this.passw.Location = new System.Drawing.Point(211, 308);
             this.passw.Name = "passw";
-            this.passw.PasswordChar = '*';
             this.passw.Size = new System.Drawing.Size(179, 22);
             this.passw.TabIndex = 4;
             this.passw.UseSystemPasswordChar = true;
             this.passw.TextChanged += new System.EventHandler(this.passw_TextChanged);
+            this.passw.Enter += new System.EventHandler(this.passw_Enter);
+            this.passw.Leave += new System.EventHandler(this.passw_Leave);
             // 
             // cpassw
             // 
@@ -156,8 +165,7 @@ namespace Store_management_system
             this.cpassw.Size = new System.Drawing.Size(178, 22);
             this.cpassw.TabIndex = 5;
             this.cpassw.TextChanged += new System.EventHandler(this.cpassw_TextChanged);
-            this.cpassw.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cpassw_KeyPress);
-            this.cpassw.Leave += new System.EventHandler(this.cpassw_Leave);
+            this.cpassw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cpassw_KeyDown);
             // 
             // label6
             // 
@@ -174,14 +182,16 @@ namespace Store_management_system
             this.userlist.AllowUserToAddRows = false;
             this.userlist.AllowUserToDeleteRows = false;
             this.userlist.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.userlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.userlist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
+            this.userlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.userlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.userlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.userlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sn,
@@ -189,23 +199,64 @@ namespace Store_management_system
             this.empid,
             this.usrname,
             this.Password});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.userlist.DefaultCellStyle = dataGridViewCellStyle4;
-            this.userlist.Location = new System.Drawing.Point(433, 90);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.userlist.DefaultCellStyle = dataGridViewCellStyle2;
+            this.userlist.GridColor = System.Drawing.Color.White;
+            this.userlist.Location = new System.Drawing.Point(435, 90);
             this.userlist.Name = "userlist";
             this.userlist.ReadOnly = true;
-            this.userlist.Size = new System.Drawing.Size(713, 382);
+            this.userlist.Size = new System.Drawing.Size(703, 382);
             this.userlist.TabIndex = 7;
+            this.userlist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.userlist_CellFormatting);
+            // 
+            // sn
+            // 
+            this.sn.HeaderText = "SN";
+            this.sn.Name = "sn";
+            this.sn.ReadOnly = true;
+            this.sn.Width = 80;
+            // 
+            // userrole
+            // 
+            this.userrole.HeaderText = "User Role";
+            this.userrole.Name = "userrole";
+            this.userrole.ReadOnly = true;
+            this.userrole.Width = 150;
+            // 
+            // empid
+            // 
+            this.empid.HeaderText = "Employee ID";
+            this.empid.Name = "empid";
+            this.empid.ReadOnly = true;
+            this.empid.Width = 130;
+            // 
+            // usrname
+            // 
+            this.usrname.HeaderText = "Username";
+            this.usrname.Name = "usrname";
+            this.usrname.ReadOnly = true;
+            this.usrname.Width = 150;
+            // 
+            // Password
+            // 
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 152;
             // 
             // rolechoose
             // 
+            this.rolechoose.BackColor = System.Drawing.Color.White;
+            this.rolechoose.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.rolechoose.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.rolechoose.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolechoose.ForeColor = System.Drawing.SystemColors.WindowText;
             this.rolechoose.FormattingEnabled = true;
             this.rolechoose.Items.AddRange(new object[] {
             "Admin",
@@ -220,7 +271,7 @@ namespace Store_management_system
             // 
             this.iderror.AutoSize = true;
             this.iderror.ForeColor = System.Drawing.Color.Red;
-            this.iderror.Location = new System.Drawing.Point(215, 204);
+            this.iderror.Location = new System.Drawing.Point(209, 204);
             this.iderror.Name = "iderror";
             this.iderror.Size = new System.Drawing.Size(90, 13);
             this.iderror.TabIndex = 14;
@@ -231,11 +282,11 @@ namespace Store_management_system
             // 
             this.usernameerror.AutoSize = true;
             this.usernameerror.ForeColor = System.Drawing.Color.Red;
-            this.usernameerror.Location = new System.Drawing.Point(215, 267);
+            this.usernameerror.Location = new System.Drawing.Point(209, 267);
             this.usernameerror.Name = "usernameerror";
-            this.usernameerror.Size = new System.Drawing.Size(120, 13);
+            this.usernameerror.Size = new System.Drawing.Size(127, 13);
             this.usernameerror.TabIndex = 14;
-            this.usernameerror.Text = "username already taken";
+            this.usernameerror.Text = "Username Already Taken";
             this.usernameerror.Visible = false;
             // 
             // unmatched
@@ -253,12 +304,138 @@ namespace Store_management_system
             // 
             this.idtaken.AutoSize = true;
             this.idtaken.ForeColor = System.Drawing.Color.Red;
-            this.idtaken.Location = new System.Drawing.Point(215, 204);
+            this.idtaken.Location = new System.Drawing.Point(209, 205);
             this.idtaken.Name = "idtaken";
             this.idtaken.Size = new System.Drawing.Size(90, 13);
             this.idtaken.TabIndex = 14;
             this.idtaken.Text = "ID Already Taken";
             this.idtaken.Visible = false;
+            // 
+            // matched
+            // 
+            this.matched.Image = ((System.Drawing.Image)(resources.GetObject("matched.Image")));
+            this.matched.Location = new System.Drawing.Point(395, 375);
+            this.matched.Name = "matched";
+            this.matched.Size = new System.Drawing.Size(23, 23);
+            this.matched.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.matched.TabIndex = 15;
+            this.matched.TabStop = false;
+            this.matched.Visible = false;
+            // 
+            // authorizederror
+            // 
+            this.authorizederror.AutoSize = true;
+            this.authorizederror.ForeColor = System.Drawing.Color.Red;
+            this.authorizederror.Location = new System.Drawing.Point(209, 267);
+            this.authorizederror.Name = "authorizederror";
+            this.authorizederror.Size = new System.Drawing.Size(190, 13);
+            this.authorizederror.TabIndex = 14;
+            this.authorizederror.Text = "Username Already Authorized to Admin";
+            this.authorizederror.Visible = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(973, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Show Password";
+            // 
+            // adminoremployee
+            // 
+            this.adminoremployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.adminoremployee.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminoremployee.FormattingEnabled = true;
+            this.adminoremployee.Items.AddRange(new object[] {
+            "Admin",
+            "Employee",
+            "Both"});
+            this.adminoremployee.Location = new System.Drawing.Point(769, 56);
+            this.adminoremployee.Name = "adminoremployee";
+            this.adminoremployee.Size = new System.Drawing.Size(127, 25);
+            this.adminoremployee.TabIndex = 19;
+            this.adminoremployee.SelectedIndexChanged += new System.EventHandler(this.adminoremployee_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(710, 57);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 20);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Show:";
+            // 
+            // hide
+            // 
+            this.hide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hide.BackgroundImage")));
+            this.hide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.hide.FlatAppearance.BorderSize = 0;
+            this.hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hide.ForeColor = System.Drawing.Color.White;
+            this.hide.Location = new System.Drawing.Point(364, 313);
+            this.hide.Margin = new System.Windows.Forms.Padding(2);
+            this.hide.Name = "hide";
+            this.hide.Size = new System.Drawing.Size(22, 13);
+            this.hide.TabIndex = 22;
+            this.hide.UseVisualStyleBackColor = true;
+            this.hide.Visible = false;
+            this.hide.Click += new System.EventHandler(this.hide_Click);
+            // 
+            // see
+            // 
+            this.see.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("see.BackgroundImage")));
+            this.see.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.see.FlatAppearance.BorderSize = 0;
+            this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.see.ForeColor = System.Drawing.Color.White;
+            this.see.Location = new System.Drawing.Point(364, 313);
+            this.see.Margin = new System.Windows.Forms.Padding(2);
+            this.see.Name = "see";
+            this.see.Size = new System.Drawing.Size(22, 13);
+            this.see.TabIndex = 21;
+            this.see.UseVisualStyleBackColor = true;
+            this.see.Visible = false;
+            this.see.Click += new System.EventHandler(this.see_Click);
+            // 
+            // showpassw
+            // 
+            this.showpassw.AutoSize = true;
+            this.showpassw.Location = new System.Drawing.Point(922, 57);
+            this.showpassw.MinimumSize = new System.Drawing.Size(45, 22);
+            this.showpassw.Name = "showpassw";
+            this.showpassw.OffBackColor = System.Drawing.Color.DarkGray;
+            this.showpassw.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.showpassw.OnBackColor = System.Drawing.Color.RoyalBlue;
+            this.showpassw.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.showpassw.Size = new System.Drawing.Size(45, 22);
+            this.showpassw.TabIndex = 17;
+            this.showpassw.UseVisualStyleBackColor = true;
+            this.showpassw.CheckedChanged += new System.EventHandler(this.showpassw_CheckedChanged);
+            // 
+            // delete
+            // 
+            this.delete.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.delete.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.delete.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.delete.FlatAppearance.BorderSize = 0;
+            this.delete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.ForeColor = System.Drawing.Color.White;
+            this.delete.Location = new System.Drawing.Point(992, 478);
+            this.delete.Name = "delete";
+            this.delete.OnHoverBorderColor = System.Drawing.Color.SlateGray;
+            this.delete.OnHoverButtonColor = System.Drawing.Color.Gold;
+            this.delete.OnHoverTextColor = System.Drawing.Color.Black;
+            this.delete.Size = new System.Drawing.Size(99, 36);
+            this.delete.TabIndex = 12;
+            this.delete.Text = "Delete";
+            this.delete.TextColor = System.Drawing.Color.White;
+            this.delete.UseVisualStyleBackColor = false;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // Reset
             // 
@@ -269,6 +446,7 @@ namespace Store_management_system
             this.Reset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.Reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Reset.ForeColor = System.Drawing.Color.White;
             this.Reset.Location = new System.Drawing.Point(256, 445);
             this.Reset.Name = "Reset";
             this.Reset.OnHoverBorderColor = System.Drawing.Color.SlateGray;
@@ -290,6 +468,7 @@ namespace Store_management_system
             this.signupbtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.signupbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.signupbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signupbtn.ForeColor = System.Drawing.Color.White;
             this.signupbtn.Location = new System.Drawing.Point(141, 445);
             this.signupbtn.Name = "signupbtn";
             this.signupbtn.OnHoverBorderColor = System.Drawing.Color.SlateGray;
@@ -302,60 +481,23 @@ namespace Store_management_system
             this.signupbtn.UseVisualStyleBackColor = false;
             this.signupbtn.Click += new System.EventHandler(this.signupbtn_Click);
             // 
-            // matched
-            // 
-            this.matched.Image = ((System.Drawing.Image)(resources.GetObject("matched.Image")));
-            this.matched.Location = new System.Drawing.Point(395, 375);
-            this.matched.Name = "matched";
-            this.matched.Size = new System.Drawing.Size(23, 23);
-            this.matched.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.matched.TabIndex = 15;
-            this.matched.TabStop = false;
-            this.matched.Visible = false;
-            // 
-            // sn
-            // 
-            this.sn.HeaderText = "SN";
-            this.sn.Name = "sn";
-            this.sn.ReadOnly = true;
-            // 
-            // userrole
-            // 
-            this.userrole.HeaderText = "UserRole";
-            this.userrole.Name = "userrole";
-            this.userrole.ReadOnly = true;
-            this.userrole.Width = 150;
-            // 
-            // empid
-            // 
-            this.empid.HeaderText = "Employee ID";
-            this.empid.Name = "empid";
-            this.empid.ReadOnly = true;
-            this.empid.Width = 120;
-            // 
-            // usrname
-            // 
-            this.usrname.HeaderText = "Username";
-            this.usrname.Name = "usrname";
-            this.usrname.ReadOnly = true;
-            this.usrname.Width = 150;
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Width = 150;
-            // 
             // Signupforms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.hide);
+            this.Controls.Add(this.see);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.adminoremployee);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.showpassw);
             this.Controls.Add(this.unmatched);
+            this.Controls.Add(this.authorizederror);
             this.Controls.Add(this.usernameerror);
             this.Controls.Add(this.idtaken);
             this.Controls.Add(this.iderror);
+            this.Controls.Add(this.delete);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.signupbtn);
             this.Controls.Add(this.rolechoose);
@@ -402,10 +544,18 @@ namespace Store_management_system
         private System.Windows.Forms.Label idtaken;
         private ePOSOne.btnProduct.Button_WOC Reset;
         private System.Windows.Forms.PictureBox matched;
+        private ePOSOne.btnProduct.Button_WOC delete;
+        private System.Windows.Forms.Label authorizederror;
+        private CustomControls.RJControls.RJToggleButton showpassw;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn sn;
         private System.Windows.Forms.DataGridViewTextBoxColumn userrole;
         private System.Windows.Forms.DataGridViewTextBoxColumn empid;
         private System.Windows.Forms.DataGridViewTextBoxColumn usrname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
+        private System.Windows.Forms.ComboBox adminoremployee;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button hide;
+        private System.Windows.Forms.Button see;
     }
 }

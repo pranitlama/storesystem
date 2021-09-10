@@ -14,7 +14,7 @@ namespace Store_management_system
 
     public partial class Employee : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionString.Value);
+        SqlConnection connect = new SqlConnection(ConnectionStr.Value);
 
         public Employee()
         {
@@ -180,7 +180,7 @@ namespace Store_management_system
                     cmd.Parameters.AddWithValue("@parameter_email", st_email);
 
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Data added successfully");
+                    string result = Messageboxok.ShowBox("", "Data Added Successfully");
                     em_fname.Text = "";
                     em_mname.Text = "";
                     em_lname.Text = "";

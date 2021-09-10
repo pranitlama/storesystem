@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Store_management_system
 {
-    public static class ConnectionString
+    public static class ConnectionStr
     {
-        public static string Value = @"Data Source=DESKTOP-NS3RPG2\SQLEXPRESS;Initial Catalog=store;Integrated Security=True";
+        public static string Value = @"Data Source=DESKTOP-JB605NC\SQLEXPRESS;Initial Catalog=store;Integrated Security=True";
         //DESKTOP-NS3RPG2
     }
 }
