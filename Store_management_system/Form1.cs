@@ -14,7 +14,7 @@ namespace Store_management_system
 
     public partial class Form1 : Form
     {
-        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
+        SqlConnection connect = new SqlConnection(connectionstri.Value);
        
         private Point mouseoffset;
         

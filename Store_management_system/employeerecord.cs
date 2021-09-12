@@ -14,7 +14,7 @@ namespace Store_management_system
 
     public partial class Employee : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
+        SqlConnection connect = new SqlConnection(connectionstri.Value);
 
         public Employee()
         {
@@ -163,8 +163,6 @@ namespace Store_management_system
                     string st_age = em_age.Text;
                     string st_dob = em_dob.Text;
                     string st_email = em_email.Text;
-
-
                     //string query = "Insert into student_details(name,address,Contact) values (" + namee + "," + Addresss +")";
                     string query = "Insert into employee_details (e_fname,e_mname,e_lname,e_address,e_pn,e_age,e_gender,e_dob,e_email) values (@parameter_fname,@parameter_mname,@parameter_lname,@parameter_address,@parameter_pn,@parameter_age,@parameter_gender,@parameter_dob,@parameter_email)";
 
@@ -253,7 +251,8 @@ namespace Store_management_system
                     {
                         int id = Convert.ToInt32(row.Cells["eid"].Value);
 
-                        string query = "delete from employee_details where e_id=@parameter_id";
+                        string query = "delete from employee_details where e_id=@parameter_id;delete from login where e_id= @parameter_id";
+                      
                         SqlCommand cmd = new SqlCommand(query, connect);
                         cmd.Parameters.AddWithValue("@parameter_id", id);
 
@@ -264,6 +263,7 @@ namespace Store_management_system
                             cmd.ExecuteNonQuery();
 
                             employeelist.Rows.RemoveAt(row.Index);
+                            
                         }
                         if (result.Equals("2"))
                         {
@@ -281,8 +281,6 @@ namespace Store_management_system
                         //}
                     }
 
-
-                    // serial no count from 1
 
                 }
                 else
@@ -524,10 +522,7 @@ namespace Store_management_system
             emailerror.Visible = false;
         }
 
-        private void label18_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void em_pn_Validating(object sender, CancelEventArgs e)
         {
@@ -641,7 +636,8 @@ namespace Store_management_system
         {
             int numrows = employeelist.Rows.Count;
             countrow.Text = numrows.ToString();
-            countrow.Text = "   " + countrow.Text;
+            countrow.Text = "  " + countrow.Text;
+
         }
 
         private void em_fname_KeyPress(object sender, KeyPressEventArgs e)
@@ -695,11 +691,18 @@ namespace Store_management_system
 
         private void check1_Click(object sender, EventArgs e)
         {
-            employee_id = Convert.ToInt32(employeelist.CurrentRow.Cells["eid"].Value.ToString());
-            string result = Messageboxok.ShowBox("", "Id: " + employee_id);
+            if (employeelist.SelectedCells.Count>0)
+            {
+                employee_id = Convert.ToInt32(employeelist.CurrentRow.Cells["eid"].Value.ToString());
+                string result = Messageboxok.ShowBox("", "Id: " + employee_id);
+            }
+            else
+            {
+                string result = Messageboxok.ShowBox("", "Please select at least one data");
+            }
 
         }
 
-     
+        
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace Store_management_system
 {
-    partial class HOMEUC
+    partial class HomeUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HOMEUC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUC));
             this.panel1 = new System.Windows.Forms.Panel();
             this.product_pic = new System.Windows.Forms.PictureBox();
             this.product_amt = new System.Windows.Forms.Label();
@@ -38,35 +38,35 @@ namespace Store_management_system
             this.revenue_pic = new System.Windows.Forms.PictureBox();
             this.revenue_amt = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.order_pic = new System.Windows.Forms.PictureBox();
-            this.order_amt = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.usercount = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.admincount = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.order_amt = new System.Windows.Forms.Label();
+            this.order_pic = new System.Windows.Forms.PictureBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_pic)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.revenue_pic)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_pic)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_pic)).BeginInit();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,17 +75,19 @@ namespace Store_management_system
             this.panel1.Controls.Add(this.product_pic);
             this.panel1.Controls.Add(this.product_amt);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(170, 89);
+            this.panel1.Location = new System.Drawing.Point(113, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(433, 202);
+            this.panel1.Size = new System.Drawing.Size(289, 131);
             this.panel1.TabIndex = 0;
             // 
             // product_pic
             // 
             this.product_pic.Image = ((System.Drawing.Image)(resources.GetObject("product_pic.Image")));
-            this.product_pic.Location = new System.Drawing.Point(41, 73);
+            this.product_pic.Location = new System.Drawing.Point(27, 47);
+            this.product_pic.Margin = new System.Windows.Forms.Padding(2);
             this.product_pic.Name = "product_pic";
-            this.product_pic.Size = new System.Drawing.Size(94, 89);
+            this.product_pic.Size = new System.Drawing.Size(63, 58);
             this.product_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.product_pic.TabIndex = 1;
             this.product_pic.TabStop = false;
@@ -95,9 +97,10 @@ namespace Store_management_system
             this.product_amt.AutoSize = true;
             this.product_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.product_amt.ForeColor = System.Drawing.Color.White;
-            this.product_amt.Location = new System.Drawing.Point(266, 125);
+            this.product_amt.Location = new System.Drawing.Point(177, 81);
+            this.product_amt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.product_amt.Name = "product_amt";
-            this.product_amt.Size = new System.Drawing.Size(34, 23);
+            this.product_amt.Size = new System.Drawing.Size(26, 19);
             this.product_amt.TabIndex = 0;
             this.product_amt.Text = "{?}";
             // 
@@ -106,9 +109,10 @@ namespace Store_management_system
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(199, 73);
+            this.label1.Location = new System.Drawing.Point(133, 47);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 23);
+            this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "TOTAL PRODUCTS";
             // 
@@ -118,17 +122,19 @@ namespace Store_management_system
             this.panel3.Controls.Add(this.revenue_pic);
             this.panel3.Controls.Add(this.revenue_amt);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(917, 347);
+            this.panel3.Location = new System.Drawing.Point(611, 226);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(433, 202);
+            this.panel3.Size = new System.Drawing.Size(289, 131);
             this.panel3.TabIndex = 0;
             // 
             // revenue_pic
             // 
             this.revenue_pic.Image = ((System.Drawing.Image)(resources.GetObject("revenue_pic.Image")));
-            this.revenue_pic.Location = new System.Drawing.Point(53, 59);
+            this.revenue_pic.Location = new System.Drawing.Point(35, 38);
+            this.revenue_pic.Margin = new System.Windows.Forms.Padding(2);
             this.revenue_pic.Name = "revenue_pic";
-            this.revenue_pic.Size = new System.Drawing.Size(94, 89);
+            this.revenue_pic.Size = new System.Drawing.Size(63, 58);
             this.revenue_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.revenue_pic.TabIndex = 2;
             this.revenue_pic.TabStop = false;
@@ -138,9 +144,10 @@ namespace Store_management_system
             this.revenue_amt.AutoSize = true;
             this.revenue_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.revenue_amt.ForeColor = System.Drawing.Color.White;
-            this.revenue_amt.Location = new System.Drawing.Point(286, 106);
+            this.revenue_amt.Location = new System.Drawing.Point(191, 69);
+            this.revenue_amt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.revenue_amt.Name = "revenue_amt";
-            this.revenue_amt.Size = new System.Drawing.Size(34, 23);
+            this.revenue_amt.Size = new System.Drawing.Size(26, 19);
             this.revenue_amt.TabIndex = 0;
             this.revenue_amt.Text = "{?}";
             // 
@@ -149,105 +156,57 @@ namespace Store_management_system
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(240, 45);
+            this.label6.Location = new System.Drawing.Point(160, 29);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 23);
+            this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "TOTAL REVENUE";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel4.Controls.Add(this.order_pic);
-            this.panel4.Controls.Add(this.order_amt);
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(917, 89);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(433, 202);
-            this.panel4.TabIndex = 0;
-            // 
-            // order_pic
-            // 
-            this.order_pic.Image = ((System.Drawing.Image)(resources.GetObject("order_pic.Image")));
-            this.order_pic.Location = new System.Drawing.Point(53, 73);
-            this.order_pic.Name = "order_pic";
-            this.order_pic.Size = new System.Drawing.Size(94, 89);
-            this.order_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.order_pic.TabIndex = 3;
-            this.order_pic.TabStop = false;
-            // 
-            // order_amt
-            // 
-            this.order_amt.AutoSize = true;
-            this.order_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.order_amt.ForeColor = System.Drawing.Color.White;
-            this.order_amt.Location = new System.Drawing.Point(286, 125);
-            this.order_amt.Name = "order_amt";
-            this.order_amt.Size = new System.Drawing.Size(34, 23);
-            this.order_amt.TabIndex = 0;
-            this.order_amt.Text = "{?}";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(240, 73);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 23);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "TOTAL ORDER";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(58, 294);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 20);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "label3";
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.usercount);
             this.panel6.Controls.Add(this.label8);
-            this.panel6.Location = new System.Drawing.Point(170, 625);
+            this.panel6.Location = new System.Drawing.Point(113, 406);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(433, 202);
+            this.panel6.Size = new System.Drawing.Size(289, 131);
             this.panel6.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(41, 59);
+            this.pictureBox2.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(94, 89);
+            this.pictureBox2.Size = new System.Drawing.Size(63, 58);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // usercount
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(266, 106);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 23);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "{?}";
+            this.usercount.AutoSize = true;
+            this.usercount.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usercount.ForeColor = System.Drawing.Color.White;
+            this.usercount.Location = new System.Drawing.Point(177, 69);
+            this.usercount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.usercount.Name = "usercount";
+            this.usercount.Size = new System.Drawing.Size(17, 19);
+            this.usercount.TabIndex = 0;
+            this.usercount.Text = "0";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(199, 57);
+            this.label8.Location = new System.Drawing.Point(133, 37);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 23);
+            this.label8.Size = new System.Drawing.Size(83, 17);
             this.label8.TabIndex = 0;
             this.label8.Text = "TOTAL USER";
             // 
@@ -255,42 +214,47 @@ namespace Store_management_system
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel7.Controls.Add(this.pictureBox3);
-            this.panel7.Controls.Add(this.label10);
+            this.panel7.Controls.Add(this.admincount);
             this.panel7.Controls.Add(this.label11);
-            this.panel7.Location = new System.Drawing.Point(917, 625);
+            this.panel7.Location = new System.Drawing.Point(611, 406);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(433, 202);
+            this.panel7.Size = new System.Drawing.Size(289, 131);
             this.panel7.TabIndex = 0;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(41, 59);
+            this.pictureBox3.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(94, 89);
+            this.pictureBox3.Size = new System.Drawing.Size(63, 58);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // label10
+            // admincount
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(286, 106);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(34, 23);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "{?}";
+            this.admincount.AutoSize = true;
+            this.admincount.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.admincount.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.admincount.ForeColor = System.Drawing.Color.White;
+            this.admincount.Location = new System.Drawing.Point(191, 69);
+            this.admincount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.admincount.Name = "admincount";
+            this.admincount.Size = new System.Drawing.Size(17, 19);
+            this.admincount.TabIndex = 0;
+            this.admincount.Text = "0";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(240, 59);
+            this.label11.Location = new System.Drawing.Point(160, 38);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(141, 23);
+            this.label11.Size = new System.Drawing.Size(99, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "TOTAL ADMIN";
             // 
@@ -300,46 +264,108 @@ namespace Store_management_system
             this.panel5.Controls.Add(this.pictureBox1);
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(170, 347);
+            this.panel5.Location = new System.Drawing.Point(113, 226);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(433, 202);
+            this.panel5.Size = new System.Drawing.Size(289, 131);
             this.panel5.TabIndex = 0;
             // 
-            // label4
+            // pictureBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(199, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "TOTAl SALES";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(27, 38);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(266, 106);
+            this.label2.Location = new System.Drawing.Point(177, 69);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 23);
+            this.label2.Size = new System.Drawing.Size(26, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "{?}";
             // 
-            // pictureBox1
+            // label4
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(41, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(133, 37);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 17);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "TOTAl SALES";
             // 
-            // HOMEUC
+            // label7
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(39, 191);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "label3";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(160, 47);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "TOTAL ORDER";
+            // 
+            // order_amt
+            // 
+            this.order_amt.AutoSize = true;
+            this.order_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.order_amt.ForeColor = System.Drawing.Color.White;
+            this.order_amt.Location = new System.Drawing.Point(191, 81);
+            this.order_amt.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.order_amt.Name = "order_amt";
+            this.order_amt.Size = new System.Drawing.Size(26, 19);
+            this.order_amt.TabIndex = 0;
+            this.order_amt.Text = "{?}";
+            // 
+            // order_pic
+            // 
+            this.order_pic.Image = ((System.Drawing.Image)(resources.GetObject("order_pic.Image")));
+            this.order_pic.Location = new System.Drawing.Point(35, 47);
+            this.order_pic.Margin = new System.Windows.Forms.Padding(2);
+            this.order_pic.Name = "order_pic";
+            this.order_pic.Size = new System.Drawing.Size(63, 58);
+            this.order_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.order_pic.TabIndex = 3;
+            this.order_pic.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel4.Controls.Add(this.order_pic);
+            this.panel4.Controls.Add(this.order_amt);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Location = new System.Drawing.Point(611, 58);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(289, 131);
+            this.panel4.TabIndex = 0;
+            // 
+            // HomeUC
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -347,17 +373,16 @@ namespace Store_management_system
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel1);
-            this.Name = "HOMEUC";
-            this.Size = new System.Drawing.Size(1608, 891);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "HomeUC";
+            this.Size = new System.Drawing.Size(1072, 579);
+            this.Load += new System.EventHandler(this.HomeUC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_pic)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.revenue_pic)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.order_pic)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -367,6 +392,9 @@ namespace Store_management_system
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.order_pic)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -379,24 +407,24 @@ namespace Store_management_system
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label revenue_amt;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label order_amt;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox product_pic;
         private System.Windows.Forms.PictureBox revenue_pic;
-        private System.Windows.Forms.PictureBox order_pic;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label usercount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label admincount;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label order_amt;
+        private System.Windows.Forms.PictureBox order_pic;
+        private System.Windows.Forms.Panel panel4;
     }
 }

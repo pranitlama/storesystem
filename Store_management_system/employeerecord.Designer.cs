@@ -80,12 +80,12 @@ namespace Store_management_system
             this.emailerror = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.validerror = new System.Windows.Forms.Label();
-            this.countrow = new System.Windows.Forms.TextBox();
             this.Total = new System.Windows.Forms.Label();
             this.searchbox = new System.Windows.Forms.TextBox();
             this.searchselect = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.check1 = new ePOSOne.btnProduct.Button_WOC();
+            this.countrow = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.employeelist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,7 +210,7 @@ namespace Store_management_system
             this.employeelist.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.employeelist.RowHeadersWidth = 39;
             this.employeelist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.employeelist.Size = new System.Drawing.Size(1188, 300);
+            this.employeelist.Size = new System.Drawing.Size(1164, 300);
             this.employeelist.TabIndex = 17;
             this.employeelist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeelist_CellClick);
             this.employeelist.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeelist_CellLeave);
@@ -305,7 +305,6 @@ namespace Store_management_system
             this.egender.MinimumWidth = 8;
             this.egender.Name = "egender";
             this.egender.ReadOnly = true;
-            this.egender.Width = 155;
             // 
             // edob
             // 
@@ -323,7 +322,7 @@ namespace Store_management_system
             this.eemail.MinimumWidth = 8;
             this.eemail.Name = "eemail";
             this.eemail.ReadOnly = true;
-            this.eemail.Width = 194;
+            this.eemail.Width = 214;
             // 
             // Action
             // 
@@ -335,7 +334,6 @@ namespace Store_management_system
             this.Action.ReadOnly = true;
             this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Action.Width = 91;
             // 
             // em_address
             // 
@@ -680,7 +678,6 @@ namespace Store_management_system
             this.emailerror.TabIndex = 15;
             this.emailerror.Text = "Email Address Already exists";
             this.emailerror.Visible = false;
-            this.emailerror.Click += new System.EventHandler(this.label18_Click);
             // 
             // label17
             // 
@@ -707,30 +704,20 @@ namespace Store_management_system
             this.validerror.Text = "Please Enter Valid Mobile Number";
             this.validerror.Visible = false;
             // 
-            // countrow
-            // 
-            this.countrow.BackColor = System.Drawing.SystemColors.Window;
-            this.countrow.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.countrow.Location = new System.Drawing.Point(204, 528);
-            this.countrow.Name = "countrow";
-            this.countrow.ReadOnly = true;
-            this.countrow.Size = new System.Drawing.Size(113, 22);
-            this.countrow.TabIndex = 16;
-            // 
             // Total
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(97, 531);
+            this.Total.Location = new System.Drawing.Point(93, 544);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(84, 17);
+            this.Total.Size = new System.Drawing.Size(88, 17);
             this.Total.TabIndex = 17;
-            this.Total.Text = "Total Count";
+            this.Total.Text = "Total Count:";
             // 
             // searchbox
             // 
             this.searchbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.Location = new System.Drawing.Point(970, 192);
+            this.searchbox.Location = new System.Drawing.Point(970, 191);
             this.searchbox.Multiline = true;
             this.searchbox.Name = "searchbox";
             this.searchbox.Size = new System.Drawing.Size(200, 25);
@@ -747,11 +734,10 @@ namespace Store_management_system
             "ID",
             "Name",
             "Phone no"});
-            this.searchselect.Location = new System.Drawing.Point(876, 192);
+            this.searchselect.Location = new System.Drawing.Point(876, 191);
             this.searchselect.Name = "searchselect";
             this.searchselect.Size = new System.Drawing.Size(88, 25);
             this.searchselect.TabIndex = 15;
-          //  this.searchselect.SelectedIndexChanged += new System.EventHandler(this.searchselect_SelectedIndexChanged);
             // 
             // label18
             // 
@@ -785,16 +771,27 @@ namespace Store_management_system
             this.check1.UseVisualStyleBackColor = false;
             this.check1.Click += new System.EventHandler(this.check1_Click);
             // 
+            // countrow
+            // 
+            this.countrow.BackColor = System.Drawing.Color.White;
+            this.countrow.Font = new System.Drawing.Font("Century Gothic", 9F);
+            this.countrow.Location = new System.Drawing.Point(204, 541);
+            this.countrow.Multiline = true;
+            this.countrow.Name = "countrow";
+            this.countrow.ReadOnly = true;
+            this.countrow.Size = new System.Drawing.Size(113, 22);
+            this.countrow.TabIndex = 22;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.countrow);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.searchselect);
             this.Controls.Add(this.searchbox);
             this.Controls.Add(this.Total);
-            this.Controls.Add(this.countrow);
             this.Controls.Add(this.validerror);
             this.Controls.Add(this.pnerror);
             this.Controls.Add(this.emailerror);
@@ -876,7 +873,6 @@ namespace Store_management_system
         private System.Windows.Forms.Label emailerror;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label validerror;
-        private System.Windows.Forms.TextBox countrow;
         private System.Windows.Forms.Label Total;
         private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.ComboBox searchselect;
@@ -895,5 +891,6 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn edob;
         private System.Windows.Forms.DataGridViewTextBoxColumn eemail;
         private System.Windows.Forms.DataGridViewButtonColumn Action;
+        private System.Windows.Forms.TextBox countrow;
     }
 }

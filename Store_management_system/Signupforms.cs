@@ -13,7 +13,7 @@ namespace Store_management_system
 {
     public partial class Signupforms : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
+        SqlConnection connect = new SqlConnection(connectionstri.Value);
 
         public Signupforms()
         {
@@ -53,7 +53,7 @@ namespace Store_management_system
 
                 }
 
-                //countrows();
+                countrows();
             }
             catch (Exception ex)
             {
@@ -74,7 +74,13 @@ namespace Store_management_system
         {
 
         }
+        private void countrows()
+        {
+            int numrows = userlist.Rows.Count;
+            countrow.Text = numrows.ToString();
+            countrow.Text = "  " + countrow.Text;
 
+        }
         private void Signupforms_Load(object sender, EventArgs e)
         {
             userlist.RowTemplate.Height = 35;
@@ -469,7 +475,7 @@ namespace Store_management_system
 
         private void showpassw_CheckedChanged(object sender, EventArgs e)
         {
-            displaydata();
+            adminoremployee_SelectedIndexChanged(sender, e);
         }
 
        
@@ -504,15 +510,18 @@ namespace Store_management_system
                     connect.Open();
 
                     combo1();
+                    countrows();
                 }
                  else if(adminoremployee.Text=="Employee")
                 {
                     connect.Open();
                     combo1();
+                    countrows();
                 }
                 else
                 {
                     displaydata();
+                    countrows();
                 }
                
             }
