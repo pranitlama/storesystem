@@ -295,17 +295,10 @@ namespace Store_management_system
             // 
             // label4
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(41, 59);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(94, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(133, 37);
+            this.label4.Location = new System.Drawing.Point(199, 57);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(87, 17);
@@ -369,14 +362,6 @@ namespace Store_management_system
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(289, 131);
             this.panel4.TabIndex = 0;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(199, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "TOTAl SALES";
             // 
             // HomeUC
             // 

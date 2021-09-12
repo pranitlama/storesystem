@@ -75,23 +75,7 @@ namespace Store_management_system
             }
             //  throw new NotImplementedException();
         }
-        private void itemclear_Click(object sender, EventArgs e)
-        {
-            itemid.Text = "";
-            itembn.Text = "";
-            itemname.Text = "";
-            itemquantity.Text = "";
-            itemprice.Text = "";
-            searchbox.Text = "";
-            mfddate.Text = "";
-            itemexpdate.Text = "";
-            itemcategory.SelectedIndex = -1;
-            searchitem.SelectedIndex = -1;
-            itemupdate.Enabled = false;
-            itemid.Enabled = true;
-            label3.Enabled = true;
-
-        }
+       
 
         private void itemid_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -117,150 +101,9 @@ namespace Store_management_system
             }
         }
 
-        private void itemadd_Click(object sender, EventArgs e)
-        {
-            if (itemname.Text == "" || itemid.Text == "" || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "")
-            {
-                string result = Messageboxok.ShowBox("", "Please enter complete data");
-            }
-            else
-            {
-                try
-                {
-                    connect.Open();
-                    string st_id = itemid.Text;
-                    string st_icategory = itemcategory.Text;
-                    string st_ibrandname = itemname.Text;
-                    string st_iname = itembn.Text;
-                    string st_imfd = mfddate.Text;
-                    string st_iexp = itemexpdate.Text;
-                    string st_iquantity = itemquantity.Text;
-                    string st_iprice = itemprice.Text;
+       
 
-
-                    //string query = "Insert into student_details(name,address,Contact) values (" + namee + "," + Addresss +")";
-                    string query = "Insert into item_details (i_id,i_category,i_brandname,i_name,i_mfddate,i_expdate,i_quantity,i_price) values (@parameter_id,@parameter_category,@parameter_brandname,@parameter_name,@parameter_mfddate,@parameter_expdate,@parameter_quantity,@parameter_price)";
-
-                    SqlCommand cmd = new SqlCommand(query, connect);
-                    cmd.Parameters.AddWithValue("@parameter_id", st_id);
-                    cmd.Parameters.AddWithValue("@parameter_category", st_icategory);
-                    cmd.Parameters.AddWithValue("@parameter_name", st_ibrandname);
-                    cmd.Parameters.AddWithValue("@parameter_brandname", st_iname);
-                    cmd.Parameters.AddWithValue("@parameter_mfddate", st_imfd);
-                    cmd.Parameters.AddWithValue("@parameter_expdate", st_iexp);
-                    cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity);
-                    cmd.Parameters.AddWithValue("@parameter_price", st_iprice);
-
-
-
-                    cmd.ExecuteNonQuery();
-                    string result = Messageboxok.ShowBox("", "Data Added Successfully");
-                    itemid.Text = "";
-                    itembn.Text = "";
-                    itemname.Text = "";
-                    itemquantity.Text = "";
-                    itemprice.Text = "";
-                    searchbox.Text = "";
-                    mfddate.Text = "";
-                    itemexpdate.Text = "";
-                    itemcategory.SelectedIndex = -1;
-                    searchitem.SelectedIndex = -1;
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    connect.Close();
-                }
-                DisplayData();
-
-            }
-        }
-
-        private void itemupdate_Click(object sender, EventArgs e)
-        {
-            itemupdate.Enabled = false;
-           
-            if (itemname.Text == "" || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "")
-            {
-                string result = Messageboxok.ShowBox("", "Please enter complete data");
-                return;
-
-            }
-            else
-            {
-
-                try
-                {
-
-
-                    //open sql connection
-                    connect.Open();
-
-                    string st_id = itemid.Text;
-                    string st_icategory = itemcategory.Text;
-                    string st_ibrandname = itemname.Text;
-                    string st_iname = itembn.Text;
-                    string st_imfd = mfddate.Text;
-                    string st_iexp = itemexpdate.Text;
-                    string st_iquantity = itemquantity.Text;
-                    string st_iprice = itemprice.Text;
-
-                    //save data to database
-
-                    //passing paramter method
-                    string query = "Update item_details set i_id=@parameter_id,i_category=@parameter_category,i_name=@parameter_name, i_brandname=@parameter_brandname,i_mfddate=@parameter_mfddate,i_expdate=@parameter_expdate,i_quantity=@parameter_quantity,i_price=@parameter_price where i_id=@parameter_id";
-
-
-                    SqlCommand cmd = new SqlCommand(query, connect);
-                    cmd.Parameters.AddWithValue("@parameter_id", st_id);
-                    cmd.Parameters.AddWithValue("@parameter_category", st_icategory);
-                    cmd.Parameters.AddWithValue("@parameter_name", st_ibrandname);
-                    cmd.Parameters.AddWithValue("@parameter_brandname", st_iname);
-                    cmd.Parameters.AddWithValue("@parameter_mfddate", st_imfd);
-                    cmd.Parameters.AddWithValue("@parameter_expdate", st_iexp);
-                    cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity);
-                    cmd.Parameters.AddWithValue("@parameter_price", st_iprice);
-                    cmd.ExecuteNonQuery();
-                    string result = Messageboxok.ShowBox("", "Updated Successfully");
-                    itemid.Text = "";
-                    itembn.Text = "";
-                    itemname.Text = "";
-                    itemquantity.Text = "";
-                    itemprice.Text = "";
-                    searchbox.Text = "";
-                    mfddate.Text = "";
-                    itemexpdate.Text = "";
-                    itemcategory.SelectedIndex = -1;
-                    searchitem.SelectedIndex = -1;
-
-
-
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-                finally
-                {
-                    connect.Close();
-
-                }
-
-                DisplayData();
-                itemid.Enabled = true;
-                label3.Enabled = true;
-            }
-
-
-
-
-        }
+       
 
         private void EMPaddproduct_Load(object sender, EventArgs e)
         {
@@ -283,61 +126,7 @@ namespace Store_management_system
 
         }
 
-        private void itemdelete_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                connect.Open();
-                if (itemlist.SelectedRows.Count > 0)
-                {
-
-                    //remove only single row
-                    // employeelist.Rows.RemoveAt(employeelist.SelectedRows[0].Index);
-
-                    //remove multiple rows
-                    foreach (DataGridViewRow row in itemlist.SelectedRows)
-                    {
-                        int id = Convert.ToInt32(row.Cells["ID"].Value);
-
-                        string query = "delete from item_details where i_id=@parameter_id";
-                        SqlCommand cmd = new SqlCommand(query, connect);
-                        cmd.Parameters.AddWithValue("@parameter_id", id);
-
-                        //      MessageBox.Show("Removed successfully");
-                        string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
-                        if (result.Equals("1"))
-                        {
-                            cmd.ExecuteNonQuery();
-
-                            itemlist.Rows.RemoveAt(row.Index);
-                        }
-                        if (result.Equals("2"))
-                        {
-
-                        }
-
-                    }
-
-
-                    // serial no count from 1
-
-                }
-                else
-                {
-                    string result = Messageboxok.ShowBox("", "Please select a row to remove");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                connect.Close();
-            }
-
-            DisplayData();
-        }
+       
         int item_id;
         private void itemlist_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -480,5 +269,219 @@ namespace Store_management_system
             }
 
         
+
+        private void itemadd_Click(object sender, EventArgs e)
+        {
+            if (itemname.Text == "" || itemid.Text == "" || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "")
+            {
+                string result = Messageboxok.ShowBox("", "Please enter complete data");
+            }
+            else
+            {
+                try
+                {
+                    connect.Open();
+                    string st_id = itemid.Text;
+                    string st_icategory = itemcategory.Text;
+                    string st_ibrandname = itemname.Text;
+                    string st_iname = itembn.Text;
+                    string st_imfd = mfddate.Text;
+                    string st_iexp = itemexpdate.Text;
+                    string st_iquantity = itemquantity.Text;
+                    string st_iprice = itemprice.Text;
+
+
+                    //string query = "Insert into student_details(name,address,Contact) values (" + namee + "," + Addresss +")";
+                    string query = "Insert into item_details (i_id,i_category,i_brandname,i_name,i_mfddate,i_expdate,i_quantity,i_price) values (@parameter_id,@parameter_category,@parameter_brandname,@parameter_name,@parameter_mfddate,@parameter_expdate,@parameter_quantity,@parameter_price)";
+
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    cmd.Parameters.AddWithValue("@parameter_id", st_id);
+                    cmd.Parameters.AddWithValue("@parameter_category", st_icategory);
+                    cmd.Parameters.AddWithValue("@parameter_name", st_ibrandname);
+                    cmd.Parameters.AddWithValue("@parameter_brandname", st_iname);
+                    cmd.Parameters.AddWithValue("@parameter_mfddate", st_imfd);
+                    cmd.Parameters.AddWithValue("@parameter_expdate", st_iexp);
+                    cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity);
+                    cmd.Parameters.AddWithValue("@parameter_price", st_iprice);
+
+
+
+                    cmd.ExecuteNonQuery();
+                    string result = Messageboxok.ShowBox("", "Data Added Successfully");
+                    itemid.Text = "";
+                    itembn.Text = "";
+                    itemname.Text = "";
+                    itemquantity.Text = "";
+                    itemprice.Text = "";
+                    searchbox.Text = "";
+                    mfddate.Text = "";
+                    itemexpdate.Text = "";
+                    itemcategory.SelectedIndex = -1;
+                    searchitem.SelectedIndex = -1;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    connect.Close();
+                }
+                DisplayData();
+
+            }
+        }
+
+        private void itemupdate_Click(object sender, EventArgs e)
+        {
+            itemupdate.Enabled = false;
+
+            if (itemname.Text == "" || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "")
+            {
+                string result = Messageboxok.ShowBox("", "Please enter complete data");
+                return;
+
+            }
+            else
+            {
+
+                try
+                {
+
+
+                    //open sql connection
+                    connect.Open();
+
+                    string st_id = itemid.Text;
+                    string st_icategory = itemcategory.Text;
+                    string st_ibrandname = itemname.Text;
+                    string st_iname = itembn.Text;
+                    string st_imfd = mfddate.Text;
+                    string st_iexp = itemexpdate.Text;
+                    string st_iquantity = itemquantity.Text;
+                    string st_iprice = itemprice.Text;
+
+                    //save data to database
+
+                    //passing paramter method
+                    string query = "Update item_details set i_id=@parameter_id,i_category=@parameter_category,i_name=@parameter_name, i_brandname=@parameter_brandname,i_mfddate=@parameter_mfddate,i_expdate=@parameter_expdate,i_quantity=@parameter_quantity,i_price=@parameter_price where i_id=@parameter_id";
+
+
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    cmd.Parameters.AddWithValue("@parameter_id", st_id);
+                    cmd.Parameters.AddWithValue("@parameter_category", st_icategory);
+                    cmd.Parameters.AddWithValue("@parameter_name", st_ibrandname);
+                    cmd.Parameters.AddWithValue("@parameter_brandname", st_iname);
+                    cmd.Parameters.AddWithValue("@parameter_mfddate", st_imfd);
+                    cmd.Parameters.AddWithValue("@parameter_expdate", st_iexp);
+                    cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity);
+                    cmd.Parameters.AddWithValue("@parameter_price", st_iprice);
+                    cmd.ExecuteNonQuery();
+                    string result = Messageboxok.ShowBox("", "Updated Successfully");
+                    itemid.Text = "";
+                    itembn.Text = "";
+                    itemname.Text = "";
+                    itemquantity.Text = "";
+                    itemprice.Text = "";
+                    searchbox.Text = "";
+                    mfddate.Text = "";
+                    itemexpdate.Text = "";
+                    itemcategory.SelectedIndex = -1;
+                    searchitem.SelectedIndex = -1;
+
+
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    connect.Close();
+
+                }
+
+                DisplayData();
+                itemid.Enabled = true;
+                label3.Enabled = true;
+            }
+        }
+
+        private void itemdelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connect.Open();
+                if (itemlist.SelectedRows.Count > 0)
+                {
+
+                    //remove only single row
+                    // employeelist.Rows.RemoveAt(employeelist.SelectedRows[0].Index);
+
+                    //remove multiple rows
+                    foreach (DataGridViewRow row in itemlist.SelectedRows)
+                    {
+                        int id = Convert.ToInt32(row.Cells["ID"].Value);
+
+                        string query = "delete from item_details where i_id=@parameter_id";
+                        SqlCommand cmd = new SqlCommand(query, connect);
+                        cmd.Parameters.AddWithValue("@parameter_id", id);
+
+                        //      MessageBox.Show("Removed successfully");
+                        string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
+                        if (result.Equals("1"))
+                        {
+                            cmd.ExecuteNonQuery();
+
+                            itemlist.Rows.RemoveAt(row.Index);
+                        }
+                        if (result.Equals("2"))
+                        {
+
+                        }
+
+                    }
+
+
+                    // serial no count from 1
+
+                }
+                else
+                {
+                    string result = Messageboxok.ShowBox("", "Please select a row to remove");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                connect.Close();
+            }
+
+            DisplayData();
+        }
+
+        private void itemclear_Click(object sender, EventArgs e)
+        {
+            itemid.Text = "";
+            itembn.Text = "";
+            itemname.Text = "";
+            itemquantity.Text = "";
+            itemprice.Text = "";
+            searchbox.Text = "";
+            mfddate.Text = "";
+            itemexpdate.Text = "";
+            itemcategory.SelectedIndex = -1;          
+            itemupdate.Enabled = false;
+            itemid.Enabled = true;
+            label3.Enabled = true;
+
+        }
     }
 }
