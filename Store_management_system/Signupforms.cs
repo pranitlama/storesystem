@@ -13,7 +13,7 @@ namespace Store_management_system
 {
     public partial class Signupforms : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
+        SqlConnection connect = new SqlConnection(connectionstri.Value);
 
         public Signupforms()
         {

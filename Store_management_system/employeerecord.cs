@@ -14,7 +14,7 @@ namespace Store_management_system
 
     public partial class Employee : UserControl
     {
-        SqlConnection connect = new SqlConnection(ConnectionStri.Value);
+        SqlConnection connect = new SqlConnection(connectionstri.Value);
 
         public Employee()
         {
@@ -423,7 +423,8 @@ namespace Store_management_system
                 return;
 
             }
-            else {
+            else
+            {
 
                 try
                 {
@@ -478,9 +479,9 @@ namespace Store_management_system
 
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString()); 
                 }
                 finally
                 {

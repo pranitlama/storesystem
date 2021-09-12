@@ -21,6 +21,12 @@ namespace Store_management_system
             panelWidth = panelleft.Width;
             isCollapsed = false;
         }
+        private void AddControlsToPanel(Control C)
+        {
+            C.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(C);
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -133,11 +139,15 @@ namespace Store_management_system
         private void emp_addproduct_Click(object sender, EventArgs e)
         {
             moveSidePanel(emp_addproduct);
+            EMPaddproduct ap = new EMPaddproduct();
+            AddControlsToPanel(ap);
         }
 
         private void emp_bill_Click(object sender, EventArgs e)
         {
             moveSidePanel(emp_bill);
+           
+
         }
 
         private void emp_cpass_Click(object sender, EventArgs e)
@@ -151,6 +161,8 @@ namespace Store_management_system
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);
             this.Size = new Size(w, h);
+            EMPaddproduct ap = new EMPaddproduct();
+            AddControlsToPanel(ap);
         }
 
         private void close_Click(object sender, EventArgs e)
