@@ -29,7 +29,8 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.itemcategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@ namespace Store_management_system
             this.EXPDATE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACTION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ACTION = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.itemlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -218,6 +219,15 @@ namespace Store_management_system
             this.itemlist.AllowUserToAddRows = false;
             this.itemlist.AllowUserToDeleteRows = false;
             this.itemlist.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.itemlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.itemlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SN,
@@ -230,19 +240,19 @@ namespace Store_management_system
             this.quantity,
             this.PRICE,
             this.ACTION});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemlist.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemlist.DefaultCellStyle = dataGridViewCellStyle4;
             this.itemlist.GridColor = System.Drawing.SystemColors.Info;
             this.itemlist.Location = new System.Drawing.Point(24, 310);
             this.itemlist.Name = "itemlist";
             this.itemlist.ReadOnly = true;
-            this.itemlist.RowHeadersWidth = 62;
+            this.itemlist.RowHeadersWidth = 31;
             this.itemlist.RowTemplate.Height = 28;
             this.itemlist.Size = new System.Drawing.Size(1366, 535);
             this.itemlist.TabIndex = 6;
@@ -304,6 +314,7 @@ namespace Store_management_system
             this.searchbox.Name = "searchbox";
             this.searchbox.Size = new System.Drawing.Size(207, 35);
             this.searchbox.TabIndex = 22;
+            this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
             // itemdelete
             // 
@@ -347,6 +358,7 @@ namespace Store_management_system
             // 
             this.itemupdate.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.itemupdate.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.itemupdate.Enabled = false;
             this.itemupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.itemupdate.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemupdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -428,7 +440,7 @@ namespace Store_management_system
             this.MFDDATEgv.MinimumWidth = 8;
             this.MFDDATEgv.Name = "MFDDATEgv";
             this.MFDDATEgv.ReadOnly = true;
-            this.MFDDATEgv.Width = 150;
+            this.MFDDATEgv.Width = 80;
             // 
             // EXPDATE
             // 
@@ -460,7 +472,8 @@ namespace Store_management_system
             this.ACTION.MinimumWidth = 8;
             this.ACTION.Name = "ACTION";
             this.ACTION.ReadOnly = true;
-            this.ACTION.Width = 150;
+            this.ACTION.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ACTION.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // EMPaddproduct
             // 
@@ -536,6 +549,6 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn EXPDATE;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ACTION;
+        private System.Windows.Forms.DataGridViewButtonColumn ACTION;
     }
 }
