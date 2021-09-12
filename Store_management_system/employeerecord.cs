@@ -421,7 +421,8 @@ namespace Store_management_system
                 return;
 
             }
-            else {
+            else
+            {
 
                 try
                 {
@@ -476,9 +477,9 @@ namespace Store_management_system
 
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.ToString()); 
                 }
                 finally
                 {

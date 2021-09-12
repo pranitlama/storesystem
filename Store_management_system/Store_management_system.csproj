@@ -50,6 +50,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="connectionstri.cs" />
+    <Compile Include="EMPaddproduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EMPaddproduct.Designer.cs">
+      <DependentUpon>EMPaddproduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="employeerecord.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,6 +118,9 @@
     <Compile Include="Signupforms.Designer.cs">
       <DependentUpon>Signupforms.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EMPaddproduct.resx">
+      <DependentUpon>EMPaddproduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="employeerecord.resx">
       <DependentUpon>employeerecord.cs</DependentUpon>
     </EmbeddedResource>

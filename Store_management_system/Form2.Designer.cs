@@ -71,9 +71,8 @@ namespace Store_management_system
             this.panelleft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelleft.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelleft.Location = new System.Drawing.Point(0, 0);
-            this.panelleft.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelleft.Name = "panelleft";
-            this.panelleft.Size = new System.Drawing.Size(172, 578);
+            this.panelleft.Size = new System.Drawing.Size(258, 889);
             this.panelleft.TabIndex = 0;
             // 
             // button1
@@ -84,10 +83,9 @@ namespace Store_management_system
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(17, 169);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Location = new System.Drawing.Point(26, 260);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 50);
+            this.button1.Size = new System.Drawing.Size(210, 77);
             this.button1.TabIndex = 2;
             this.button1.Text = "    HOME";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -101,10 +99,9 @@ namespace Store_management_system
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.menu);
-            this.panel2.Location = new System.Drawing.Point(0, -1);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Location = new System.Drawing.Point(0, -2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(172, 105);
+            this.panel2.Size = new System.Drawing.Size(258, 162);
             this.panel2.TabIndex = 0;
             // 
             // label1
@@ -112,10 +109,10 @@ namespace Store_management_system
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(61, 36);
-            this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
+            this.label1.Location = new System.Drawing.Point(92, 55);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 16);
+            this.label1.Size = new System.Drawing.Size(150, 23);
             this.label1.TabIndex = 2;
             this.label1.Text = "SAMP STORE";
             // 
@@ -126,10 +123,10 @@ namespace Store_management_system
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button2.Location = new System.Drawing.Point(11, 76);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button2.Location = new System.Drawing.Point(16, 117);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
+            this.button2.Size = new System.Drawing.Size(45, 46);
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.menu_Click);
@@ -137,10 +134,9 @@ namespace Store_management_system
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 19);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(58, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(87, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -152,10 +148,10 @@ namespace Store_management_system
             this.menu.FlatAppearance.BorderSize = 0;
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.menu.Location = new System.Drawing.Point(139, 75);
-            this.menu.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.menu.Location = new System.Drawing.Point(208, 115);
+            this.menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(30, 30);
+            this.menu.Size = new System.Drawing.Size(45, 46);
             this.menu.TabIndex = 3;
             this.menu.UseVisualStyleBackColor = true;
             this.menu.Click += new System.EventHandler(this.menu_Click);
@@ -163,10 +159,9 @@ namespace Store_management_system
             // panelside
             // 
             this.panelside.BackColor = System.Drawing.Color.White;
-            this.panelside.Location = new System.Drawing.Point(11, 169);
-            this.panelside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelside.Location = new System.Drawing.Point(16, 260);
             this.panelside.Name = "panelside";
-            this.panelside.Size = new System.Drawing.Size(7, 50);
+            this.panelside.Size = new System.Drawing.Size(10, 77);
             this.panelside.TabIndex = 3;
             this.panelside.Paint += new System.Windows.Forms.PaintEventHandler(this.panelside_Paint);
             // 
@@ -178,10 +173,9 @@ namespace Store_management_system
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(20, 543);
-            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button7.Location = new System.Drawing.Point(30, 835);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(140, 50);
+            this.button7.Size = new System.Drawing.Size(210, 77);
             this.button7.TabIndex = 2;
             this.button7.Text = "    LOG OUT";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -196,10 +190,9 @@ namespace Store_management_system
             this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(21, 468);
-            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button6.Location = new System.Drawing.Point(32, 720);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(140, 50);
+            this.button6.Size = new System.Drawing.Size(210, 77);
             this.button6.TabIndex = 2;
             this.button6.Text = "    SETTING";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -214,10 +207,9 @@ namespace Store_management_system
             this.areport.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.areport.Image = ((System.Drawing.Image)(resources.GetObject("areport.Image")));
             this.areport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.areport.Location = new System.Drawing.Point(21, 318);
-            this.areport.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.areport.Location = new System.Drawing.Point(32, 489);
             this.areport.Name = "areport";
-            this.areport.Size = new System.Drawing.Size(140, 50);
+            this.areport.Size = new System.Drawing.Size(210, 77);
             this.areport.TabIndex = 2;
             this.areport.Text = "    SIGN UP";
             this.areport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -232,10 +224,9 @@ namespace Store_management_system
             this.astock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.astock.Image = ((System.Drawing.Image)(resources.GetObject("astock.Image")));
             this.astock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.astock.Location = new System.Drawing.Point(17, 393);
-            this.astock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.astock.Location = new System.Drawing.Point(26, 605);
             this.astock.Name = "astock";
-            this.astock.Size = new System.Drawing.Size(140, 50);
+            this.astock.Size = new System.Drawing.Size(210, 77);
             this.astock.TabIndex = 2;
             this.astock.Text = "     STOCKS";
             this.astock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -250,10 +241,9 @@ namespace Store_management_system
             this.aemployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.aemployee.Image = ((System.Drawing.Image)(resources.GetObject("aemployee.Image")));
             this.aemployee.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.aemployee.Location = new System.Drawing.Point(18, 244);
-            this.aemployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.aemployee.Location = new System.Drawing.Point(27, 375);
             this.aemployee.Name = "aemployee";
-            this.aemployee.Size = new System.Drawing.Size(140, 50);
+            this.aemployee.Size = new System.Drawing.Size(210, 77);
             this.aemployee.TabIndex = 2;
             this.aemployee.Text = "    EMPLOYEE";
             this.aemployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -267,10 +257,9 @@ namespace Store_management_system
             this.panel3.Controls.Add(this.clos);
             this.panel3.Controls.Add(this.mini);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(172, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Location = new System.Drawing.Point(258, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(778, 62);
+            this.panel3.Size = new System.Drawing.Size(1167, 95);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -280,9 +269,10 @@ namespace Store_management_system
             this.employeerecords.AutoSize = true;
             this.employeerecords.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeerecords.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.employeerecords.Location = new System.Drawing.Point(231, 18);
+            this.employeerecords.Location = new System.Drawing.Point(346, 28);
+            this.employeerecords.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.employeerecords.Name = "employeerecords";
-            this.employeerecords.Size = new System.Drawing.Size(330, 29);
+            this.employeerecords.Size = new System.Drawing.Size(485, 44);
             this.employeerecords.TabIndex = 10;
             this.employeerecords.Text = "Store Management System";
             // 
@@ -294,10 +284,9 @@ namespace Store_management_system
             this.clos.FlatAppearance.BorderSize = 0;
             this.clos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.clos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.clos.Location = new System.Drawing.Point(748, 2);
-            this.clos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clos.Location = new System.Drawing.Point(1122, 3);
             this.clos.Name = "clos";
-            this.clos.Size = new System.Drawing.Size(24, 24);
+            this.clos.Size = new System.Drawing.Size(36, 37);
             this.clos.TabIndex = 9;
             this.clos.UseVisualStyleBackColor = true;
             this.clos.Click += new System.EventHandler(this.clos_Click);
@@ -309,10 +298,9 @@ namespace Store_management_system
             this.mini.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mini.FlatAppearance.BorderSize = 0;
             this.mini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mini.Location = new System.Drawing.Point(720, 2);
-            this.mini.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mini.Location = new System.Drawing.Point(1080, 3);
             this.mini.Name = "mini";
-            this.mini.Size = new System.Drawing.Size(24, 24);
+            this.mini.Size = new System.Drawing.Size(36, 37);
             this.mini.TabIndex = 8;
             this.mini.UseVisualStyleBackColor = true;
             this.mini.Click += new System.EventHandler(this.mini_Click);
@@ -326,34 +314,33 @@ namespace Store_management_system
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(172, 62);
-            this.panel4.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel4.Location = new System.Drawing.Point(258, 95);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(778, 41);
+            this.panel4.Size = new System.Drawing.Size(1167, 63);
             this.panel4.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(172, 103);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.panel1.Location = new System.Drawing.Point(258, 158);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(778, 475);
+            this.panel1.Size = new System.Drawing.Size(1167, 731);
             this.panel1.TabIndex = 3;
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 578);
+            this.ClientSize = new System.Drawing.Size(1425, 889);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelleft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
