@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;  
+using System.Data.SqlClient;
 
 namespace Store_management_system
 {
@@ -18,6 +18,19 @@ namespace Store_management_system
         {
             InitializeComponent();
             itemlist.DefaultCellStyle.ForeColor = Color.Black;
+           
+            this.itemlist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.itemlist.ColumnHeadersHeight = 40;
+            //    this.employeelist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            itemlist.Columns[5].DefaultCellStyle.Format = "yyyy/MM/dd";
+            itemlist.Columns[6].DefaultCellStyle.Format = "yyyy/MM/dd";
+            DataGridViewButtonColumn c = (DataGridViewButtonColumn)itemlist.Columns["Action"];
+            c.FlatStyle = FlatStyle.Popup;
+            c.DefaultCellStyle.ForeColor = Color.White;
+            c.DefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94); ;
+
+
+            searchitem.SelectedIndex = 0;
         }
         private void DisplayData()
         {
@@ -35,13 +48,13 @@ namespace Store_management_system
                 int sn = 1;
                 foreach (DataRow dataRow in dt.Rows)
                 {
-                  
-                    itemlist.Rows.Add(sn, dataRow["i_id"], dataRow["i_category"],dataRow["i_brandname"], dataRow["i_name"],dataRow["i_mfddate"], dataRow["i_expdate"], dataRow["i_quantity"], dataRow["i_price"], "Edit");
+
+                    itemlist.Rows.Add(sn, dataRow["i_id"], dataRow["i_category"], dataRow["i_brandname"], dataRow["i_name"], dataRow["i_mfddate"], dataRow["i_expdate"], dataRow["i_quantity"], dataRow["i_price"], "Edit");
                     sn++;
 
                 }
 
-                
+
 
 
 
@@ -70,13 +83,14 @@ namespace Store_management_system
             itemquantity.Text = "";
             itemprice.Text = "";
             searchbox.Text = "";
-            mfddate.Text="";
+            mfddate.Text = "";
             itemexpdate.Text = "";
             itemcategory.SelectedIndex = -1;
-            // itemcategory.Items.Clear();
             searchitem.SelectedIndex = -1;
-            //searchitem.Items.Clear();
-            
+            itemupdate.Enabled = false;
+            itemid.Enabled = true;
+            label3.Enabled = true;
+
         }
 
         private void itemid_KeyPress(object sender, KeyPressEventArgs e)
@@ -105,7 +119,7 @@ namespace Store_management_system
 
         private void itemadd_Click(object sender, EventArgs e)
         {
-            if (itemname.Text == "" || itemid.Text == "" || itembn.Text == "" || itemquantity .Text == ""  || itemprice .Text == "" || mfddate .Text == "" | itemexpdate .Text == "")
+            if (itemname.Text == "" || itemid.Text == "" || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "")
             {
                 string result = Messageboxok.ShowBox("", "Please enter complete data");
             }
@@ -120,7 +134,7 @@ namespace Store_management_system
                     string st_iname = itembn.Text;
                     string st_imfd = mfddate.Text;
                     string st_iexp = itemexpdate.Text;
-                    string st_iquantity= itemquantity.Text;
+                    string st_iquantity = itemquantity.Text;
                     string st_iprice = itemprice.Text;
 
 
@@ -134,9 +148,9 @@ namespace Store_management_system
                     cmd.Parameters.AddWithValue("@parameter_brandname", st_iname);
                     cmd.Parameters.AddWithValue("@parameter_mfddate", st_imfd);
                     cmd.Parameters.AddWithValue("@parameter_expdate", st_iexp);
-                    cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity); 
+                    cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity);
                     cmd.Parameters.AddWithValue("@parameter_price", st_iprice);
-                  
+
 
 
                     cmd.ExecuteNonQuery();
@@ -165,11 +179,12 @@ namespace Store_management_system
 
             }
         }
-        
+
         private void itemupdate_Click(object sender, EventArgs e)
         {
-
-            if (itemname.Text == ""  || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "") 
+            itemupdate.Enabled = false;
+           
+            if (itemname.Text == "" || itembn.Text == "" || itemquantity.Text == "" || itemprice.Text == "" || mfddate.Text == "" | itemexpdate.Text == "")
             {
                 string result = Messageboxok.ShowBox("", "Please enter complete data");
                 return;
@@ -182,8 +197,8 @@ namespace Store_management_system
                 {
 
 
-                        //open sql connection
-                        connect.Open();
+                    //open sql connection
+                    connect.Open();
 
                     string st_id = itemid.Text;
                     string st_icategory = itemcategory.Text;
@@ -200,7 +215,7 @@ namespace Store_management_system
                     string query = "Update item_details set i_id=@parameter_id,i_category=@parameter_category,i_name=@parameter_name, i_brandname=@parameter_brandname,i_mfddate=@parameter_mfddate,i_expdate=@parameter_expdate,i_quantity=@parameter_quantity,i_price=@parameter_price where i_id=@parameter_id";
 
 
-                        SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.Parameters.AddWithValue("@parameter_id", st_id);
                     cmd.Parameters.AddWithValue("@parameter_category", st_icategory);
                     cmd.Parameters.AddWithValue("@parameter_name", st_ibrandname);
@@ -210,7 +225,7 @@ namespace Store_management_system
                     cmd.Parameters.AddWithValue("@parameter_quantity", st_iquantity);
                     cmd.Parameters.AddWithValue("@parameter_price", st_iprice);
                     cmd.ExecuteNonQuery();
-                        string result = Messageboxok.ShowBox("", "Updated Successfully");
+                    string result = Messageboxok.ShowBox("", "Updated Successfully");
                     itemid.Text = "";
                     itembn.Text = "";
                     itemname.Text = "";
@@ -238,6 +253,8 @@ namespace Store_management_system
                 }
 
                 DisplayData();
+                itemid.Enabled = true;
+                label3.Enabled = true;
             }
 
 
@@ -249,6 +266,20 @@ namespace Store_management_system
         {
             DisplayData();
             itemlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+            itemlist.RowTemplate.Height = 35;
+            // employeelist.AllowUserToResizeRows = false;
+
+
+
+            DisplayData();
+            // em_dob.CustomFormat = "yyyy/MM/dd";
+
+            itemlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+
+
+
+            this.itemlist.EnableHeadersVisualStyles = false;
+            // this.employeelist.ColumnHeadersHeight = 80;
 
         }
 
@@ -284,7 +315,7 @@ namespace Store_management_system
                         {
 
                         }
-                      
+
                     }
 
 
@@ -323,19 +354,19 @@ namespace Store_management_system
                 item_id = Convert.ToInt32(itemlist.CurrentRow.Cells["id"].Value.ToString());
                 string item_quantity = itemlist.CurrentRow.Cells["quantity"].Value.ToString();
                 string item_price = itemlist.CurrentRow.Cells["price"].Value.ToString();
-                string item_brandname = itemlist.CurrentRow.Cells["brandname"].Value.ToString(); 
-               
+                string item_brandname = itemlist.CurrentRow.Cells["brandname"].Value.ToString();
+
                 //   MessageBox.Show("Id: " + employee_id + "\nName: " + employee_name);
                 string result = Messageboxok.ShowBox("", "Id: " + item_id + "\nName: " + item_name);
-               // itemid.Text = item_id;
-                itemcategory .Text = item_category ;
-                itemname.Text = item_name ;
-                mfddate.Text = item_mfddate ;
-                itemexpdate.Text = item_expdate ;
-                itemquantity.Text   = item_quantity ;
-                itemprice.Text = item_price ;
+                 itemid.Text = item_id.ToString() ;
+                itemcategory.Text = item_category;
+                itemname.Text = item_name;
+                mfddate.Text = item_mfddate;
+                itemexpdate.Text = item_expdate;
+                itemquantity.Text = item_quantity;
+                itemprice.Text = item_price;
                 itembn.Text = item_brandname;
-             
+
 
             }
             else
@@ -343,11 +374,111 @@ namespace Store_management_system
 
                 itemid.Enabled = false;
                 label3.Enabled = false;
-              
+
 
 
 
             }
+
+
         }
+        private void display()
+        {
+            try
+            {
+
+                if (searchbox.Text == "")
+                {
+                    DisplayData();
+                }
+                else if (searchitem.Text == "ID")
+                {
+                    connect.Open();
+                    string query = "select * from item_details where i_id like '" + searchbox.Text + "%'";
+
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    itemlist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        itemlist.Rows.Add(sn, dataRow["i_id"], dataRow["i_category"], dataRow["i_brandname"], dataRow["i_name"], dataRow["i_mfddate"], dataRow["i_expdate"], dataRow["i_quantity"], dataRow["i_price"], "Edit");
+                        sn++;
+
+                    }
+                    // countrows();
+
+
+                }
+                else if (searchitem.Text == "CATEGORY")
+                {
+                    connect.Open();
+                    // string query = "select * from employee_details where e_fname,e_lname like '" + searchbox.Text + "%'";
+                    string query = "Select * from item_details where i_category like'" + searchbox.Text + "%'";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    itemlist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                       
+                        itemlist.Rows.Add(sn, dataRow["i_id"], dataRow["i_category"], dataRow["i_brandname"], dataRow["i_name"], dataRow["i_mfddate"], dataRow["i_expdate"], dataRow["i_quantity"], dataRow["i_price"], "Edit");
+                        sn++;
+
+                    }
+                    //    countrows();
+
+
+                }
+                else if (searchitem.Text == "NAME")
+                {
+                    connect.Open();
+                    string query = "select * from item_details where i_name like '" + searchbox.Text + "%'";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    itemlist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        itemlist.Rows.Add(sn, dataRow["i_id"], dataRow["i_category"], dataRow["i_brandname"], dataRow["i_name"], dataRow["i_mfddate"], dataRow["i_expdate"], dataRow["i_quantity"], dataRow["i_price"], "Edit");
+                        sn++;
+
+                    }
+                    //   countrows();
+
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (connect.State == ConnectionState.Open)
+                {
+                    connect.Close();
+                }
+            }
+        }
+
+
+            private void searchbox_TextChanged(object sender, EventArgs e)
+            {
+
+                display();
+            }
+
+        
     }
 }
