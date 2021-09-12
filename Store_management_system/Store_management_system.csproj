@@ -49,7 +49,6 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ConnectionStr.cs" />
     <Compile Include="connectionstri.cs" />
     <Compile Include="EMPaddproduct.cs">
       <SubType>UserControl</SubType>
