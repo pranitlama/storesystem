@@ -48,3 +48,5 @@ E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.Assembly
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\CustomControls.RJControls.RJTextBox.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.HomeUC.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.EMPaddproduct.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.EMPaddproduct.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.BillingSystem.resources

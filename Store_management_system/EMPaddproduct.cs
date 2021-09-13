@@ -483,5 +483,10 @@ namespace Store_management_system
             label3.Enabled = true;
 
         }
+
+        private void itemid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

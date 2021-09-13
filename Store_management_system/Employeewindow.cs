@@ -146,7 +146,9 @@ namespace Store_management_system
         private void emp_bill_Click(object sender, EventArgs e)
         {
             moveSidePanel(emp_bill);
-           
+            BillingSystem  bs  = new BillingSystem ();
+            AddControlsToPanel(bs);
+
 
         }
 
