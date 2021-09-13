@@ -42,6 +42,12 @@ namespace Store_management_system
             this.textprice = new System.Windows.Forms.TextBox();
             this.textquantity = new System.Windows.Forms.TextBox();
             this.basket = new System.Windows.Forms.DataGridView();
+            this.tID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tdelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.bsubtotal = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,12 +69,6 @@ namespace Store_management_system
             this.prodadd = new ePOSOne.btnProduct.Button_WOC();
             this.prodclear = new ePOSOne.btnProduct.Button_WOC();
             this.prodprint = new ePOSOne.btnProduct.Button_WOC();
-            this.tID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tquantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tprice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tdelete = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.itemviewer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basket)).BeginInit();
             this.SuspendLayout();
@@ -77,6 +77,8 @@ namespace Store_management_system
             // 
             this.itemviewer.AllowUserToAddRows = false;
             this.itemviewer.AllowUserToDeleteRows = false;
+            this.itemviewer.AllowUserToResizeColumns = false;
+            this.itemviewer.AllowUserToResizeRows = false;
             this.itemviewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.itemviewer.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.itemviewer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -219,6 +221,56 @@ namespace Store_management_system
             this.basket.TabIndex = 0;
             this.basket.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.basket_CellEndEdit);
             this.basket.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.basket_CellPainting);
+            // 
+            // tID
+            // 
+            this.tID.HeaderText = "ID";
+            this.tID.MinimumWidth = 8;
+            this.tID.Name = "tID";
+            this.tID.ReadOnly = true;
+            this.tID.Width = 50;
+            // 
+            // tname
+            // 
+            this.tname.HeaderText = "NAME";
+            this.tname.MinimumWidth = 8;
+            this.tname.Name = "tname";
+            this.tname.ReadOnly = true;
+            this.tname.Width = 150;
+            // 
+            // tquantity
+            // 
+            this.tquantity.HeaderText = "QUANTITY";
+            this.tquantity.MinimumWidth = 8;
+            this.tquantity.Name = "tquantity";
+            this.tquantity.ReadOnly = true;
+            // 
+            // tprice
+            // 
+            this.tprice.HeaderText = "PRICE";
+            this.tprice.MinimumWidth = 8;
+            this.tprice.Name = "tprice";
+            this.tprice.ReadOnly = true;
+            this.tprice.Width = 150;
+            // 
+            // tamt
+            // 
+            this.tamt.HeaderText = "AMOUNT";
+            this.tamt.MinimumWidth = 8;
+            this.tamt.Name = "tamt";
+            this.tamt.ReadOnly = true;
+            this.tamt.Width = 150;
+            // 
+            // tdelete
+            // 
+            this.tdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tdelete.HeaderText = "DELETE";
+            this.tdelete.MinimumWidth = 8;
+            this.tdelete.Name = "tdelete";
+            this.tdelete.ReadOnly = true;
+            this.tdelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tdelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.tdelete.Width = 71;
             // 
             // bsubtotal
             // 
@@ -482,56 +534,6 @@ namespace Store_management_system
             this.prodprint.Text = "PRINT";
             this.prodprint.TextColor = System.Drawing.Color.White;
             this.prodprint.UseVisualStyleBackColor = false;
-            // 
-            // tID
-            // 
-            this.tID.HeaderText = "ID";
-            this.tID.MinimumWidth = 8;
-            this.tID.Name = "tID";
-            this.tID.ReadOnly = true;
-            this.tID.Width = 50;
-            // 
-            // tname
-            // 
-            this.tname.HeaderText = "NAME";
-            this.tname.MinimumWidth = 8;
-            this.tname.Name = "tname";
-            this.tname.ReadOnly = true;
-            this.tname.Width = 150;
-            // 
-            // tquantity
-            // 
-            this.tquantity.HeaderText = "QUANTITY";
-            this.tquantity.MinimumWidth = 8;
-            this.tquantity.Name = "tquantity";
-            this.tquantity.ReadOnly = true;
-            // 
-            // tprice
-            // 
-            this.tprice.HeaderText = "PRICE";
-            this.tprice.MinimumWidth = 8;
-            this.tprice.Name = "tprice";
-            this.tprice.ReadOnly = true;
-            this.tprice.Width = 150;
-            // 
-            // tamt
-            // 
-            this.tamt.HeaderText = "AMOUNT";
-            this.tamt.MinimumWidth = 8;
-            this.tamt.Name = "tamt";
-            this.tamt.ReadOnly = true;
-            this.tamt.Width = 150;
-            // 
-            // tdelete
-            // 
-            this.tdelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tdelete.HeaderText = "DELETE";
-            this.tdelete.MinimumWidth = 8;
-            this.tdelete.Name = "tdelete";
-            this.tdelete.ReadOnly = true;
-            this.tdelete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.tdelete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.tdelete.Width = 71;
             // 
             // BillingSystem
             // 
