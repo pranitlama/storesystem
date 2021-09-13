@@ -23,9 +23,11 @@ namespace Store_management_system
 
             this.itemviewer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.itemviewer.ColumnHeadersHeight = 40;
-          
-          
 
+            //DataGridViewButtonColumn c = (DataGridViewButtonColumn)basket.Columns["tdelete"];
+            //c.Text = "delete";
+       
+            tdelete.UseColumnTextForButtonValue = true;
             searchitem.SelectedIndex = 0;
         }
 
@@ -294,25 +296,40 @@ namespace Store_management_system
             else
             {
 
-                DataTable dt = new DataTable();
                 
-                itemviewer.Rows.Clear();
+                
 
                 string st_id = bidtext .Text;
                     string st_name = textname .Text;
                     string st_qty = textquantity.Text;
                     string st_price = textprice .Text;
-                    string[] row = { st_id , st_name,st_qty,st_price };
-                    basket.Rows.Add(row);
-                    foreach (DataRow dataRow in dt.Rows)
-                    {
-                        int s = Convert.ToInt32(basket.CurrentRow.Cells[2].Value);
-                        int s1 = Convert.ToInt32(basket.CurrentRow.Cells[3].Value);
-                        int s13 = s1 * s; basket.CurrentRow.Cells[4].Value = s13;
-                    }
+              
+                    string[] rows = { st_id , st_name,st_qty,st_price};
+                    basket.Rows.Add(rows);
+               
+                foreach (DataGridViewRow row in basket.Rows)
+                {
+                    int a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);  
+                    row.Cells[4].Value = a;
+                }
 
 
 
+            }
+        }
+
+        private void basket_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+               }
+
+        private void basket_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 5 && e.RowIndex > -1)
+            {
+                Image img = Image.FromFile(@"D:\delete.png");
+                e.Graphics.DrawImage(img, e.CellBounds.Location);
+                e.PaintContent(e.CellBounds);
+                e.Handled = true;
             }
         }
     }
