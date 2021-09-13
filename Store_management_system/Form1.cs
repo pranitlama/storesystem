@@ -232,9 +232,11 @@ namespace Store_management_system
         {
 
         }
-
+        public static string username;
+        public static string label;
         private void logins_Click(object sender, EventArgs e)
         {
+
             if (textBox1.Text != "Username" && textBox2.Text != "Password")
             {
                 try
@@ -256,10 +258,13 @@ namespace Store_management_system
                     if (textBox1.Text=="admin"  || textBox1.Text =="Admin" && textBox2.Text=="admin" || textBox2.Text=="Admin")
                     {
                         string result = Messageboxok.ShowBox("", "Admin Login Successful");
-                        
+                      
                         MainMenu mm = new MainMenu();
                         this.Hide();
                         mm.Show();
+                       
+                        
+
                     }
                         while (reader.Read())
                     {
@@ -277,11 +282,12 @@ namespace Store_management_system
                             //show admin window
                             //     MessageBox.Show("admin login");
                             string result = Messageboxok.ShowBox("", "Admin Login Successful");
-                            
+                        
                             MainMenu mm = new MainMenu();
                             this.Hide();
                             mm.Show();
-                            
+                           
+
                         }
                       
                         else

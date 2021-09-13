@@ -33,6 +33,8 @@ namespace Store_management_system
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+         
+
             button2.Visible=false;
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
