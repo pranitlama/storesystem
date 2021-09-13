@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillingSystem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BillingSystem.Designer.cs">
+      <DependentUpon>BillingSystem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     <Compile Include="Signupforms.Designer.cs">
       <DependentUpon>Signupforms.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BillingSystem.resx">
+      <DependentUpon>BillingSystem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPaddproduct.resx">
       <DependentUpon>EMPaddproduct.cs</DependentUpon>
     </EmbeddedResource>
