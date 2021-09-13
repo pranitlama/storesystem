@@ -16,7 +16,7 @@ namespace Store_management_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Employeewindow ());
+            Application.Run(new Employeewindow());
         }
     }
 }

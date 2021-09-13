@@ -78,17 +78,7 @@ namespace Store_management_system
             displaydata();
             itemviewer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
             itemviewer.RowTemplate.Height = 35;
-         
-
-
-
-           
-           
-
             itemviewer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
-
-
-
             this.itemviewer.EnableHeadersVisualStyles = false;
             
 
@@ -198,7 +188,7 @@ namespace Store_management_system
 
         private void textquantity_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -286,38 +276,97 @@ namespace Store_management_system
 
 
         }
-        protected Int64 newquantity;
+
         private void prodadd_Click(object sender, EventArgs e)
         {
+            int qtycompare=0;
+          // var valid = false;
+            int remaining;
+            int text;
+            //int text1 = 0;
             if (bidtext.Text == "" || textname.Text == "" || textquantity.Text == "" || textprice.Text == "")
             {
                 string result = Messageboxok.ShowBox("", "Please enter complete data");
             }
             else
             {
+                try
+                {
+                    connect.Open();
+                    string query = "Select i_quantity from  item_details where i_ID=" + bidtext.Text;
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    //  SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    // DataTable dt = new DataTable();
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        qtycompare = Convert.ToInt32(dr["i_quantity"]);
+                    }
+                    text = Convert.ToInt32(this.textquantity.Text);
+
+                    if (text > qtycompare)
+                    {
+                        MessageBox.Show("quantity exceeded");
+                        return;
+
+                    }
+
+                  
                 
+                    else
+                    {
+                        dr.Close();
+                        remaining = qtycompare - text;
+                        string st_id = bidtext.Text;
+                        string st_name = textname.Text;
+                        string st_qty = textquantity.Text;
+                        string st_price = textprice.Text;
 
+                        string[] rows = { st_id, st_name, st_qty, st_price};
+                        basket.Rows.Add(rows);
+                        string total = bsubtotal.Text;
+                        foreach (DataGridViewRow row in basket.Rows)
+                        {
+                            int a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
 
+                            row.Cells[4].Value = a;
 
+                        }
+                        int text1;
+                        text1= Convert.ToInt32(this.bidtext.Text);
 
+                        string s = remaining.ToString();
+                         query = "Update item_details set i_quantity=@parameter_quantity where i_id="+bidtext.Text;
 
-                    string st_id = bidtext.Text;
-                    string st_name = textname.Text;
-                    string st_qty = textquantity.Text;
-                    string st_price = textprice.Text;
+                        SqlCommand cmds = new SqlCommand(query, connect);
+
+                        cmds.Parameters.AddWithValue("@parameter_quantity", remaining);
+
+                        cmds.ExecuteNonQuery();
+                       
+                    
+                     
+
+                    }
+             
                     
 
-                    string[] rows = { st_id, st_name, st_qty, st_price };
-                    basket.Rows.Add(rows);
-
-                    foreach (DataGridViewRow row in basket.Rows)
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally 
                     {
-                        textquantity.Text = "";
-                        int a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
-                        row.Cells[4].Value = a;
-                    }
-                
-              
+                    connect.Close();
+                }
+                itemviewer.Rows.Clear();
+                displaydata();
+
+
+
+
+
 
 
             }
@@ -329,13 +378,13 @@ namespace Store_management_system
 
         private void basket_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex == 5 && e.RowIndex > -1)
-            {
-                //Image img = Image.FromFile(@"D:\delete.png");
-               // e.Graphics.DrawImage(img, e.CellBounds.Location);
-                //e.PaintContent(e.CellBounds);
-                //e.Handled = true;
-            }
+            //if (e.ColumnIndex == 5 && e.RowIndex > -1)
+            //{
+            //    Image img = Image.FromFile(@"D:\delete.png");
+            //    e.Graphics.DrawImage(img, e.CellBounds.Location);
+            //    e.PaintContent(e.CellBounds);
+            //    e.Handled = true;
+            //}
         }
     }
 }
