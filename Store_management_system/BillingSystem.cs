@@ -198,7 +198,7 @@ namespace Store_management_system
 
         private void textquantity_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -286,7 +286,7 @@ namespace Store_management_system
 
 
         }
-
+        protected Int64 newquantity;
         private void prodadd_Click(object sender, EventArgs e)
         {
             if (bidtext.Text == "" || textname.Text == "" || textquantity.Text == "" || textprice.Text == "")
@@ -295,24 +295,29 @@ namespace Store_management_system
             }
             else
             {
-
-                
                 
 
-                string st_id = bidtext .Text;
-                    string st_name = textname .Text;
+
+
+
+
+                    string st_id = bidtext.Text;
+                    string st_name = textname.Text;
                     string st_qty = textquantity.Text;
-                    string st_price = textprice .Text;
-              
-                    string[] rows = { st_id , st_name,st_qty,st_price};
-                    basket.Rows.Add(rows);
-               
-                foreach (DataGridViewRow row in basket.Rows)
-                {
-                    int a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);  
-                    row.Cells[4].Value = a;
-                }
+                    string st_price = textprice.Text;
+                    
 
+                    string[] rows = { st_id, st_name, st_qty, st_price };
+                    basket.Rows.Add(rows);
+
+                    foreach (DataGridViewRow row in basket.Rows)
+                    {
+                        textquantity.Text = "";
+                        int a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
+                        row.Cells[4].Value = a;
+                    }
+                
+              
 
 
             }
@@ -326,10 +331,10 @@ namespace Store_management_system
         {
             if (e.ColumnIndex == 5 && e.RowIndex > -1)
             {
-                Image img = Image.FromFile(@"D:\delete.png");
-                e.Graphics.DrawImage(img, e.CellBounds.Location);
-                e.PaintContent(e.CellBounds);
-                e.Handled = true;
+                //Image img = Image.FromFile(@"D:\delete.png");
+               // e.Graphics.DrawImage(img, e.CellBounds.Location);
+                //e.PaintContent(e.CellBounds);
+                //e.Handled = true;
             }
         }
     }
