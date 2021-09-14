@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; 
+using System.Data.SqlClient;
 
 namespace Store_management_system
 {
@@ -26,7 +26,7 @@ namespace Store_management_system
 
             //DataGridViewButtonColumn c = (DataGridViewButtonColumn)basket.Columns["tdelete"];
             //c.Text = "delete";
-       
+
             tdelete.UseColumnTextForButtonValue = true;
             searchitem.SelectedIndex = 0;
         }
@@ -42,12 +42,12 @@ namespace Store_management_system
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 itemviewer.Rows.Clear();
-                
+
                 foreach (DataRow dataRow in dt.Rows)
                 {
 
-                    itemviewer.Rows.Add( dataRow["i_id"], dataRow["i_category"], dataRow["i_name"], dataRow["i_quantity"], dataRow["i_price"]);
-                    
+                    itemviewer.Rows.Add(dataRow["i_id"], dataRow["i_category"], dataRow["i_name"], dataRow["i_quantity"], dataRow["i_price"]);
+
 
                 }
 
@@ -71,7 +71,7 @@ namespace Store_management_system
                 }
             }
         }
-        
+
 
         private void BillingSystem_Load(object sender, EventArgs e)
         {
@@ -80,7 +80,7 @@ namespace Store_management_system
             itemviewer.RowTemplate.Height = 35;
             itemviewer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
             this.itemviewer.EnableHeadersVisualStyles = false;
-            
+
 
         }
         private void display()
@@ -102,12 +102,12 @@ namespace Store_management_system
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     itemviewer.Rows.Clear();
-                   
+
                     foreach (DataRow dataRow in dt.Rows)
                     {
 
                         itemviewer.Rows.Add(dataRow["i_id"], dataRow["i_category"], dataRow["i_name"], dataRow["i_quantity"], dataRow["i_price"]);
-                   
+
 
                     }
                     // countrows();
@@ -124,14 +124,14 @@ namespace Store_management_system
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     itemviewer.Rows.Clear();
-                  
+
                     foreach (DataRow dataRow in dt.Rows)
                     {
 
                         itemviewer.Rows.Add(dataRow["i_id"], dataRow["i_category"], dataRow["i_name"], dataRow["i_quantity"], dataRow["i_price"]);
 
                     }
-                 
+
 
 
                 }
@@ -144,7 +144,7 @@ namespace Store_management_system
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
                     itemviewer.Rows.Clear();
-                    
+
                     foreach (DataRow dataRow in dt.Rows)
                     {
 
@@ -152,7 +152,7 @@ namespace Store_management_system
 
 
                     }
-                 
+
 
 
 
@@ -184,7 +184,7 @@ namespace Store_management_system
 
         }
 
-   
+
 
         private void textquantity_TextChanged(object sender, EventArgs e)
         {
@@ -196,15 +196,15 @@ namespace Store_management_system
 
         }
 
-     
 
-        
 
-    
 
-        
 
-     
+
+
+
+
+
 
         private void searchbox_TextChanged(object sender, EventArgs e)
         {
@@ -229,15 +229,15 @@ namespace Store_management_system
 
         private void bdiscount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
-            {
-                e.Handled = true;
+             if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
+              {
+               e.Handled = true;
             }
         }
 
         private void bcash_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
+          if (!(char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Delete))
             {
                 e.Handled = true;
             }
@@ -251,24 +251,24 @@ namespace Store_management_system
             textprice.Text = "";
         }
         int item_id;
-        
+
         private void itemviewer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             // string item_category = itemviewer.CurrentRow.Cells["prodcategory"].Value.ToString();
             string item_name = itemviewer.CurrentRow.Cells["prodname"].Value.ToString();
-           
+
             item_id = Convert.ToInt32(itemviewer.CurrentRow.Cells["prodid"].Value.ToString());
             //string item_quantity = itemviewer.CurrentRow.Cells["prodquantity"].Value.ToString();
             string item_price = itemviewer.CurrentRow.Cells["prodprice"].Value.ToString();
-        
+
 
             //   MessageBox.Show("Id: " + employee_id + "\nName: " + employee_name);
-           // string result = Messageboxok.ShowBox("", "Id: " + item_id + "\nName: " + item_name);
+            // string result = Messageboxok.ShowBox("", "Id: " + item_id + "\nName: " + item_name);
             bidtext.Text = item_id.ToString();
             //itemcategory.Text = item_category;
             textname.Text = item_name;
-           
+
             //quantity.Text = item_quantity;
             textprice.Text = item_price;
             itemviewer.Rows[index].Selected = true;
@@ -277,16 +277,20 @@ namespace Store_management_system
 
         }
 
+
+        int i;
+        int st;
         private void prodadd_Click(object sender, EventArgs e)
         {
-            int qtycompare=0;
-          // var valid = false;
+            int qtycompare = 0;
+            // var valid = false;
             int remaining;
             int text;
             //int text1 = 0;
+
             if (bidtext.Text == "" || textname.Text == "" || textquantity.Text == "" || textprice.Text == "")
             {
-                string result = Messageboxok.ShowBox("", "Please enter complete data");
+                string result = Messageboxok.ShowBox("", "Please select a item");
             }
             else
             {
@@ -311,10 +315,13 @@ namespace Store_management_system
 
                     }
 
-                  
-                
+
                     else
                     {
+
+                        int a = 0;
+                        int sum = 0;
+
                         dr.Close();
                         remaining = qtycompare - text;
                         string st_id = bidtext.Text;
@@ -322,42 +329,77 @@ namespace Store_management_system
                         string st_qty = textquantity.Text;
                         string st_price = textprice.Text;
 
-                        string[] rows = { st_id, st_name, st_qty, st_price};
+                        string[] rows = { st_id, st_name, st_qty, st_price };
                         basket.Rows.Add(rows);
                         string total = bsubtotal.Text;
                         foreach (DataGridViewRow row in basket.Rows)
                         {
-                            int a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
+
+                            a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
 
                             row.Cells[4].Value = a;
+                            //  row.Cells[5].Value = amount;
+
+
 
                         }
+                        for (i = 0; i < basket.Rows.Count; ++i)
+                        {
+
+                            sum += Convert.ToInt32(basket.Rows[i].Cells[4].Value);
+
+
+                        }
+
+
+
+
+
+
+                        bsubtotal.Text = sum.ToString();
+                        btotal.Text = bsubtotal.Text;
+                        st = int.Parse(bsubtotal.Text);
+                        string ab = "Rs " + bsubtotal.Text;
+                        bsubtotal.Text = ab;
+                        //if (bdiscount.Text == "" || bdiscount.Text == "0")
+                        //{
+                        //    btotal.Text = bsubtotal.Text;
+                        //    double.Parse(btotal.Text);
+                        //}
+
+
+
+
                         int text1;
-                        text1= Convert.ToInt32(this.bidtext.Text);
+                        text1 = Convert.ToInt32(this.bidtext.Text);
 
                         string s = remaining.ToString();
-                         query = "Update item_details set i_quantity=@parameter_quantity where i_id="+bidtext.Text;
+                        query = "Update item_details set i_quantity=@parameter_quantity where i_id=" + bidtext.Text;
 
                         SqlCommand cmds = new SqlCommand(query, connect);
 
                         cmds.Parameters.AddWithValue("@parameter_quantity", remaining);
 
                         cmds.ExecuteNonQuery();
-                       
-                    
-                     
+                        bidtext.Text = "";
+                        textname.Text = "";
+                        textquantity.Text = "";
+                        textprice.Text = "";
+
+
+
 
                     }
-             
-                    
+
+
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
                 }
-                finally 
-                    {
+                finally
+                {
                     connect.Close();
                 }
                 itemviewer.Rows.Clear();
@@ -372,19 +414,85 @@ namespace Store_management_system
             }
         }
 
-        private void basket_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        double dis;
+        double disgi;
+        double gtotal;
+     
+        private void bdiscount_TextChanged(object sender, EventArgs e)
         {
-               }
 
-        private void basket_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+            if (bdiscount.Text != "")
+            {
+                
+                dis = double.Parse(bdiscount.Text);
+                disgi = st * (dis / 100);
+                gtotal = st - disgi;
+                btotal.Text = gtotal.ToString();
+            }
+            else if(bdiscount.Text=="")
+            {
+                btotal.Text = bsubtotal.Text;
+        
+
+
+            }
+            else if(bdiscount.Text=="0")
+            {
+                btotal.Text = bsubtotal.Text;
+            }
+
+        }
+
+        private void bdiscount_Enter(object sender, EventArgs e)
         {
-            //if (e.ColumnIndex == 5 && e.RowIndex > -1)
-            //{
-            //    Image img = Image.FromFile(@"D:\delete.png");
-            //    e.Graphics.DrawImage(img, e.CellBounds.Location);
-            //    e.PaintContent(e.CellBounds);
-            //    e.Handled = true;
-            //}
+            bdiscount.Text = string.Empty ;
+            
+        }
+
+        private void bdiscount_Leave(object sender, EventArgs e)
+        {
+            if(bdiscount.Text =="")
+            {
+                bdiscount.Text = "0";
+            }
+        }
+        double money;
+        double totals;
+        double balance;
+        private void bcash_TextChanged(object sender, EventArgs e)
+        {
+            if (bcash.Text != "")
+            {
+                money = double.Parse(bcash.Text);
+                totals = double.Parse(btotal.Text);
+                balance = money - totals;
+                bbalance.Text = balance.ToString();
+               double.Parse(bbalance.Text);
+            }
+            else if(bcash.Text=="")
+            {
+                bbalance.Text = btotal.Text;
+            }
+            else if(bcash.Text=="0")
+            {
+                bbalance.Text = btotal.Text;
+            }
+
+            
+
+        }
+
+        private void bcash_Enter(object sender, EventArgs e)
+        {
+            bcash.Text = string.Empty;
+        }
+
+        private void bcash_Leave(object sender, EventArgs e)
+        {
+            if (bcash.Text == "")
+            {
+                bcash.Text = "0";
+            }
         }
     }
 }
