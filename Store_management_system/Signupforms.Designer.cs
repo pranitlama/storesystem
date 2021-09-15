@@ -75,9 +75,10 @@ namespace Store_management_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label1.Location = new System.Drawing.Point(68, 114);
+            this.label1.Location = new System.Drawing.Point(102, 175);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 17);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 1;
             this.label1.Text = "User Role";
             // 
@@ -85,9 +86,10 @@ namespace Store_management_system
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(63, 180);
+            this.label2.Location = new System.Drawing.Point(94, 277);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 17);
+            this.label2.Size = new System.Drawing.Size(157, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "Employee ID No.";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -95,10 +97,11 @@ namespace Store_management_system
             // idno
             // 
             this.idno.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.idno.Location = new System.Drawing.Point(212, 174);
+            this.idno.Location = new System.Drawing.Point(318, 268);
+            this.idno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.idno.Multiline = true;
             this.idno.Name = "idno";
-            this.idno.Size = new System.Drawing.Size(178, 23);
+            this.idno.Size = new System.Drawing.Size(265, 33);
             this.idno.TabIndex = 2;
             this.idno.TextChanged += new System.EventHandler(this.idno_TextChanged);
             this.idno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.idno_KeyPress);
@@ -106,10 +109,11 @@ namespace Store_management_system
             // username
             // 
             this.username.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.username.Location = new System.Drawing.Point(211, 241);
+            this.username.Location = new System.Drawing.Point(316, 371);
+            this.username.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.username.Multiline = true;
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(179, 23);
+            this.username.Size = new System.Drawing.Size(266, 33);
             this.username.TabIndex = 3;
             this.username.TextChanged += new System.EventHandler(this.username_TextChanged);
             // 
@@ -117,9 +121,10 @@ namespace Store_management_system
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label3.Location = new System.Drawing.Point(63, 247);
+            this.label3.Location = new System.Drawing.Point(94, 380);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 17);
+            this.label3.Size = new System.Drawing.Size(98, 21);
             this.label3.TabIndex = 2;
             this.label3.Text = "Username";
             this.label3.Click += new System.EventHandler(this.label2_Click);
@@ -128,9 +133,10 @@ namespace Store_management_system
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label4.Location = new System.Drawing.Point(63, 311);
+            this.label4.Location = new System.Drawing.Point(94, 478);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 17);
+            this.label4.Size = new System.Drawing.Size(90, 21);
             this.label4.TabIndex = 2;
             this.label4.Text = "Password";
             this.label4.Click += new System.EventHandler(this.label2_Click);
@@ -139,9 +145,10 @@ namespace Store_management_system
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.label5.Location = new System.Drawing.Point(63, 378);
+            this.label5.Location = new System.Drawing.Point(94, 582);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 17);
+            this.label5.Size = new System.Drawing.Size(164, 21);
             this.label5.TabIndex = 2;
             this.label5.Text = "Confirm Password";
             this.label5.Click += new System.EventHandler(this.label2_Click);
@@ -150,9 +157,10 @@ namespace Store_management_system
             // 
             this.passw.Font = new System.Drawing.Font("Century Gothic", 9F);
             this.passw.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.passw.Location = new System.Drawing.Point(211, 308);
+            this.passw.Location = new System.Drawing.Point(316, 474);
+            this.passw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.passw.Name = "passw";
-            this.passw.Size = new System.Drawing.Size(179, 22);
+            this.passw.Size = new System.Drawing.Size(266, 30);
             this.passw.TabIndex = 4;
             this.passw.UseSystemPasswordChar = true;
             this.passw.TextChanged += new System.EventHandler(this.passw_TextChanged);
@@ -162,9 +170,10 @@ namespace Store_management_system
             // cpassw
             // 
             this.cpassw.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.cpassw.Location = new System.Drawing.Point(211, 375);
+            this.cpassw.Location = new System.Drawing.Point(316, 577);
+            this.cpassw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cpassw.Name = "cpassw";
-            this.cpassw.Size = new System.Drawing.Size(178, 22);
+            this.cpassw.Size = new System.Drawing.Size(265, 30);
             this.cpassw.TabIndex = 5;
             this.cpassw.TextChanged += new System.EventHandler(this.cpassw_TextChanged);
             this.cpassw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cpassw_KeyDown);
@@ -173,9 +182,10 @@ namespace Store_management_system
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(405, 18);
+            this.label6.Location = new System.Drawing.Point(608, 28);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(163, 28);
+            this.label6.Size = new System.Drawing.Size(246, 43);
             this.label6.TabIndex = 1;
             this.label6.Text = "Sign Up Form";
             // 
@@ -210,11 +220,12 @@ namespace Store_management_system
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.userlist.DefaultCellStyle = dataGridViewCellStyle2;
             this.userlist.GridColor = System.Drawing.Color.White;
-            this.userlist.Location = new System.Drawing.Point(435, 90);
+            this.userlist.Location = new System.Drawing.Point(652, 138);
+            this.userlist.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userlist.Name = "userlist";
             this.userlist.ReadOnly = true;
             this.userlist.RowHeadersWidth = 62;
-            this.userlist.Size = new System.Drawing.Size(703, 382);
+            this.userlist.Size = new System.Drawing.Size(1054, 588);
             this.userlist.TabIndex = 7;
             this.userlist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.userlist_CellFormatting);
             // 
@@ -269,9 +280,10 @@ namespace Store_management_system
             this.rolechoose.Items.AddRange(new object[] {
             "Admin",
             "Employee"});
-            this.rolechoose.Location = new System.Drawing.Point(211, 114);
+            this.rolechoose.Location = new System.Drawing.Point(316, 175);
+            this.rolechoose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rolechoose.Name = "rolechoose";
-            this.rolechoose.Size = new System.Drawing.Size(144, 25);
+            this.rolechoose.Size = new System.Drawing.Size(214, 29);
             this.rolechoose.TabIndex = 1;
             this.rolechoose.SelectedIndexChanged += new System.EventHandler(this.rolechoose_SelectedIndexChanged);
             // 
@@ -279,9 +291,10 @@ namespace Store_management_system
             // 
             this.iderror.AutoSize = true;
             this.iderror.ForeColor = System.Drawing.Color.Red;
-            this.iderror.Location = new System.Drawing.Point(209, 204);
+            this.iderror.Location = new System.Drawing.Point(314, 314);
+            this.iderror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.iderror.Name = "iderror";
-            this.iderror.Size = new System.Drawing.Size(90, 13);
+            this.iderror.Size = new System.Drawing.Size(133, 20);
             this.iderror.TabIndex = 14;
             this.iderror.Text = "Invalid ID number";
             this.iderror.Visible = false;
@@ -290,9 +303,10 @@ namespace Store_management_system
             // 
             this.usernameerror.AutoSize = true;
             this.usernameerror.ForeColor = System.Drawing.Color.Red;
-            this.usernameerror.Location = new System.Drawing.Point(209, 267);
+            this.usernameerror.Location = new System.Drawing.Point(314, 411);
+            this.usernameerror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.usernameerror.Name = "usernameerror";
-            this.usernameerror.Size = new System.Drawing.Size(127, 13);
+            this.usernameerror.Size = new System.Drawing.Size(188, 20);
             this.usernameerror.TabIndex = 14;
             this.usernameerror.Text = "Username Already Taken";
             this.usernameerror.Visible = false;
@@ -300,9 +314,10 @@ namespace Store_management_system
             // unmatched
             // 
             this.unmatched.Image = ((System.Drawing.Image)(resources.GetObject("unmatched.Image")));
-            this.unmatched.Location = new System.Drawing.Point(395, 375);
+            this.unmatched.Location = new System.Drawing.Point(592, 577);
+            this.unmatched.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.unmatched.Name = "unmatched";
-            this.unmatched.Size = new System.Drawing.Size(23, 23);
+            this.unmatched.Size = new System.Drawing.Size(34, 35);
             this.unmatched.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.unmatched.TabIndex = 15;
             this.unmatched.TabStop = false;
@@ -312,9 +327,10 @@ namespace Store_management_system
             // 
             this.idtaken.AutoSize = true;
             this.idtaken.ForeColor = System.Drawing.Color.Red;
-            this.idtaken.Location = new System.Drawing.Point(209, 205);
+            this.idtaken.Location = new System.Drawing.Point(314, 315);
+            this.idtaken.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idtaken.Name = "idtaken";
-            this.idtaken.Size = new System.Drawing.Size(90, 13);
+            this.idtaken.Size = new System.Drawing.Size(131, 20);
             this.idtaken.TabIndex = 14;
             this.idtaken.Text = "ID Already Taken";
             this.idtaken.Visible = false;
@@ -322,9 +338,10 @@ namespace Store_management_system
             // matched
             // 
             this.matched.Image = ((System.Drawing.Image)(resources.GetObject("matched.Image")));
-            this.matched.Location = new System.Drawing.Point(395, 375);
+            this.matched.Location = new System.Drawing.Point(592, 577);
+            this.matched.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.matched.Name = "matched";
-            this.matched.Size = new System.Drawing.Size(23, 23);
+            this.matched.Size = new System.Drawing.Size(34, 35);
             this.matched.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.matched.TabIndex = 15;
             this.matched.TabStop = false;
@@ -334,9 +351,10 @@ namespace Store_management_system
             // 
             this.authorizederror.AutoSize = true;
             this.authorizederror.ForeColor = System.Drawing.Color.Red;
-            this.authorizederror.Location = new System.Drawing.Point(209, 267);
+            this.authorizederror.Location = new System.Drawing.Point(314, 411);
+            this.authorizederror.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.authorizederror.Name = "authorizederror";
-            this.authorizederror.Size = new System.Drawing.Size(190, 13);
+            this.authorizederror.Size = new System.Drawing.Size(288, 20);
             this.authorizederror.TabIndex = 14;
             this.authorizederror.Text = "Username Already Authorized to Admin";
             this.authorizederror.Visible = false;
@@ -345,9 +363,10 @@ namespace Store_management_system
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(973, 59);
+            this.label7.Location = new System.Drawing.Point(1460, 91);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 17);
+            this.label7.Size = new System.Drawing.Size(162, 23);
             this.label7.TabIndex = 18;
             this.label7.Text = "Show Password";
             // 
@@ -360,9 +379,10 @@ namespace Store_management_system
             "Admin",
             "Employee",
             "Both"});
-            this.adminoremployee.Location = new System.Drawing.Point(769, 56);
+            this.adminoremployee.Location = new System.Drawing.Point(1154, 86);
+            this.adminoremployee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.adminoremployee.Name = "adminoremployee";
-            this.adminoremployee.Size = new System.Drawing.Size(127, 25);
+            this.adminoremployee.Size = new System.Drawing.Size(188, 29);
             this.adminoremployee.TabIndex = 19;
             this.adminoremployee.SelectedIndexChanged += new System.EventHandler(this.adminoremployee_SelectedIndexChanged);
             // 
@@ -370,9 +390,10 @@ namespace Store_management_system
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(710, 57);
+            this.label8.Location = new System.Drawing.Point(1065, 88);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 20);
+            this.label8.Size = new System.Drawing.Size(78, 27);
             this.label8.TabIndex = 20;
             this.label8.Text = "Show:";
             // 
@@ -383,10 +404,9 @@ namespace Store_management_system
             this.hide.FlatAppearance.BorderSize = 0;
             this.hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hide.ForeColor = System.Drawing.Color.White;
-            this.hide.Location = new System.Drawing.Point(365, 311);
-            this.hide.Margin = new System.Windows.Forms.Padding(2);
+            this.hide.Location = new System.Drawing.Point(548, 478);
             this.hide.Name = "hide";
-            this.hide.Size = new System.Drawing.Size(22, 13);
+            this.hide.Size = new System.Drawing.Size(33, 20);
             this.hide.TabIndex = 22;
             this.hide.UseVisualStyleBackColor = true;
             this.hide.Visible = false;
@@ -399,10 +419,9 @@ namespace Store_management_system
             this.see.FlatAppearance.BorderSize = 0;
             this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.see.ForeColor = System.Drawing.Color.White;
-            this.see.Location = new System.Drawing.Point(365, 309);
-            this.see.Margin = new System.Windows.Forms.Padding(2);
+            this.see.Location = new System.Drawing.Point(548, 475);
             this.see.Name = "see";
-            this.see.Size = new System.Drawing.Size(22, 17);
+            this.see.Size = new System.Drawing.Size(33, 26);
             this.see.TabIndex = 21;
             this.see.UseVisualStyleBackColor = true;
             this.see.Visible = false;
@@ -411,14 +430,15 @@ namespace Store_management_system
             // showpassw
             // 
             this.showpassw.AutoSize = true;
-            this.showpassw.Location = new System.Drawing.Point(922, 57);
-            this.showpassw.MinimumSize = new System.Drawing.Size(45, 22);
+            this.showpassw.Location = new System.Drawing.Point(1383, 88);
+            this.showpassw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.showpassw.MinimumSize = new System.Drawing.Size(68, 34);
             this.showpassw.Name = "showpassw";
             this.showpassw.OffBackColor = System.Drawing.Color.DarkGray;
             this.showpassw.OffToggleColor = System.Drawing.Color.Gainsboro;
             this.showpassw.OnBackColor = System.Drawing.Color.RoyalBlue;
             this.showpassw.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.showpassw.Size = new System.Drawing.Size(45, 22);
+            this.showpassw.Size = new System.Drawing.Size(68, 34);
             this.showpassw.TabIndex = 17;
             this.showpassw.UseVisualStyleBackColor = true;
             this.showpassw.CheckedChanged += new System.EventHandler(this.showpassw_CheckedChanged);
@@ -433,12 +453,13 @@ namespace Store_management_system
             this.delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.ForeColor = System.Drawing.Color.White;
-            this.delete.Location = new System.Drawing.Point(992, 478);
+            this.delete.Location = new System.Drawing.Point(1488, 735);
+            this.delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.delete.Name = "delete";
             this.delete.OnHoverBorderColor = System.Drawing.Color.SlateGray;
-            this.delete.OnHoverButtonColor = System.Drawing.Color.Gold;
+            this.delete.OnHoverButtonColor = System.Drawing.Color.White;
             this.delete.OnHoverTextColor = System.Drawing.Color.Black;
-            this.delete.Size = new System.Drawing.Size(99, 36);
+            this.delete.Size = new System.Drawing.Size(148, 55);
             this.delete.TabIndex = 12;
             this.delete.Text = "Delete";
             this.delete.TextColor = System.Drawing.Color.White;
@@ -455,12 +476,13 @@ namespace Store_management_system
             this.Reset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Reset.ForeColor = System.Drawing.Color.White;
-            this.Reset.Location = new System.Drawing.Point(256, 445);
+            this.Reset.Location = new System.Drawing.Point(384, 685);
+            this.Reset.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Reset.Name = "Reset";
             this.Reset.OnHoverBorderColor = System.Drawing.Color.SlateGray;
-            this.Reset.OnHoverButtonColor = System.Drawing.Color.Gold;
+            this.Reset.OnHoverButtonColor = System.Drawing.Color.White;
             this.Reset.OnHoverTextColor = System.Drawing.Color.Black;
-            this.Reset.Size = new System.Drawing.Size(99, 36);
+            this.Reset.Size = new System.Drawing.Size(148, 55);
             this.Reset.TabIndex = 12;
             this.Reset.Text = "Reset";
             this.Reset.TextColor = System.Drawing.Color.White;
@@ -477,12 +499,13 @@ namespace Store_management_system
             this.signupbtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.signupbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signupbtn.ForeColor = System.Drawing.Color.White;
-            this.signupbtn.Location = new System.Drawing.Point(141, 445);
+            this.signupbtn.Location = new System.Drawing.Point(212, 685);
+            this.signupbtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.signupbtn.Name = "signupbtn";
             this.signupbtn.OnHoverBorderColor = System.Drawing.Color.SlateGray;
-            this.signupbtn.OnHoverButtonColor = System.Drawing.Color.Gold;
+            this.signupbtn.OnHoverButtonColor = System.Drawing.Color.White;
             this.signupbtn.OnHoverTextColor = System.Drawing.Color.Black;
-            this.signupbtn.Size = new System.Drawing.Size(99, 36);
+            this.signupbtn.Size = new System.Drawing.Size(148, 55);
             this.signupbtn.TabIndex = 12;
             this.signupbtn.Text = "Sign Up";
             this.signupbtn.TextColor = System.Drawing.Color.White;
@@ -493,9 +516,10 @@ namespace Store_management_system
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(484, 493);
+            this.Total.Location = new System.Drawing.Point(726, 758);
+            this.Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(88, 17);
+            this.Total.Size = new System.Drawing.Size(128, 23);
             this.Total.TabIndex = 24;
             this.Total.Text = "Total Count:";
             // 
@@ -503,16 +527,17 @@ namespace Store_management_system
             // 
             this.countrow.BackColor = System.Drawing.Color.White;
             this.countrow.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.countrow.Location = new System.Drawing.Point(590, 490);
+            this.countrow.Location = new System.Drawing.Point(885, 754);
+            this.countrow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.countrow.Multiline = true;
             this.countrow.Name = "countrow";
             this.countrow.ReadOnly = true;
-            this.countrow.Size = new System.Drawing.Size(113, 22);
+            this.countrow.Size = new System.Drawing.Size(168, 32);
             this.countrow.TabIndex = 26;
             // 
             // Signupforms
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.countrow);
@@ -544,8 +569,9 @@ namespace Store_management_system
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.matched);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Signupforms";
-            this.Size = new System.Drawing.Size(1194, 561);
+            this.Size = new System.Drawing.Size(1791, 863);
             this.Load += new System.EventHandler(this.Signupforms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unmatched)).EndInit();

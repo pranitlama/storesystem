@@ -56,10 +56,10 @@ namespace Store_management_system
 
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void changepassword_Click(object sender, EventArgs e)
         {
             
-            moveSidePanel(button6);
+            moveSidePanel(changepassword);
         }
 
         private void aemployee_Click(object sender, EventArgs e)
@@ -158,10 +158,10 @@ namespace Store_management_system
             
         }
 
-        private void astock_Click(object sender, EventArgs e)
+        private void report_Click(object sender, EventArgs e)
         {
            
-            moveSidePanel(astock);
+            moveSidePanel(report);
         }
 
         private void areport_Click(object sender, EventArgs e)

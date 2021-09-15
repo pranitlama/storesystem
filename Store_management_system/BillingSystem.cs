@@ -310,11 +310,12 @@ namespace Store_management_system
 
         int i;
         int st;
+        int remaining;
         private void prodadd_Click(object sender, EventArgs e)
         {
             int qtycompare = 0;
             // var valid = false;
-            int remaining;
+          
             int text;
             //int text1 = 0;
 
@@ -364,7 +365,7 @@ namespace Store_management_system
                         string total = bsubtotal.Text;
                         foreach (DataGridViewRow row in basket.Rows)
                         {
-
+                            //amount calulator
                             a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
 
                             row.Cells[4].Value = a;
@@ -389,7 +390,7 @@ namespace Store_management_system
                         bsubtotal.Text = sum.ToString();
                         btotal.Text = bsubtotal.Text;
                         st = int.Parse(bsubtotal.Text);
-                        string ab = "Rs " + bsubtotal.Text;
+                        string ab =  bsubtotal.Text;
                         bsubtotal.Text = ab;
                         //if (bdiscount.Text == "" || bdiscount.Text == "0")
                         //{
@@ -460,7 +461,7 @@ namespace Store_management_system
                 btotal.Text = gtotal.ToString();
                 double c = double.Parse(btotal.Text);
                 double d = double.Parse(bcash.Text);
-                bbalance.Text = (c - d).ToString();
+                bbalance.Text = (d - c).ToString();
 
             }
             else if(bdiscount.Text=="")
@@ -557,6 +558,100 @@ namespace Store_management_system
                 e.Graphics.DrawImage(someImage , new Rectangle(x, y, w, h));
       
                 e.Handled = true;
+            }
+        }
+        int b_id;
+        
+        int qtycompares;
+        private void basket_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int sumqty;
+            int totalqty;
+            
+            //int index = e.RowIndex;
+            if (e.ColumnIndex == basket.Columns["tdelete"].Index)
+            {
+             
+                try
+                {
+                    connect.Open();
+                    string b_amount = basket.CurrentRow.Cells["tamt"].Value.ToString();
+                    string b_name = basket.CurrentRow.Cells["tname"].Value.ToString();
+                    string b_quantity = basket.CurrentRow.Cells["tquantity"].Value.ToString();
+                    string b_price = basket.CurrentRow.Cells["tprice"].Value.ToString();
+                    b_id = Convert.ToInt32(basket.CurrentRow.Cells["tID"].Value.ToString());
+
+
+                    string query = "Select i_quantity from  item_details where i_ID=" + b_id;
+                    SqlCommand cmds = new SqlCommand(query, connect);
+                    SqlDataReader dr = cmds.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        qtycompares = Convert.ToInt32(dr["i_quantity"]);
+                    }
+                    dr.Close();
+                    sumqty = Convert.ToInt32(b_quantity);
+                    totalqty = sumqty + qtycompares;
+                    string querys = "Update item_details set i_quantity=@parameter_quantity where i_id=" + b_id;
+                    SqlCommand cmdss = new SqlCommand(querys, connect);
+                    cmdss.Parameters.AddWithValue("@parameter_quantity", totalqty.ToString());
+                    cmdss.ExecuteNonQuery();
+                    int amounts = int.Parse(b_amount);
+                    int sbt = int.Parse(bsubtotal.Text);
+                    int totalamt = sbt - amounts ;
+                    string tamts = totalamt.ToString();
+                    bsubtotal.Text = tamts;
+                   btotal.Text = bsubtotal.Text ;
+                 
+              
+                    foreach (DataGridViewCell onecell in basket.SelectedCells)
+                   {
+                      if (onecell.Selected)
+                        { 
+                            basket.Rows.RemoveAt(onecell.RowIndex);
+
+                         
+                        
+
+                            
+                        }
+                   }
+                   
+
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                    connect.Close();
+                }
+                displaydata();
+
+                //em_fname.Text = employee_fname;
+                //em_mname.Text = employee_mname;
+                //em_lname.Text = employee_lname;
+                //em_address.Text = employee_address;
+                //em_pn.Text = employee_pn;
+                //employeegender = employee_gender;
+                //em_age.Text = employee_age;
+                //em_dob.Text = employee_dob;
+                //em_email.Text = employee_email;
+
+            }
+            else
+            {
+
+
+                //employeelist.Rows[index].Selected = true;
+                //employeelist.CurrentRow.Selected = true;
+                //employeelist.CurrentRow.Selected
+                //eupdate.Enabled = false;
+
+
+
             }
         }
     }
