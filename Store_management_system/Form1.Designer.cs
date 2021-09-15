@@ -69,7 +69,7 @@ namespace Store_management_system
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(553, 227);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(17, 16);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -83,7 +83,7 @@ namespace Store_management_system
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox1.Location = new System.Drawing.Point(588, 227);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.MaxLength = 25;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(135, 15);
@@ -99,7 +99,7 @@ namespace Store_management_system
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(553, 279);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(17, 17);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -112,7 +112,7 @@ namespace Store_management_system
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.InactiveCaption;
             this.textBox2.Location = new System.Drawing.Point(588, 277);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.MaxLength = 15;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(183, 15);
@@ -130,7 +130,7 @@ namespace Store_management_system
             this.see.FlatAppearance.BorderSize = 0;
             this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.see.Location = new System.Drawing.Point(744, 279);
-            this.see.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.see.Margin = new System.Windows.Forms.Padding(2);
             this.see.Name = "see";
             this.see.Size = new System.Drawing.Size(22, 13);
             this.see.TabIndex = 4;
@@ -144,7 +144,7 @@ namespace Store_management_system
             this.hide.FlatAppearance.BorderSize = 0;
             this.hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hide.Location = new System.Drawing.Point(744, 279);
-            this.hide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hide.Margin = new System.Windows.Forms.Padding(2);
             this.hide.Name = "hide";
             this.hide.Size = new System.Drawing.Size(22, 13);
             this.hide.TabIndex = 5;
@@ -158,7 +158,7 @@ namespace Store_management_system
             this.mini.FlatAppearance.BorderSize = 0;
             this.mini.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.mini.Location = new System.Drawing.Point(744, 8);
-            this.mini.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mini.Margin = new System.Windows.Forms.Padding(2);
             this.mini.Name = "mini";
             this.mini.Size = new System.Drawing.Size(24, 24);
             this.mini.TabIndex = 6;
@@ -173,7 +173,7 @@ namespace Store_management_system
             this.clos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.clos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clos.Location = new System.Drawing.Point(772, 8);
-            this.clos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clos.Margin = new System.Windows.Forms.Padding(2);
             this.clos.Name = "clos";
             this.clos.Size = new System.Drawing.Size(24, 24);
             this.clos.TabIndex = 7;
@@ -299,7 +299,7 @@ namespace Store_management_system
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -255,9 +255,9 @@ namespace Store_management_system
                       
                         SqlCommand cmd = new SqlCommand(query, connect);
                         cmd.Parameters.AddWithValue("@parameter_id", id);
-
+                        int employee_i = Convert.ToInt32(employeelist.CurrentRow.Cells["eid"].Value.ToString());
                         //      MessageBox.Show("Removed successfully");
-                        string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?");
+                        string result = MyMessageBoxyesno.ShowBox("DELETE", "Do you want to delete?" + "\nID No: " +employee_i);
                         if (result.Equals("1"))
                         {
                             cmd.ExecuteNonQuery();

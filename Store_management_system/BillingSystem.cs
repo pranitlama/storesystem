@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using Store_management_system.Properties;
 namespace Store_management_system
 {
     public partial class BillingSystem : UserControl
@@ -19,15 +19,7 @@ namespace Store_management_system
         public BillingSystem()
         {
             InitializeComponent();
-            itemviewer.DefaultCellStyle.ForeColor = Color.Black;
-
-            this.itemviewer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.itemviewer.ColumnHeadersHeight = 40;
-
-            //DataGridViewButtonColumn c = (DataGridViewButtonColumn)basket.Columns["tdelete"];
-            //c.Text = "delete";
-
-            tdelete.UseColumnTextForButtonValue = true;
+            datagridcustomize();
             searchitem.SelectedIndex = 0;
         }
 
@@ -76,13 +68,51 @@ namespace Store_management_system
         private void BillingSystem_Load(object sender, EventArgs e)
         {
             displaydata();
+        
+
+
+        }
+
+        private void datagridcustomize()
+        {
             itemviewer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
             itemviewer.RowTemplate.Height = 35;
             itemviewer.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
             this.itemviewer.EnableHeadersVisualStyles = false;
 
+            basket.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+            basket.RowTemplate.Height = 35;
+            basket.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+            this.basket.EnableHeadersVisualStyles = false;
+
+            itemviewer.DefaultCellStyle.ForeColor = Color.Black;
+
+            this.itemviewer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.itemviewer.ColumnHeadersHeight = 40;
+
+            this.basket.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.basket.ColumnHeadersHeight = 40;
+
+
+            //DataGridViewButtonColumn c = (DataGridViewButtonColumn)basket.Columns["tdelete"];
+            //c.Text = "delete";
+
+//            tdelete.UseColumnTextForButtonValue = true;
+
+         //   tdelete.Width = 5;
+
+          //  tdelete.DefaultCellStyle.Padding = new Padding(16,0,16,0);
+
+//            DataGridViewButtonColumn c = (DataGridViewButtonColumn)basket.Columns["tdelete"];
+            //c.FlatStyle = FlatStyle.Popup;
+            //c.DefaultCellStyle.ForeColor = Color.White;
+            //c.DefaultCellStyle.BackColor = Color.Navy;
+
+
 
         }
+
+
         private void display()
         {
             try
@@ -428,6 +458,10 @@ namespace Store_management_system
                 disgi = st * (dis / 100);
                 gtotal = st - disgi;
                 btotal.Text = gtotal.ToString();
+                double c = double.Parse(btotal.Text);
+                double d = double.Parse(bcash.Text);
+                bbalance.Text = (c - d).ToString();
+
             }
             else if(bdiscount.Text=="")
             {
@@ -445,7 +479,10 @@ namespace Store_management_system
 
         private void bdiscount_Enter(object sender, EventArgs e)
         {
-            bdiscount.Text = string.Empty ;
+            if (bdiscount.Text == "" || bdiscount.Text == "0")
+            {
+                bdiscount.Text = string.Empty;
+            }
             
         }
 
@@ -484,7 +521,11 @@ namespace Store_management_system
 
         private void bcash_Enter(object sender, EventArgs e)
         {
-            bcash.Text = string.Empty;
+            if (bcash.Text == "" || bcash.Text=="0")
+            {
+                bcash.Text = string.Empty;
+
+            }
         }
 
         private void bcash_Leave(object sender, EventArgs e)
@@ -492,6 +533,30 @@ namespace Store_management_system
             if (bcash.Text == "")
             {
                 bcash.Text = "0";
+            }
+        }
+        public Rectangle rc;
+        private void basket_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            Image someImage = Properties.Resources.Img4;
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+
+     
+            if (e.ColumnIndex == 5)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.Img4.Width;
+                var h = Properties.Resources.Img4.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+              
+                e.Graphics.DrawImage(someImage , new Rectangle(x, y, w, h));
+      
+                e.Handled = true;
             }
         }
     }
