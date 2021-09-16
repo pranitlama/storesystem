@@ -29,8 +29,8 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.itemcategory = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,16 +46,6 @@ namespace Store_management_system
             this.label7 = new System.Windows.Forms.Label();
             this.itemprice = new System.Windows.Forms.TextBox();
             this.itemlist = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.itemexpdate = new System.Windows.Forms.DateTimePicker();
-            this.label18 = new System.Windows.Forms.Label();
-            this.searchitem = new System.Windows.Forms.ComboBox();
-            this.searchbox = new System.Windows.Forms.TextBox();
-            this.idtaken = new System.Windows.Forms.Label();
-            this.itemclear = new ePOSOne.btnProduct.Button_WOC();
-            this.itemdelete = new ePOSOne.btnProduct.Button_WOC();
-            this.itemupdate = new ePOSOne.btnProduct.Button_WOC();
-            this.itemadd = new ePOSOne.btnProduct.Button_WOC();
             this.SN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categorygv = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +56,16 @@ namespace Store_management_system
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACTION = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label8 = new System.Windows.Forms.Label();
+            this.itemexpdate = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.searchitem = new System.Windows.Forms.ComboBox();
+            this.searchbox = new System.Windows.Forms.TextBox();
+            this.idtaken = new System.Windows.Forms.Label();
+            this.itemclear = new ePOSOne.btnProduct.Button_WOC();
+            this.itemdelete = new ePOSOne.btnProduct.Button_WOC();
+            this.itemupdate = new ePOSOne.btnProduct.Button_WOC();
+            this.itemadd = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.itemlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,7 +86,7 @@ namespace Store_management_system
             "SNACKS",
             "OTHER ITEM"});
             this.itemcategory.Location = new System.Drawing.Point(117, 25);
-            this.itemcategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemcategory.Margin = new System.Windows.Forms.Padding(2);
             this.itemcategory.Name = "itemcategory";
             this.itemcategory.Size = new System.Drawing.Size(123, 24);
             this.itemcategory.TabIndex = 0;
@@ -119,7 +119,7 @@ namespace Store_management_system
             // 
             this.itemid.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.itemid.Location = new System.Drawing.Point(117, 71);
-            this.itemid.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemid.Margin = new System.Windows.Forms.Padding(2);
             this.itemid.Name = "itemid";
             this.itemid.Size = new System.Drawing.Size(123, 23);
             this.itemid.TabIndex = 3;
@@ -143,7 +143,7 @@ namespace Store_management_system
             // 
             this.itembn.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.itembn.Location = new System.Drawing.Point(117, 114);
-            this.itembn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itembn.Margin = new System.Windows.Forms.Padding(2);
             this.itembn.Name = "itembn";
             this.itembn.Size = new System.Drawing.Size(123, 23);
             this.itembn.TabIndex = 3;
@@ -165,7 +165,7 @@ namespace Store_management_system
             this.mfddate.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mfddate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.mfddate.Location = new System.Drawing.Point(401, 71);
-            this.mfddate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mfddate.Margin = new System.Windows.Forms.Padding(2);
             this.mfddate.Name = "mfddate";
             this.mfddate.Size = new System.Drawing.Size(121, 21);
             this.mfddate.TabIndex = 4;
@@ -186,7 +186,7 @@ namespace Store_management_system
             // 
             this.itemname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.itemname.Location = new System.Drawing.Point(401, 32);
-            this.itemname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemname.Margin = new System.Windows.Forms.Padding(2);
             this.itemname.Name = "itemname";
             this.itemname.Size = new System.Drawing.Size(121, 23);
             this.itemname.TabIndex = 3;
@@ -207,7 +207,7 @@ namespace Store_management_system
             // 
             this.itemquantity.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.itemquantity.Location = new System.Drawing.Point(690, 31);
-            this.itemquantity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemquantity.Margin = new System.Windows.Forms.Padding(2);
             this.itemquantity.Name = "itemquantity";
             this.itemquantity.Size = new System.Drawing.Size(121, 23);
             this.itemquantity.TabIndex = 3;
@@ -229,7 +229,7 @@ namespace Store_management_system
             // 
             this.itemprice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.itemprice.Location = new System.Drawing.Point(690, 73);
-            this.itemprice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemprice.Margin = new System.Windows.Forms.Padding(2);
             this.itemprice.Name = "itemprice";
             this.itemprice.Size = new System.Drawing.Size(121, 23);
             this.itemprice.TabIndex = 3;
@@ -241,14 +241,14 @@ namespace Store_management_system
             this.itemlist.AllowUserToDeleteRows = false;
             this.itemlist.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.itemlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.itemlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SN,
@@ -261,17 +261,17 @@ namespace Store_management_system
             this.quantity,
             this.PRICE,
             this.ACTION});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemlist.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemlist.DefaultCellStyle = dataGridViewCellStyle4;
             this.itemlist.GridColor = System.Drawing.SystemColors.Info;
             this.itemlist.Location = new System.Drawing.Point(16, 201);
-            this.itemlist.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemlist.Margin = new System.Windows.Forms.Padding(2);
             this.itemlist.Name = "itemlist";
             this.itemlist.ReadOnly = true;
             this.itemlist.RowHeadersWidth = 31;
@@ -279,6 +279,88 @@ namespace Store_management_system
             this.itemlist.Size = new System.Drawing.Size(912, 348);
             this.itemlist.TabIndex = 6;
             this.itemlist.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemlist_CellClick);
+            // 
+            // SN
+            // 
+            this.SN.HeaderText = "SN";
+            this.SN.MinimumWidth = 8;
+            this.SN.Name = "SN";
+            this.SN.ReadOnly = true;
+            this.SN.Width = 80;
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 8;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 80;
+            // 
+            // Categorygv
+            // 
+            this.Categorygv.HeaderText = "CATEGORY";
+            this.Categorygv.MinimumWidth = 8;
+            this.Categorygv.Name = "Categorygv";
+            this.Categorygv.ReadOnly = true;
+            this.Categorygv.Width = 150;
+            // 
+            // BRANDNAME
+            // 
+            this.BRANDNAME.HeaderText = "BRANDNAME";
+            this.BRANDNAME.MinimumWidth = 8;
+            this.BRANDNAME.Name = "BRANDNAME";
+            this.BRANDNAME.ReadOnly = true;
+            this.BRANDNAME.Visible = false;
+            this.BRANDNAME.Width = 150;
+            // 
+            // NAME
+            // 
+            this.NAME.HeaderText = "NAME";
+            this.NAME.MinimumWidth = 8;
+            this.NAME.Name = "NAME";
+            this.NAME.ReadOnly = true;
+            this.NAME.Width = 150;
+            // 
+            // MFDDATEgv
+            // 
+            this.MFDDATEgv.HeaderText = "MFDDATE";
+            this.MFDDATEgv.MinimumWidth = 8;
+            this.MFDDATEgv.Name = "MFDDATEgv";
+            this.MFDDATEgv.ReadOnly = true;
+            this.MFDDATEgv.Width = 80;
+            // 
+            // EXPDATE
+            // 
+            this.EXPDATE.HeaderText = "EXP DATE";
+            this.EXPDATE.MinimumWidth = 8;
+            this.EXPDATE.Name = "EXPDATE";
+            this.EXPDATE.ReadOnly = true;
+            this.EXPDATE.Width = 80;
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "QUANTITY";
+            this.quantity.MinimumWidth = 8;
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 80;
+            // 
+            // PRICE
+            // 
+            this.PRICE.HeaderText = "PRICE";
+            this.PRICE.MinimumWidth = 8;
+            this.PRICE.Name = "PRICE";
+            this.PRICE.ReadOnly = true;
+            this.PRICE.Width = 80;
+            // 
+            // ACTION
+            // 
+            this.ACTION.HeaderText = "ACTION";
+            this.ACTION.MinimumWidth = 8;
+            this.ACTION.Name = "ACTION";
+            this.ACTION.ReadOnly = true;
+            this.ACTION.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ACTION.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label8
             // 
@@ -297,7 +379,7 @@ namespace Store_management_system
             this.itemexpdate.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemexpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.itemexpdate.Location = new System.Drawing.Point(401, 116);
-            this.itemexpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.itemexpdate.Margin = new System.Windows.Forms.Padding(2);
             this.itemexpdate.Name = "itemexpdate";
             this.itemexpdate.Size = new System.Drawing.Size(121, 21);
             this.itemexpdate.TabIndex = 4;
@@ -440,88 +522,6 @@ namespace Store_management_system
             this.itemadd.UseVisualStyleBackColor = false;
             this.itemadd.Click += new System.EventHandler(this.itemadd_Click);
             // 
-            // SN
-            // 
-            this.SN.HeaderText = "SN";
-            this.SN.MinimumWidth = 8;
-            this.SN.Name = "SN";
-            this.SN.ReadOnly = true;
-            this.SN.Width = 80;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 8;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 80;
-            // 
-            // Categorygv
-            // 
-            this.Categorygv.HeaderText = "CATEGORY";
-            this.Categorygv.MinimumWidth = 8;
-            this.Categorygv.Name = "Categorygv";
-            this.Categorygv.ReadOnly = true;
-            this.Categorygv.Width = 150;
-            // 
-            // BRANDNAME
-            // 
-            this.BRANDNAME.HeaderText = "BRANDNAME";
-            this.BRANDNAME.MinimumWidth = 8;
-            this.BRANDNAME.Name = "BRANDNAME";
-            this.BRANDNAME.ReadOnly = true;
-            this.BRANDNAME.Visible = false;
-            this.BRANDNAME.Width = 150;
-            // 
-            // NAME
-            // 
-            this.NAME.HeaderText = "NAME";
-            this.NAME.MinimumWidth = 8;
-            this.NAME.Name = "NAME";
-            this.NAME.ReadOnly = true;
-            this.NAME.Width = 150;
-            // 
-            // MFDDATEgv
-            // 
-            this.MFDDATEgv.HeaderText = "MFDDATE";
-            this.MFDDATEgv.MinimumWidth = 8;
-            this.MFDDATEgv.Name = "MFDDATEgv";
-            this.MFDDATEgv.ReadOnly = true;
-            this.MFDDATEgv.Width = 80;
-            // 
-            // EXPDATE
-            // 
-            this.EXPDATE.HeaderText = "EXP DATE";
-            this.EXPDATE.MinimumWidth = 8;
-            this.EXPDATE.Name = "EXPDATE";
-            this.EXPDATE.ReadOnly = true;
-            this.EXPDATE.Width = 80;
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "QUANTITY";
-            this.quantity.MinimumWidth = 8;
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            this.quantity.Width = 80;
-            // 
-            // PRICE
-            // 
-            this.PRICE.HeaderText = "PRICE";
-            this.PRICE.MinimumWidth = 8;
-            this.PRICE.Name = "PRICE";
-            this.PRICE.ReadOnly = true;
-            this.PRICE.Width = 80;
-            // 
-            // ACTION
-            // 
-            this.ACTION.HeaderText = "ACTION";
-            this.ACTION.MinimumWidth = 8;
-            this.ACTION.Name = "ACTION";
-            this.ACTION.ReadOnly = true;
-            this.ACTION.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ACTION.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // EMPaddproduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,7 +553,7 @@ namespace Store_management_system
             this.Controls.Add(this.label1);
             this.Controls.Add(this.itemcategory);
             this.ForeColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EMPaddproduct";
             this.Size = new System.Drawing.Size(967, 559);
             this.Load += new System.EventHandler(this.EMPaddproduct_Load);

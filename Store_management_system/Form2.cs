@@ -33,7 +33,10 @@ namespace Store_management_system
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-         
+           
+            adminusernamelabel.Text = "WELCOME:  " + Form1.username;
+            adminlabel.Text = "ROLE:  " + Form1.label;
+
 
             button2.Visible=false;
             int w = Screen.PrimaryScreen.Bounds.Width;
