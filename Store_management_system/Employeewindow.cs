@@ -159,6 +159,10 @@ namespace Store_management_system
 
         private void Employeewindow_Load(object sender, EventArgs e)
         {
+         
+            userusernamelabel.Text ="WELCOME:  "+ Form1.username;   
+            userlabel.Text = "ROLE:  " + Form1.label;
+
             int w = Screen.PrimaryScreen.Bounds.Width;
             int h = Screen.PrimaryScreen.Bounds.Height;
             this.Location = new Point(0, 0);

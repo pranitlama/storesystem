@@ -119,8 +119,17 @@ namespace Store_management_system
           //  }
             
         }
-   
 
+        public string FirstLetterToUpper(string str)
+        {
+            if (str == null)
+                return null;
+
+            if (str.Length > 1)
+                return char.ToUpper(str[0]) + str.Substring(1);
+
+            return str.ToUpper();
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             entererror.Hide();
@@ -258,7 +267,9 @@ namespace Store_management_system
                     if (textBox1.Text=="admin"  || textBox1.Text =="Admin" && textBox2.Text=="admin" || textBox2.Text=="Admin")
                     {
                         string result = Messageboxok.ShowBox("", "Admin Login Successful");
-                      
+                        username = textBox1.Text.ToUpper();
+
+                        label = "ADMIN";
                         MainMenu mm = new MainMenu();
                         this.Hide();
                         mm.Show();
@@ -282,10 +293,14 @@ namespace Store_management_system
                             //show admin window
                             //     MessageBox.Show("admin login");
                             string result = Messageboxok.ShowBox("", "Admin Login Successful");
-                        
+                            username = textBox1.Text.ToUpper(); 
+                                
+                            label = "ADMIN";
                             MainMenu mm = new MainMenu();
                             this.Hide();
                             mm.Show();
+                          
+                            
                            
 
                         }
@@ -293,7 +308,9 @@ namespace Store_management_system
                         else
                         {//show user window
                          string result = Messageboxok.ShowBox("", "Employee Login Successful");
-                         
+                            username = textBox1.Text.ToUpper();
+                                
+                            label = "USER";
                             //   MessageBox.Show("employee login"); 
                             Employeewindow ew = new Employeewindow();
                             this.Hide();

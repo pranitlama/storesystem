@@ -68,7 +68,8 @@ namespace Store_management_system
         private void BillingSystem_Load(object sender, EventArgs e)
         {
             displaydata();
-        
+          
+
 
 
         }
@@ -218,7 +219,7 @@ namespace Store_management_system
 
         private void textquantity_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -319,9 +320,15 @@ namespace Store_management_system
             int text;
             //int text1 = 0;
 
-            if (bidtext.Text == "" || textname.Text == "" || textquantity.Text == "" || textprice.Text == "")
+            if (bidtext.Text == "" || textname.Text == "" || textprice.Text == "")
             {
+                
                 string result = Messageboxok.ShowBox("", "Please select a item");
+            }
+
+            else if(textquantity.Text==string.Empty)
+            {
+                string result = Messageboxok.ShowBox("", "Please Enter Quantity");
             }
             else
             {
@@ -341,7 +348,7 @@ namespace Store_management_system
 
                     if (text > qtycompare)
                     {
-                        MessageBox.Show("quantity exceeded");
+                        string result = Messageboxok.ShowBox("", "Quantity Exceeded");
                         return;
 
                     }
@@ -568,7 +575,7 @@ namespace Store_management_system
             int sumqty;
             int totalqty;
             
-            //int index = e.RowIndex;
+        
             if (e.ColumnIndex == basket.Columns["tdelete"].Index)
             {
              
@@ -630,26 +637,13 @@ namespace Store_management_system
                 }
                 displaydata();
 
-                //em_fname.Text = employee_fname;
-                //em_mname.Text = employee_mname;
-                //em_lname.Text = employee_lname;
-                //em_address.Text = employee_address;
-                //em_pn.Text = employee_pn;
-                //employeegender = employee_gender;
-                //em_age.Text = employee_age;
-                //em_dob.Text = employee_dob;
-                //em_email.Text = employee_email;
-
+              
             }
             else
             {
 
 
-                //employeelist.Rows[index].Selected = true;
-                //employeelist.CurrentRow.Selected = true;
-                //employeelist.CurrentRow.Selected
-                //eupdate.Enabled = false;
-
+             
 
 
             }
