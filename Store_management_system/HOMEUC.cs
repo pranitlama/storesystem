@@ -19,7 +19,8 @@ namespace Store_management_system
             InitializeComponent();
             displayinadminlabel();
             displayinuserlabel();
-
+            displayintotalproductlabel();
+            displayintotalorderlabel();
         }
         private void displayinadminlabel()
         {
@@ -59,11 +60,52 @@ namespace Store_management_system
                 usercount.Text = "0";
             }
         }
+        private void displayintotalproductlabel()
+        {
+            connect.Open();
+            string query = "Select * from item_details ";
+            SqlCommand cmd = new SqlCommand(query, connect);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            connect.Close();
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                product_amt.Text = ds.Tables[0].Rows.Count.ToString();
 
+            }
+            else
+            {
+                product_amt.Text = "0";
+            }
+
+
+        }
+        private void displayintotalorderlabel()
+        {
+            connect.Open();
+            string query = "Select * from transaction_details ";
+            SqlCommand cmd = new SqlCommand(query, connect);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            connect.Close();
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+                order_amt.Text = ds.Tables[0].Rows.Count.ToString();
+
+            }
+            else
+            {
+                order_amt.Text = "0";
+            }
+
+        }
         private void HomeUC_Load(object sender, EventArgs e)
         {
            
         }
+
 
      
     }

@@ -21,6 +21,7 @@ namespace Store_management_system
             InitializeComponent();
             datagridcustomize();
             searchitem.SelectedIndex = 0;
+           
         }
 
         private void displaydata()
@@ -68,7 +69,7 @@ namespace Store_management_system
         private void BillingSystem_Load(object sender, EventArgs e)
         {
             displaydata();
-          
+            prodprint.Enabled = false;
 
 
 
@@ -280,6 +281,7 @@ namespace Store_management_system
             textname.Text = "";
             textquantity.Text = "";
             textprice.Text = "";
+            prodprint.Enabled = false ;
         }
         int item_id;
 
@@ -314,6 +316,7 @@ namespace Store_management_system
         int remaining;
         private void prodadd_Click(object sender, EventArgs e)
         {
+            
             int qtycompare = 0;
             // var valid = false;
           
@@ -324,11 +327,13 @@ namespace Store_management_system
             {
                 
                 string result = Messageboxok.ShowBox("", "Please select a item");
+                prodprint.Enabled = false;
             }
 
             else if(textquantity.Text==string.Empty)
             {
                 string result = Messageboxok.ShowBox("", "Please Enter Quantity");
+                prodprint.Enabled = false;
             }
             else
             {
@@ -349,6 +354,7 @@ namespace Store_management_system
                     if (text > qtycompare)
                     {
                         string result = Messageboxok.ShowBox("", "Quantity Exceeded");
+                        prodprint.Enabled = false;
                         return;
 
                     }
@@ -381,6 +387,7 @@ namespace Store_management_system
 
 
                         }
+                        prodprint.Enabled = true;
                         for (i = 0; i < basket.Rows.Count; ++i)
                         {
 
@@ -578,7 +585,8 @@ namespace Store_management_system
         
             if (e.ColumnIndex == basket.Columns["tdelete"].Index)
             {
-             
+
+                 
                 try
                 {
                     connect.Open();
@@ -609,8 +617,9 @@ namespace Store_management_system
                     string tamts = totalamt.ToString();
                     bsubtotal.Text = tamts;
                    btotal.Text = bsubtotal.Text ;
-                 
-              
+               
+
+
                     foreach (DataGridViewCell onecell in basket.SelectedCells)
                    {
                       if (onecell.Selected)
@@ -623,7 +632,7 @@ namespace Store_management_system
                             
                         }
                    }
-                   
+                    checkdatagrid();
 
 
                 }
@@ -646,6 +655,54 @@ namespace Store_management_system
              
 
 
+            }
+        }
+
+        private void prodprint_Click(object sender, EventArgs e)
+        {
+            foreach(DataGridViewRow dr in basket.Rows )
+            {
+                try
+                {
+                    connect.Open();
+                    string query = "insert into transaction_details (t_name,t_quantity,t_amt,t_price,t_date,t_empname) values(@parameter_name,@parameter_qty,@parameter_amt,@parameter_price,@parameter_date,@parameter_uname)";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    cmd.Parameters.AddWithValue("@parameter_name", dr.Cells["tname"].Value);
+                    cmd.Parameters.AddWithValue("@parameter_qty", dr.Cells["tquantity"].Value);
+                    cmd.Parameters.AddWithValue("@parameter_amt", dr.Cells["tamt"].Value);
+                    cmd.Parameters.AddWithValue("@parameter_price", dr.Cells["tprice"].Value);
+                    cmd.Parameters.AddWithValue("@parameter_date", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@parameter_uname", Form1.username);
+                    cmd.ExecuteNonQuery();
+                   
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+                finally
+                {
+                 
+                    connect.Close();
+
+                  
+                }
+               
+            }
+            MessageBox.Show("row inserted");
+            basket.Rows.Clear();
+        }
+        private void checkdatagrid()
+        {
+            if(basket.Rows.Count ==0)
+            {
+                prodprint.Enabled = false;
+
+            }
+            else
+            {
+                prodprint.Enabled = true;
             }
         }
     }

@@ -250,10 +250,10 @@ namespace Store_management_system
             {
                 try
                 {
-                    if (connect.State != ConnectionState.Open)
-                    {
+                 
+                    
                         connect.Open();
-                    }
+                    
                     string query = "Select * from login where username='" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
 
                     SqlCommand cmd = new SqlCommand(query, connect);
