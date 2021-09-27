@@ -155,6 +155,8 @@ namespace Store_management_system
         private void emp_cpass_Click(object sender, EventArgs e)
         {
             moveSidePanel(emp_cpass);
+            ChangePassword  cp = new ChangePassword ();
+            AddControlsToPanel(cp);
         }
 
         private void Employeewindow_Load(object sender, EventArgs e)
@@ -190,6 +192,11 @@ namespace Store_management_system
             //minimize login window
             this.WindowState = FormWindowState.Minimized;
             //textBox1.Focus();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

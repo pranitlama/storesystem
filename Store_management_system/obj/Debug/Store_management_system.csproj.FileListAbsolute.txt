@@ -53,3 +53,4 @@ C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Deb
 E:\sms\Store_management_system\obj\Debug\Store_management_system.BillingSystem.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.picturebox.resources
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.picturebox.resources
+C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.ChangePassword.resources

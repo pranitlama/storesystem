@@ -626,11 +626,14 @@ namespace Store_management_system
                         { 
                             basket.Rows.RemoveAt(onecell.RowIndex);
 
-                         
+                          
+
                         
 
                             
                         }
+                        bcash.Text = "0";
+                        bbalance.Text = "0";
                    }
                     checkdatagrid();
 
@@ -690,7 +693,7 @@ namespace Store_management_system
                 }
                
             }
-            MessageBox.Show("row inserted");
+            string result = Messageboxok.ShowBox("", "PURCHASE COMPLETE");
             basket.Rows.Clear();
         }
         private void checkdatagrid()

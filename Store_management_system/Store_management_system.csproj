@@ -55,6 +55,12 @@
     <Compile Include="Button_WOC.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ChangePassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.Designer.cs">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="connectionstri.cs" />
     <Compile Include="EMPaddproduct.cs">
       <SubType>UserControl</SubType>
@@ -132,6 +138,9 @@
     </Compile>
     <EmbeddedResource Include="BillingSystem.resx">
       <DependentUpon>BillingSystem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePassword.resx">
+      <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EMPaddproduct.resx">
       <DependentUpon>EMPaddproduct.cs</DependentUpon>

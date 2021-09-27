@@ -63,6 +63,9 @@ namespace Store_management_system
         {
             
             moveSidePanel(changepassword);
+            ChangePassword  cp = new ChangePassword();
+            AddControlsToPanel(cp);
+          
         }
 
         private void aemployee_Click(object sender, EventArgs e)

@@ -592,6 +592,16 @@ namespace Store_management_system
 
 
         }
+
+        private void unmatched_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idtaken_Click(  object sender, EventArgs e)
+        {
+
+        }
     }
     }
 
