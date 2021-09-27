@@ -21,6 +21,8 @@ namespace Store_management_system
             displayinuserlabel();
             displayintotalproductlabel();
             displayintotalorderlabel();
+            displayintotalsaleslabel();
+
         }
         private void displayinadminlabel()
         {
@@ -41,6 +43,20 @@ namespace Store_management_system
                 admincount.Text = "0";
             }
            
+        }
+
+        private void displayintotalsaleslabel()
+        {
+            connect.Open();
+            string query = "Select Sum(t_amt) from transaction_details";
+            SqlCommand cmd = new SqlCommand(query, connect);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            totalsaleslabel.Text = dt.Rows[0][0].ToString();
+         
+            connect.Close();
+            
         }
         private void displayinuserlabel()
         {

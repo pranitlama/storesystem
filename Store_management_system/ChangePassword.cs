@@ -17,6 +17,7 @@ namespace Store_management_system
         public ChangePassword()
         {
             InitializeComponent();
+            this.usernametxt.BackColor = Color.White;
         }
 
         private void clear_Click(object sender, EventArgs e)

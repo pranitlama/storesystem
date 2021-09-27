@@ -31,13 +31,16 @@ namespace Store_management_system
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUC));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.product_pic = new System.Windows.Forms.PictureBox();
+            this.product_amt = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.order_pic = new System.Windows.Forms.PictureBox();
             this.order_amt = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.totalsaleslabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,11 +55,9 @@ namespace Store_management_system
             this.revenue_amt = new System.Windows.Forms.Label();
             this.revenue_pic = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.product_amt = new System.Windows.Forms.Label();
-            this.product_pic = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.product_pic)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,7 +68,6 @@ namespace Store_management_system
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.revenue_pic)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.product_pic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -80,6 +80,38 @@ namespace Store_management_system
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(434, 202);
             this.panel1.TabIndex = 0;
+            // 
+            // product_pic
+            // 
+            this.product_pic.Image = ((System.Drawing.Image)(resources.GetObject("product_pic.Image")));
+            this.product_pic.Location = new System.Drawing.Point(40, 72);
+            this.product_pic.Name = "product_pic";
+            this.product_pic.Size = new System.Drawing.Size(94, 89);
+            this.product_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.product_pic.TabIndex = 1;
+            this.product_pic.TabStop = false;
+            // 
+            // product_amt
+            // 
+            this.product_amt.AutoSize = true;
+            this.product_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.product_amt.ForeColor = System.Drawing.Color.White;
+            this.product_amt.Location = new System.Drawing.Point(266, 125);
+            this.product_amt.Name = "product_amt";
+            this.product_amt.Size = new System.Drawing.Size(21, 23);
+            this.product_amt.TabIndex = 0;
+            this.product_amt.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(200, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(174, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TOTAL PRODUCTS";
             // 
             // panel4
             // 
@@ -145,16 +177,16 @@ namespace Store_management_system
             this.label4.TabIndex = 0;
             this.label4.Text = "TOTAl SALES";
             // 
-            // label2
+            // totalsaleslabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(266, 124);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(21, 23);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "0";
+            this.totalsaleslabel.AutoSize = true;
+            this.totalsaleslabel.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalsaleslabel.ForeColor = System.Drawing.Color.White;
+            this.totalsaleslabel.Location = new System.Drawing.Point(266, 124);
+            this.totalsaleslabel.Name = "totalsaleslabel";
+            this.totalsaleslabel.Size = new System.Drawing.Size(21, 23);
+            this.totalsaleslabel.TabIndex = 0;
+            this.totalsaleslabel.Text = "0";
             // 
             // pictureBox1
             // 
@@ -170,7 +202,7 @@ namespace Store_management_system
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel5.Controls.Add(this.pictureBox1);
-            this.panel5.Controls.Add(this.label2);
+            this.panel5.Controls.Add(this.totalsaleslabel);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Location = new System.Drawing.Point(170, 348);
             this.panel5.Name = "panel5";
@@ -308,38 +340,6 @@ namespace Store_management_system
             this.panel3.Size = new System.Drawing.Size(434, 202);
             this.panel3.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(200, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TOTAL PRODUCTS";
-            // 
-            // product_amt
-            // 
-            this.product_amt.AutoSize = true;
-            this.product_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.product_amt.ForeColor = System.Drawing.Color.White;
-            this.product_amt.Location = new System.Drawing.Point(266, 125);
-            this.product_amt.Name = "product_amt";
-            this.product_amt.Size = new System.Drawing.Size(21, 23);
-            this.product_amt.TabIndex = 0;
-            this.product_amt.Text = "0";
-            // 
-            // product_pic
-            // 
-            this.product_pic.Image = ((System.Drawing.Image)(resources.GetObject("product_pic.Image")));
-            this.product_pic.Location = new System.Drawing.Point(40, 72);
-            this.product_pic.Name = "product_pic";
-            this.product_pic.Size = new System.Drawing.Size(94, 89);
-            this.product_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.product_pic.TabIndex = 1;
-            this.product_pic.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -367,6 +367,7 @@ namespace Store_management_system
             this.Load += new System.EventHandler(this.HomeUC_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.product_pic)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.order_pic)).EndInit();
@@ -382,7 +383,6 @@ namespace Store_management_system
             ((System.ComponentModel.ISupportInitialize)(this.revenue_pic)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.product_pic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -399,7 +399,7 @@ namespace Store_management_system
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label totalsaleslabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label11;

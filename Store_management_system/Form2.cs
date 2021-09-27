@@ -198,15 +198,7 @@ namespace Store_management_system
 
             }
 
-            //DialogResult dialog = MessageBox.Show("Do you really want to exit the program?", "EXIT", MessageBoxButtons.YesNo);
-            //if (dialog == DialogResult.Yes)
-            //{
-            //    Application.Exit();
-            //}
-            // else if (dialog == DialogResult.No)
-            //  {
-            //     e.Cancel = true;
-            // }
+       
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
