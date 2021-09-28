@@ -198,5 +198,13 @@ namespace Store_management_system
         {
 
         }
+
+        private void stock_Click(object sender, EventArgs e)
+        {
+            moveSidePanel(stock);
+            Stock st  = new Stock();
+            AddControlsToPanel(st);
+
+        }
     }
 }
