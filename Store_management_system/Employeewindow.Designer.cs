@@ -51,6 +51,7 @@ namespace Store_management_system
             this.userusernamelabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.stock = new System.Windows.Forms.Button();
             this.panelleft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -61,6 +62,7 @@ namespace Store_management_system
             // panelleft
             // 
             this.panelleft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.panelleft.Controls.Add(this.stock);
             this.panelleft.Controls.Add(this.emp_addproduct);
             this.panelleft.Controls.Add(this.panel2);
             this.panelleft.Controls.Add(this.panelsides);
@@ -71,7 +73,7 @@ namespace Store_management_system
             this.panelleft.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelleft.Location = new System.Drawing.Point(0, 0);
             this.panelleft.Name = "panelleft";
-            this.panelleft.Size = new System.Drawing.Size(345, 749);
+            this.panelleft.Size = new System.Drawing.Size(345, 806);
             this.panelleft.TabIndex = 1;
             // 
             // emp_addproduct
@@ -172,7 +174,7 @@ namespace Store_management_system
             this.emp_logout.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.emp_logout.Image = ((System.Drawing.Image)(resources.GetObject("emp_logout.Image")));
             this.emp_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.emp_logout.Location = new System.Drawing.Point(32, 655);
+            this.emp_logout.Location = new System.Drawing.Point(32, 726);
             this.emp_logout.Name = "emp_logout";
             this.emp_logout.Size = new System.Drawing.Size(266, 77);
             this.emp_logout.TabIndex = 2;
@@ -189,7 +191,7 @@ namespace Store_management_system
             this.emp_cpass.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.emp_cpass.Image = ((System.Drawing.Image)(resources.GetObject("emp_cpass.Image")));
             this.emp_cpass.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.emp_cpass.Location = new System.Drawing.Point(32, 525);
+            this.emp_cpass.Location = new System.Drawing.Point(26, 617);
             this.emp_cpass.Name = "emp_cpass";
             this.emp_cpass.Size = new System.Drawing.Size(310, 77);
             this.emp_cpass.TabIndex = 2;
@@ -312,7 +314,7 @@ namespace Store_management_system
             this.panel1.Location = new System.Drawing.Point(345, 158);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1025, 591);
+            this.panel1.Size = new System.Drawing.Size(1025, 648);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -321,11 +323,28 @@ namespace Store_management_system
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // stock
+            // 
+            this.stock.FlatAppearance.BorderSize = 0;
+            this.stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
+            this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stock.Location = new System.Drawing.Point(32, 502);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(266, 77);
+            this.stock.TabIndex = 3;
+            this.stock.Text = "     STOCK";
+            this.stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.stock.UseVisualStyleBackColor = true;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
+            // 
             // Employeewindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1370, 806);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -369,5 +388,6 @@ namespace Store_management_system
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label userlabel;
         private System.Windows.Forms.Label userusernamelabel;
+        private System.Windows.Forms.Button stock;
     }
 }

@@ -168,6 +168,8 @@ namespace Store_management_system
         {
            
             moveSidePanel(report);
+            Reports re  = new Reports ();
+            AddControlsToPanel(re);
         }
 
         private void areport_Click(object sender, EventArgs e)
