@@ -323,10 +323,6 @@ namespace Store_management_system
             
         }
 
-       
-
-       
-
         private void passw_TextChanged(object sender, EventArgs e)
         {
             passw.UseSystemPasswordChar = true;
@@ -343,6 +339,11 @@ namespace Store_management_system
 
                 unmatched.Visible = false;
                 matched.Visible = true;
+            }
+            else if (passw.Text == string.Empty)
+            {
+                unmatched.Visible = false;
+                matched.Visible = false;
             }
         }
 

@@ -51,8 +51,7 @@ namespace Store_management_system
                         if (dt.Rows.Count.ToString() == "1")
                         {
                             string querys = "update  login set password='" + nptxt.Text + "' where username= '" + usernametxt.Text + "'";
-
-                            SqlCommand cmdsa = new SqlCommand(querys, connect);
+                        SqlCommand cmdsa = new SqlCommand(querys, connect);
                             cmdsa.ExecuteNonQuery();
                         string result = Messageboxok.ShowBox("", "Change Password");
                         cptxt.Text = "";
@@ -122,6 +121,11 @@ namespace Store_management_system
                 unmatched.Visible = false;
                 matched.Visible = true;
             }
+            else if (nptxt.Text==string.Empty)
+            {
+                unmatched.Visible = false;
+                matched.Visible = false;
+            }
         }
 
         private void conptxt_Leave(object sender, EventArgs e)
@@ -156,6 +160,59 @@ namespace Store_management_system
             {
                 matched.Visible = false;
                 unmatched.Visible = false;
+
+            }
+        }
+
+        private void hide_Click(object sender, EventArgs e)
+        {
+            nptxt.UseSystemPasswordChar = false;
+            nptxt.Focus();
+            hide.Hide();
+            see.Show();
+           
+        }
+
+        private void see_Click(object sender, EventArgs e)
+        {
+            nptxt.UseSystemPasswordChar = true;
+            nptxt.Focus();
+            hide.Show();
+            see.Hide();
+        }
+
+        private void cphide_Click(object sender, EventArgs e)
+        {
+            cptxt.UseSystemPasswordChar = false;
+            cptxt.Focus();
+            cphide.Hide();
+            cpsee.Show();
+        }
+
+        private void cpsee_Click(object sender, EventArgs e)
+        {
+            cptxt.UseSystemPasswordChar = true;
+            cptxt.Focus();
+            cphide.Show();
+            cpsee.Hide();
+        }
+
+        private void cptxt_Enter(object sender, EventArgs e)
+        {
+            cptxt.Focus();
+            cphide.Show();
+            cpsee.Show();
+        }
+
+        private void cptxt_Leave(object sender, EventArgs e)
+        {
+            if (cptxt.Text == "")
+            {
+
+
+                cptxt.UseSystemPasswordChar = true;
+                cpsee.Hide();
+                cphide.Hide();
 
             }
         }
