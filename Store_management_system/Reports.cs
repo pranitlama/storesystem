@@ -120,7 +120,7 @@ namespace Store_management_system
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
-                    transactionlist .Rows.Clear();
+                    transactionlist.Rows.Clear();
                     int sn = 1;
                     foreach (DataRow dataRow in dt.Rows)
                     {
@@ -154,6 +154,7 @@ namespace Store_management_system
 
 
                 }
+               
 
             }
             catch (Exception ex)
@@ -172,6 +173,16 @@ namespace Store_management_system
         private void searchbox_TextChanged(object sender, EventArgs e)
         {
             displaydata();
+        }
+
+        private void searchselect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

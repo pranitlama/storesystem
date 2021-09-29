@@ -29,8 +29,8 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.transactionlist = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +44,11 @@ namespace Store_management_system
             this.label18 = new System.Windows.Forms.Label();
             this.searchselect = new System.Windows.Forms.ComboBox();
             this.searchbox = new System.Windows.Forms.TextBox();
+            this.show = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.to = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.transactionlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,14 +58,14 @@ namespace Store_management_system
             this.transactionlist.AllowUserToDeleteRows = false;
             this.transactionlist.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.transactionlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.transactionlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.transactionlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.transactionlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -70,14 +75,14 @@ namespace Store_management_system
             this.PRICE,
             this.AMOUNT,
             this.tdategv});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.transactionlist.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.transactionlist.DefaultCellStyle = dataGridViewCellStyle10;
             this.transactionlist.GridColor = System.Drawing.SystemColors.Info;
             this.transactionlist.Location = new System.Drawing.Point(174, 122);
             this.transactionlist.Name = "transactionlist";
@@ -176,6 +181,7 @@ namespace Store_management_system
             this.label18.Size = new System.Drawing.Size(134, 28);
             this.label18.TabIndex = 27;
             this.label18.Text = "Search By:";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // searchselect
             // 
@@ -184,6 +190,7 @@ namespace Store_management_system
             this.searchselect.FormattingEnabled = true;
             this.searchselect.Items.AddRange(new object[] {
             "ID",
+            "",
             "NAME",
             "EMPLOYEE NAME"});
             this.searchselect.Location = new System.Drawing.Point(866, 66);
@@ -191,6 +198,7 @@ namespace Store_management_system
             this.searchselect.Name = "searchselect";
             this.searchselect.Size = new System.Drawing.Size(186, 29);
             this.searchselect.TabIndex = 25;
+            this.searchselect.SelectedIndexChanged += new System.EventHandler(this.searchselect_SelectedIndexChanged);
             // 
             // searchbox
             // 
@@ -203,10 +211,65 @@ namespace Store_management_system
             this.searchbox.TabIndex = 26;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
+            // show
+            // 
+            this.show.AutoSize = true;
+            this.show.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.show.Location = new System.Drawing.Point(101, 71);
+            this.show.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.show.Name = "show";
+            this.show.Size = new System.Drawing.Size(92, 30);
+            this.show.TabIndex = 27;
+            this.show.Text = "SHOW:";
+            this.show.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(200, 75);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker1.TabIndex = 28;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(475, 77);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
+            this.dateTimePicker2.TabIndex = 28;
+            // 
+            // to
+            // 
+            this.to.AutoSize = true;
+            this.to.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.to.Location = new System.Drawing.Point(514, 44);
+            this.to.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.to.Name = "to";
+            this.to.Size = new System.Drawing.Size(52, 30);
+            this.to.TabIndex = 27;
+            this.to.Text = "TO:";
+            this.to.Click += new System.EventHandler(this.label18_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.Location = new System.Drawing.Point(249, 44);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(98, 30);
+            this.label1.TabIndex = 27;
+            this.label1.Text = " FROM:";
+            this.label1.Click += new System.EventHandler(this.label18_Click);
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.to);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.show);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.searchselect);
             this.Controls.Add(this.searchbox);
@@ -237,5 +300,10 @@ namespace Store_management_system
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox searchselect;
         private System.Windows.Forms.TextBox searchbox;
+        private System.Windows.Forms.Label show;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label to;
+        private System.Windows.Forms.Label label1;
     }
 }

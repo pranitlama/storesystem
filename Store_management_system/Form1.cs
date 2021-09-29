@@ -264,7 +264,7 @@ namespace Store_management_system
 
                     int count = 0;
                     string userrole = string.Empty;
-                    if (textBox1.Text=="admin"  || textBox1.Text =="Admin" && textBox2.Text=="admin" || textBox2.Text=="Admin")
+                    if (textBox1.Text=="admin" && textBox2.Text=="admin")
                     {
                         string result = Messageboxok.ShowBox("", "Admin Login Successful");
                         username = textBox1.Text.ToUpper();

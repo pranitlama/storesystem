@@ -703,7 +703,24 @@ namespace Store_management_system
             }
 
         }
-
-        
+        OpenFileDialog openFileDialog = new OpenFileDialog();
+        private void chooseimage_Click(object sender, EventArgs e)
+        {
+            
+          
+            
+                //Filter images only
+                // image matra lina dincha (*jpeg,*jpg,png);
+                openFileDialog.Filter = "JPG Files(*jpeg)|*jpeg|PNG Files(*.png)|*png";
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    photo.Image = Image.FromFile(openFileDialog.FileName);
+                }
+                else
+                {
+                    MessageBox.Show("Closed File Dialog");
+                }
+            
+        }
     }
 }

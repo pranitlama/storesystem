@@ -512,12 +512,14 @@ namespace Store_management_system
 
                     combo1();
                     countrows();
+                 
                 }
                  else if(adminoremployee.Text=="Employee")
                 {
                     connect.Open();
                     combo1();
                     countrows();
+                    
                 }
                 else
                 {
@@ -601,6 +603,88 @@ namespace Store_management_system
 
         private void idtaken_Click(  object sender, EventArgs e)
         {
+
+        }
+
+        private void display()
+        {
+          
+        }
+        private void searchbox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+
+                if (searchbox.Text == "")
+                {
+                    displaydata();
+                }
+                else if (searchselect.Text == "EID")
+                {
+                                        connect.Open();
+                
+                    string query = "select * from login where e_id like '" + searchbox.Text + "'";
+
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    userlist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+
+                        userlist.Rows.Add(sn, dataRow["userrole"], dataRow["e_id"], dataRow["username"], dataRow["password"]);
+                        sn++;
+
+                    }
+                    
+                    connect.Close();
+                    countrows();
+
+
+                }
+                else if (searchselect.Text == "USER NAME")
+                {
+                    
+                    connect.Open();
+                  
+                    // string query = "select * from employee_details where e_fname,e_lname like '" + searchbox.Text + "%'";
+                    string query = "Select * from login where username like'" + searchbox.Text + "%' ";
+                    SqlCommand cmd = new SqlCommand(query, connect);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    sda.Fill(dt);
+                    userlist.Rows.Clear();
+                    int sn = 1;
+                    foreach (DataRow dataRow in dt.Rows)
+                    {
+                        userlist.Rows.Add(sn, dataRow["userrole"], dataRow["e_id"], dataRow["username"], dataRow["password"]);
+                        sn++;
+
+                    }
+                    connect.Close();
+           
+                    countrows();
+                    
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                if (connect.State == ConnectionState.Open)
+                {
+                    connect.Close();
+                }
+            }
 
         }
     }
