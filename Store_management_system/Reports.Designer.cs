@@ -29,8 +29,10 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Reports));
             this.transactionlist = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.empname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,28 +46,32 @@ namespace Store_management_system
             this.label18 = new System.Windows.Forms.Label();
             this.searchselect = new System.Windows.Forms.ComboBox();
             this.searchbox = new System.Windows.Forms.TextBox();
-            this.show = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.to = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.refresh = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.fromdate = new Store_management_system.RJDatePicker();
+            this.todate = new Store_management_system.RJDatePicker();
+            this.filter = new ePOSOne.btnProduct.Button_WOC();
             ((System.ComponentModel.ISupportInitialize)(this.transactionlist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refresh)).BeginInit();
             this.SuspendLayout();
             // 
             // transactionlist
             // 
             this.transactionlist.AllowUserToAddRows = false;
             this.transactionlist.AllowUserToDeleteRows = false;
+            this.transactionlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.transactionlist.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.transactionlist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.transactionlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.transactionlist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.transactionlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.transactionlist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -75,30 +81,31 @@ namespace Store_management_system
             this.PRICE,
             this.AMOUNT,
             this.tdategv});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.transactionlist.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.transactionlist.DefaultCellStyle = dataGridViewCellStyle2;
             this.transactionlist.GridColor = System.Drawing.SystemColors.Info;
-            this.transactionlist.Location = new System.Drawing.Point(174, 122);
+            this.transactionlist.Location = new System.Drawing.Point(83, 108);
+            this.transactionlist.Margin = new System.Windows.Forms.Padding(2);
             this.transactionlist.Name = "transactionlist";
             this.transactionlist.ReadOnly = true;
             this.transactionlist.RowHeadersWidth = 31;
             this.transactionlist.RowTemplate.Height = 28;
-            this.transactionlist.Size = new System.Drawing.Size(1200, 734);
+            this.transactionlist.Size = new System.Drawing.Size(1020, 422);
             this.transactionlist.TabIndex = 7;
             // 
             // ID
             // 
+            this.ID.FillWeight = 50F;
             this.ID.HeaderText = "ID";
             this.ID.MinimumWidth = 8;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 80;
             // 
             // empname
             // 
@@ -106,7 +113,6 @@ namespace Store_management_system
             this.empname.MinimumWidth = 8;
             this.empname.Name = "empname";
             this.empname.ReadOnly = true;
-            this.empname.Width = 150;
             // 
             // NAME
             // 
@@ -114,31 +120,30 @@ namespace Store_management_system
             this.NAME.MinimumWidth = 8;
             this.NAME.Name = "NAME";
             this.NAME.ReadOnly = true;
-            this.NAME.Width = 150;
             // 
             // quantity
             // 
+            this.quantity.FillWeight = 50F;
             this.quantity.HeaderText = "QUANTITY";
             this.quantity.MinimumWidth = 8;
             this.quantity.Name = "quantity";
             this.quantity.ReadOnly = true;
-            this.quantity.Width = 80;
             // 
             // PRICE
             // 
+            this.PRICE.FillWeight = 60F;
             this.PRICE.HeaderText = "PRICE";
             this.PRICE.MinimumWidth = 8;
             this.PRICE.Name = "PRICE";
             this.PRICE.ReadOnly = true;
-            this.PRICE.Width = 80;
             // 
             // AMOUNT
             // 
+            this.AMOUNT.FillWeight = 60F;
             this.AMOUNT.HeaderText = "AMOUNT";
             this.AMOUNT.MinimumWidth = 8;
             this.AMOUNT.Name = "AMOUNT";
             this.AMOUNT.ReadOnly = true;
-            this.AMOUNT.Width = 150;
             // 
             // tdategv
             // 
@@ -146,28 +151,25 @@ namespace Store_management_system
             this.tdategv.MinimumWidth = 8;
             this.tdategv.Name = "tdategv";
             this.tdategv.ReadOnly = true;
-            this.tdategv.Width = 80;
             // 
             // countrow
             // 
             this.countrow.BackColor = System.Drawing.Color.White;
             this.countrow.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.countrow.Location = new System.Drawing.Point(451, 864);
-            this.countrow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.countrow.Location = new System.Drawing.Point(265, 564);
             this.countrow.Multiline = true;
             this.countrow.Name = "countrow";
             this.countrow.ReadOnly = true;
-            this.countrow.Size = new System.Drawing.Size(168, 32);
+            this.countrow.Size = new System.Drawing.Size(113, 22);
             this.countrow.TabIndex = 24;
             // 
             // Total
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(285, 869);
-            this.Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Total.Location = new System.Drawing.Point(154, 567);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(128, 23);
+            this.Total.Size = new System.Drawing.Size(88, 17);
             this.Total.TabIndex = 23;
             this.Total.Text = "Total Count:";
             // 
@@ -175,10 +177,9 @@ namespace Store_management_system
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(710, 67);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Location = new System.Drawing.Point(678, 71);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(134, 28);
+            this.label18.Size = new System.Drawing.Size(88, 19);
             this.label18.TabIndex = 27;
             this.label18.Text = "Search By:";
             this.label18.Click += new System.EventHandler(this.label18_Click);
@@ -193,58 +194,29 @@ namespace Store_management_system
             "",
             "NAME",
             "EMPLOYEE NAME"});
-            this.searchselect.Location = new System.Drawing.Point(866, 66);
-            this.searchselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchselect.Location = new System.Drawing.Point(787, 67);
             this.searchselect.Name = "searchselect";
-            this.searchselect.Size = new System.Drawing.Size(186, 29);
+            this.searchselect.Size = new System.Drawing.Size(116, 25);
             this.searchselect.TabIndex = 25;
             this.searchselect.SelectedIndexChanged += new System.EventHandler(this.searchselect_SelectedIndexChanged);
             // 
             // searchbox
             // 
             this.searchbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.Location = new System.Drawing.Point(1060, 66);
-            this.searchbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchbox.Location = new System.Drawing.Point(924, 67);
             this.searchbox.Multiline = true;
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(298, 36);
+            this.searchbox.Size = new System.Drawing.Size(165, 25);
             this.searchbox.TabIndex = 26;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
-            // 
-            // show
-            // 
-            this.show.AutoSize = true;
-            this.show.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.show.Location = new System.Drawing.Point(101, 71);
-            this.show.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.show.Name = "show";
-            this.show.Size = new System.Drawing.Size(92, 30);
-            this.show.TabIndex = 27;
-            this.show.Text = "SHOW:";
-            this.show.Click += new System.EventHandler(this.label18_Click);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(200, 75);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 28;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(475, 77);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 28;
             // 
             // to
             // 
             this.to.AutoSize = true;
             this.to.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.to.Location = new System.Drawing.Point(514, 44);
-            this.to.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.to.Location = new System.Drawing.Point(266, 40);
             this.to.Name = "to";
-            this.to.Size = new System.Drawing.Size(52, 30);
+            this.to.Size = new System.Drawing.Size(36, 21);
             this.to.TabIndex = 27;
             this.to.Text = "TO:";
             this.to.Click += new System.EventHandler(this.label18_Click);
@@ -253,33 +225,100 @@ namespace Store_management_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label1.Location = new System.Drawing.Point(249, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(93, 40);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 30);
+            this.label1.Size = new System.Drawing.Size(65, 21);
             this.label1.TabIndex = 27;
             this.label1.Text = " FROM:";
             this.label1.Click += new System.EventHandler(this.label18_Click);
             // 
+            // refresh
+            // 
+            this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
+            this.refresh.Location = new System.Drawing.Point(477, 70);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(24, 24);
+            this.refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.refresh.TabIndex = 30;
+            this.refresh.TabStop = false;
+            this.toolTip1.SetToolTip(this.refresh, "Refresh");
+            this.refresh.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // fromdate
+            // 
+            this.fromdate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.fromdate.BorderSize = 0;
+            this.fromdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.fromdate.Location = new System.Drawing.Point(97, 64);
+            this.fromdate.MinimumSize = new System.Drawing.Size(4, 35);
+            this.fromdate.Name = "fromdate";
+            this.fromdate.Size = new System.Drawing.Size(114, 35);
+            this.fromdate.SkinColor = System.Drawing.Color.RoyalBlue;
+            this.fromdate.TabIndex = 32;
+            this.fromdate.TextColor = System.Drawing.Color.White;
+            // 
+            // todate
+            // 
+            this.todate.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.todate.BorderSize = 0;
+            this.todate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
+            this.todate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.todate.Location = new System.Drawing.Point(270, 64);
+            this.todate.MinimumSize = new System.Drawing.Size(4, 35);
+            this.todate.Name = "todate";
+            this.todate.Size = new System.Drawing.Size(114, 35);
+            this.todate.SkinColor = System.Drawing.Color.RoyalBlue;
+            this.todate.TabIndex = 31;
+            this.todate.TextColor = System.Drawing.Color.White;
+            // 
+            // filter
+            // 
+            this.filter.BackColor = System.Drawing.Color.White;
+            this.filter.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.filter.ButtonColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.filter.FlatAppearance.BorderSize = 0;
+            this.filter.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.filter.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.filter.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.filter.Location = new System.Drawing.Point(390, 63);
+            this.filter.Name = "filter";
+            this.filter.OnHoverBorderColor = System.Drawing.Color.SlateGray;
+            this.filter.OnHoverButtonColor = System.Drawing.Color.White;
+            this.filter.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.filter.Size = new System.Drawing.Size(81, 36);
+            this.filter.TabIndex = 29;
+            this.filter.Text = "Filter";
+            this.filter.TextColor = System.Drawing.Color.White;
+            this.filter.UseVisualStyleBackColor = false;
+            this.filter.Click += new System.EventHandler(this.filter_Click);
+            // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.fromdate);
+            this.Controls.Add(this.todate);
+            this.Controls.Add(this.refresh);
+            this.Controls.Add(this.filter);
             this.Controls.Add(this.to);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.show);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.searchselect);
             this.Controls.Add(this.searchbox);
             this.Controls.Add(this.countrow);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.transactionlist);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Reports";
-            this.Size = new System.Drawing.Size(1453, 928);
+            this.Size = new System.Drawing.Size(1194, 561);
             this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.transactionlist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.refresh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,6 +327,15 @@ namespace Store_management_system
         #endregion
 
         private System.Windows.Forms.DataGridView transactionlist;
+        private System.Windows.Forms.TextBox countrow;
+        private System.Windows.Forms.Label Total;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox searchselect;
+        private System.Windows.Forms.TextBox searchbox;
+        private System.Windows.Forms.Label to;
+        private System.Windows.Forms.Label label1;
+        private ePOSOne.btnProduct.Button_WOC filter;
+        private System.Windows.Forms.PictureBox refresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn empname;
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
@@ -295,15 +343,8 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
         private System.Windows.Forms.DataGridViewTextBoxColumn AMOUNT;
         private System.Windows.Forms.DataGridViewTextBoxColumn tdategv;
-        private System.Windows.Forms.TextBox countrow;
-        private System.Windows.Forms.Label Total;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox searchselect;
-        private System.Windows.Forms.TextBox searchbox;
-        private System.Windows.Forms.Label show;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.Label to;
-        private System.Windows.Forms.Label label1;
+        private RJDatePicker todate;
+        private RJDatePicker fromdate;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

@@ -18,6 +18,24 @@ namespace Store_management_system
         {
             InitializeComponent();
             transactionlist.DefaultCellStyle.ForeColor = Color.Black;
+            this.transactionlist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.transactionlist.ColumnHeadersHeight = 40;
+            //    this.employeelist.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            transactionlist.Columns[6].DefaultCellStyle.Format = "yyyy/MM/dd";
+            searchselect.SelectedIndex = 0;
+            transactionlist.RowTemplate.Height = 35;
+            // employeelist.AllowUserToResizeRows = false;
+
+
+
+            // em_dob.CustomFormat = "yyyy/MM/dd";
+
+            transactionlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+
+
+
+            this.transactionlist.EnableHeadersVisualStyles = false;
+
         }
         private void display()
         {
@@ -66,18 +84,7 @@ namespace Store_management_system
         private void Reports_Load(object sender, EventArgs e)
         {
             display();
-            transactionlist.RowTemplate.Height = 35;
-            // employeelist.AllowUserToResizeRows = false;
-
-
            
-            // em_dob.CustomFormat = "yyyy/MM/dd";
-
-            transactionlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
-
-
-
-            this.transactionlist.EnableHeadersVisualStyles = false;
             // this.employeelist.ColumnHeadersHeight = 80;
         }
         private void displaydata()
@@ -184,5 +191,40 @@ namespace Store_management_system
         {
 
         }
+
+        private void filter_Click(object sender, EventArgs e)
+        {
+            DateTime datefrom = Convert.ToDateTime(fromdate.Text);
+            DateTime dateto = Convert.ToDateTime(todate.Text);
+            if (datefrom <= dateto)
+            {
+                SqlDataAdapter sda = new SqlDataAdapter("select * from transaction_details where t_date between '" + fromdate.Value.ToString() + "' and '" + todate.Value.ToString() + "'", connect);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                transactionlist.Rows.Clear();
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+
+                    transactionlist.Rows.Add(dataRow["t_id"], dataRow["t_empname"], dataRow["t_name"], dataRow["t_quantity"], dataRow["t_price"], dataRow["t_amt"], dataRow["t_date"]);
+
+
+                }
+                countrows();
+            }
+            else
+            {
+                string result = Messageboxok.ShowBox("", "Invalid Date Difference");
+            }
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            display();
+            fromdate.Value = DateTime.Today;
+        }
+
+       
     }
 }

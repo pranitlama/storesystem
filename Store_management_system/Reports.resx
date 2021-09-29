@@ -138,4 +138,21 @@
   <metadata name="tdategv.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="refresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAb5JREFUSEu1
+        1stKHEEYhuFRA2owi6jgBYhBXWkieCAulGhW6koUTSTb7KN4H+Jh4U3oLgQCIerCqLeRGEREUDee3rfo
+        ARm6p2vU+eCBqe7q+qd7qqqn8MxpSlScNoxjAV+Szy0ozfdEVOrwCbu4xV2JG3huFjUwB4ncdOEIDnSM
+        NTjQAPqTz6v4B/vsoR1RBYZxjkt8QyOy4rkl2PcEfpmyBTrh4H/R44HI9MLBvZvMArU4xAViB3+Bj9jE
+        KSzwA6lxhthhMbTyMwkfi9dc4ye+ohmp8Yf6j/rQys8UtuGgTuOyaYVTcSW0qhCfo7c6E1pVyGdY4H1o
+        PS2vsIXu0Epiw4OP2kdK4jryy7oLVCVzsMBYaFUhbitOmMzpWoxTzynoVHRKxqQBro3foZUSqzqoi8bF
+        4616wQRisgyv8TGlxmVuB5e9y9/p63YQkz646f2B205q3Kgs4Mb11gOReQd3gTN0eCArFnBwH8sVvOWX
+        yIrn7GNfBx9C2VhAvjx8W3k3frN1+FxHMIh5bMBz9tnHG+SmWMD4GpzGLxR/8Id8Ze7AwpnPvDRZL+3X
+        GIVbuvvVB7hBVpxH/+1IT6FwD/lRbc7wLm7nAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

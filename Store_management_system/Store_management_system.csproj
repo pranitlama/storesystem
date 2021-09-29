@@ -127,6 +127,9 @@
     <Compile Include="RJComboBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="RJDatePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -230,6 +233,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Img5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
