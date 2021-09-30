@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Store_management_system
 {
@@ -63,7 +64,7 @@ namespace Store_management_system
                 foreach (DataRow dataRow in dt.Rows)
                 {
                     var fullName = $"{dataRow["e_fname"].ToString()} {dataRow["e_mname"].ToString()} {dataRow["e_lname"].ToString()}";
-                    employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"], fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit");
+                    employeelist.Rows.Add(sn, dataRow["e_id"], dataRow["e_fname"], dataRow["e_mname"], dataRow["e_lname"], fullName, dataRow["e_address"], dataRow["e_pn"], dataRow["e_age"], dataRow["e_gender"], dataRow["e_dob"], dataRow["e_email"], "Edit",dataRow["filepath"]);
                     sn++;
 
                 }
@@ -163,8 +164,14 @@ namespace Store_management_system
                     string st_age = em_age.Text;
                     string st_dob = em_dob.Text;
                     string st_email = em_email.Text;
+                 //   byte[] images = null;
+                  //  FileStream streem = new FileStream(imglocation, FileMode.Open, FileAccess.Read);
+                   // string images = imglocation.ToString();
+                   // BinaryReader brs = new BinaryReader(streem);
+                  //  images = brs.ReadBytes((int)streem.Length); 
+ 
                     //string query = "Insert into student_details(name,address,Contact) values (" + namee + "," + Addresss +")";
-                    string query = "Insert into employee_details (e_fname,e_mname,e_lname,e_address,e_pn,e_age,e_gender,e_dob,e_email) values (@parameter_fname,@parameter_mname,@parameter_lname,@parameter_address,@parameter_pn,@parameter_age,@parameter_gender,@parameter_dob,@parameter_email)";
+                    string query = "Insert into employee_details (e_fname,e_mname,e_lname,e_address,e_pn,e_age,e_gender,e_dob,e_email,filepath) values (@parameter_fname,@parameter_mname,@parameter_lname,@parameter_address,@parameter_pn,@parameter_age,@parameter_gender,@parameter_dob,@parameter_email,@parameter_photo_path)";
 
                     SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.Parameters.AddWithValue("@parameter_fname", st_fname);
@@ -176,6 +183,7 @@ namespace Store_management_system
                     cmd.Parameters.AddWithValue("@parameter_gender", employeegender);
                     cmd.Parameters.AddWithValue("@parameter_dob", st_dob);
                     cmd.Parameters.AddWithValue("@parameter_email", st_email);
+                   cmd.Parameters.AddWithValue("@parameter_photo_path", imglocation);
 
                     cmd.ExecuteNonQuery();
                     string result = Messageboxok.ShowBox("", "Data Added Successfully");
@@ -325,6 +333,11 @@ namespace Store_management_system
                 string employee_age = employeelist.CurrentRow.Cells["eage"].Value.ToString();
                 string employee_dob = employeelist.CurrentRow.Cells["edob"].Value.ToString();
                 string employee_email = employeelist.CurrentRow.Cells["eemail"].Value.ToString();
+             //   string photo_path = employeelist.CurrentRow.Cells["filepath"].Value.ToString();
+                //for saving and getting only file name
+                //  string path = Application.StartupPath + "\\uploadedimage\\" + photo_path;
+                // for saving and getting file path
+               // photo.Image = Image.FromFile(photo_path);
                 //   MessageBox.Show("Id: " + employee_id + "\nName: " + employee_name);
                 string result = Messageboxok.ShowBox("", "Id: " + employee_id + "\nName: " + employee_name);
                 em_fname.Text = employee_fname;
@@ -372,6 +385,7 @@ namespace Store_management_system
             em_female.Checked = false;
             pnerror.Visible = false;
             emailerror.Visible = false;
+            photo.Image = null;
 
         }
 
@@ -703,6 +717,7 @@ namespace Store_management_system
             }
 
         }
+        string imglocation = "";
         OpenFileDialog openFileDialog = new OpenFileDialog();
         private void chooseimage_Click(object sender, EventArgs e)
         {
@@ -714,7 +729,8 @@ namespace Store_management_system
                 openFileDialog.Filter = "JPG Files(*jpeg)|*jpeg|PNG Files(*.png)|*png";
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    photo.Image = Image.FromFile(openFileDialog.FileName);
+                imglocation = openFileDialog.FileName.ToString();
+                photo.ImageLocation = imglocation;
                 }
                 else
                 {
