@@ -90,13 +90,12 @@ namespace Store_management_system
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.transactionlist.DefaultCellStyle = dataGridViewCellStyle2;
             this.transactionlist.GridColor = System.Drawing.SystemColors.Info;
-            this.transactionlist.Location = new System.Drawing.Point(83, 108);
-            this.transactionlist.Margin = new System.Windows.Forms.Padding(2);
+            this.transactionlist.Location = new System.Drawing.Point(124, 166);
             this.transactionlist.Name = "transactionlist";
             this.transactionlist.ReadOnly = true;
             this.transactionlist.RowHeadersWidth = 31;
             this.transactionlist.RowTemplate.Height = 28;
-            this.transactionlist.Size = new System.Drawing.Size(1020, 422);
+            this.transactionlist.Size = new System.Drawing.Size(1530, 649);
             this.transactionlist.TabIndex = 7;
             // 
             // ID
@@ -156,20 +155,22 @@ namespace Store_management_system
             // 
             this.countrow.BackColor = System.Drawing.Color.White;
             this.countrow.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.countrow.Location = new System.Drawing.Point(265, 564);
+            this.countrow.Location = new System.Drawing.Point(398, 868);
+            this.countrow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.countrow.Multiline = true;
             this.countrow.Name = "countrow";
             this.countrow.ReadOnly = true;
-            this.countrow.Size = new System.Drawing.Size(113, 22);
+            this.countrow.Size = new System.Drawing.Size(168, 32);
             this.countrow.TabIndex = 24;
             // 
             // Total
             // 
             this.Total.AutoSize = true;
             this.Total.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Total.Location = new System.Drawing.Point(154, 567);
+            this.Total.Location = new System.Drawing.Point(231, 872);
+            this.Total.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(88, 17);
+            this.Total.Size = new System.Drawing.Size(128, 23);
             this.Total.TabIndex = 23;
             this.Total.Text = "Total Count:";
             // 
@@ -177,9 +178,10 @@ namespace Store_management_system
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(678, 71);
+            this.label18.Location = new System.Drawing.Point(1017, 109);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(88, 19);
+            this.label18.Size = new System.Drawing.Size(134, 28);
             this.label18.TabIndex = 27;
             this.label18.Text = "Search By:";
             this.label18.Click += new System.EventHandler(this.label18_Click);
@@ -191,22 +193,23 @@ namespace Store_management_system
             this.searchselect.FormattingEnabled = true;
             this.searchselect.Items.AddRange(new object[] {
             "ID",
-            "",
             "NAME",
             "EMPLOYEE NAME"});
-            this.searchselect.Location = new System.Drawing.Point(787, 67);
+            this.searchselect.Location = new System.Drawing.Point(1180, 103);
+            this.searchselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchselect.Name = "searchselect";
-            this.searchselect.Size = new System.Drawing.Size(116, 25);
+            this.searchselect.Size = new System.Drawing.Size(172, 29);
             this.searchselect.TabIndex = 25;
             this.searchselect.SelectedIndexChanged += new System.EventHandler(this.searchselect_SelectedIndexChanged);
             // 
             // searchbox
             // 
             this.searchbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.Location = new System.Drawing.Point(924, 67);
+            this.searchbox.Location = new System.Drawing.Point(1386, 103);
+            this.searchbox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchbox.Multiline = true;
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(165, 25);
+            this.searchbox.Size = new System.Drawing.Size(246, 36);
             this.searchbox.TabIndex = 26;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
@@ -214,9 +217,10 @@ namespace Store_management_system
             // 
             this.to.AutoSize = true;
             this.to.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.to.Location = new System.Drawing.Point(266, 40);
+            this.to.Location = new System.Drawing.Point(399, 62);
+            this.to.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.to.Name = "to";
-            this.to.Size = new System.Drawing.Size(36, 21);
+            this.to.Size = new System.Drawing.Size(52, 30);
             this.to.TabIndex = 27;
             this.to.Text = "TO:";
             this.to.Click += new System.EventHandler(this.label18_Click);
@@ -225,9 +229,10 @@ namespace Store_management_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.label1.Location = new System.Drawing.Point(93, 40);
+            this.label1.Location = new System.Drawing.Point(140, 62);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 21);
+            this.label1.Size = new System.Drawing.Size(98, 30);
             this.label1.TabIndex = 27;
             this.label1.Text = " FROM:";
             this.label1.Click += new System.EventHandler(this.label18_Click);
@@ -236,7 +241,8 @@ namespace Store_management_system
             // 
             this.refresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
-            this.refresh.Location = new System.Drawing.Point(477, 70);
+            this.refresh.Location = new System.Drawing.Point(716, 108);
+            this.refresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(24, 24);
             this.refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -251,10 +257,11 @@ namespace Store_management_system
             this.fromdate.BorderSize = 0;
             this.fromdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.fromdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fromdate.Location = new System.Drawing.Point(97, 64);
+            this.fromdate.Location = new System.Drawing.Point(146, 98);
+            this.fromdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fromdate.MinimumSize = new System.Drawing.Size(4, 35);
             this.fromdate.Name = "fromdate";
-            this.fromdate.Size = new System.Drawing.Size(114, 35);
+            this.fromdate.Size = new System.Drawing.Size(169, 35);
             this.fromdate.SkinColor = System.Drawing.Color.RoyalBlue;
             this.fromdate.TabIndex = 32;
             this.fromdate.TextColor = System.Drawing.Color.White;
@@ -265,10 +272,11 @@ namespace Store_management_system
             this.todate.BorderSize = 0;
             this.todate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F);
             this.todate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.todate.Location = new System.Drawing.Point(270, 64);
+            this.todate.Location = new System.Drawing.Point(405, 98);
+            this.todate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.todate.MinimumSize = new System.Drawing.Size(4, 35);
             this.todate.Name = "todate";
-            this.todate.Size = new System.Drawing.Size(114, 35);
+            this.todate.Size = new System.Drawing.Size(169, 35);
             this.todate.SkinColor = System.Drawing.Color.RoyalBlue;
             this.todate.TabIndex = 31;
             this.todate.TextColor = System.Drawing.Color.White;
@@ -284,12 +292,13 @@ namespace Store_management_system
             this.filter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.filter.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.filter.Location = new System.Drawing.Point(390, 63);
+            this.filter.Location = new System.Drawing.Point(585, 97);
+            this.filter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.filter.Name = "filter";
             this.filter.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.filter.OnHoverButtonColor = System.Drawing.Color.White;
             this.filter.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
-            this.filter.Size = new System.Drawing.Size(81, 36);
+            this.filter.Size = new System.Drawing.Size(122, 55);
             this.filter.TabIndex = 29;
             this.filter.Text = "Filter";
             this.filter.TextColor = System.Drawing.Color.White;
@@ -298,7 +307,7 @@ namespace Store_management_system
             // 
             // Reports
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.fromdate);
@@ -313,9 +322,8 @@ namespace Store_management_system
             this.Controls.Add(this.countrow);
             this.Controls.Add(this.Total);
             this.Controls.Add(this.transactionlist);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Reports";
-            this.Size = new System.Drawing.Size(1194, 561);
+            this.Size = new System.Drawing.Size(1791, 863);
             this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.transactionlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.refresh)).EndInit();
