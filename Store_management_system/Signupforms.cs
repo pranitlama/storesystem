@@ -27,6 +27,7 @@ namespace Store_management_system
             adminoremployee.SelectedIndex = 2;
             see.Hide();
             hide.Hide();
+            searchselect.SelectedIndex = 1;
 
             
           
@@ -477,6 +478,7 @@ namespace Store_management_system
         private void showpassw_CheckedChanged(object sender, EventArgs e)
         {
             adminoremployee_SelectedIndexChanged(sender, e);
+            searchbox_TextChanged(sender, e);
         }
 
        
@@ -615,16 +617,13 @@ namespace Store_management_system
             try
             {
 
-
-
                 if (searchbox.Text == "")
                 {
                     displaydata();
                 }
                 else if (searchselect.Text == "EID")
                 {
-                                        connect.Open();
-                
+                                        connect.Open();             
                     string query = "select * from login where e_id like '" + searchbox.Text + "'";
 
                     SqlCommand cmd = new SqlCommand(query, connect);
@@ -642,6 +641,9 @@ namespace Store_management_system
                     }
                     
                     connect.Close();
+
+
+                 
                     countrows();
 
 
