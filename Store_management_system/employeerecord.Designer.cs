@@ -29,9 +29,9 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employee));
             this.label2 = new System.Windows.Forms.Label();
             this.em_fname = new System.Windows.Forms.TextBox();
@@ -53,6 +53,7 @@ namespace Store_management_system
             this.edob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eemail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Action = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.filepath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.em_address = new System.Windows.Forms.TextBox();
             this.em_pn = new System.Windows.Forms.TextBox();
             this.em_age = new System.Windows.Forms.TextBox();
@@ -89,6 +90,7 @@ namespace Store_management_system
             this.countrow = new System.Windows.Forms.TextBox();
             this.photo = new System.Windows.Forms.PictureBox();
             this.chooseimage = new ePOSOne.btnProduct.Button_WOC();
+            this.filepathtext = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.employeelist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.SuspendLayout();
@@ -168,14 +170,14 @@ namespace Store_management_system
             this.employeelist.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.employeelist.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.RaisedHorizontal;
             this.employeelist.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.employeelist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeelist.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.employeelist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeelist.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SN,
@@ -190,28 +192,29 @@ namespace Store_management_system
             this.egender,
             this.edob,
             this.eemail,
-            this.Action});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.employeelist.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Action,
+            this.filepath});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.employeelist.DefaultCellStyle = dataGridViewCellStyle2;
             this.employeelist.GridColor = System.Drawing.SystemColors.Info;
             this.employeelist.Location = new System.Drawing.Point(6, 225);
             this.employeelist.Name = "employeelist";
             this.employeelist.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.employeelist.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.employeelist.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.employeelist.RowHeadersWidth = 39;
             this.employeelist.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.employeelist.Size = new System.Drawing.Size(1164, 300);
@@ -339,7 +342,14 @@ namespace Store_management_system
             this.Action.ReadOnly = true;
             this.Action.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Action.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Action.Width = 150;
+            this.Action.Width = 80;
+            // 
+            // filepath
+            // 
+            this.filepath.HeaderText = "Filepath";
+            this.filepath.Name = "filepath";
+            this.filepath.ReadOnly = true;
+            this.filepath.Visible = false;
             // 
             // em_address
             // 
@@ -349,6 +359,7 @@ namespace Store_management_system
             this.em_address.Name = "em_address";
             this.em_address.Size = new System.Drawing.Size(198, 23);
             this.em_address.TabIndex = 4;
+            this.em_address.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.em_address_KeyPress);
             // 
             // em_pn
             // 
@@ -492,7 +503,7 @@ namespace Store_management_system
             this.eupdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eupdate.ForeColor = System.Drawing.Color.White;
-            this.eupdate.Location = new System.Drawing.Point(352, 183);
+            this.eupdate.Location = new System.Drawing.Point(388, 180);
             this.eupdate.Name = "eupdate";
             this.eupdate.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.eupdate.OnHoverButtonColor = System.Drawing.Color.White;
@@ -514,7 +525,7 @@ namespace Store_management_system
             this.edelete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.edelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edelete.ForeColor = System.Drawing.Color.White;
-            this.edelete.Location = new System.Drawing.Point(474, 183);
+            this.edelete.Location = new System.Drawing.Point(510, 180);
             this.edelete.Name = "edelete";
             this.edelete.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.edelete.OnHoverButtonColor = System.Drawing.Color.White;
@@ -536,7 +547,7 @@ namespace Store_management_system
             this.eadd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eadd.ForeColor = System.Drawing.Color.White;
-            this.eadd.Location = new System.Drawing.Point(230, 183);
+            this.eadd.Location = new System.Drawing.Point(266, 180);
             this.eadd.Name = "eadd";
             this.eadd.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.eadd.OnHoverButtonColor = System.Drawing.Color.White;
@@ -649,7 +660,7 @@ namespace Store_management_system
             this.eclear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.eclear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.eclear.ForeColor = System.Drawing.Color.White;
-            this.eclear.Location = new System.Drawing.Point(596, 183);
+            this.eclear.Location = new System.Drawing.Point(632, 180);
             this.eclear.Name = "eclear";
             this.eclear.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.eclear.OnHoverButtonColor = System.Drawing.Color.White;
@@ -765,7 +776,7 @@ namespace Store_management_system
             this.check1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.check1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.check1.ForeColor = System.Drawing.Color.White;
-            this.check1.Location = new System.Drawing.Point(107, 183);
+            this.check1.Location = new System.Drawing.Point(143, 180);
             this.check1.Name = "check1";
             this.check1.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.check1.OnHoverButtonColor = System.Drawing.Color.White;
@@ -794,11 +805,11 @@ namespace Store_management_system
             this.photo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.photo.Image = ((System.Drawing.Image)(resources.GetObject("photo.Image")));
             this.photo.InitialImage = ((System.Drawing.Image)(resources.GetObject("photo.InitialImage")));
-            this.photo.Location = new System.Drawing.Point(19, 40);
-            this.photo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.photo.Location = new System.Drawing.Point(33, 28);
+            this.photo.Margin = new System.Windows.Forms.Padding(2);
             this.photo.Name = "photo";
-            this.photo.Size = new System.Drawing.Size(107, 99);
-            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.photo.Size = new System.Drawing.Size(106, 106);
+            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.photo.TabIndex = 23;
             this.photo.TabStop = false;
             // 
@@ -812,7 +823,7 @@ namespace Store_management_system
             this.chooseimage.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.chooseimage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.chooseimage.ForeColor = System.Drawing.Color.White;
-            this.chooseimage.Location = new System.Drawing.Point(22, 139);
+            this.chooseimage.Location = new System.Drawing.Point(33, 144);
             this.chooseimage.Name = "chooseimage";
             this.chooseimage.OnHoverBorderColor = System.Drawing.Color.SlateGray;
             this.chooseimage.OnHoverButtonColor = System.Drawing.Color.White;
@@ -824,11 +835,21 @@ namespace Store_management_system
             this.chooseimage.UseVisualStyleBackColor = false;
             this.chooseimage.Click += new System.EventHandler(this.chooseimage_Click);
             // 
+            // filepathtext
+            // 
+            this.filepathtext.AutoSize = true;
+            this.filepathtext.Location = new System.Drawing.Point(33, 134);
+            this.filepathtext.Name = "filepathtext";
+            this.filepathtext.Size = new System.Drawing.Size(0, 13);
+            this.filepathtext.TabIndex = 24;
+            this.filepathtext.Visible = false;
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.filepathtext);
             this.Controls.Add(this.photo);
             this.Controls.Add(this.countrow);
             this.Controls.Add(this.label18);
@@ -923,6 +944,10 @@ namespace Store_management_system
         private System.Windows.Forms.ComboBox searchselect;
         private System.Windows.Forms.Label label18;
         private ePOSOne.btnProduct.Button_WOC check1;
+        private System.Windows.Forms.TextBox countrow;
+        private System.Windows.Forms.PictureBox photo;
+        private ePOSOne.btnProduct.Button_WOC chooseimage;
+        private System.Windows.Forms.Label filepathtext;
         private System.Windows.Forms.DataGridViewTextBoxColumn SN;
         private System.Windows.Forms.DataGridViewTextBoxColumn eid;
         private System.Windows.Forms.DataGridViewTextBoxColumn efname;
@@ -936,8 +961,6 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn edob;
         private System.Windows.Forms.DataGridViewTextBoxColumn eemail;
         private System.Windows.Forms.DataGridViewButtonColumn Action;
-        private System.Windows.Forms.TextBox countrow;
-        private System.Windows.Forms.PictureBox photo;
-        private ePOSOne.btnProduct.Button_WOC chooseimage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn filepath;
     }
 }

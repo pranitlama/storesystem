@@ -43,11 +43,6 @@ namespace Store_management_system
             this.cpassw = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.userlist = new System.Windows.Forms.DataGridView();
-            this.sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userrole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolechoose = new System.Windows.Forms.ComboBox();
             this.iderror = new System.Windows.Forms.Label();
             this.usernameerror = new System.Windows.Forms.Label();
@@ -65,17 +60,18 @@ namespace Store_management_system
             this.label18 = new System.Windows.Forms.Label();
             this.searchselect = new System.Windows.Forms.ComboBox();
             this.searchbox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.showpassw = new CustomControls.RJControls.RJToggleButton();
             this.delete = new ePOSOne.btnProduct.Button_WOC();
             this.Reset = new ePOSOne.btnProduct.Button_WOC();
             this.signupbtn = new ePOSOne.btnProduct.Button_WOC();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userrole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.userlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unmatched)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matched)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -225,46 +221,6 @@ namespace Store_management_system
             this.userlist.TabIndex = 7;
             this.userlist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.userlist_CellFormatting);
             // 
-            // sn
-            // 
-            this.sn.HeaderText = "SN";
-            this.sn.MinimumWidth = 8;
-            this.sn.Name = "sn";
-            this.sn.ReadOnly = true;
-            this.sn.Width = 80;
-            // 
-            // userrole
-            // 
-            this.userrole.HeaderText = "User Role";
-            this.userrole.MinimumWidth = 8;
-            this.userrole.Name = "userrole";
-            this.userrole.ReadOnly = true;
-            this.userrole.Width = 150;
-            // 
-            // empid
-            // 
-            this.empid.HeaderText = "Employee ID";
-            this.empid.MinimumWidth = 8;
-            this.empid.Name = "empid";
-            this.empid.ReadOnly = true;
-            this.empid.Width = 130;
-            // 
-            // usrname
-            // 
-            this.usrname.HeaderText = "Username";
-            this.usrname.MinimumWidth = 8;
-            this.usrname.Name = "usrname";
-            this.usrname.ReadOnly = true;
-            this.usrname.Width = 150;
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Password";
-            this.Password.MinimumWidth = 8;
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Width = 152;
-            // 
             // rolechoose
             // 
             this.rolechoose.BackColor = System.Drawing.Color.White;
@@ -393,7 +349,7 @@ namespace Store_management_system
             this.hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.hide.ForeColor = System.Drawing.Color.White;
             this.hide.Location = new System.Drawing.Point(365, 311);
-            this.hide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.hide.Margin = new System.Windows.Forms.Padding(2);
             this.hide.Name = "hide";
             this.hide.Size = new System.Drawing.Size(22, 13);
             this.hide.TabIndex = 22;
@@ -409,7 +365,7 @@ namespace Store_management_system
             this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.see.ForeColor = System.Drawing.Color.White;
             this.see.Location = new System.Drawing.Point(365, 309);
-            this.see.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.see.Margin = new System.Windows.Forms.Padding(2);
             this.see.Name = "see";
             this.see.Size = new System.Drawing.Size(22, 17);
             this.see.TabIndex = 21;
@@ -464,30 +420,12 @@ namespace Store_management_system
             // searchbox
             // 
             this.searchbox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbox.Location = new System.Drawing.Point(0, 1);
+            this.searchbox.Location = new System.Drawing.Point(1018, 60);
             this.searchbox.Multiline = true;
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(115, 25);
+            this.searchbox.Size = new System.Drawing.Size(120, 25);
             this.searchbox.TabIndex = 29;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.searchbox);
-            this.panel1.Location = new System.Drawing.Point(1023, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(121, 26);
-            this.panel1.TabIndex = 31;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(93, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(17, 20);
-            this.pictureBox1.TabIndex = 30;
-            this.pictureBox1.TabStop = false;
             // 
             // showpassw
             // 
@@ -570,11 +508,52 @@ namespace Store_management_system
             this.signupbtn.UseVisualStyleBackColor = false;
             this.signupbtn.Click += new System.EventHandler(this.signupbtn_Click);
             // 
+            // Password
+            // 
+            this.Password.HeaderText = "Password";
+            this.Password.MinimumWidth = 8;
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 152;
+            // 
+            // usrname
+            // 
+            this.usrname.HeaderText = "Username";
+            this.usrname.MinimumWidth = 8;
+            this.usrname.Name = "usrname";
+            this.usrname.ReadOnly = true;
+            this.usrname.Width = 150;
+            // 
+            // empid
+            // 
+            this.empid.HeaderText = "Employee ID";
+            this.empid.MinimumWidth = 8;
+            this.empid.Name = "empid";
+            this.empid.ReadOnly = true;
+            this.empid.Width = 130;
+            // 
+            // userrole
+            // 
+            this.userrole.HeaderText = "User Role";
+            this.userrole.MinimumWidth = 8;
+            this.userrole.Name = "userrole";
+            this.userrole.ReadOnly = true;
+            this.userrole.Width = 150;
+            // 
+            // sn
+            // 
+            this.sn.HeaderText = "SN";
+            this.sn.MinimumWidth = 8;
+            this.sn.Name = "sn";
+            this.sn.ReadOnly = true;
+            this.sn.Width = 80;
+            // 
             // Signupforms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.searchselect);
             this.Controls.Add(this.hide);
@@ -606,16 +585,12 @@ namespace Store_management_system
             this.Controls.Add(this.label1);
             this.Controls.Add(this.matched);
             this.Controls.Add(this.unmatched);
-            this.Controls.Add(this.panel1);
             this.Name = "Signupforms";
             this.Size = new System.Drawing.Size(1194, 561);
             this.Load += new System.EventHandler(this.Signupforms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userlist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unmatched)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.matched)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -645,11 +620,6 @@ namespace Store_management_system
         private System.Windows.Forms.Label authorizederror;
         private CustomControls.RJControls.RJToggleButton showpassw;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userrole;
-        private System.Windows.Forms.DataGridViewTextBoxColumn empid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usrname;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.ComboBox adminoremployee;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button hide;
@@ -659,7 +629,10 @@ namespace Store_management_system
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox searchselect;
         private System.Windows.Forms.TextBox searchbox;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userrole;
+        private System.Windows.Forms.DataGridViewTextBoxColumn empid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usrname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Password;
     }
 }
