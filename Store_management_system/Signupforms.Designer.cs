@@ -43,6 +43,11 @@ namespace Store_management_system
             this.cpassw = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.userlist = new System.Windows.Forms.DataGridView();
+            this.sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userrole = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.empid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usrname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rolechoose = new System.Windows.Forms.ComboBox();
             this.iderror = new System.Windows.Forms.Label();
             this.usernameerror = new System.Windows.Forms.Label();
@@ -64,11 +69,6 @@ namespace Store_management_system
             this.delete = new ePOSOne.btnProduct.Button_WOC();
             this.Reset = new ePOSOne.btnProduct.Button_WOC();
             this.signupbtn = new ePOSOne.btnProduct.Button_WOC();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usrname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.empid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userrole = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.userlist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unmatched)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matched)).BeginInit();
@@ -220,6 +220,46 @@ namespace Store_management_system
             this.userlist.Size = new System.Drawing.Size(703, 382);
             this.userlist.TabIndex = 7;
             this.userlist.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.userlist_CellFormatting);
+            // 
+            // sn
+            // 
+            this.sn.HeaderText = "SN";
+            this.sn.MinimumWidth = 8;
+            this.sn.Name = "sn";
+            this.sn.ReadOnly = true;
+            this.sn.Width = 80;
+            // 
+            // userrole
+            // 
+            this.userrole.HeaderText = "User Role";
+            this.userrole.MinimumWidth = 8;
+            this.userrole.Name = "userrole";
+            this.userrole.ReadOnly = true;
+            this.userrole.Width = 150;
+            // 
+            // empid
+            // 
+            this.empid.HeaderText = "Employee ID";
+            this.empid.MinimumWidth = 8;
+            this.empid.Name = "empid";
+            this.empid.ReadOnly = true;
+            this.empid.Width = 130;
+            // 
+            // usrname
+            // 
+            this.usrname.HeaderText = "Username";
+            this.usrname.MinimumWidth = 8;
+            this.usrname.Name = "usrname";
+            this.usrname.ReadOnly = true;
+            this.usrname.Width = 150;
+            // 
+            // Password
+            // 
+            this.Password.HeaderText = "Password";
+            this.Password.MinimumWidth = 8;
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            this.Password.Width = 152;
             // 
             // rolechoose
             // 
@@ -411,7 +451,7 @@ namespace Store_management_system
             this.searchselect.FormattingEnabled = true;
             this.searchselect.Items.AddRange(new object[] {
             "EID",
-            "USER NAME"});
+            "Username"});
             this.searchselect.Location = new System.Drawing.Point(913, 59);
             this.searchselect.Name = "searchselect";
             this.searchselect.Size = new System.Drawing.Size(99, 25);
@@ -507,46 +547,6 @@ namespace Store_management_system
             this.signupbtn.TextColor = System.Drawing.Color.White;
             this.signupbtn.UseVisualStyleBackColor = false;
             this.signupbtn.Click += new System.EventHandler(this.signupbtn_Click);
-            // 
-            // Password
-            // 
-            this.Password.HeaderText = "Password";
-            this.Password.MinimumWidth = 8;
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
-            this.Password.Width = 152;
-            // 
-            // usrname
-            // 
-            this.usrname.HeaderText = "Username";
-            this.usrname.MinimumWidth = 8;
-            this.usrname.Name = "usrname";
-            this.usrname.ReadOnly = true;
-            this.usrname.Width = 150;
-            // 
-            // empid
-            // 
-            this.empid.HeaderText = "Employee ID";
-            this.empid.MinimumWidth = 8;
-            this.empid.Name = "empid";
-            this.empid.ReadOnly = true;
-            this.empid.Width = 130;
-            // 
-            // userrole
-            // 
-            this.userrole.HeaderText = "User Role";
-            this.userrole.MinimumWidth = 8;
-            this.userrole.Name = "userrole";
-            this.userrole.ReadOnly = true;
-            this.userrole.Width = 150;
-            // 
-            // sn
-            // 
-            this.sn.HeaderText = "SN";
-            this.sn.MinimumWidth = 8;
-            this.sn.Name = "sn";
-            this.sn.ReadOnly = true;
-            this.sn.Width = 80;
             // 
             // Signupforms
             // 

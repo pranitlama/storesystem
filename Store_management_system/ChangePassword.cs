@@ -11,34 +11,46 @@ using System.Data.SqlClient;
 
 namespace Store_management_system
 {
+   
     public partial class ChangePassword : UserControl
     {
+ 
         SqlConnection connect = new SqlConnection(connectionstri.Value);
         public ChangePassword()
         {
             InitializeComponent();
             this.usernametxt.BackColor = Color.White;
+            
+            
+       
         }
-
+        
         private void clear_Click(object sender, EventArgs e)
         {
             cptxt.Clear();
             conptxt.Clear();
             nptxt.Clear();
         }
+      
+        
 
         private void ChangePassword_Load(object sender, EventArgs e)
         {
             usernametxt.Text = Form1.username ;
+           
         }
 
 
 
         private void confirm_Click_1(object sender, EventArgs e)
         {
+            
+            
+
             if (cptxt.Text != "" || nptxt.Text != "" || conptxt.Text != "" )
             {
-
+               
+              
                 try
                 {
                     connect.Open();
@@ -215,6 +227,11 @@ namespace Store_management_system
                 cphide.Hide();
 
             }
+        }
+
+        private void cptxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

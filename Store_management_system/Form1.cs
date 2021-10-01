@@ -15,18 +15,18 @@ namespace Store_management_system
     public partial class Form1 : Form
     {
         SqlConnection connect = new SqlConnection(connectionstri.Value);
-       
+
         private Point mouseoffset;
-        
+
         public Form1()
         {
             InitializeComponent();
             hide.Hide();
             see.Hide();
-           
-      
+          
 
         }
+        
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -34,24 +34,24 @@ namespace Store_management_system
             entererror.Hide();
         }
 
-       
+
 
         private void hide_Click(object sender, EventArgs e)
         {
             textBox2.UseSystemPasswordChar = true;
-           // if (textBox2.UseSystemPasswordChar==false)
-           // if (textBox2.PasswordChar == '\0')
-            
-                hide.Hide();
-                //   see.BringToFront();
-                //hide password
-                //textBox2.UseSystemPasswordChar = true;
-                // textBox2.PasswordChar = '•';
-                see.Show();
-                textBox2.Focus();
+            // if (textBox2.UseSystemPasswordChar==false)
+            // if (textBox2.PasswordChar == '\0')
+
+            hide.Hide();
+            //   see.BringToFront();
+            //hide password
+            //textBox2.UseSystemPasswordChar = true;
+            // textBox2.PasswordChar = '•';
+            see.Show();
+            textBox2.Focus();
 
 
-            
+
         }
 
         private void see_Click(object sender, EventArgs e)
@@ -63,11 +63,11 @@ namespace Store_management_system
             // hide.BringToFront();
             //show password
             see.Hide();
-                //textBox2.PasswordChar = '\0';
-               
-                hide.Show();
-                textBox2.Focus();
-            
+            //textBox2.PasswordChar = '\0';
+
+            hide.Show();
+            textBox2.Focus();
+
 
         }
 
@@ -105,19 +105,19 @@ namespace Store_management_system
         {
             if (textBox2.Text == "")
             {
-               incorrecterror.Hide();
+                incorrecterror.Hide();
                 entererror.Hide();
             }
-            
+
             textBox2.UseSystemPasswordChar = true;
             see.Show();
-          //  textBox2.PasswordChar = '•';
-           // if (textBox2.PasswordChar == '•')
-           // {
-             //   see.Show();
-                
-          //  }
-            
+            //  textBox2.PasswordChar = '•';
+            // if (textBox2.PasswordChar == '•')
+            // {
+            //   see.Show();
+
+            //  }
+
         }
 
         public string FirstLetterToUpper(string str)
@@ -140,12 +140,12 @@ namespace Store_management_system
         //placeholder username
         private void textBox1_Enter(object sender, EventArgs e)
         {
-            
+
             if (textBox1.Text == " Username")
             {
                 textBox1.Text = "";
                 textBox1.ForeColor = Color.Black;
-               
+
             }
 
         }
@@ -161,7 +161,7 @@ namespace Store_management_system
         //placeholder password
         private void textBox2_Enter(object sender, EventArgs e)
         {
-            
+
             if (textBox2.Text == "Password")
             {
                 textBox2.Text = "";
@@ -173,21 +173,21 @@ namespace Store_management_system
         {
             if (textBox2.Text == "")
             {
-                
+
                 textBox2.Text = "Password";
                 textBox2.ForeColor = Color.Silver;
                 textBox2.UseSystemPasswordChar = false;
                 see.Hide();
                 hide.Hide();
-                
+
             }
         }
 
-       
 
-       
 
-       
+
+
+
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
             mouseoffset = new Point(-e.X, -e.Y);
@@ -206,13 +206,13 @@ namespace Store_management_system
 
         private void textBox2_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-          
-            
+
+
         }
         private bool mouseDown;
         private Point offset;
@@ -243,15 +243,15 @@ namespace Store_management_system
         }
         public static string username;
         public static string label;
+
         private void logins_Click(object sender, EventArgs e)
         {
-
+            
             if (textBox1.Text != "Username" && textBox2.Text != "Password")
             {
                 try
                 {
-                 
-                    
+  
                         connect.Open();
                     
                     string query = "Select * from login where username='" + textBox1.Text + "' and password = '" + textBox2.Text + "'";
@@ -264,6 +264,7 @@ namespace Store_management_system
 
                     int count = 0;
                     string userrole = string.Empty;
+                   
                     if (textBox1.Text=="admin" && textBox2.Text=="admin")
                     {
                         string result = Messageboxok.ShowBox("", "Admin Login Successful");

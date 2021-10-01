@@ -39,14 +39,14 @@ namespace Store_management_system
             this.label4 = new System.Windows.Forms.Label();
             this.usernametxt = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cphide = new System.Windows.Forms.Button();
+            this.cpsee = new System.Windows.Forms.Button();
             this.hide = new System.Windows.Forms.Button();
             this.matched = new System.Windows.Forms.PictureBox();
             this.unmatched = new System.Windows.Forms.PictureBox();
-            this.see = new System.Windows.Forms.Button();
             this.clear = new ePOSOne.btnProduct.Button_WOC();
             this.confirm = new ePOSOne.btnProduct.Button_WOC();
-            this.cphide = new System.Windows.Forms.Button();
-            this.cpsee = new System.Windows.Forms.Button();
+            this.see = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.matched)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unmatched)).BeginInit();
@@ -120,6 +120,7 @@ namespace Store_management_system
             this.cptxt.Size = new System.Drawing.Size(269, 24);
             this.cptxt.TabIndex = 0;
             this.cptxt.UseSystemPasswordChar = true;
+            this.cptxt.TextChanged += new System.EventHandler(this.cptxt_TextChanged);
             this.cptxt.Enter += new System.EventHandler(this.cptxt_Enter);
             this.cptxt.Leave += new System.EventHandler(this.cptxt_Leave);
             // 
@@ -169,6 +170,38 @@ namespace Store_management_system
             this.panel1.Size = new System.Drawing.Size(366, 395);
             this.panel1.TabIndex = 14;
             // 
+            // cphide
+            // 
+            this.cphide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cphide.BackgroundImage")));
+            this.cphide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cphide.FlatAppearance.BorderSize = 0;
+            this.cphide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cphide.ForeColor = System.Drawing.Color.White;
+            this.cphide.Location = new System.Drawing.Point(287, 126);
+            this.cphide.Margin = new System.Windows.Forms.Padding(2);
+            this.cphide.Name = "cphide";
+            this.cphide.Size = new System.Drawing.Size(23, 16);
+            this.cphide.TabIndex = 23;
+            this.cphide.UseVisualStyleBackColor = true;
+            this.cphide.Visible = false;
+            this.cphide.Click += new System.EventHandler(this.cphide_Click);
+            // 
+            // cpsee
+            // 
+            this.cpsee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpsee.BackgroundImage")));
+            this.cpsee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cpsee.FlatAppearance.BorderSize = 0;
+            this.cpsee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cpsee.ForeColor = System.Drawing.Color.White;
+            this.cpsee.Location = new System.Drawing.Point(287, 126);
+            this.cpsee.Margin = new System.Windows.Forms.Padding(2);
+            this.cpsee.Name = "cpsee";
+            this.cpsee.Size = new System.Drawing.Size(23, 16);
+            this.cpsee.TabIndex = 24;
+            this.cpsee.UseVisualStyleBackColor = true;
+            this.cpsee.Visible = false;
+            this.cpsee.Click += new System.EventHandler(this.cpsee_Click);
+            // 
             // hide
             // 
             this.hide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hide.BackgroundImage")));
@@ -206,22 +239,6 @@ namespace Store_management_system
             this.unmatched.TabIndex = 16;
             this.unmatched.TabStop = false;
             this.unmatched.Visible = false;
-            // 
-            // see
-            // 
-            this.see.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("see.BackgroundImage")));
-            this.see.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.see.FlatAppearance.BorderSize = 0;
-            this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.see.ForeColor = System.Drawing.Color.White;
-            this.see.Location = new System.Drawing.Point(287, 203);
-            this.see.Margin = new System.Windows.Forms.Padding(2);
-            this.see.Name = "see";
-            this.see.Size = new System.Drawing.Size(23, 16);
-            this.see.TabIndex = 24;
-            this.see.UseVisualStyleBackColor = true;
-            this.see.Visible = false;
-            this.see.Click += new System.EventHandler(this.see_Click);
             // 
             // clear
             // 
@@ -269,37 +286,21 @@ namespace Store_management_system
             this.confirm.UseVisualStyleBackColor = false;
             this.confirm.Click += new System.EventHandler(this.confirm_Click_1);
             // 
-            // cphide
+            // see
             // 
-            this.cphide.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cphide.BackgroundImage")));
-            this.cphide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cphide.FlatAppearance.BorderSize = 0;
-            this.cphide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cphide.ForeColor = System.Drawing.Color.White;
-            this.cphide.Location = new System.Drawing.Point(287, 126);
-            this.cphide.Margin = new System.Windows.Forms.Padding(2);
-            this.cphide.Name = "cphide";
-            this.cphide.Size = new System.Drawing.Size(23, 16);
-            this.cphide.TabIndex = 23;
-            this.cphide.UseVisualStyleBackColor = true;
-            this.cphide.Visible = false;
-            this.cphide.Click += new System.EventHandler(this.cphide_Click);
-            // 
-            // cpsee
-            // 
-            this.cpsee.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("cpsee.BackgroundImage")));
-            this.cpsee.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cpsee.FlatAppearance.BorderSize = 0;
-            this.cpsee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cpsee.ForeColor = System.Drawing.Color.White;
-            this.cpsee.Location = new System.Drawing.Point(287, 126);
-            this.cpsee.Margin = new System.Windows.Forms.Padding(2);
-            this.cpsee.Name = "cpsee";
-            this.cpsee.Size = new System.Drawing.Size(23, 16);
-            this.cpsee.TabIndex = 24;
-            this.cpsee.UseVisualStyleBackColor = true;
-            this.cpsee.Visible = false;
-            this.cpsee.Click += new System.EventHandler(this.cpsee_Click);
+            this.see.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("see.BackgroundImage")));
+            this.see.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.see.FlatAppearance.BorderSize = 0;
+            this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.see.ForeColor = System.Drawing.Color.White;
+            this.see.Location = new System.Drawing.Point(287, 203);
+            this.see.Margin = new System.Windows.Forms.Padding(2);
+            this.see.Name = "see";
+            this.see.Size = new System.Drawing.Size(23, 16);
+            this.see.TabIndex = 24;
+            this.see.UseVisualStyleBackColor = true;
+            this.see.Visible = false;
+            this.see.Click += new System.EventHandler(this.see_Click);
             // 
             // ChangePassword
             // 
