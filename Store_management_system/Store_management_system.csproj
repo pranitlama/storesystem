@@ -61,6 +61,12 @@
     <Compile Include="ChangePassword.Designer.cs">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkid.Designer.cs">
+      <DependentUpon>checkid.cs</DependentUpon>
+    </Compile>
     <Compile Include="connectionstri.cs" />
     <Compile Include="EMPaddproduct.cs">
       <SubType>UserControl</SubType>
@@ -157,6 +163,9 @@
     <EmbeddedResource Include="ChangePassword.resx">
       <DependentUpon>ChangePassword.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="checkid.resx">
+      <DependentUpon>checkid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPaddproduct.resx">
       <DependentUpon>EMPaddproduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -239,6 +248,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calendarDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
