@@ -276,12 +276,15 @@ namespace Store_management_system
                         if (result.Equals("1"))
                         {
                             cmd.ExecuteNonQuery();
-                            
-                            FileInfo file = new FileInfo(filepaths);
-                            if (File.Exists(filepaths))
+                            string paths = Application.StartupPath.Substring(0,(Application.StartupPath.Length - 10));
+                            FileInfo file = new FileInfo(paths +filepaths);
+                            if (File.Exists(paths + filepaths))
                             {
-                                File.Delete(filepaths);
-                                
+                                File.Delete(paths + filepaths);                          
+                            }
+                            else
+                            {
+                                 result = MyMessageBoxyesno.ShowBox("", "Image not Found");
                             }
                             employeelist.Rows.RemoveAt(row.Index);
                             
@@ -411,8 +414,10 @@ namespace Store_management_system
             em_female.Checked = false;
             pnerror.Visible = false;
             emailerror.Visible = false;
+            photo.Image.Dispose();
             photo.Image = photo.InitialImage;
             filepathtext.Text = "";
+         
 
         }
 
@@ -738,10 +743,10 @@ namespace Store_management_system
             {
                 employee_id = Convert.ToInt32(employeelist.CurrentRow.Cells["eid"].Value.ToString());
                 string employee_name = employeelist.CurrentRow.Cells["efname"].Value.ToString();
-            
+                string employee_address = employeelist.CurrentRow.Cells["eaddress"].Value.ToString();
                 //string result = Messageboxok.ShowBox("", "Id: " + employee_id);
 
-                checkid cid = new checkid(employee_id,employee_name);
+                checkid cid = new checkid(employee_id,employee_name,employee_address);
                 cid.ShowDialog();
                 
             }

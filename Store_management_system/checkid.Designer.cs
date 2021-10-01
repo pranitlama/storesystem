@@ -37,6 +37,10 @@ namespace Store_management_system
             this.label1 = new System.Windows.Forms.Label();
             this.idlabel = new System.Windows.Forms.Label();
             this.namelabel = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.addresslabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.joineddatelabel = new System.Windows.Forms.Label();
             this.toppanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ephoto)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +52,7 @@ namespace Store_management_system
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
             this.toppanel.Name = "toppanel";
-            this.toppanel.Size = new System.Drawing.Size(418, 32);
+            this.toppanel.Size = new System.Drawing.Size(431, 32);
             this.toppanel.TabIndex = 2;
             // 
             // label2
@@ -74,7 +78,7 @@ namespace Store_management_system
             // 
             // buttonok
             // 
-            this.buttonok.Location = new System.Drawing.Point(157, 177);
+            this.buttonok.Location = new System.Drawing.Point(150, 190);
             this.buttonok.Name = "buttonok";
             this.buttonok.Size = new System.Drawing.Size(75, 31);
             this.buttonok.TabIndex = 4;
@@ -95,7 +99,7 @@ namespace Store_management_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 82);
+            this.label1.Location = new System.Drawing.Point(147, 79);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 3;
@@ -105,7 +109,7 @@ namespace Store_management_system
             // 
             this.idlabel.AutoSize = true;
             this.idlabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idlabel.Location = new System.Drawing.Point(212, 47);
+            this.idlabel.Location = new System.Drawing.Point(238, 47);
             this.idlabel.Name = "idlabel";
             this.idlabel.Size = new System.Drawing.Size(20, 17);
             this.idlabel.TabIndex = 3;
@@ -115,20 +119,64 @@ namespace Store_management_system
             // 
             this.namelabel.AutoSize = true;
             this.namelabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namelabel.Location = new System.Drawing.Point(212, 82);
+            this.namelabel.Location = new System.Drawing.Point(239, 79);
             this.namelabel.Name = "namelabel";
             this.namelabel.Size = new System.Drawing.Size(20, 17);
             this.namelabel.TabIndex = 3;
             this.namelabel.Text = "...";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(147, 113);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Address:";
+            // 
+            // addresslabel
+            // 
+            this.addresslabel.AutoSize = true;
+            this.addresslabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addresslabel.Location = new System.Drawing.Point(240, 114);
+            this.addresslabel.Name = "addresslabel";
+            this.addresslabel.Size = new System.Drawing.Size(20, 17);
+            this.addresslabel.TabIndex = 3;
+            this.addresslabel.Text = "...";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(146, 148);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Joined Date:";
+            // 
+            // joineddatelabel
+            // 
+            this.joineddatelabel.AutoSize = true;
+            this.joineddatelabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.joineddatelabel.Location = new System.Drawing.Point(240, 148);
+            this.joineddatelabel.Name = "joineddatelabel";
+            this.joineddatelabel.Size = new System.Drawing.Size(20, 17);
+            this.joineddatelabel.TabIndex = 3;
+            this.joineddatelabel.Text = "...";
             // 
             // checkid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(418, 220);
+            this.ClientSize = new System.Drawing.Size(431, 233);
             this.Controls.Add(this.ephoto);
             this.Controls.Add(this.toppanel);
+            this.Controls.Add(this.joineddatelabel);
+            this.Controls.Add(this.addresslabel);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.namelabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.idlabel);
@@ -156,5 +204,9 @@ namespace Store_management_system
         private System.Windows.Forms.Label idlabel;
         private System.Windows.Forms.Label namelabel;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label addresslabel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label joineddatelabel;
     }
 }
