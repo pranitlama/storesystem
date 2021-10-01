@@ -29,10 +29,10 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.itemviewer = new System.Windows.Forms.DataGridView();
             this.prodid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prodcategory = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +70,7 @@ namespace Store_management_system
             this.prodprint = new ePOSOne.btnProduct.Button_WOC();
             this.prodclear = new ePOSOne.btnProduct.Button_WOC();
             this.prodadd = new ePOSOne.btnProduct.Button_WOC();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.itemviewer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.basket)).BeginInit();
             this.SuspendLayout();
@@ -83,14 +84,14 @@ namespace Store_management_system
             this.itemviewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.itemviewer.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.itemviewer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemviewer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemviewer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.itemviewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemviewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.prodid,
@@ -98,14 +99,14 @@ namespace Store_management_system
             this.prodname,
             this.prodquantity,
             this.prodprice});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemviewer.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemviewer.DefaultCellStyle = dataGridViewCellStyle10;
             this.itemviewer.GridColor = System.Drawing.SystemColors.Info;
             this.itemviewer.Location = new System.Drawing.Point(26, 129);
             this.itemviewer.Name = "itemviewer";
@@ -113,7 +114,7 @@ namespace Store_management_system
             this.itemviewer.RowHeadersVisible = false;
             this.itemviewer.RowHeadersWidth = 15;
             this.itemviewer.RowTemplate.Height = 28;
-            this.itemviewer.Size = new System.Drawing.Size(544, 658);
+            this.itemviewer.Size = new System.Drawing.Size(544, 700);
             this.itemviewer.TabIndex = 0;
             this.itemviewer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.itemviewer_CellClick);
             // 
@@ -192,14 +193,14 @@ namespace Store_management_system
             this.basket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.basket.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.basket.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.basket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.basket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.basket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.basket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tID,
@@ -208,14 +209,14 @@ namespace Store_management_system
             this.tprice,
             this.tamt,
             this.tdelete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.basket.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.basket.DefaultCellStyle = dataGridViewCellStyle12;
             this.basket.GridColor = System.Drawing.SystemColors.Info;
             this.basket.Location = new System.Drawing.Point(596, 143);
             this.basket.Name = "basket";
@@ -224,7 +225,7 @@ namespace Store_management_system
             this.basket.RowHeadersWidth = 62;
             this.basket.RowTemplate.Height = 28;
             this.basket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.basket.Size = new System.Drawing.Size(924, 480);
+            this.basket.Size = new System.Drawing.Size(924, 573);
             this.basket.TabIndex = 0;
             this.basket.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.basket_CellClick);
             this.basket.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.basket_CellPainting);
@@ -282,7 +283,7 @@ namespace Store_management_system
             // bsubtotal
             // 
             this.bsubtotal.BackColor = System.Drawing.Color.White;
-            this.bsubtotal.Location = new System.Drawing.Point(993, 642);
+            this.bsubtotal.Location = new System.Drawing.Point(993, 738);
             this.bsubtotal.Name = "bsubtotal";
             this.bsubtotal.ReadOnly = true;
             this.bsubtotal.Size = new System.Drawing.Size(184, 26);
@@ -326,7 +327,7 @@ namespace Store_management_system
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(856, 645);
+            this.label4.Location = new System.Drawing.Point(856, 741);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 21);
             this.label4.TabIndex = 7;
@@ -336,7 +337,7 @@ namespace Store_management_system
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(844, 686);
+            this.label5.Location = new System.Drawing.Point(844, 782);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(127, 21);
             this.label5.TabIndex = 7;
@@ -346,7 +347,7 @@ namespace Store_management_system
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1238, 685);
+            this.label6.Location = new System.Drawing.Point(1238, 781);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 21);
             this.label6.TabIndex = 7;
@@ -356,7 +357,7 @@ namespace Store_management_system
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1203, 728);
+            this.label7.Location = new System.Drawing.Point(1203, 824);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 21);
             this.label7.TabIndex = 7;
@@ -366,7 +367,7 @@ namespace Store_management_system
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1234, 648);
+            this.label8.Location = new System.Drawing.Point(1234, 744);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(95, 21);
             this.label8.TabIndex = 7;
@@ -422,7 +423,7 @@ namespace Store_management_system
             // 
             // bdiscount
             // 
-            this.bdiscount.Location = new System.Drawing.Point(993, 686);
+            this.bdiscount.Location = new System.Drawing.Point(993, 782);
             this.bdiscount.Name = "bdiscount";
             this.bdiscount.Size = new System.Drawing.Size(184, 26);
             this.bdiscount.TabIndex = 4;
@@ -436,7 +437,7 @@ namespace Store_management_system
             // btotal
             // 
             this.btotal.BackColor = System.Drawing.Color.White;
-            this.btotal.Location = new System.Drawing.Point(1335, 645);
+            this.btotal.Location = new System.Drawing.Point(1335, 741);
             this.btotal.Name = "btotal";
             this.btotal.ReadOnly = true;
             this.btotal.Size = new System.Drawing.Size(184, 26);
@@ -446,7 +447,7 @@ namespace Store_management_system
             // 
             // bcash
             // 
-            this.bcash.Location = new System.Drawing.Point(1335, 685);
+            this.bcash.Location = new System.Drawing.Point(1335, 781);
             this.bcash.Name = "bcash";
             this.bcash.Size = new System.Drawing.Size(184, 26);
             this.bcash.TabIndex = 4;
@@ -460,7 +461,7 @@ namespace Store_management_system
             // bbalance
             // 
             this.bbalance.BackColor = System.Drawing.Color.White;
-            this.bbalance.Location = new System.Drawing.Point(1335, 722);
+            this.bbalance.Location = new System.Drawing.Point(1335, 818);
             this.bbalance.Name = "bbalance";
             this.bbalance.ReadOnly = true;
             this.bbalance.Size = new System.Drawing.Size(184, 26);
@@ -548,6 +549,10 @@ namespace Store_management_system
             this.prodadd.UseVisualStyleBackColor = false;
             this.prodadd.Click += new System.EventHandler(this.prodadd_Click);
             // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // BillingSystem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -628,5 +633,6 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn tprice;
         private System.Windows.Forms.DataGridViewTextBoxColumn tamt;
         private System.Windows.Forms.DataGridViewButtonColumn tdelete;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }

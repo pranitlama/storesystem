@@ -38,6 +38,7 @@ namespace Store_management_system
             this.NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRICE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.searchitem = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.stocklist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@ namespace Store_management_system
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.stocklist.DefaultCellStyle = dataGridViewCellStyle2;
             this.stocklist.GridColor = System.Drawing.SystemColors.Info;
-            this.stocklist.Location = new System.Drawing.Point(105, 6);
+            this.stocklist.Location = new System.Drawing.Point(105, 94);
             this.stocklist.Name = "stocklist";
             this.stocklist.ReadOnly = true;
             this.stocklist.RowHeadersWidth = 31;
@@ -129,10 +130,27 @@ namespace Store_management_system
             this.PRICE.ReadOnly = true;
             this.PRICE.Width = 80;
             // 
+            // searchitem
+            // 
+            this.searchitem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchitem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchitem.FormattingEnabled = true;
+            this.searchitem.Items.AddRange(new object[] {
+            "LOW STOCK",
+            "OUT OF STOCK",
+            "STOCK",
+            "ALL"});
+            this.searchitem.Location = new System.Drawing.Point(762, 36);
+            this.searchitem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchitem.Name = "searchitem";
+            this.searchitem.Size = new System.Drawing.Size(140, 29);
+            this.searchitem.TabIndex = 25;
+            // 
             // Stock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.searchitem);
             this.Controls.Add(this.stocklist);
             this.Name = "Stock";
             this.Size = new System.Drawing.Size(1410, 746);
@@ -151,5 +169,6 @@ namespace Store_management_system
         private System.Windows.Forms.DataGridViewTextBoxColumn NAME;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRICE;
+        private System.Windows.Forms.ComboBox searchitem;
     }
 }
