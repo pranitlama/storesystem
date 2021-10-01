@@ -780,6 +780,11 @@ namespace Store_management_system
         {
             e.Handled = (e.KeyChar == (char)Keys.Space);
         }
+
+        private void searchselect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

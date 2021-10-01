@@ -693,7 +693,9 @@ namespace Store_management_system
                 }
                
             }
+            printDocument1.Print();
             string result = Messageboxok.ShowBox("", "PURCHASE COMPLETE");
+           
             basket.Rows.Clear();
         }
         private void checkdatagrid()
@@ -707,6 +709,14 @@ namespace Store_management_system
             {
                 prodprint.Enabled = true;
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+          //   var Center = Convert.ToSingle(e.PageBounds.Width / 2 - e.Graphics.MeasureString("SAMP STORE",SystemFonts.DefaultFont).Width / 2);
+          //  SolidBrush brush = new SolidBrush(Color.Black);
+          //  e.Graphics.DrawString(Center,new Font("Century Gothic", 18, FontStyle.Bold), brush, new Point(1, 10)); 
+            
         }
     }
 }

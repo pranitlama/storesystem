@@ -68,7 +68,9 @@ namespace Store_management_system
             }
             
         }
+    
 
+        
         private void stocklist_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if(e.ColumnIndex==4 & e.Value!= null  )
@@ -79,6 +81,7 @@ namespace Store_management_system
                     e.CellStyle.BackColor = Color.Yellow;
                     
                 }
+
                 else if(sum1<=0)
 
                 {
