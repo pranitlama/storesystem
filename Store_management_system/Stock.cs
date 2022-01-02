@@ -19,11 +19,16 @@ namespace Store_management_system
         {
             InitializeComponent();
             stocklist.DefaultCellStyle.ForeColor = Color.Black;
+            searchitem.SelectedIndex = 3;
+            
+            
+            
         }
 
         private void Stock_Load(object sender, EventArgs e)
         {
             DisplayData();
+            countrows();
         }
         private void DisplayData()
         {
@@ -68,9 +73,14 @@ namespace Store_management_system
             }
             
         }
-    
 
-        
+        private void countrows()
+        {
+            int num = stocklist.Rows.GetRowCount(DataGridViewElementStates.Visible);
+            countrow.Text = num.ToString();
+            countrow.Text = "  " + countrow.Text;
+        }
+
         private void stocklist_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if(e.ColumnIndex==4 & e.Value!= null  )
@@ -78,6 +88,7 @@ namespace Store_management_system
                 int sum1 = Convert.ToInt32(e.Value);
                 if(sum1<=30 && sum1>0)
                 {
+                   // stockalert.Visible = true;
                     e.CellStyle.BackColor = Color.Yellow;
                     
                 }
@@ -85,13 +96,113 @@ namespace Store_management_system
                 else if(sum1<=0)
 
                 {
+                    stockalert.Visible = true;
+                    pictureBox1.Visible = true;
+
                     e.CellStyle.BackColor = Color.Red;
                 }
                 else
                 {
+                    //stockalert.Visible = false;
+                       
                     e.CellStyle.BackColor = Color.Green;
                 }
             }
+        }
+
+        private void searchitem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (searchitem.Text == "OUT OF STOCK")
+            {
+                foreach (DataGridViewRow row in stocklist.Rows)
+                {
+                    int X = Convert.ToInt32(row.Cells["quantity"].Value);
+                    if (X <= 0)
+                    {
+                        row.Visible = true;
+                        
+                    }
+                   
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                   
+                }
+                countrows();
+            }
+
+            if (searchitem.Text == "LOW STOCK")
+            {
+                foreach (DataGridViewRow row in stocklist.Rows)
+                {
+                    int X = Convert.ToInt32(row.Cells["quantity"].Value);
+                    if (X > 0 && X<=30)
+                    {
+                        row.Visible = true;
+                       
+                            countrows();
+                        
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+                countrows();
+
+            }
+
+            if (searchitem.Text == "STOCK")
+            {
+                foreach (DataGridViewRow row in stocklist.Rows)
+                {
+                    int X = Convert.ToInt32(row.Cells["quantity"].Value);
+                    if (X >30)
+                    {
+                        row.Visible = true;
+                        countrows();
+
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+                countrows();
+
+
+            }
+
+            if (searchitem.Text == "ALL")
+            {
+                foreach (DataGridViewRow row in stocklist.Rows)
+                {
+                  
+                    row.Visible = true;
+                  
+                        countrows();
+                    
+
+                }
+                countrows();
+
+            }
+        }
+
+        private void stockalert_Click(object sender, EventArgs e)
+        {
+            searchitem.SelectedIndex = 1;
+        }
+
+        private void refresh_Click(object sender, EventArgs e)
+        {
+            searchitem.SelectedIndex = 3;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            searchitem.SelectedIndex = 1;
         }
     }
 }

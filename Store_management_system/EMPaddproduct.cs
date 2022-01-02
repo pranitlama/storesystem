@@ -28,12 +28,35 @@ namespace Store_management_system
             DataGridViewButtonColumn c = (DataGridViewButtonColumn)itemlist.Columns["Action"];
             c.FlatStyle = FlatStyle.Popup;
             c.DefaultCellStyle.ForeColor = Color.White;
-            c.DefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94); ;
+            c.DefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+            itemlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+            itemlist.RowTemplate.Height = 35;
+            // employeelist.AllowUserToResizeRows = false;
+
+
+            countrows();
+
+            // em_dob.CustomFormat = "yyyy/MM/dd";
+
+            itemlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
+
+
+
+            this.itemlist.EnableHeadersVisualStyles = false;
 
 
             searchitem.SelectedIndex = 0;
             itemupdate.Enabled = false;
         }
+
+        private void countrows()
+        {
+            int numrows = itemlist.Rows.Count;
+            countrow.Text = numrows.ToString();
+            countrow.Text = "  " + countrow.Text;
+
+        }
+
         private void DisplayData()
         {
 
@@ -57,7 +80,7 @@ namespace Store_management_system
                 }
 
 
-
+                countrows();
 
 
 
@@ -110,20 +133,7 @@ namespace Store_management_system
         private void EMPaddproduct_Load(object sender, EventArgs e)
         {
             DisplayData();
-            itemlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
-            itemlist.RowTemplate.Height = 35;
-            // employeelist.AllowUserToResizeRows = false;
-
-
-
-            DisplayData();
-            // em_dob.CustomFormat = "yyyy/MM/dd";
-
-            itemlist.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 50, 94);
-
-
-
-            this.itemlist.EnableHeadersVisualStyles = false;
+           
             // this.employeelist.ColumnHeadersHeight = 80;
 
         }
@@ -190,7 +200,7 @@ namespace Store_management_system
                 else if (searchitem.Text == "ID")
                 {
                     connect.Open();
-                    string query = "select * from item_details where i_id like '" + searchbox.Text + "%'";
+                    string query = "select * from item_details where i_id like '" + searchbox.Text + "'";
 
                     SqlCommand cmd = new SqlCommand(query, connect);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -205,7 +215,7 @@ namespace Store_management_system
                         sn++;
 
                     }
-                    // countrows();
+                     countrows();
 
 
                 }
@@ -227,7 +237,7 @@ namespace Store_management_system
                         sn++;
 
                     }
-                    //    countrows();
+                        countrows();
 
 
                 }
@@ -248,7 +258,7 @@ namespace Store_management_system
                         sn++;
 
                     }
-                    //   countrows();
+                       countrows();
 
 
 

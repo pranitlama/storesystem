@@ -608,10 +608,7 @@ namespace Store_management_system
 
         }
 
-        private void display()
-        {
-          
-        }
+       
         private void searchbox_TextChanged(object sender, EventArgs e)
         {
             try
@@ -648,7 +645,7 @@ namespace Store_management_system
 
 
                 }
-                else if (searchselect.Text == "USER NAME")
+                else if (searchselect.Text == "Username")
                 {
                     
                     connect.Open();
