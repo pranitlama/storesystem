@@ -677,8 +677,8 @@ namespace Store_management_system
                     cmd.Parameters.AddWithValue("@parameter_date", DateTime.Now);
                     cmd.Parameters.AddWithValue("@parameter_uname", Form1.username);
                     cmd.ExecuteNonQuery();
-                   
-                    
+                 
+
                 }
                 catch(Exception ex)
                 {
@@ -693,9 +693,12 @@ namespace Store_management_system
                 }
                
             }
-            printDocument1.Print();
+          //  printDocument1.Print();
             string result = Messageboxok.ShowBox("", "PURCHASE COMPLETE");
-           
+         
+            print pr = new print();
+            pr.Show();
+
             basket.Rows.Clear();
         }
         private void checkdatagrid()
