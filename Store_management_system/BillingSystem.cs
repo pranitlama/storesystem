@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Store_management_system.Properties;
+using System.Drawing.Printing;
+
 namespace Store_management_system
 {
     public partial class BillingSystem : UserControl
 
     {
-
+       // PrintPreviewDialog prntprvw = new PrintPreviewDialog();
+        //PrintDocument pntdoc = new PrintDocument();
         SqlConnection connect = new SqlConnection(connectionstri.Value);
         public BillingSystem()
         {
@@ -70,8 +73,7 @@ namespace Store_management_system
         {
             displaydata();
             prodprint.Enabled = false;
-
-
+            
 
         }
 
@@ -625,11 +627,6 @@ namespace Store_management_system
                       if (onecell.Selected)
                         { 
                             basket.Rows.RemoveAt(onecell.RowIndex);
-
-                          
-
-                        
-
                             
                         }
                         bcash.Text = "0";
@@ -660,14 +657,26 @@ namespace Store_management_system
 
             }
         }
+        Bitmap bmp;
 
         private void prodprint_Click(object sender, EventArgs e)
         {
+
+            double bbcash = double.Parse (bcash.Text);
+            double bbtotal = double.Parse(btotal.Text);
+            if(bbcash<bbtotal)
+            {
+                string results = Messageboxok.ShowBox("", "Please give complete cash");
+                return;
+            }
             foreach(DataGridViewRow dr in basket.Rows )
             {
                 try
                 {
                     connect.Open();
+                    string querys = "delete from addcart";
+                    SqlCommand cmds = new SqlCommand(querys, connect);
+                    cmds.ExecuteNonQuery();
                     string query = "insert into transaction_details (t_name,t_quantity,t_amt,t_price,t_date,t_empname) values(@parameter_name,@parameter_qty,@parameter_amt,@parameter_price,@parameter_date,@parameter_uname)";
                     SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.Parameters.AddWithValue("@parameter_name", dr.Cells["tname"].Value);
@@ -691,13 +700,35 @@ namespace Store_management_system
 
                   
                 }
-               
+             //   addcartdisplay();
+
+               // Print(this.printpanel);
+
+                //print master = (print)Application.OpenForms["print"];
+                //master.button1.PerformClick();
+
+                //var print = new print(ptotal, pdiscount, pgtotal);
+                //print.button1.PerformClick();
+
+
+
             }
-          //  printDocument1.Print();
+            this.basket.Columns["tdelete"].Visible = false;
+            printDocument1.Print();
+            this.basket.Columns["tdelete"].Visible = true;
             string result = Messageboxok.ShowBox("", "PURCHASE COMPLETE");
-         
-            print pr = new print();
-            pr.Show();
+
+            bcash.Text = "0";
+            bbalance.Text = "0";
+            bsubtotal.Text = "0";
+            btotal.Text = "0";
+            
+            //double ptotal = double.Parse(bsubtotal.Text);
+            //double pdiscount = double.Parse(bdiscount.Text);
+            //double pgtotal = double.Parse(btotal.Text);
+
+            //print pr = new print(ptotal,pdiscount,pgtotal);
+            //pr.Show();
 
             basket.Rows.Clear();
         }
@@ -716,10 +747,99 @@ namespace Store_management_system
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-          //   var Center = Convert.ToSingle(e.PageBounds.Width / 2 - e.Graphics.MeasureString("SAMP STORE",SystemFonts.DefaultFont).Width / 2);
-          //  SolidBrush brush = new SolidBrush(Color.Black);
-          //  e.Graphics.DrawString(Center,new Font("Century Gothic", 18, FontStyle.Bold), brush, new Point(1, 10)); 
-            
+
+            e.Graphics.DrawString("SAMP STORE", new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(365, 10));
+            e.Graphics.DrawString("Kamalpokhari,Kathmandu", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(335, 40));
+            e.Graphics.DrawString("Ph No: 01-422222", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(365, 60));
+
+            e.Graphics.DrawString("TOTAL:", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 970));
+            e.Graphics.DrawString("DISCOUNT(%):", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 1010));
+            e.Graphics.DrawString("GRAND TOTAL:", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 1040));
+
+
+            e.Graphics.DrawString(bsubtotal.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750,970));
+            e.Graphics.DrawString(bdiscount.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750, 1010));
+            e.Graphics.DrawString(btotal.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750, 1040));
+
+            int height = basket.Height;
+            basket.Height = basket.RowCount * basket.RowTemplate.Height * 2;
+            bmp = new Bitmap(basket.Width, basket.Height);
+            basket.DrawToBitmap(bmp, new Rectangle(0, 0, basket.Width, basket.Height));
+            basket.Height = height;
+            e.Graphics.DrawImage(bmp, 100, 125);
+            //printPreviewDialog1.ShowDialog();
+
+            //Rectangle pagearea = e.PageBounds;
+            //e.Graphics.DrawImage(memoryimg, (pagearea.Width / 2) - (this.printpanel.Width / 2), this.printpanel.Location.Y);
+
+            //Bitmap bmp = new Bitmap(printpanel.Width, printpanel.Height, printpanel.CreateGraphics());
+            //printpanel.DrawToBitmap(bmp, new Rectangle(0, 0, printpanel.Width, printpanel.Height));
+            //RectangleF bounds = e.PageSettings.PrintableArea;
+            //float factor = ((float)bmp.Height / (float)bmp.Width);
+            //e.Graphics.DrawImage(bmp, bounds.Left, bounds.Top, bounds.Width, factor * bounds.Width);
+
         }
+
+        //private void addcartdisplay()
+        //{
+        //    foreach (DataGridViewRow dr in basket.Rows)
+        //    {
+        //        try
+        //        {
+        //            connect.Open();
+              
+        //           string query = "insert into addcart (a_id,a_name,a_quantity,a_amt,a_prince) values(@parameter_aid,@parameter_aname,@parameter_aqty,@parameter_aamt,@parameter_aprice)";
+        //            SqlCommand cmd = new SqlCommand(query, connect);
+        //            cmd.Parameters.AddWithValue("@parameter_aid", dr.Cells["tID"].Value);
+        //            cmd.Parameters.AddWithValue("@parameter_aname", dr.Cells["tname"].Value);
+        //            cmd.Parameters.AddWithValue("@parameter_aqty", dr.Cells["tquantity"].Value);
+        //            cmd.Parameters.AddWithValue("@parameter_aamt", dr.Cells["tamt"].Value);
+        //            cmd.Parameters.AddWithValue("@parameter_aprice", dr.Cells["tprice"].Value);
+
+        //            cmd.ExecuteNonQuery();
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show(ex.ToString());
+        //        }
+        //        finally
+        //        {
+        //            connect.Close();
+        //        }
+        //    }
+        //}
+        //public void Print(Panel pnl)
+        //{
+        //    //PrinterSettings ps = new PrinterSettings();
+        //    printpanel = pnl;
+        //    getprintarea(pnl);
+        //    printPreviewDialog1.Document = printDocument1;
+        //    //   pntdoc.PrintPage += new PrintPageEventHandler(pntdoc_printpage);
+        //    printPreviewDialog1.ShowDialog();
+
+        //}
+        //protected override void OnPaint(PaintEventArgs e)
+        //{
+        //    if (memoryimg != null)
+        //    {
+        //        e.Graphics.DrawImage(memoryimg, 0, 0);
+        //        base.OnPaint(e);
+        //    }
+        ////}
+        //public void pntdoc_printpage(object sender, PrintPageEventArgs e)
+        //{
+        //    Rectangle pagearea = e.PageBounds;
+        //    e.Graphics.DrawImage(memoryimg, (pagearea.Width / 2) - (this.printpanel.Width / 2), this.printpanel.Location.Y);
+        //}
+        // Bitmap memoryimg;
+        //public void getprintarea(Panel pnl)
+        //{
+        //    memoryimg = new Bitmap(pnl.Width, pnl.Height);
+        //    pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+
+        //}
+
+
     }
 }
