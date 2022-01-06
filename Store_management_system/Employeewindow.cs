@@ -113,7 +113,7 @@ namespace Store_management_system
 
         private void emp_logout_Click(object sender, EventArgs e)
         {
-            employeerecords.Visible = false;
+           // employeerecords.Visible = false;
             moveSidePanel(emp_logout);
             //  moveSidePanel(button7);
             string result = MyMessageBoxyesno.ShowBox("CLOSE", "Do you want to sign out?");

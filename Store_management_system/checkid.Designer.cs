@@ -51,8 +51,9 @@ namespace Store_management_system
             this.toppanel.Controls.Add(this.label2);
             this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.toppanel.Location = new System.Drawing.Point(0, 0);
+            this.toppanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.toppanel.Name = "toppanel";
-            this.toppanel.Size = new System.Drawing.Size(431, 32);
+            this.toppanel.Size = new System.Drawing.Size(646, 49);
             this.toppanel.TabIndex = 2;
             // 
             // label2
@@ -60,9 +61,10 @@ namespace Store_management_system
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(146, 7);
+            this.label2.Location = new System.Drawing.Point(219, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 19);
+            this.label2.Size = new System.Drawing.Size(111, 28);
             this.label2.TabIndex = 3;
             this.label2.Text = "ID CARD";
             // 
@@ -70,17 +72,19 @@ namespace Store_management_system
             // 
             this.labeltitles.AutoSize = true;
             this.labeltitles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labeltitles.Location = new System.Drawing.Point(147, 47);
+            this.labeltitles.Location = new System.Drawing.Point(220, 72);
+            this.labeltitles.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labeltitles.Name = "labeltitles";
-            this.labeltitles.Size = new System.Drawing.Size(48, 17);
+            this.labeltitles.Size = new System.Drawing.Size(69, 23);
             this.labeltitles.TabIndex = 3;
             this.labeltitles.Text = "ID No:";
             // 
             // buttonok
             // 
-            this.buttonok.Location = new System.Drawing.Point(150, 190);
+            this.buttonok.Location = new System.Drawing.Point(225, 292);
+            this.buttonok.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonok.Name = "buttonok";
-            this.buttonok.Size = new System.Drawing.Size(75, 31);
+            this.buttonok.Size = new System.Drawing.Size(112, 48);
             this.buttonok.TabIndex = 4;
             this.buttonok.Text = "OK";
             this.buttonok.UseVisualStyleBackColor = true;
@@ -88,9 +92,10 @@ namespace Store_management_system
             // 
             // ephoto
             // 
-            this.ephoto.Location = new System.Drawing.Point(12, 47);
+            this.ephoto.Location = new System.Drawing.Point(18, 72);
+            this.ephoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ephoto.Name = "ephoto";
-            this.ephoto.Size = new System.Drawing.Size(118, 120);
+            this.ephoto.Size = new System.Drawing.Size(177, 185);
             this.ephoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ephoto.TabIndex = 5;
             this.ephoto.TabStop = false;
@@ -99,9 +104,10 @@ namespace Store_management_system
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(147, 79);
+            this.label1.Location = new System.Drawing.Point(220, 122);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.Size = new System.Drawing.Size(76, 23);
             this.label1.TabIndex = 3;
             this.label1.Text = "Name:";
             // 
@@ -109,9 +115,10 @@ namespace Store_management_system
             // 
             this.idlabel.AutoSize = true;
             this.idlabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idlabel.Location = new System.Drawing.Point(238, 47);
+            this.idlabel.Location = new System.Drawing.Point(357, 72);
+            this.idlabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idlabel.Name = "idlabel";
-            this.idlabel.Size = new System.Drawing.Size(20, 17);
+            this.idlabel.Size = new System.Drawing.Size(25, 23);
             this.idlabel.TabIndex = 3;
             this.idlabel.Text = "...";
             // 
@@ -119,9 +126,10 @@ namespace Store_management_system
             // 
             this.namelabel.AutoSize = true;
             this.namelabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namelabel.Location = new System.Drawing.Point(239, 79);
+            this.namelabel.Location = new System.Drawing.Point(358, 122);
+            this.namelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(20, 17);
+            this.namelabel.Size = new System.Drawing.Size(25, 23);
             this.namelabel.TabIndex = 3;
             this.namelabel.Text = "...";
             // 
@@ -129,9 +137,10 @@ namespace Store_management_system
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 113);
+            this.label3.Location = new System.Drawing.Point(220, 174);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.Size = new System.Drawing.Size(93, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Address:";
             // 
@@ -139,9 +148,10 @@ namespace Store_management_system
             // 
             this.addresslabel.AutoSize = true;
             this.addresslabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addresslabel.Location = new System.Drawing.Point(240, 114);
+            this.addresslabel.Location = new System.Drawing.Point(360, 175);
+            this.addresslabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.addresslabel.Name = "addresslabel";
-            this.addresslabel.Size = new System.Drawing.Size(20, 17);
+            this.addresslabel.Size = new System.Drawing.Size(25, 23);
             this.addresslabel.TabIndex = 3;
             this.addresslabel.Text = "...";
             // 
@@ -149,28 +159,30 @@ namespace Store_management_system
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(146, 148);
+            this.label4.Location = new System.Drawing.Point(219, 228);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 17);
+            this.label4.Size = new System.Drawing.Size(68, 23);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Joined Date:";
+            this.label4.Text = "D.O.B:";
             // 
             // joineddatelabel
             // 
             this.joineddatelabel.AutoSize = true;
             this.joineddatelabel.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.joineddatelabel.Location = new System.Drawing.Point(240, 148);
+            this.joineddatelabel.Location = new System.Drawing.Point(360, 228);
+            this.joineddatelabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.joineddatelabel.Name = "joineddatelabel";
-            this.joineddatelabel.Size = new System.Drawing.Size(20, 17);
+            this.joineddatelabel.Size = new System.Drawing.Size(25, 23);
             this.joineddatelabel.TabIndex = 3;
             this.joineddatelabel.Text = "...";
             // 
             // checkid
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(431, 233);
+            this.ClientSize = new System.Drawing.Size(646, 358);
             this.Controls.Add(this.ephoto);
             this.Controls.Add(this.toppanel);
             this.Controls.Add(this.joineddatelabel);
@@ -183,6 +195,7 @@ namespace Store_management_system
             this.Controls.Add(this.labeltitles);
             this.Controls.Add(this.buttonok);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "checkid";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "checkid";

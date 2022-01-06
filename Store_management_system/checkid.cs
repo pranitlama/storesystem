@@ -17,7 +17,7 @@ namespace Store_management_system
       
         
        
-        public checkid(int eid, string name,string add)
+        public checkid(int eid, string name,string add,string dob)
         {
 
             InitializeComponent();
@@ -32,6 +32,7 @@ namespace Store_management_system
             idlabel.Text = eid.ToString();
             namelabel.Text = name;
             addresslabel.Text = add;
+            joineddatelabel.Text = dob;
         }
       
         private void buttonok_Click(object sender, EventArgs e)

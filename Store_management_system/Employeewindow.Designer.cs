@@ -32,6 +32,7 @@ namespace Store_management_system
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employeewindow));
             this.panelleft = new System.Windows.Forms.Panel();
+            this.stock = new System.Windows.Forms.Button();
             this.emp_addproduct = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace Store_management_system
             this.userusernamelabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.stock = new System.Windows.Forms.Button();
             this.panelleft.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -75,6 +75,23 @@ namespace Store_management_system
             this.panelleft.Name = "panelleft";
             this.panelleft.Size = new System.Drawing.Size(345, 806);
             this.panelleft.TabIndex = 1;
+            // 
+            // stock
+            // 
+            this.stock.FlatAppearance.BorderSize = 0;
+            this.stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
+            this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.stock.Location = new System.Drawing.Point(32, 502);
+            this.stock.Name = "stock";
+            this.stock.Size = new System.Drawing.Size(266, 77);
+            this.stock.TabIndex = 3;
+            this.stock.Text = "     STOCK";
+            this.stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.stock.UseVisualStyleBackColor = true;
+            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
             // emp_addproduct
             // 
@@ -235,7 +252,7 @@ namespace Store_management_system
             this.employeerecords.AutoSize = true;
             this.employeerecords.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeerecords.ForeColor = System.Drawing.Color.DarkSlateBlue;
-            this.employeerecords.Location = new System.Drawing.Point(274, 28);
+            this.employeerecords.Location = new System.Drawing.Point(278, 27);
             this.employeerecords.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.employeerecords.Name = "employeerecords";
             this.employeerecords.Size = new System.Drawing.Size(485, 44);
@@ -322,23 +339,6 @@ namespace Store_management_system
             // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // stock
-            // 
-            this.stock.FlatAppearance.BorderSize = 0;
-            this.stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stock.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stock.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.stock.Image = ((System.Drawing.Image)(resources.GetObject("stock.Image")));
-            this.stock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.stock.Location = new System.Drawing.Point(32, 502);
-            this.stock.Name = "stock";
-            this.stock.Size = new System.Drawing.Size(266, 77);
-            this.stock.TabIndex = 3;
-            this.stock.Text = "     STOCK";
-            this.stock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.stock.UseVisualStyleBackColor = true;
-            this.stock.Click += new System.EventHandler(this.stock_Click);
             // 
             // Employeewindow
             // 

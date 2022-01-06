@@ -51,11 +51,11 @@ namespace Store_management_system
             this.usercount = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.revenue_amt = new System.Windows.Forms.Label();
-            this.revenue_pic = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.emp_no = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.product_pic)).BeginInit();
             this.panel4.SuspendLayout();
@@ -66,8 +66,8 @@ namespace Store_management_system
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.revenue_pic)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -296,50 +296,6 @@ namespace Store_management_system
             this.panel6.Size = new System.Drawing.Size(434, 202);
             this.panel6.TabIndex = 0;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(240, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 23);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "TOTAL REVENUE";
-            // 
-            // revenue_amt
-            // 
-            this.revenue_amt.AutoSize = true;
-            this.revenue_amt.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.revenue_amt.ForeColor = System.Drawing.Color.White;
-            this.revenue_amt.Location = new System.Drawing.Point(286, 124);
-            this.revenue_amt.Name = "revenue_amt";
-            this.revenue_amt.Size = new System.Drawing.Size(21, 23);
-            this.revenue_amt.TabIndex = 0;
-            this.revenue_amt.Text = "0";
-            // 
-            // revenue_pic
-            // 
-            this.revenue_pic.Image = ((System.Drawing.Image)(resources.GetObject("revenue_pic.Image")));
-            this.revenue_pic.Location = new System.Drawing.Point(52, 58);
-            this.revenue_pic.Name = "revenue_pic";
-            this.revenue_pic.Size = new System.Drawing.Size(94, 89);
-            this.revenue_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.revenue_pic.TabIndex = 2;
-            this.revenue_pic.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel3.Controls.Add(this.revenue_pic);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.revenue_amt);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(916, 348);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(434, 202);
-            this.panel3.TabIndex = 0;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -350,6 +306,50 @@ namespace Store_management_system
             this.label3.Size = new System.Drawing.Size(34, 23);
             this.label3.TabIndex = 0;
             this.label3.Text = "{?}";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panel3.Controls.Add(this.pictureBox4);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.emp_no);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Location = new System.Drawing.Point(916, 348);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(434, 202);
+            this.panel3.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(240, 72);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(170, 23);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "TOTAL EMPLOYEE";
+            // 
+            // emp_no
+            // 
+            this.emp_no.AutoSize = true;
+            this.emp_no.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emp_no.ForeColor = System.Drawing.Color.White;
+            this.emp_no.Location = new System.Drawing.Point(286, 124);
+            this.emp_no.Name = "emp_no";
+            this.emp_no.Size = new System.Drawing.Size(21, 23);
+            this.emp_no.TabIndex = 0;
+            this.emp_no.Text = "0";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(52, 58);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(94, 89);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 3;
+            this.pictureBox4.TabStop = false;
             // 
             // HomeUC
             // 
@@ -380,9 +380,9 @@ namespace Store_management_system
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.revenue_pic)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -410,10 +410,10 @@ namespace Store_management_system
         private System.Windows.Forms.Label usercount;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label revenue_amt;
-        private System.Windows.Forms.PictureBox revenue_pic;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label emp_no;
+        private System.Windows.Forms.Label label6;
     }
 }

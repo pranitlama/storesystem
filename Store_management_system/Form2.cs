@@ -21,6 +21,10 @@ namespace Store_management_system
             InitializeComponent();
             panelWidth = panelleft.Width; 
             isCollapsed= false;
+            if(Form1.username=="ADMIN")
+            {
+                changepassword.Enabled = false;
+            }
            
         }
 
@@ -78,7 +82,7 @@ namespace Store_management_system
        
         private void button7_Click(object sender, EventArgs e)//exit code
         {
-            employeerecords.Visible = false;
+           // employeerecords.Visible = false;
             moveSidePanel(button7);
             string result = MyMessageBoxyesno.ShowBox("CLOSE", "Do you want to sign out?");
             if (result.Equals("1"))
@@ -89,7 +93,7 @@ namespace Store_management_system
             }
             if (result.Equals("2"))
             {
-
+              //  employeerecords.Visible = true;
             }
             //if (dialog == DialogResult.Yes)
             //{

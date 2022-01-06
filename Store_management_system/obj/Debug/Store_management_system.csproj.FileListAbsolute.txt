@@ -61,7 +61,6 @@ E:\sms\Store_management_system\obj\Debug\Store_management_system.Stock.resources
 E:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
 E:\sms\Store_management_system\obj\Debug\Store_management_system.checkid.resources
 C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.checkid.resources
-C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Debug\Store_management_system.print.resources
 F:\sms\Store_management_system\bin\Debug\Store_management_system.exe.config
 F:\sms\Store_management_system\bin\Debug\Store_management_system.exe
 F:\sms\Store_management_system\bin\Debug\Store_management_system.pdb

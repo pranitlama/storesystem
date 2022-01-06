@@ -22,6 +22,7 @@ namespace Store_management_system
             displayintotalproductlabel();
             displayintotalorderlabel();
             displayintotalsaleslabel();
+            displayinemplabel();
 
         }
         private void displayinadminlabel()
@@ -121,8 +122,26 @@ namespace Store_management_system
         {
            
         }
+        private void displayinemplabel()
+        {
+            connect.Open();
+            string query = "Select * from employee_details ";
+            SqlCommand cmd = new SqlCommand(query, connect);
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            sda.Fill(ds);
+            connect.Close();
+            if (ds.Tables[0].Rows.Count != 0)
+            {
+               emp_no.Text = ds.Tables[0].Rows.Count.ToString();
+            }
+            else
+            {
+                emp_no.Text = "0";
+            }
+        }
 
 
-     
+
     }
 }

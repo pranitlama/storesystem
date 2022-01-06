@@ -127,7 +127,7 @@ namespace Store_management_system
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.button2.Location = new System.Drawing.Point(16, 117);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 46);
             this.button2.TabIndex = 3;
@@ -152,7 +152,7 @@ namespace Store_management_system
             this.menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menu.ImageAlign = System.Drawing.ContentAlignment.TopRight;
             this.menu.Location = new System.Drawing.Point(208, 115);
-            this.menu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menu.Margin = new System.Windows.Forms.Padding(2);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(45, 46);
             this.menu.TabIndex = 3;
@@ -320,7 +320,7 @@ namespace Store_management_system
             this.panel4.Controls.Add(this.adminusernamelabel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(258, 95);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1149, 63);
             this.panel4.TabIndex = 2;
@@ -354,7 +354,7 @@ namespace Store_management_system
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(258, 158);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1149, 707);
             this.panel1.TabIndex = 3;

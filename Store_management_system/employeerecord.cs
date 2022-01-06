@@ -744,9 +744,10 @@ namespace Store_management_system
                 employee_id = Convert.ToInt32(employeelist.CurrentRow.Cells["eid"].Value.ToString());
                 string employee_name = employeelist.CurrentRow.Cells["efname"].Value.ToString();
                 string employee_address = employeelist.CurrentRow.Cells["eaddress"].Value.ToString();
+                string employee_dob = employeelist.CurrentRow.Cells["edob"].Value.ToString();
                 //string result = Messageboxok.ShowBox("", "Id: " + employee_id);
 
-                checkid cid = new checkid(employee_id,employee_name,employee_address);
+                checkid cid = new checkid(employee_id,employee_name,employee_address,employee_dob);
                 cid.ShowDialog();
                 
             }

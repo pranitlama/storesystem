@@ -329,7 +329,14 @@ namespace Store_management_system
             {
                 
                 string result = Messageboxok.ShowBox("", "Please select a item");
-                prodprint.Enabled = false;
+                if (bsubtotal.Text != "0")
+                {
+                    prodprint.Enabled = true;
+                }
+                else
+                {
+                    prodprint.Enabled = false;
+                }
             }
 
             else if(textquantity.Text==string.Empty)
@@ -674,9 +681,7 @@ namespace Store_management_system
                 try
                 {
                     connect.Open();
-                    string querys = "delete from addcart";
-                    SqlCommand cmds = new SqlCommand(querys, connect);
-                    cmds.ExecuteNonQuery();
+                 
                     string query = "insert into transaction_details (t_name,t_quantity,t_amt,t_price,t_date,t_empname) values(@parameter_name,@parameter_qty,@parameter_amt,@parameter_price,@parameter_date,@parameter_uname)";
                     SqlCommand cmd = new SqlCommand(query, connect);
                     cmd.Parameters.AddWithValue("@parameter_name", dr.Cells["tname"].Value);
@@ -751,22 +756,27 @@ namespace Store_management_system
             e.Graphics.DrawString("SAMP STORE", new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(365, 10));
             e.Graphics.DrawString("Kamalpokhari,Kathmandu", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(335, 40));
             e.Graphics.DrawString("Ph No: 01-422222", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(365, 60));
+            e.Graphics.DrawString("TIME:", new Font("Century Gothic", 12, FontStyle.Regular), Brushes.Black, new Point(120, 100));
 
-            e.Graphics.DrawString("TOTAL:", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 970));
+            e.Graphics.DrawString("TOTAL:", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 980));
             e.Graphics.DrawString("DISCOUNT(%):", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 1010));
             e.Graphics.DrawString("GRAND TOTAL:", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 1040));
 
+            string date = DateTime.Now.ToString();
 
-            e.Graphics.DrawString(bsubtotal.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750,970));
+            e.Graphics.DrawString(bsubtotal.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750,980));
             e.Graphics.DrawString(bdiscount.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750, 1010));
             e.Graphics.DrawString(btotal.Text, new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(750, 1040));
+            e.Graphics.DrawString(date, new Font("Century Gothic", 12, FontStyle.Regular), Brushes.Black, new Point(160, 100));
 
+            
             int height = basket.Height;
             basket.Height = basket.RowCount * basket.RowTemplate.Height * 2;
             bmp = new Bitmap(basket.Width, basket.Height);
             basket.DrawToBitmap(bmp, new Rectangle(0, 0, basket.Width, basket.Height));
             basket.Height = height;
             e.Graphics.DrawImage(bmp, 100, 125);
+            
             //printPreviewDialog1.ShowDialog();
 
             //Rectangle pagearea = e.PageBounds;
