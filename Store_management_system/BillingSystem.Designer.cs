@@ -29,10 +29,10 @@ namespace Store_management_system
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BillingSystem));
             this.itemviewer = new System.Windows.Forms.DataGridView();
             this.prodid = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +71,7 @@ namespace Store_management_system
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.cancelcart = new System.Windows.Forms.Button();
             this.prodprint = new ePOSOne.btnProduct.Button_WOC();
             this.prodclear = new ePOSOne.btnProduct.Button_WOC();
             this.prodadd = new ePOSOne.btnProduct.Button_WOC();
@@ -87,14 +88,14 @@ namespace Store_management_system
             this.itemviewer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.itemviewer.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.itemviewer.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.itemviewer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.itemviewer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.itemviewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.itemviewer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.prodid,
@@ -102,14 +103,14 @@ namespace Store_management_system
             this.prodname,
             this.prodquantity,
             this.prodprice});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.itemviewer.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.itemviewer.DefaultCellStyle = dataGridViewCellStyle6;
             this.itemviewer.GridColor = System.Drawing.SystemColors.Info;
             this.itemviewer.Location = new System.Drawing.Point(17, 84);
             this.itemviewer.Margin = new System.Windows.Forms.Padding(2);
@@ -165,30 +166,33 @@ namespace Store_management_system
             // textname
             // 
             this.textname.BackColor = System.Drawing.Color.White;
+            this.textname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.textname.Location = new System.Drawing.Point(587, 25);
             this.textname.Margin = new System.Windows.Forms.Padding(2);
             this.textname.Name = "textname";
             this.textname.ReadOnly = true;
-            this.textname.Size = new System.Drawing.Size(101, 20);
+            this.textname.Size = new System.Drawing.Size(101, 23);
             this.textname.TabIndex = 1;
             // 
             // textprice
             // 
             this.textprice.BackColor = System.Drawing.Color.White;
+            this.textprice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.textprice.Location = new System.Drawing.Point(772, 23);
             this.textprice.Margin = new System.Windows.Forms.Padding(2);
             this.textprice.Name = "textprice";
             this.textprice.ReadOnly = true;
-            this.textprice.Size = new System.Drawing.Size(80, 20);
+            this.textprice.Size = new System.Drawing.Size(80, 23);
             this.textprice.TabIndex = 1;
             this.textprice.TextChanged += new System.EventHandler(this.textprice_TextChanged);
             // 
             // textquantity
             // 
+            this.textquantity.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.textquantity.Location = new System.Drawing.Point(946, 21);
             this.textquantity.Margin = new System.Windows.Forms.Padding(2);
             this.textquantity.Name = "textquantity";
-            this.textquantity.Size = new System.Drawing.Size(68, 20);
+            this.textquantity.Size = new System.Drawing.Size(68, 23);
             this.textquantity.TabIndex = 3;
             this.textquantity.TextChanged += new System.EventHandler(this.textquantity_TextChanged);
             this.textquantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textquantity_KeyPress);
@@ -200,14 +204,14 @@ namespace Store_management_system
             this.basket.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.basket.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.basket.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.basket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.basket.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.basket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.basket.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tID,
@@ -216,14 +220,14 @@ namespace Store_management_system
             this.tprice,
             this.tamt,
             this.tdelete});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.basket.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.basket.DefaultCellStyle = dataGridViewCellStyle8;
             this.basket.GridColor = System.Drawing.SystemColors.Info;
             this.basket.Location = new System.Drawing.Point(398, 93);
             this.basket.Margin = new System.Windows.Forms.Padding(2);
@@ -393,11 +397,12 @@ namespace Store_management_system
             // bidtext
             // 
             this.bidtext.BackColor = System.Drawing.Color.White;
+            this.bidtext.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.bidtext.Location = new System.Drawing.Point(447, 28);
             this.bidtext.Margin = new System.Windows.Forms.Padding(2);
             this.bidtext.Name = "bidtext";
             this.bidtext.ReadOnly = true;
-            this.bidtext.Size = new System.Drawing.Size(61, 20);
+            this.bidtext.Size = new System.Drawing.Size(61, 23);
             this.bidtext.TabIndex = 1;
             this.bidtext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.bidtext_KeyPress);
             // 
@@ -492,10 +497,11 @@ namespace Store_management_system
             // 
             // searchbox
             // 
+            this.searchbox.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.searchbox.Location = new System.Drawing.Point(259, 30);
             this.searchbox.Margin = new System.Windows.Forms.Padding(2);
             this.searchbox.Name = "searchbox";
-            this.searchbox.Size = new System.Drawing.Size(101, 20);
+            this.searchbox.Size = new System.Drawing.Size(101, 23);
             this.searchbox.TabIndex = 1;
             this.searchbox.TextChanged += new System.EventHandler(this.searchbox_TextChanged);
             // 
@@ -516,6 +522,25 @@ namespace Store_management_system
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
+            // 
+            // cancelcart
+            // 
+            this.cancelcart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
+            this.cancelcart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.cancelcart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelcart.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Bold);
+            this.cancelcart.ForeColor = System.Drawing.Color.White;
+            this.cancelcart.Image = ((System.Drawing.Image)(resources.GetObject("cancelcart.Image")));
+            this.cancelcart.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cancelcart.Location = new System.Drawing.Point(398, 482);
+            this.cancelcart.Name = "cancelcart";
+            this.cancelcart.Size = new System.Drawing.Size(144, 41);
+            this.cancelcart.TabIndex = 28;
+            this.cancelcart.Text = "       CANCEL CART";
+            this.cancelcart.UseVisualStyleBackColor = false;
+            this.cancelcart.Click += new System.EventHandler(this.cancelcart_Click);
+            this.cancelcart.MouseEnter += new System.EventHandler(this.cancelcart_MouseEnter);
+            this.cancelcart.MouseLeave += new System.EventHandler(this.cancelcart_MouseLeave);
             // 
             // prodprint
             // 
@@ -592,6 +617,7 @@ namespace Store_management_system
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.cancelcart);
             this.Controls.Add(this.basket);
             this.Controls.Add(this.prodprint);
             this.Controls.Add(this.prodclear);
@@ -622,6 +648,8 @@ namespace Store_management_system
             this.Name = "BillingSystem";
             this.Size = new System.Drawing.Size(1029, 581);
             this.Load += new System.EventHandler(this.BillingSystem_Load);
+            this.Enter += new System.EventHandler(this.BillingSystem_Enter);
+            this.Leave += new System.EventHandler(this.BillingSystem_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.itemviewer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.basket)).EndInit();
             this.ResumeLayout(false);
@@ -671,5 +699,6 @@ namespace Store_management_system
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PrintDialog printDialog1;
         internal ePOSOne.btnProduct.Button_WOC prodprint;
+        private System.Windows.Forms.Button cancelcart;
     }
 }

@@ -24,7 +24,13 @@ namespace Store_management_system
             InitializeComponent();
             datagridcustomize();
             searchitem.SelectedIndex = 0;
+
+            displaydata();
            
+            
+
+
+
         }
 
         private void displaydata()
@@ -71,10 +77,11 @@ namespace Store_management_system
 
         private void BillingSystem_Load(object sender, EventArgs e)
         {
-            displaydata();
+            
             prodprint.Enabled = false;
             
-
+           
+              
         }
 
         private void datagridcustomize()
@@ -329,7 +336,7 @@ namespace Store_management_system
             {
                 
                 string result = Messageboxok.ShowBox("", "Please select a item");
-                if (bsubtotal.Text != "0")
+                if (basket.Rows.Count!=0)
                 {
                     prodprint.Enabled = true;
                 }
@@ -342,7 +349,14 @@ namespace Store_management_system
             else if(textquantity.Text==string.Empty)
             {
                 string result = Messageboxok.ShowBox("", "Please Enter Quantity");
-                prodprint.Enabled = false;
+                if (basket.Rows.Count != 0)
+                {
+                    prodprint.Enabled = true;
+                }
+                else
+                {
+                    prodprint.Enabled = false;
+                }
             }
             else
             {
@@ -382,70 +396,95 @@ namespace Store_management_system
                         string st_qty = textquantity.Text;
                         string st_price = textprice.Text;
 
-                        string[] rows = { st_id, st_name, st_qty, st_price };
-                        basket.Rows.Add(rows);
-                        string total = bsubtotal.Text;
-                        foreach (DataGridViewRow row in basket.Rows)
-                        {
-                            //amount calulator
-                            a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
+                        int qqty = Convert.ToInt32(textquantity.Text);
 
-                            row.Cells[4].Value = a;
-                            //  row.Cells[5].Value = amount;
+                        bool Found = false;
+                        if (basket.Rows.Count > 0)
+                        {
+
+                            
+                            foreach (DataGridViewRow row in basket.Rows)
+                            {
+                                if (Convert.ToString(row.Cells[0].Value) == bidtext.Text)
+                                {
+                                    
+                                    row.Cells[2].Value = Convert.ToString(qqty + Convert.ToInt32(row.Cells[2].Value));
+                                    Found = true;
+                                }
+
+                            }
+                        }
+                            if (!Found)
+                            {
+                              
+                                    string[] rows = { st_id, st_name, st_qty, st_price };
+                                    basket.Rows.Add(rows);
+                                
+                            }
+                        
+
+                            string total = bsubtotal.Text;
+                            foreach (DataGridViewRow row in basket.Rows)
+                            {
+                                //amount calulator
+                                a = Convert.ToInt32(row.Cells[2].Value) * Convert.ToInt32(row.Cells[3].Value);
+
+                                row.Cells[4].Value = a;
+                                //  row.Cells[5].Value = amount;
+
+
+
+                            }
+                            prodprint.Enabled = true;
+                            for (i = 0; i < basket.Rows.Count; ++i)
+                            {
+
+                                sum += Convert.ToInt32(basket.Rows[i].Cells[4].Value);
+
+
+                            }
+
+
+
+
+
+
+                            bsubtotal.Text = sum.ToString();
+                            btotal.Text = bsubtotal.Text;
+                            st = int.Parse(bsubtotal.Text);
+                            string ab = bsubtotal.Text;
+                            bsubtotal.Text = ab;
+                            //if (bdiscount.Text == "" || bdiscount.Text == "0")
+                            //{
+                            //    btotal.Text = bsubtotal.Text;
+                            //    double.Parse(btotal.Text);
+                            //}
+
+
+
+
+                            int text1;
+                            text1 = Convert.ToInt32(this.bidtext.Text);
+
+                            string s = remaining.ToString();
+                            query = "Update item_details set i_quantity=@parameter_quantity where i_id=" + bidtext.Text;
+
+                            SqlCommand cmds = new SqlCommand(query, connect);
+
+                            cmds.Parameters.AddWithValue("@parameter_quantity", remaining);
+
+                            cmds.ExecuteNonQuery();
+                            bidtext.Text = "";
+                            textname.Text = "";
+                            textquantity.Text = "";
+                            textprice.Text = "";
+
 
 
 
                         }
-                        prodprint.Enabled = true;
-                        for (i = 0; i < basket.Rows.Count; ++i)
-                        {
 
-                            sum += Convert.ToInt32(basket.Rows[i].Cells[4].Value);
-
-
-                        }
-
-
-
-
-
-
-                        bsubtotal.Text = sum.ToString();
-                        btotal.Text = bsubtotal.Text;
-                        st = int.Parse(bsubtotal.Text);
-                        string ab =  bsubtotal.Text;
-                        bsubtotal.Text = ab;
-                        //if (bdiscount.Text == "" || bdiscount.Text == "0")
-                        //{
-                        //    btotal.Text = bsubtotal.Text;
-                        //    double.Parse(btotal.Text);
-                        //}
-
-
-
-
-                        int text1;
-                        text1 = Convert.ToInt32(this.bidtext.Text);
-
-                        string s = remaining.ToString();
-                        query = "Update item_details set i_quantity=@parameter_quantity where i_id=" + bidtext.Text;
-
-                        SqlCommand cmds = new SqlCommand(query, connect);
-
-                        cmds.Parameters.AddWithValue("@parameter_quantity", remaining);
-
-                        cmds.ExecuteNonQuery();
-                        bidtext.Text = "";
-                        textname.Text = "";
-                        textquantity.Text = "";
-                        textprice.Text = "";
-
-
-
-
-                    }
-
-
+                    
 
                 }
                 catch (Exception ex)
@@ -756,7 +795,7 @@ namespace Store_management_system
             e.Graphics.DrawString("SAMP STORE", new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(365, 10));
             e.Graphics.DrawString("Kamalpokhari,Kathmandu", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(335, 40));
             e.Graphics.DrawString("Ph No: 01-422222", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(365, 60));
-            e.Graphics.DrawString("TIME:", new Font("Century Gothic", 12, FontStyle.Regular), Brushes.Black, new Point(120, 100));
+            e.Graphics.DrawString("Date:", new Font("Century Gothic", 12, FontStyle.Regular), Brushes.Black, new Point(120, 100));
 
             e.Graphics.DrawString("TOTAL:", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 980));
             e.Graphics.DrawString("DISCOUNT(%):", new Font("Century Gothic", 12, FontStyle.Bold), Brushes.Black, new Point(600, 1010));
@@ -790,6 +829,117 @@ namespace Store_management_system
 
         }
 
+       
+     
+
+    
+
+    
+
+        
+
+        private void cancelcart_MouseEnter(object sender, EventArgs e)
+        {
+            cancelcart.BackColor = SystemColors.ButtonHighlight;
+            cancelcart.ForeColor = Color.Black;
+        }
+
+        private void cancelcart_Click(object sender, EventArgs e)
+        {
+            if (basket.Rows.Count > 0)
+            { 
+                string result = MyMessageBoxyesno.ShowBox("CANCEL", "Do you want to cancel the order?");
+            if (result.Equals("2"))
+            {
+                
+            }
+                if (result.Equals("1"))
+                {
+
+
+
+                    try
+                    {
+                        connect.Open();
+
+                        //string aa;
+
+                        foreach (DataGridViewRow row in basket.Rows)
+
+                        {
+                            int totalqty;
+                            int aqtycompares = 0;
+                            string b = Convert.ToString(row.Cells[0].Value);
+                            int sumqtys = Convert.ToInt32(row.Cells[2].Value);
+
+                            string query = "Select i_quantity from  item_details where i_id=" + b;
+                            SqlCommand cmds = new SqlCommand(query, connect);
+                            SqlDataReader dr = cmds.ExecuteReader();
+
+                            if (dr.Read())
+                            {
+                                // aa = Convert.ToString(dr["i_ID"]);
+                                aqtycompares = Convert.ToInt32(dr["i_quantity"]);
+                            }
+                            dr.Close();
+                            totalqty = sumqtys + aqtycompares;
+
+                            string querys = "Update item_details set i_quantity=@parameter_quantity where i_id=" + b;
+                            SqlCommand cmdss = new SqlCommand(querys, connect);
+                            cmdss.Parameters.AddWithValue("@parameter_quantity", totalqty.ToString());
+                            cmdss.ExecuteNonQuery();
+
+
+                        }
+                        basket.Rows.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                    finally
+                    {
+
+                        connect.Close();
+
+
+                    }
+                    displaydata();
+
+
+                }
+            }
+            else
+            {
+
+
+            }
+        }
+
+        private void cancelcart_MouseLeave(object sender, EventArgs e)
+        {
+            cancelcart.BackColor = Color.FromArgb(30, 50, 94);
+            cancelcart.ForeColor = SystemColors.ButtonHighlight;
+        }
+
+        private void BillingSystem_Leave(object sender, EventArgs e)
+        {
+            
+            
+                cancelcart_Click(sender, e);
+                this.Focus();
+            
+        }
+
+        private void BillingSystem_Enter(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+
+
         //private void addcartdisplay()
         //{
         //    foreach (DataGridViewRow dr in basket.Rows)
@@ -797,7 +947,7 @@ namespace Store_management_system
         //        try
         //        {
         //            connect.Open();
-              
+
         //           string query = "insert into addcart (a_id,a_name,a_quantity,a_amt,a_prince) values(@parameter_aid,@parameter_aname,@parameter_aqty,@parameter_aamt,@parameter_aprice)";
         //            SqlCommand cmd = new SqlCommand(query, connect);
         //            cmd.Parameters.AddWithValue("@parameter_aid", dr.Cells["tID"].Value);

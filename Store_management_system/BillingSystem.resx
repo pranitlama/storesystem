@@ -333,4 +333,21 @@
   <metadata name="printDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>319, 17</value>
   </metadata>
+  <data name="cancelcart.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAArlJREFUWEfF
+        V0mIE0EUbRdcQEG9ehEZGTFOUl1hQD0FD6areiJzCeJRcEFwQ4RB9DA3PciA4Em9iOBFVNxwvckI3gQv
+        ntxwGREV5xBTXU7KV5Pfop0OnaQz7YNHV/2qerX0r/8p578j4HKXcsX9wJWPQirXv4vv2aBY4dRt7hAw
+        OY3JDDiJhZy2hG1CcfkANq0LYht1nRto7p8ImP8EE28g0x8E3D+PE3pB1eyhuJe3p6OKlfVkyhbGceZh
+        AZ9xCvvIlD2061/FIq5QNXsEXBxQrvxI1eyhinLI+kGdjawjU7YgP/gCXsCt2NsvqkI5R1MkQ7vymj2F
+        PvMiyScDnQ9FBqem5tIj+WSE8aANZ8CpiM1oV3yI2kLiRN+banUBySfDOOPzMfBrVKhJ/7EplZbgptwj
+        WwO2g4aNrmiWo/0R2Fx5iqQ7B47sRpwY2EDuOGxy1UXIH3cQN8bMgFiMXd6K6TvLniIr4sGRODFiw7bb
+        kzKbq0spu8b1s5wkye4QFIQbIxay8wUwsYckuwP5wbcWwbhfgHKbX1CzvkGS3QOefbNVtI0TDvkrm+W/
+        +jJ5maR6A3Z19B/BJmOvoc0fUZvmYitJ9QaE0GJUtAu+sb+RpHqDDR4Q+h4R7ojwj3GSSQfF5O24CRJY
+        +8m8NSSRDpr5xyD4yjpZx8TVpOHpETBv2O6qVhhZTaZsQX4whSu1m0zZA/f8DBbx9hfzZJ2XB+rD/tok
+        msHty2l4ephcaVlCvG9lv98XzewoniIHbMLvOIdJairvbwx3jKB1EvbpOhcVBKWdaFd4BJVpeHpA8DUW
+        sN+W7YR2l/W8NzjbCGDyCdgeUtX2f27zBFXTA4KXcKwvFRc7NBPXUX+HnLCQmhEvxChsyuYFzeRxlGdw
+        hbdQc3qYXHkVPVp+gM/iXtJ2Yhz/J7u4+NeV4/wGp6Fcifywj+YAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>
