@@ -64,7 +64,6 @@ C:\Users\HP\source\repos\Store_management_system\Store_management_system\obj\Deb
 F:\sms\Store_management_system\bin\Debug\Store_management_system.exe.config
 F:\sms\Store_management_system\bin\Debug\Store_management_system.exe
 F:\sms\Store_management_system\bin\Debug\Store_management_system.pdb
-F:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
 F:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.SuggestedBindingRedirects.cache
 F:\sms\Store_management_system\obj\Debug\Store_management_system.BillingSystem.resources
 F:\sms\Store_management_system\obj\Debug\Store_management_system.ChangePassword.resources
@@ -87,3 +86,4 @@ F:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.Generate
 F:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.CoreCompileInputs.cache
 F:\sms\Store_management_system\obj\Debug\Store_management_system.exe
 F:\sms\Store_management_system\obj\Debug\Store_management_system.pdb
+F:\sms\Store_management_system\obj\Debug\Store_management_system.csproj.AssemblyReference.cache
