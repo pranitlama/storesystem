@@ -89,7 +89,7 @@ namespace Store_management_system
             this.button1.Location = new System.Drawing.Point(26, 260);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(210, 77);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 1;
             this.button1.Text = "    HOME";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
@@ -179,7 +179,7 @@ namespace Store_management_system
             this.button7.Location = new System.Drawing.Point(30, 835);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(210, 77);
-            this.button7.TabIndex = 2;
+            this.button7.TabIndex = 6;
             this.button7.Text = "    LOG OUT";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button7.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@ namespace Store_management_system
             this.changepassword.Location = new System.Drawing.Point(32, 720);
             this.changepassword.Name = "changepassword";
             this.changepassword.Size = new System.Drawing.Size(238, 77);
-            this.changepassword.TabIndex = 2;
+            this.changepassword.TabIndex = 5;
             this.changepassword.Text = "   CHANGE         PASSWORD";
             this.changepassword.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.changepassword.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@ namespace Store_management_system
             this.areport.Location = new System.Drawing.Point(32, 489);
             this.areport.Name = "areport";
             this.areport.Size = new System.Drawing.Size(210, 77);
-            this.areport.TabIndex = 2;
+            this.areport.TabIndex = 3;
             this.areport.Text = "    SIGN UP";
             this.areport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.areport.UseVisualStyleBackColor = true;
@@ -230,7 +230,7 @@ namespace Store_management_system
             this.report.Location = new System.Drawing.Point(26, 605);
             this.report.Name = "report";
             this.report.Size = new System.Drawing.Size(210, 77);
-            this.report.TabIndex = 2;
+            this.report.TabIndex = 4;
             this.report.Text = "     REPORTS";
             this.report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.report.UseVisualStyleBackColor = true;
@@ -290,7 +290,7 @@ namespace Store_management_system
             this.clos.Location = new System.Drawing.Point(1104, 3);
             this.clos.Name = "clos";
             this.clos.Size = new System.Drawing.Size(36, 37);
-            this.clos.TabIndex = 9;
+            this.clos.TabIndex = 8;
             this.clos.UseVisualStyleBackColor = true;
             this.clos.Click += new System.EventHandler(this.clos_Click);
             // 
@@ -304,7 +304,7 @@ namespace Store_management_system
             this.mini.Location = new System.Drawing.Point(1062, 3);
             this.mini.Name = "mini";
             this.mini.Size = new System.Drawing.Size(36, 37);
-            this.mini.TabIndex = 8;
+            this.mini.TabIndex = 7;
             this.mini.UseVisualStyleBackColor = true;
             this.mini.Click += new System.EventHandler(this.mini_Click);
             // 

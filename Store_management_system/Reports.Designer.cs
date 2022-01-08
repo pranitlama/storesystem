@@ -299,7 +299,7 @@ namespace Store_management_system
             this.filter.OnHoverButtonColor = System.Drawing.Color.White;
             this.filter.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
             this.filter.Size = new System.Drawing.Size(122, 55);
-            this.filter.TabIndex = 29;
+            this.filter.TabIndex = 1;
             this.filter.Text = "Filter";
             this.filter.TextColor = System.Drawing.Color.White;
             this.filter.UseVisualStyleBackColor = false;

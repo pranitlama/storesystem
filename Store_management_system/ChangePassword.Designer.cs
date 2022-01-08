@@ -45,9 +45,9 @@ namespace Store_management_system
             this.hide = new System.Windows.Forms.Button();
             this.matched = new System.Windows.Forms.PictureBox();
             this.unmatched = new System.Windows.Forms.PictureBox();
-            this.see = new System.Windows.Forms.Button();
             this.clear = new ePOSOne.btnProduct.Button_WOC();
             this.confirm = new ePOSOne.btnProduct.Button_WOC();
+            this.see = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.matched)).BeginInit();
@@ -60,7 +60,7 @@ namespace Store_management_system
             this.nptxt.Location = new System.Drawing.Point(60, 540);
             this.nptxt.Name = "nptxt";
             this.nptxt.Size = new System.Drawing.Size(402, 32);
-            this.nptxt.TabIndex = 0;
+            this.nptxt.TabIndex = 2;
             this.nptxt.UseSystemPasswordChar = true;
             this.nptxt.TextChanged += new System.EventHandler(this.nptxt_TextChanged);
             this.nptxt.Enter += new System.EventHandler(this.nptxt_Enter);
@@ -72,7 +72,7 @@ namespace Store_management_system
             this.conptxt.Location = new System.Drawing.Point(60, 667);
             this.conptxt.Name = "conptxt";
             this.conptxt.Size = new System.Drawing.Size(402, 32);
-            this.conptxt.TabIndex = 0;
+            this.conptxt.TabIndex = 3;
             this.conptxt.UseSystemPasswordChar = true;
             this.conptxt.TextChanged += new System.EventHandler(this.conptxt_TextChanged);
             this.conptxt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.conptxt_KeyDown);
@@ -114,7 +114,7 @@ namespace Store_management_system
             this.cptxt.Location = new System.Drawing.Point(60, 421);
             this.cptxt.Name = "cptxt";
             this.cptxt.Size = new System.Drawing.Size(402, 32);
-            this.cptxt.TabIndex = 0;
+            this.cptxt.TabIndex = 1;
             this.cptxt.UseSystemPasswordChar = true;
             this.cptxt.TextChanged += new System.EventHandler(this.cptxt_TextChanged);
             this.cptxt.Enter += new System.EventHandler(this.cptxt_Enter);
@@ -243,21 +243,6 @@ namespace Store_management_system
             this.unmatched.TabStop = false;
             this.unmatched.Visible = false;
             // 
-            // see
-            // 
-            this.see.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("see.BackgroundImage")));
-            this.see.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.see.FlatAppearance.BorderSize = 0;
-            this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.see.ForeColor = System.Drawing.Color.White;
-            this.see.Location = new System.Drawing.Point(426, 544);
-            this.see.Name = "see";
-            this.see.Size = new System.Drawing.Size(34, 25);
-            this.see.TabIndex = 24;
-            this.see.UseVisualStyleBackColor = true;
-            this.see.Visible = false;
-            this.see.Click += new System.EventHandler(this.see_Click);
-            // 
             // clear
             // 
             this.clear.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -276,7 +261,7 @@ namespace Store_management_system
             this.clear.OnHoverButtonColor = System.Drawing.Color.White;
             this.clear.OnHoverTextColor = System.Drawing.Color.Black;
             this.clear.Size = new System.Drawing.Size(148, 55);
-            this.clear.TabIndex = 13;
+            this.clear.TabIndex = 5;
             this.clear.Text = "CLEAR";
             this.clear.TextColor = System.Drawing.Color.White;
             this.clear.UseVisualStyleBackColor = false;
@@ -300,11 +285,26 @@ namespace Store_management_system
             this.confirm.OnHoverButtonColor = System.Drawing.Color.White;
             this.confirm.OnHoverTextColor = System.Drawing.Color.Black;
             this.confirm.Size = new System.Drawing.Size(148, 55);
-            this.confirm.TabIndex = 13;
+            this.confirm.TabIndex = 4;
             this.confirm.Text = "CONFIRM";
             this.confirm.TextColor = System.Drawing.Color.White;
             this.confirm.UseVisualStyleBackColor = false;
             this.confirm.Click += new System.EventHandler(this.confirm_Click_1);
+            // 
+            // see
+            // 
+            this.see.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("see.BackgroundImage")));
+            this.see.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.see.FlatAppearance.BorderSize = 0;
+            this.see.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.see.ForeColor = System.Drawing.Color.White;
+            this.see.Location = new System.Drawing.Point(426, 544);
+            this.see.Name = "see";
+            this.see.Size = new System.Drawing.Size(34, 25);
+            this.see.TabIndex = 24;
+            this.see.UseVisualStyleBackColor = true;
+            this.see.Visible = false;
+            this.see.Click += new System.EventHandler(this.see_Click);
             // 
             // ChangePassword
             // 

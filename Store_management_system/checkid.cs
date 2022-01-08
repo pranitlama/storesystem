@@ -27,8 +27,6 @@ namespace Store_management_system
             sda.Fill(dt);
 
             ephoto.Image=Image.FromFile(paths + dt.Rows[0]["filepath"].ToString());
-         
-
             idlabel.Text = eid.ToString();
             namelabel.Text = name;
             addresslabel.Text = add;

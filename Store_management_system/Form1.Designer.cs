@@ -128,7 +128,7 @@ namespace Store_management_system
             this.see.Location = new System.Drawing.Point(1116, 429);
             this.see.Name = "see";
             this.see.Size = new System.Drawing.Size(33, 20);
-            this.see.TabIndex = 4;
+            this.see.TabIndex = 0;
             this.see.UseVisualStyleBackColor = true;
             this.see.Click += new System.EventHandler(this.see_Click);
             // 
@@ -138,10 +138,10 @@ namespace Store_management_system
             this.hide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.hide.FlatAppearance.BorderSize = 0;
             this.hide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hide.Location = new System.Drawing.Point(1116, 429);
+            this.hide.Location = new System.Drawing.Point(1115, 429);
             this.hide.Name = "hide";
             this.hide.Size = new System.Drawing.Size(33, 20);
-            this.hide.TabIndex = 5;
+            this.hide.TabIndex = 0;
             this.hide.UseVisualStyleBackColor = true;
             this.hide.Click += new System.EventHandler(this.hide_Click);
             // 
@@ -154,7 +154,7 @@ namespace Store_management_system
             this.mini.Location = new System.Drawing.Point(1116, 12);
             this.mini.Name = "mini";
             this.mini.Size = new System.Drawing.Size(36, 37);
-            this.mini.TabIndex = 6;
+            this.mini.TabIndex = 4;
             this.mini.UseVisualStyleBackColor = true;
             this.mini.Click += new System.EventHandler(this.mini_Click);
             // 
@@ -168,7 +168,7 @@ namespace Store_management_system
             this.clos.Location = new System.Drawing.Point(1158, 12);
             this.clos.Name = "clos";
             this.clos.Size = new System.Drawing.Size(36, 37);
-            this.clos.TabIndex = 7;
+            this.clos.TabIndex = 5;
             this.clos.UseVisualStyleBackColor = true;
             this.clos.Click += new System.EventHandler(this.clos_Click);
             // 
@@ -248,7 +248,7 @@ namespace Store_management_system
             this.logins.OnHoverButtonColor = System.Drawing.Color.White;
             this.logins.OnHoverTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(50)))), ((int)(((byte)(94)))));
             this.logins.Size = new System.Drawing.Size(141, 55);
-            this.logins.TabIndex = 12;
+            this.logins.TabIndex = 3;
             this.logins.Text = "Login";
             this.logins.TextColor = System.Drawing.Color.White;
             this.logins.UseVisualStyleBackColor = false;
