@@ -791,6 +791,11 @@ namespace Store_management_system
         {
 
         }
+
+        private void em_dob_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

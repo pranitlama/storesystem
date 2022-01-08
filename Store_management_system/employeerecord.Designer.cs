@@ -147,11 +147,12 @@ namespace Store_management_system
             this.em_dob.CustomFormat = "yyyy/MM/dd";
             this.em_dob.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.em_dob.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.em_dob.Location = new System.Drawing.Point(582, 136);
+            this.em_dob.Location = new System.Drawing.Point(588, 136);
             this.em_dob.Name = "em_dob";
             this.em_dob.Size = new System.Drawing.Size(212, 23);
             this.em_dob.TabIndex = 9;
             this.em_dob.Value = new System.DateTime(2021, 8, 27, 0, 0, 0, 0);
+            this.em_dob.ValueChanged += new System.EventHandler(this.em_dob_ValueChanged);
             // 
             // em_mname
             // 
@@ -809,7 +810,7 @@ namespace Store_management_system
             this.photo.Image = ((System.Drawing.Image)(resources.GetObject("photo.Image")));
             this.photo.InitialImage = ((System.Drawing.Image)(resources.GetObject("photo.InitialImage")));
             this.photo.Location = new System.Drawing.Point(33, 28);
-            this.photo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.photo.Margin = new System.Windows.Forms.Padding(2);
             this.photo.Name = "photo";
             this.photo.Size = new System.Drawing.Size(106, 106);
             this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

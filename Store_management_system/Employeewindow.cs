@@ -142,12 +142,21 @@ namespace Store_management_system
             EMPaddproduct ap = new EMPaddproduct();
             AddControlsToPanel(ap);
         }
-
+       
         private void emp_bill_Click(object sender, EventArgs e)
         {
+         
             moveSidePanel(emp_bill);
             BillingSystem  bs  = new BillingSystem ();
+            
+
+            
+
+           
             AddControlsToPanel(bs);
+            
+            
+            
 
 
         }
@@ -206,5 +215,7 @@ namespace Store_management_system
             AddControlsToPanel(st);
 
         }
+
+       
     }
 }

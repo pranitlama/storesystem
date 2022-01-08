@@ -78,7 +78,6 @@ F:\sms\Store_management_system\obj\Debug\Store_management_system.HomeUC.resource
 F:\sms\Store_management_system\obj\Debug\Store_management_system.Messageboxok.resources
 F:\sms\Store_management_system\obj\Debug\Store_management_system.MyMessageBoxyesno.resources
 F:\sms\Store_management_system\obj\Debug\Store_management_system.picturebox.resources
-F:\sms\Store_management_system\obj\Debug\Store_management_system.print.resources
 F:\sms\Store_management_system\obj\Debug\Store_management_system.Properties.Resources.resources
 F:\sms\Store_management_system\obj\Debug\Store_management_system.Reports.resources
 F:\sms\Store_management_system\obj\Debug\CustomControls.RJControls.RJTextBox.resources
