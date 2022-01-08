@@ -192,7 +192,7 @@ namespace Store_management_system
             }
             if (result.Equals("2"))
             {
-
+                //
             }
         }
 
